@@ -65,6 +65,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<button class="material-icons"	onclick="location.href='./genvouchers.php';"	title="Ganerate Vouchers">group_add</button>
 						<button class="material-icons"	onclick="location.href='./genvoucher.php';" 	title="Generate 1 User">person_add</button>
+						<button class="material-icons"	onclick="window.open('https://github.com/laksa19/mikrotik-hotspot-monitor','_blank');" 	title="Check Update">system_update_alt</button>
 					</td>
 				</tr>
 			</table>
