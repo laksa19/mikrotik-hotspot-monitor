@@ -1,0 +1,51 @@
+@font-face {
+  font-family: Roboto;
+  src: url('fonts/Roboto-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  color: #000000; 
+  background-color: #FFFFFF; 
+  font-size: 14px; 
+  font-family: Roboto;
+}
+table.tprint { 
+  margin-left:auto; 
+  margin-right:auto;
+  width: 300px;
+  height: 180px;
+  border-collapse: collapse;
+}
+table.tprint td { 
+  padding: 10px; 
+  border: 1px solid #000000;
+  font-size: 14px;
+  text-align: left; 
+}
+table.tprinta { 
+  margin-left:auto; 
+  margin-right:auto;
+  width: 300px;
+  height: 180px;
+  border-collapse: collapse;
+}
+table.tprinta td { 
+  padding: 4px; 
+  border: 2px solid #000000;
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
+}
+table.tprintb { 
+  margin-left:auto; 
+  margin-right:auto;
+  width: 300px; 
+  border-collapse: collapse; 
+}
+table.tprintb td { 
+  padding-left: 20px; 
+  border: 0px;
+  font-size: 18px;
+  text-align: left; 
+}
