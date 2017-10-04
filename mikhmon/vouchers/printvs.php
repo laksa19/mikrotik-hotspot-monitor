@@ -112,7 +112,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -133,7 +133,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -154,7 +154,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -177,7 +177,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -198,7 +198,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -219,7 +219,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -242,7 +242,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -263,7 +263,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -284,7 +284,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -307,7 +307,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -328,7 +328,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -349,7 +349,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -372,7 +372,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -393,7 +393,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -414,7 +414,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -437,7 +437,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -458,7 +458,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -479,7 +479,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -502,7 +502,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -523,7 +523,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -544,7 +544,7 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vname1);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
