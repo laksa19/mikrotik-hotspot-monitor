@@ -32,6 +32,11 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->write('=count-only=', false);
 	$API->write('?=profile='.$profile4.'');
 	$ARRAY6 = $API->read();
+	
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile5.'');
+	$ARRAY7 = $API->read();
 
     $API->disconnect();
 }
@@ -71,7 +76,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			</table>
 			<table class="tnav">
 				<tr>
-					<td><p>Sisa Voucher Aktif : <?php	$a=array($ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6);	echo array_sum($a);	?></p></td>
+					<td><p>Sisa Voucher Aktif : <?php	$a=array($ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6,$ARRAY7);	echo array_sum($a);	?></p></td>
 				</tr>
 			</table>
 			<table class="tprinta" >
@@ -80,12 +85,14 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<th><a href="userlists2.php"><?php print_r($vname2);?></a></th>
 					<th><a href="userlists3.php"><?php print_r($vname3);?></a></th>
 					<th><a href="userlists4.php"><?php print_r($vname4);?></a></th>
+					<th><a href="userlists5.php"><?php print_r($vname5);?></a></th>
 				</tr>
 				<tr>
 					<td><?php print_r($ARRAY3); ?></td>
 					<td><?php print_r($ARRAY4); ?></td>
 					<td><?php print_r($ARRAY5); ?></td>
 					<td><?php print_r($ARRAY6); ?></td>
+					<td><?php print_r($ARRAY7); ?></td>
 				</tr>
 			</table>
 			<table class="tnav">

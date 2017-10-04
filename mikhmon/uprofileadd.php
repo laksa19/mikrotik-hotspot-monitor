@@ -46,24 +46,26 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			</table>
 			<form autocomplete="off" method="post" action="">
 				<table class="tnav" align="center"  >
-					<tr><td>Nama Profile</td><td>:</td><td>
+					<tr><td>Profile | Masa Aktif</td><td>:</td><td>
 						<select name="nama" required="1">
 							<option value="">Pilih...</option>
 							<option value=<?php print_r($profile1);?>><?php print_r($profile1);?></option>
 							<option value=<?php print_r($profile2);?>><?php print_r($profile2);?></option>
 							<option value=<?php print_r($profile3);?>><?php print_r($profile3);?></option>
 							<option value=<?php print_r($profile4);?>><?php print_r($profile4);?></option>
+							<option value=<?php print_r($profile5);?>><?php print_r($profile5);?></option>
 						</select>
 					</td></tr>
-					<tr><td>Masa Aktif</td><td>:</td><td>
+					<!--<tr><td>Masa Aktif</td><td>:</td><td>
 						<select name="aktif" required="1">
 							<option value="">Pilih...</option>
 							<option value=<?php print_r($uactive1);?>><?php print_r($vname1);?></option>
 							<option value=<?php print_r($uactive2);?>><?php print_r($vname2);?></option>
 							<option value=<?php print_r($uactive3);?>><?php print_r($vname3);?></option>
 							<option value=<?php print_r($uactive4);?>><?php print_r($vname4);?></option>
+							<option value=<?php print_r($uactive5);?>><?php print_r($vname5);?></option>
 						</select>
-					</td></tr>
+					</td></tr>-->
 					<tr><td>Shared Users</td><td>:</td><td><input type="text" size="3" maxlength="3" name="sharedu" value="1" required="1"/></td></tr>
 					<tr><td>Upload/Download</td><td>:</td><td>
 						<select name="updown" required="1">
@@ -86,7 +88,21 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					exit('Login Failed');
 			}
 			$profname = ($_POST['nama']);
-			$exptime = ($_POST['aktif']);
+			$uprofile = $profname;
+			if ($uprofile == $profile1){
+				$exptime = $uactive1;
+			}elseif ($uprofile == $profile2){
+				$exptime = $uactive2;
+			}elseif ($uprofile == $profile3){
+				$exptime = $uactive3;
+			}elseif ($uprofile == $profile4){
+				$exptime = $uactive4;
+			}elseif ($uprofile == $profile5){
+				$exptime = $uactive5;
+			}else {
+				$exptime= "";
+			}
+			//$exptime = ($_POST['aktif']);
 			$sharuser=($_POST['sharedu']);
 			$rxtx = ($_POST['updown']);
 			$command = '/ip hotspot user profile add add-mac-cookie=no  name=' . $profname. ' \    on-login="{:local date [/system clock get date ];:local time [/system cloc\    k get time ];:local uptime (' .$exptime. ');[/system scheduler add disabled=no interva\    l=\$uptime name=\$user on-event= \"[/ip hotspot user remove [find where na\    me=\$user]];[/ip hotspot active remove [find where user=\$user]];[/sys sch\    \_re [find where name=\$user]]\" start-date=\$date start-time=\$time]; }}" \    rate-limit=' .$rxtx. ' status-autorefresh=15s	transparent-proxy=yes	shared-users=' . $sharuser . '';
