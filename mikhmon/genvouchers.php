@@ -117,7 +117,7 @@ if ($blimit == $ubytelimit1){
 						</select>
 						</td>
 					</tr>
-					<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Generate"/><button class="btnprint" onclick="window.open('./vouchers/printvs.php','_blank');">Cetak</button></td></tr>
+					<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Generate"/><button class="btnsubmit" onclick="window.open('./vouchers/printvs.php','_blank');">Cetak</button></td></tr>
 				</table>
 				<br>
 				<table class="tprinta">
@@ -128,6 +128,7 @@ if ($blimit == $ubytelimit1){
 						<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
 					</tr>
 				</table>
+				<br>
 			</form>
 
 <?php
