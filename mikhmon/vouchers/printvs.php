@@ -11,6 +11,8 @@ if ($tlimit == $utimelimit1){
 	$vtimelimit = "Durasi:$utimelimit3t";
 }elseif ($tlimit == $utimelimit4){
 	$vtimelimit = "Durasi:$utimelimit4t";
+}elseif ($tlimit == $utimelimit5){
+	$vtimelimit = "Durasi:$utimelimit5t";
 }else {
 	$vtimelimit= "";
 }
