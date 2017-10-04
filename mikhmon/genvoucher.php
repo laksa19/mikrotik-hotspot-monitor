@@ -116,6 +116,7 @@ table.tuserb td {
 						</td>
 					</tr>
 					<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Generate"/></td></tr>
+				<br>
 			</form>
 
 <?php
