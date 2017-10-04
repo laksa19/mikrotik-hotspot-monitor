@@ -41,20 +41,6 @@ if ($blimit == $ubytelimit1){
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
 		<link rel="icon" href="favicon.ico" />
 		<link rel="stylesheet" href="css/style.css" media="screen">
-		<style>
-table.tnotif { 
-  margin-left:auto; 
-  margin-right:auto;
-  width: 330px; 
-  border-collapse: collapse; 
-}
-table.tnotif th { 
-  background: #008CCA; 
-  color: white; 
-  font-weight: bold;
-  text-align: center;
-}
-		</style>
 		<script>
 			function Reload() {
 				location.reload();
@@ -245,11 +231,12 @@ table.tnotif th {
 		$data = '<?php $vprofname="' . $vprofile . '"; $uptimelimit="' . $timelimit . '"; $upbytelimit="' . $bytelimit . '"; $vprice="' . $price . '"; $user1="' . $u1. '"; $pass1="' . $p1. '"; $user2="' . $u2. '";$pass2="' . $p2. '"; $user3="' . $u3. '";$pass3="' . $p3. '"; $user4="' . $u4. '";$pass4="' . $p4. '"; $user5="' . $u5. '";$pass5="' . $p5. '"; $user6="' . $u6. '";$pass6="' . $p6. '"; $user7="' . $u7. '";$pass7="' . $p7. '"; $user8="' . $u8. '";$pass8="' . $p8. '"; $user9="' . $u9. '";$pass9="' . $p9. '"; $user10="' . $u10. '";$pass10="' . $p10. '"; $user11="' . $u11. '";$pass11="' . $p11. '"; $user12="' . $u12. '";$pass12="' . $p12. '"; $user13="' . $u13. '";$pass13="' . $p13. '"; $user14="' . $u14. '";$pass14="' . $p14. '"; $user15="' . $u15. '";$pass15="' . $p15. '"; $user16="' . $u16. '";$pass16="' . $p16. '"; $user17="' . $u17. '";$pass17="' . $p17. '"; $user18="' . $u18. '";$pass18="' . $p18. '"; $user19="' . $u19. '";$pass19="' . $p19. '"; $user20="' . $u20. '";$pass20="' . $p20. '"; $user21="' . $u21. '";$pass21="' . $p21. '"; ?>';
 		fwrite($handle, $data);
 		
-		echo	"</table class='tnotif'>";
+		echo	"<table class='tprinta'>";
 		echo				"<tr>";
 		echo					"<th>Generate Voucher Sekarang</th>";
-		echo						"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '> Harga : $price</td>";
 		echo				"<tr>";
+		echo					"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '> Harga : $price</td>";
+		echo				"</tr>";
 		echo	"</table>";
 		echo	"<br>";
 	}
