@@ -30,5 +30,14 @@ Download web server :
     2. https://play.google.com/store/apps/details?id=com.alfanla.android.pws
 
 Changelog :
-  - 10-03-2017
+  - 03-10-2017
       1. Upload pertama.
+  - 04-10-2017
+      1. Penyesuaian config.php
+      2. Penyesuaian index.php
+      3. Penambahan User Lists, sekarang menjadi 5
+      4. Penyederhanaan pembuatan Profile
+      5. Penambahan fitur pada generate voucher
+	      1. Batasan Durasi (Limit Uptime)
+	      2. Batasan Kuota (Limit Bytes Out)
+      6. Penyesuaian cetak voucher
