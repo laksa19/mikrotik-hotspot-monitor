@@ -1,1 +1,1 @@
-<?php $user1="QJCEFL";$pass1="268832";$profname1="Voucher2d"; ?>
+<?php $user1="XUZBRV";$pass1="711004";$vprofname="Voucher3Jam";$vptimelimit=""; $vpbytelimit=""; $vprice="Rp1.000"; ?>
