@@ -10,7 +10,7 @@ II. Pastikan Jam dan Tanggal di Mikrotik sudah update sesuai wilayah masing-masi
 
 III. Sesuaikan pengaturan di file config.php
 
-Fitur:
+# Fitur:
 1. Menampilkan User Hotspot yang aktif dan masa aktifnya.
 2. Membuat, edit dan hapus User Profile.
 3. Menampilkan User Hotspot berdasarkan User Profile.
@@ -29,7 +29,7 @@ Download web server :
     1. https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en
     2. https://play.google.com/store/apps/details?id=com.alfanla.android.pws
 
-Changelog :
+# Changelog :
   - 03-10-2017
       1. Upload pertama.
   - 04-10-2017
