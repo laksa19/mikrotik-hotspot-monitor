@@ -80,33 +80,33 @@ table.tsetup td {
 					</tr>
 					<tr>
 						<td><input type="text" size="10" maxlength="20" name="prof1" placeholder="Profile1" value="<?php print_r($profile1);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="active1" placeholder="Masa Aktif1" value="<?php print_r($uactive1);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="durasi1" placeholder="Durasi1" value="<?php print_r($utimelimit1);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="active1" placeholder="Masa Aktif1" value="<?php print_r($uactive1);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="durasi1" placeholder="Durasi1" value="<?php print_r($utimelimit1);?>" required="1"/></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota1" placeholder="Kuota1" value="<?php print_r($ubytelimit1t);?>" required="1"/></td>
 					</tr>
 					<tr>
 						<td><input type="text" size="10" maxlength="20" name="prof2" placeholder="Profile2" value="<?php print_r($profile2);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="active2" placeholder="Masa Aktif2" value="<?php print_r($uactive2);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="durasi2" placeholder="Durasi2" value="<?php print_r($utimelimit2);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="active2" placeholder="Masa Aktif2" value="<?php print_r($uactive2);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="durasi2" placeholder="Durasi2" value="<?php print_r($utimelimit2);?>" required="1"/></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota2" placeholder="Kuota2" value="<?php print_r($ubytelimit2t);?>" required="1"/></td>
 						
 					</tr>
 					<tr>
 						<td><input type="text" size="10" maxlength="20" name="prof3" placeholder="Profile3" value="<?php print_r($profile3);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="active3" placeholder="Masa Aktif3" value="<?php print_r($uactive3);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="durasi3" placeholder="Durasi3" value="<?php print_r($utimelimit3);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="active3" placeholder="Masa Aktif3" value="<?php print_r($uactive3);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="durasi3" placeholder="Durasi3" value="<?php print_r($utimelimit3);?>" required="1"/></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota3" placeholder="Kuota3" value="<?php print_r($ubytelimit3t);?>" required="1"/></td>
 					</tr>
 					<tr>
 						<td><input type="text" size="10" maxlength="20" name="prof4" placeholder="Profile4" value="<?php print_r($profile4);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="active4" placeholder="Masa Aktif4" value="<?php print_r($uactive4);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="durasi4" placeholder="Durasi4" value="<?php print_r($utimelimit4);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="active4" placeholder="Masa Aktif4" value="<?php print_r($uactive4);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="durasi4" placeholder="Durasi4" value="<?php print_r($utimelimit4);?>" required="1"/></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota4" placeholder="Kuota4" value="<?php print_r($ubytelimit4t);?>" required="1"/></td>
 					</tr>
 					<tr>
 						<td><input type="text" size="10" maxlength="20" name="prof5" placeholder="Profile5" value="<?php print_r($profile5);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="active5" placeholder="Masa Aktif5" value="<?php print_r($uactive5);?>" required="1"/></td>
-						<td><input type="text" size="5" maxlength="5" name="durasi5" placeholder="Durasi5" value="<?php print_r($utimelimit5);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="active5" placeholder="Masa Aktif5" value="<?php print_r($uactive5);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="durasi5" placeholder="Durasi5" value="<?php print_r($utimelimit5);?>" required="1"/></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota5" placeholder="Kuota5" value="<?php print_r($ubytelimit5t);?>" required="1"/></td>
 					</tr>
 				</table>
