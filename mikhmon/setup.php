@@ -203,7 +203,7 @@ table.tsetup td {
 					<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
 				</tr>
 				<tr>
-					<td>Setup</td>
+					<td>Konfigurasi Aplikasi</td>
 					<td>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
