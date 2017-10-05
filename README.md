@@ -30,7 +30,7 @@ Download web server :
     1. https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en
     2. https://play.google.com/store/apps/details?id=com.alfanla.android.pws
 
-# Changelog :
+# Changelog 
 03-10-2017
 
   1. Upload pertama.
