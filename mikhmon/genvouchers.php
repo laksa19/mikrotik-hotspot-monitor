@@ -179,8 +179,8 @@ if ($blimit == $ubytelimit1){
 				$vbytelimit = "Kuota:$ubytelimit4t";
 			}elseif ($blimit == $ubytelimit5){
 				$vbytelimit = "Kuota:$ubytelimit5t";
-			}elseif ($blimit == $ubytelimit6){
-				$vbytelimit = "Kuota:$ubytelimit6t";
+			}elseif ($blimit == $ubytelimit5){
+				$vbytelimit = "Kuota:$ubytelimit5t";
 			}else {
 				$vbytelimit= "";
 			}
