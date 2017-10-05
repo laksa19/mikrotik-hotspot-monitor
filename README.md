@@ -7,9 +7,7 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
     - API port 8728
     - SSH port 2219 [disarankan untuk mengganti port default ssh di Mikrotik Anda.]
 
-2. Pastikan Jam dan Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Dan isi Rate Limit pada User Profile "default"
-
-3. Untuk pertama kali sesuaikan config melalui setup.php : http://localhost/setup.php atau http://localhost:8080/setup.php
+2. Pastikan Jam dan Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Dan isi Rate Limit pada User Profile "default". Untuk pengaturan Jam dan Tanggal bisa baca di sini http://www.mikrotik.co.id/artikel_lihat.php?id=55
 
 ## FITUR  MIKROTIK HOTSPOT MONITOR
 
@@ -22,14 +20,23 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 7. Cetak Voucher. *Sebaiknya menggunakan kertas A4.
 
 ## PENGGUNAAN  MIKROTIK HOTSPOT MONITOR
-Aplikasi ini bisa dijalankan menggunakan web server dengan PHP versi 5
+1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP versi 5
 
-Download web server :
-* Windows USBWebserver : www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip
-* Android Web Server : 
-    1. https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en (berbayar)
-    2. https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma (gratis)
-    3. https://play.google.com/store/apps/details?id=com.alfanla.android.pws (gratis, berbayar, berisi iklan)
+    Download web server :
+    * Windows USBWebserver : www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip
+    * Android Web Server : 
+      - https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en (berbayar)
+      - https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma (gratis)
+      - https://play.google.com/store/apps/details?id=com.alfanla.android.pws (gratis, berbayar, berisi iklan)
+
+2. Untuk pertama kali Anda perlu menyesuaikan file config.php dengan Mikrotik Anda, pada bagian berikut
+    - $iphost="111.111.111.111";    // ip Mikrotik
+    - $sshport="2219";              // port ssh Mikrotik
+    - $userhost="admin";            // username Mikrotik
+    - $passwdhost="password";       // password Mikrotik
+    
+    sesuaikan yang ada dalam tanda kutip ( " " ).
+3. Selanjutnya login dengan username dan password Mikrotik yang telah disesuaikan tadi.
 
 ## Changelog 
 03-10-2017
