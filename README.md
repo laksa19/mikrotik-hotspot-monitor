@@ -57,12 +57,5 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 05-10-2017
 
   1. Penambahan setup.php untuk memudahkan edit file config.php
-  2. Perbaikan di file berikut 
-       - index.php
-       - genvoucher.php
-       - genvouches.php
-       - uprofileadd.php
-       - uprofileset.php
-       - printvs.php
-       - vouchers.php
-
+  2. Penambahan halaman login.
+  3. Beberapa penyesuaian lainnya.
