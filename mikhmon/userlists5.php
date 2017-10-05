@@ -66,7 +66,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			$profname = ($_POST['nama']);
 			$command = '/ip hotspot user remove [find name=' . $profname. ']';
 			echo $ssh->exec($command);
-			header('Location: userlists4.php');
+			header('Location: userlists5.php');
 }
 ?>
 		<div style="overflow-x:auto;">
