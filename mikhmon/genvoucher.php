@@ -1,3 +1,9 @@
+<?php session_start(); ?>
+<?php
+if(!isset($_SESSION['usermikhmon'])){
+	header("Location:login.php");
+}
+?>
 <?php
 require('./api.php');
 include('./Net/SSH2.php');
@@ -183,7 +189,7 @@ table.tuserb td {
 		$data = '<?php $user1="' . $u1. '";$pass1="' . $p1. '";$vprofname="' . $profname. '";$vptimelimit="' . $vtimelimit. '"; $vpbytelimit="' . $vbytelimit. '"; $vprice="' . $price. '"; ?>';
 		fwrite($handle, $data);
 	
-		echo	"</table>";
+		echo	"<table>";
 		echo			"<table class='tusera' id='preview-table'>";
 		echo				"<tr>";
 		echo					"<tr>";

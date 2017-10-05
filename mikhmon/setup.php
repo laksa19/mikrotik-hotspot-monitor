@@ -1,3 +1,9 @@
+<?php session_start(); ?>
+<?php
+if(!isset($_SESSION['usermikhmon'])){
+	header("Location:login.php");
+}
+?>
 <?php
 include('./config.php');
 ?>
@@ -197,6 +203,7 @@ table.tsetup td {
 			}
 		</script>
 	</head>
+	<body>
 		<div class="main">
 			<table class="tnav">
 				<tr>

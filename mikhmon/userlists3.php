@@ -1,3 +1,9 @@
+<?php session_start(); ?>
+<?php
+if(!isset($_SESSION['usermikhmon'])){
+	header("Location:login.php");
+}
+?>
 <?php
 require('./api.php');
 include('./Net/SSH2.php');

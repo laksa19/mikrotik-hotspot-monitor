@@ -1,3 +1,9 @@
+<?php session_start(); ?>
+<?php
+if(!isset($_SESSION['usermikhmon'])){
+	header("Location:login.php");
+}
+?>
 <?php
 require('./api.php');
 include('./config.php');
@@ -67,6 +73,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td>Dashboard</td>
 					<td>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
+						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<button class="material-icons"	onclick="location.href='./genvouchers.php';"	title="Ganerate Vouchers">group_add</button>
