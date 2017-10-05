@@ -27,8 +27,9 @@ Aplikasi ini bisa dijalankan menggunakan web server dengan PHP versi 5
 Download web server :
 * Windows USBWebserver : www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip
 * Android Web Server : 
-    1. https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en
-    2. https://play.google.com/store/apps/details?id=com.alfanla.android.pws
+    1. https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en (berbayar)
+    2. https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma (gratis)
+    3. https://play.google.com/store/apps/details?id=com.alfanla.android.pws (gratis, berbayar, berisi iklan)
 
 ## Changelog 
 03-10-2017
