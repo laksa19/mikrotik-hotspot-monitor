@@ -99,7 +99,7 @@ textarea,input,select {
 				<form action="" method="post">
 					<table class="tlogin">
 						<tr>
-							<th>Login</th>
+							<th>Login Aplikasi</th>
 						</tr>
 						<tr>
 							<td><input type="text" name="user" placeholder="Username" autofocus></td>
