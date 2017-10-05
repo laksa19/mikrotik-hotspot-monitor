@@ -67,7 +67,7 @@ table.tsetup td {
 					</tr>
 					<tr>
 						<td><input type="text" size="15" maxlength="20" name="usermik" placeholder="User Mikrotik" value="<?php print_r($userhost);?>" required="1"/></td>
-						<td><input type="text" size="15" maxlength="100" name="passmik" placeholder="Password Mikrotik" value="<?php print_r($passwdhost);?>" required="1"/></td>
+						<td><input type="password" size="15" maxlength="100" name="passmik" placeholder="Password Mikrotik" value="<?php print_r($passwdhost);?>" required="1"/></td>
 					</tr>
 				</table>
 				<br>
