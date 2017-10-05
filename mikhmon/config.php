@@ -39,7 +39,7 @@ $utimelimit1="1h";
 $utimelimit2="2h";
 $utimelimit3="5h";
 $utimelimit4="10h";
-$utimelimit5="10h";
+$utimelimit5="12h";
 // teks durasi
 $utimelimit1t="1Jam";
 $utimelimit2t="2Jam";
