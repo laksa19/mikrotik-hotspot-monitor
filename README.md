@@ -48,7 +48,7 @@ Download web server :
 
 05-10-2017
 
-  1. Penambahan setup.php untuk memudahkan configurasi.
+  1. Penambahan setup.php untuk memudahkan edit file config.php
   2. Perbaikan di file berikut 
        - index.php
        - genvoucher.php
