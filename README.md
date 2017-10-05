@@ -4,8 +4,8 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 ## TENTANG  MIKROTIK HOTSPOT MONITOR
 
 1. Aplikasi ini menggunakan dua koneksi ke mikrotik
-  1. API port 8728
-  2. SSH port 2219 [disarankan untuk mengganti port default ssh di Mikrotik Anda.]
+    - API port 8728
+    - SSH port 2219 [disarankan untuk mengganti port default ssh di Mikrotik Anda.]
 
 2. Pastikan Jam dan Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Dan isi Rate Limit pada User Profile "default"
 
