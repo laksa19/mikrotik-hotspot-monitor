@@ -1,8 +1,8 @@
 # MIKROTIK HOTSPOT MONITOR
 Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
----
+
 ## TENTANG  MIKROTIK HOTSPOT MONITOR
----
+
 1. Aplikasi ini menggunakan dua koneksi ke mikrotik
   1. API port 8728
   2. SSH port 2219 [disarankan untuk mengganti port default ssh di Mikrotik Anda.]
@@ -12,7 +12,7 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 3. Untuk pertama kali sesuaikan config melalui setup.php : http://localhost/setup.php atau http://localhost:8080/setup.php
 
 ## FITUR  MIKROTIK HOTSPOT MONITOR
----
+
 1. Menampilkan User Hotspot yang aktif dan masa aktifnya.
 2. Membuat, edit dan hapus User Profile.
 3. Menampilkan User Hotspot berdasarkan User Profile.
@@ -20,7 +20,7 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 5. Generate 1 Voucher.
 6. Generate 21 Voucher.
 7. Cetak Voucher. *Sebaiknya menggunakan kertas A4.
----
+
 ## PENGGUNAAN  MIKROTIK HOTSPOT MONITOR
 Aplikasi ini bisa dijalankan menggunakan web server dengan PHP versi 5
 
