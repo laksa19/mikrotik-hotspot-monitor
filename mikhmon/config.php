@@ -53,7 +53,6 @@ $ubytelimit2="1000000000";
 $ubytelimit3="2000000000";
 $ubytelimit4="5000000000";
 $ubytelimit5="10000000000";
-$ubytelimit6="20000000000";
 // teks kuota
 $ubytelimit1t="500MB";
 $ubytelimit2t="1GB";
