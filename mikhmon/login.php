@@ -12,10 +12,13 @@ if(isset($_POST['login'])){
 	$user = $_POST['user'];
 	$pass = $_POST['pass'];
 		if($user == $userhost && $pass == $passwdhost){
-			$_SESSION['usermikhmon']=$user;
+			$_SESSION['usermikhmon']="Administrator";
+			echo '<script type="text/javascript"> window.open("./","_self");</script>';
+		}elseif ($user == $userop && $pass == $passwdop){
+			$_SESSION['usermikhmon']="Operator";
 			echo '<script type="text/javascript"> window.open("./","_self");</script>';
 		}else{
-			$error = "Username atau Password tidak sesuai";
+			$error = "Username atau Password tidak sesuai.";
 	}
 }
  ?>
@@ -108,7 +111,7 @@ textarea,input,select {
 							<td><input type="password" name="pass" placeholder="Password" ></td>
 						</tr>
 						<tr>
-							<td><input class="btnlogin" type="submit" name="login" value="Login"><p><?php if(isset($_POST['login'])){ print_r($error);}?></p></td>
+							<td style="font-size: 12px;" ><input class="btnlogin" type="submit" name="login" value="Login"><p><?php if(isset($_POST['login'])){ print_r($error);}?></p></td>
 						</tr>
 					</table>
 				</form>

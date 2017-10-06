@@ -3,16 +3,10 @@
 if(!isset($_SESSION['usermikhmon'])){
 	header("Location:login.php");
 }
-
-	$validasi = ($_SESSION['usermikhmon']);
-		if ($validasi == "Operator"){
-	header("Location:userlistsmon/userlists1.php");
-}
 ?>
 <?php
-require('./api.php');
-include('./Net/SSH2.php');
-include('./config.php');
+require('../api.php');
+include('../config.php');
 $API = new RouterosAPI();
 $API->debug = false;
 if ($API->connect( $iphost, $userhost, $passwdhost )) {
@@ -36,7 +30,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		<meta http-equiv="pragma" content="no-cache" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
 		<link rel="icon" href="favicon.ico" />
-		<link rel="stylesheet" href="css/style.css" media="screen">
+		<link rel="stylesheet" href="../css/style.css" media="screen">
 		<script>
 			function Reload() {
 				location.reload();
@@ -56,30 +50,12 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			<td>Voucher <?php print_r($vname1);?> Aktif  : <?php print_r($ARRAY2);?></td>
 			<td>
 				<button class="material-icons" onclick="Reload()" title="Reload">autorenew</button>
-				<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
+				<button class="material-icons" onclick="location.href='../';" title="Dashboard">dashboard</button>
 				<button class="material-icons" onclick="goBack()" title="Back">arrow_back</button>
 			</td>
 		</tr>
 	</table>
-		<form autocomplete="off" method="post" action="">
-				<table class="tnav" align="center"  >
-				<!--<tr><td>ID</td><td><td>:</td><input type="text" size="20" maxlength="20" name="id" required="1"/></td></tr>-->
-				<tr><td>Hapus User</td><td>:</td><td><input type="text" size="15" maxlength="15" name="nama" placeholder="Nama User" required="1"/></td></tr>
-				<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Hapus"/></td></tr>
-			</table>
-		</form>
-<?php
-	if(isset($_POST['nama'])){
-		$ssh = new Net_SSH2($iphost,$sshport);
-			if (!$ssh->login($userhost, $passwdhost)) {
-					exit('Login Failed');
-			}
-			$profname = ($_POST['nama']);
-			$command = '/ip hotspot user remove [find name=' . $profname. ']';
-			echo $ssh->exec($command);
-			header('Location: userlists1.php');
-}
-?>
+	<br>
 		<div style="overflow-x:auto;">
 			<table class="tprint" >
 				<tr>

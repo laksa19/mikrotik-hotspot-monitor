@@ -85,6 +85,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			<table class="tnav">
 				<tr>
 					<td><p>Sisa Voucher Aktif : <?php	$a=array($ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6,$ARRAY7);	echo array_sum($a);	?></p></td>
+					<td style="text-align: right;"><?php print_r($_SESSION['usermikhmon']);?></td>
 				</tr>
 			</table>
 			<table class="tprinta" >
