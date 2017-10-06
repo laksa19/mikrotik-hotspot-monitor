@@ -59,3 +59,7 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
   1. Penambahan setup.php untuk memudahkan edit file config.php
   2. Penambahan halaman login.
   3. Beberapa penyesuaian lainnya.
+
+06-10-2017
+
+   Menambahkan hak akses user :  1. Administrator,  2. Operator
