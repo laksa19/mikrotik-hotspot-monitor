@@ -14,7 +14,7 @@ $passwdhost="password";
 
 //operator
 $userop="op";
-$passwdop="1234;
+$passwdop="1234";
 
 //user profile voucher
 $profile1="Voucher3Jam";
