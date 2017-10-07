@@ -62,4 +62,4 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		</div>
 	</body>
 </html>
-<?php
+
