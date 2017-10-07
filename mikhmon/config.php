@@ -13,7 +13,7 @@ $reloadindex="0";
 //user mikrotik
 $userhost="admin";
 //password mikrotik
-$passwdhost="password";
+$passwdhost="1234";
 
 //operator
 $userop="op";
