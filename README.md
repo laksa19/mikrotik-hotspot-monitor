@@ -65,3 +65,7 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 06-10-2017
 
    Menambahkan hak akses user :  1. Administrator,  2. Operator
+
+07-10-2017
+
+   Menambahkan opsi untuk auto reload laman index (perubahan: config.php, index.php, setup.php)
