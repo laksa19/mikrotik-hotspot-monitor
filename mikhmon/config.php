@@ -7,6 +7,9 @@ $iphost="111.111.111.111";
 //port ssh mikrotik, disarankan untuk mengganti port default mikrotik
 $sshport="2219";
 
+// auto reload index page
+$reloadindex="0";
+
 //user mikrotik
 $userhost="admin";
 //password mikrotik
