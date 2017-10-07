@@ -7,6 +7,9 @@ if(!isset($_SESSION['usermikhmon'])){
 <?php
 require('./api.php');
 include('./config.php');
+if ($reloadindex == "0"){ 
+} else
+header("Refresh: $reloadindex ; url='./'");
 $API = new RouterosAPI();
 $API->debug = false;
 if ($API->connect( $iphost, $userhost, $passwdhost )) {
