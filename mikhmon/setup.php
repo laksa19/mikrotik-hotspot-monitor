@@ -221,6 +221,9 @@ table.tsetup td {
 					<td>Konfigurasi Aplikasi</td>
 					<td>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
+						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
+						<button class="material-icons" onclick="location.href='resetconfig.php';" title="Reset Config">history</button>
+						<button class="material-icons" onclick="location.href='conntest.php';" title="Tes Koneksi ke Mikrotik">settings_ethernet</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 					</td>
 				</tr>
@@ -234,8 +237,8 @@ table.tsetup td {
 					</tr>
 					<tr>
 						<td><input type="text" size="20" maxlength="100" name="ipmik" placeholder="IP Mikrotik" value="<?php print_r($iphost);?>" required="1"/></td>
-						<td><input type="text" size="4" maxlength="4" name="portmik" placeholder="SSH" value="<?php print_r($sshport);?>" required="1"/></td>
-						<td><input type="text" size="4" maxlength="4" name="reloadindex" placeholder="Auto Reload Page" title="Reload otomatis laman index, dengan satuan detik" value="<?php print_r($reloadindex);?>" required="1"/></td>
+						<td><input type="text" size="3" maxlength="4" name="portmik" placeholder="SSH" value="<?php print_r($sshport);?>" required="1"/></td>
+						<td><input type="text" size="3" maxlength="4" name="reloadindex" placeholder="Auto Reload Page" title="Reload otomatis laman index, dengan satuan detik" value="<?php print_r($reloadindex);?>" required="1"/></td>
 					</tr>
 				</table>
 				<br>

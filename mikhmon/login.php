@@ -13,7 +13,11 @@ if(isset($_POST['login'])){
 	$pass = $_POST['pass'];
 		if($user == $userhost && $pass == $passwdhost){
 			$_SESSION['usermikhmon']="Administrator";
-			echo '<script type="text/javascript"> window.open("./","_self");</script>';
+			if ($iphost == ""){
+				header("Location:setup.php");
+			}	else
+				header("Location:./");
+			//echo '<script type="text/javascript"> window.open("./","_self");</script>';
 		}elseif ($user == $userop && $pass == $passwdop){
 			$_SESSION['usermikhmon']="Operator";
 			echo '<script type="text/javascript"> window.open("./","_self");</script>';
