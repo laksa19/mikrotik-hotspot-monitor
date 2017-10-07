@@ -34,7 +34,7 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 2. Untuk pertama kali Anda perlu menyesuaikan konfigurasi pada laman setup, dengan login terlebih dahulu
    menggunakan akun default. 
    
-   http://localhost/mikhmon atau http://localhost:8080/mikhmon
+   http://localhost/mikhmon/login.php atau http://localhost:8080/mikhmon/login.php
    
       - Username : admin 
       - Password : 1234
