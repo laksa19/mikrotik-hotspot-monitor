@@ -31,14 +31,13 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
       - https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma (gratis)
       - https://play.google.com/store/apps/details?id=com.alfanla.android.pws (gratis, berbayar, berisi iklan)
 
-2. Untuk pertama kali Anda perlu menyesuaikan file config.php dengan Mikrotik Anda, pada bagian berikut
-    - $iphost="111.111.111.111";    // ip Mikrotik
-    - $sshport="2219";              // port ssh Mikrotik
-    - $userhost="admin";            // username Mikrotik
-    - $passwdhost="password";       // password Mikrotik
+2. Untuk pertama kali Anda perlu menyesuaikan konfigurasi pada laman setup, dengan login terlebih dahulu
+   menggunakan akun default. 
+   
+      - Username : admin 
+      - Password : 1234
     
-    sesuaikan yang ada dalam tanda kutip ( " " ).
-3. Selanjutnya login dengan username dan password Mikrotik yang telah disesuaikan tadi.
+3. Selanjutnya test koneksi ke Mikrotik, klik tombol tes koneksi (<--->) yaitu tombol kedua dari kiri. Jika koneksi gagal, maka akan muncul notifikasi error (ciri-ciri koneksi gagal, laman dimuat lebih dari 30 detik). Kembali ke laman setup dan sesuaikan kembali konfigurasi Anda.
 
 ## Changelog 
 03-10-2017
@@ -68,4 +67,5 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 
 07-10-2017
 
-   Menambahkan opsi untuk auto reload laman index (perubahan: config.php, index.php, setup.php)
+   1. Menambahkan opsi untuk auto reload laman index (perubahan: index.php)
+   2. Perbaikan dan penambahan setup aplikasi (perubahan : config.php, login.php, setup.php, conntest.php, resetconfig.php)
