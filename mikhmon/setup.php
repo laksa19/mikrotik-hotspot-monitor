@@ -230,12 +230,12 @@ table.tsetup td {
 					<tr>
 						<th>IP MIKROTIK</th>
 						<th>PORT SSH</th>
-						<th>RELOAD</th>
+						<th>AUTO RELOAD</th>
 					</tr>
 					<tr>
 						<td><input type="text" size="20" maxlength="100" name="ipmik" placeholder="IP Mikrotik" value="<?php print_r($iphost);?>" required="1"/></td>
 						<td><input type="text" size="4" maxlength="4" name="portmik" placeholder="SSH" value="<?php print_r($sshport);?>" required="1"/></td>
-						<td><input type="text" size="4" maxlength="4" name="reloadindex" placeholder="Auto Reload Page" title="Reload otomatis halaman index, dengan satuan detik" value="<?php print_r($reloadindex);?>" required="1"/></td>
+						<td><input type="text" size="4" maxlength="4" name="reloadindex" placeholder="Auto Reload Page" title="Reload otomatis laman index, dengan satuan detik" value="<?php print_r($reloadindex);?>" required="1"/></td>
 					</tr>
 				</table>
 				<br>
