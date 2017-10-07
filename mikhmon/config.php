@@ -2,7 +2,7 @@
 // UBAH YANG DIDALAM TANDA KUTIP ("")
 //senver config
 //ip mikrotik
-$iphost="111.111.111.111";
+$iphost="";
 
 //port ssh mikrotik, disarankan untuk mengganti port default mikrotik
 $sshport="2219";
