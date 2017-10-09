@@ -218,7 +218,7 @@ table.tsetup td {
 					<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
 				</tr>
 				<tr>
-					<td>Konfigurasi Aplikasi</td>
+					<td>Konfigurasi</td>
 					<td>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
