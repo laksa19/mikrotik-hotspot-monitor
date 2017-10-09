@@ -22,7 +22,7 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 7. Cetak Voucher. *Sebaiknya menggunakan kertas A4.
 
 ## PENGGUNAAN  MIKROTIK HOTSPOT MONITOR
-1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP minimum versi 5.3.3. *Belum support PHP v7
+1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP minimum versi 5.3.3. *Belum support PHP v7.
 
     Download web server :
     * Windows USBWebserver : www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip
