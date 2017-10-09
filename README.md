@@ -71,3 +71,7 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 
    1. Menambahkan opsi untuk auto reload laman index (perubahan: index.php)
    2. Perbaikan dan penambahan setup aplikasi (perubahan : config.php, login.php, setup.php, conntest.php, resetconfig.php)
+
+09-10-2017
+
+   Perbaikan Setup (perubahan : index.php, setup.php)
