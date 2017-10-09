@@ -237,7 +237,7 @@ table.tsetup td {
 						<th>AUTO RELOAD</th>
 					</tr>
 					<tr>
-						<td><input type="text" size="20" maxlength="100" name="ipmik" placeholder="IP Mikrotik" value="<?php print_r($iphost);?>" required="1"/></td>
+						<td><input type="text" size="16" maxlength="100" name="ipmik" placeholder="IP Mikrotik" value="<?php print_r($iphost);?>" required="1"/></td>
 						<td><input type="text" size="3" maxlength="4" name="portmik" placeholder="SSH" value="<?php print_r($sshport);?>" required="1"/></td>
 						<td><input type="text" size="3" maxlength="4" name="reloadindex" placeholder="Auto Reload Page" title="Reload otomatis laman index, dengan satuan detik" value="<?php print_r($reloadindex);?>" required="1"/></td>
 					</tr>
@@ -249,8 +249,8 @@ table.tsetup td {
 						<th>PASSWORD</th>
 					</tr>
 					<tr>
-						<td><input type="text" size="15" maxlength="20" name="usermik" placeholder="User Mikrotik" value="<?php print_r($userhost);?>" required="1"/></td>
-						<td><input type="password" size="15" maxlength="100" name="passmik" placeholder="Password Mikrotik" value="<?php print_r($passwdhost);?>" required="1"/></td>
+						<td><input type="text" size="12" maxlength="20" name="usermik" placeholder="User Mikrotik" value="<?php print_r($userhost);?>" required="1"/></td>
+						<td><input type="password" size="12" maxlength="100" name="passmik" placeholder="Password Mikrotik" value="<?php print_r($passwdhost);?>" required="1"/></td>
 					</tr>
 				</table>
 								<br>
@@ -260,8 +260,8 @@ table.tsetup td {
 						<th>PASSWORD</th>
 					</tr>
 					<tr>
-						<td><input type="text" size="15" maxlength="20" name="userop" placeholder="User Operator" value="<?php print_r($userop);?>" required="1"/></td>
-						<td><input type="password" size="15" maxlength="100" name="passop" placeholder="Password Operator" value="<?php print_r($passwdop);?>" required="1"/></td>
+						<td><input type="text" size="12" maxlength="20" name="userop" placeholder="User Operator" value="<?php print_r($userop);?>" required="1"/></td>
+						<td><input type="password" size="12" maxlength="100" name="passop" placeholder="Password Operator" value="<?php print_r($passwdop);?>" required="1"/></td>
 					</tr>
 				</table>
 				<br>
