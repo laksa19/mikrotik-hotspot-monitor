@@ -225,6 +225,7 @@ table.tsetup td {
 						<button class="material-icons" onclick="location.href='resetconfig.php';" title="Reset Config">history</button>
 						<button class="material-icons" onclick="location.href='conntest.php';" title="Tes Koneksi ke Mikrotik">settings_ethernet</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
+						<button class="material-icons"	onclick="window.open('https://github.com/laksa19/mikrotik-hotspot-monitor','_blank');" 	title="Check Update">system_update_alt</button>
 					</td>
 				</tr>
 			</table>
