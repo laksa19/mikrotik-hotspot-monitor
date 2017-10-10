@@ -43,10 +43,10 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 
 4. Beberapa video untuk panduan.
 
-       https://drive.google.com/open?id=0B-nJrksLMgOzUXdFNlp2dVdXQkU
-       https://www.youtube.com/watch?v=k-mbO-7Yuck
-       https://www.youtube.com/watch?v=SyX5qRcNyj8
-       https://www.youtube.com/watch?v=ob0uYW2wT9k
+     - https://drive.google.com/open?id=0B-nJrksLMgOzUXdFNlp2dVdXQkU
+     - https://www.youtube.com/watch?v=k-mbO-7Yuck
+     - https://www.youtube.com/watch?v=SyX5qRcNyj8
+     - https://www.youtube.com/watch?v=ob0uYW2wT9k
 
 ## Changelog 
 03-10-2017
