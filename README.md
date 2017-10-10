@@ -41,6 +41,13 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
     
 3. Selanjutnya test koneksi ke Mikrotik, klik tombol tes koneksi (<--->) yaitu tombol kedua dari kiri. Jika koneksi gagal, maka akan muncul notifikasi error (ciri-ciri koneksi gagal, laman dimuat lebih dari 30 detik). Kembali ke laman setup dan sesuaikan kembali konfigurasi Anda.
 
+4. Beberapa video untuk panduan.
+
+       https://drive.google.com/open?id=0B-nJrksLMgOzUXdFNlp2dVdXQkU
+       https://www.youtube.com/watch?v=k-mbO-7Yuck
+       https://www.youtube.com/watch?v=SyX5qRcNyj8
+       https://www.youtube.com/watch?v=ob0uYW2wT9k
+
 ## Changelog 
 03-10-2017
 
