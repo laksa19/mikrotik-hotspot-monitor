@@ -65,13 +65,17 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 
 06-10-2017
 
-   Menambahkan hak akses user :  1. Administrator,  2. Operator
+   Menambahkan hak akses user :  1. Administrator,  2. Operator.
 
 07-10-2017
 
-   1. Menambahkan opsi untuk auto reload laman index (perubahan: index.php)
-   2. Perbaikan dan penambahan setup aplikasi (perubahan : config.php, login.php, setup.php, conntest.php, resetconfig.php)
+   1. Menambahkan opsi untuk auto reload laman index (perubahan: index.php).
+   2. Perbaikan dan penambahan setup aplikasi (perubahan : config.php, login.php, setup.php, conntest.php, resetconfig.php).
 
 09-10-2017
 
-   Perbaikan Setup (perubahan : index.php, setup.php)
+   Perbaikan Setup (perubahan : index.php, setup.php).
+   
+10-10-2017
+
+   Penambahan form untuk pengaturan warna di cetak voucher (Perubahan: printv.php, genvouchers.php, vcolorconf.php, vcolors.php).
