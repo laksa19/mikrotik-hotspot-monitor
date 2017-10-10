@@ -128,7 +128,13 @@ if ($blimit == $ubytelimit1){
 						</select>
 						</td>
 					</tr>
-					<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Generate"/><button class="btnsubmit" onclick="window.open('./vouchers/printvs.php','_blank');">Cetak</button></td></tr>
+					<tr>
+						<td></td>
+						<td colspan=3>
+							<input type="submit" class="btnsubmit" value="Generate"/>
+							<button class="btnsubmit" onclick="window.open('./vouchers/printvs.php','_blank');">Cetak</button>
+						</td>
+					</tr>
 				</table>
 				<br>
 				<table class="tprinta">
@@ -141,7 +147,13 @@ if ($blimit == $ubytelimit1){
 				</table>
 				<br>
 			</form>
-
+				<table class="tnav">
+					<tr>
+						<td>
+							<button class="btnsubmit" onclick="location.href='./vcolorconf.php';">Ganti Warna Voucher</button>
+						</td>
+					</tr>
+				</table>
 <?php
 	if(isset($_POST['uprofile'])){
 		$ssh = new Net_SSH2($iphost,$sshport);
