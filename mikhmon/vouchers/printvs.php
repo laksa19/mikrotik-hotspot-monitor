@@ -7,6 +7,7 @@ if(!isset($_SESSION['usermikhmon'])){
 <?php
 include('../config.php');
 include('./vouchers.php');
+include('../css/vcolors.php');
 
 $tlimit = $uptimelimit;
 if ($tlimit == $utimelimit1){
@@ -106,13 +107,13 @@ table.tprintb td {
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [1]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [1]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user1);?></td></tr>
 									<tr><td>Password : <?php print_r($pass1);?></td></tr>
@@ -120,20 +121,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [2]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [2]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user2);?></td></tr>
 									<tr><td>Password : <?php print_r($pass2);?></td></tr>
@@ -141,20 +145,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [3]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [3]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user3);?></td></tr>
 									<tr><td>Password : <?php print_r($pass3);?></td></tr>
@@ -162,7 +169,10 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -171,13 +181,13 @@ table.tprintb td {
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [4]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [4]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user4);?></td></tr>
 									<tr><td>Password : <?php print_r($pass4);?></td></tr>
@@ -185,20 +195,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [5]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [5]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user5);?></td></tr>
 									<tr><td>Password : <?php print_r($pass5);?></td></tr>
@@ -206,20 +219,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+							</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [6]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [6]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user6);?></td></tr>
 									<tr><td>Password : <?php print_r($pass6);?></td></tr>
@@ -227,7 +243,10 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -236,13 +255,13 @@ table.tprintb td {
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [7]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [7]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user7);?></td></tr>
 									<tr><td>Password : <?php print_r($pass7);?></td></tr>
@@ -250,20 +269,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [8]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [8]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user8);?></td></tr>
 									<tr><td>Password : <?php print_r($pass8);?></td></tr>
@@ -271,20 +293,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [9]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [9]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user9);?></td></tr>
 									<tr><td>Password : <?php print_r($pass9);?></td></tr>
@@ -292,7 +317,10 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -301,13 +329,13 @@ table.tprintb td {
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [10]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [10]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user10);?></td></tr>
 									<tr><td>Password : <?php print_r($pass10);?></td></tr>
@@ -315,20 +343,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [11]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [11]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user11);?></td></tr>
 									<tr><td>Password : <?php print_r($pass11);?></td></tr>
@@ -336,20 +367,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [12]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [12]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user12);?></td></tr>
 									<tr><td>Password : <?php print_r($pass12);?></td></tr>
@@ -357,7 +391,10 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -366,13 +403,13 @@ table.tprintb td {
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [13]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [13]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user13);?></td></tr>
 									<tr><td>Password : <?php print_r($pass13);?></td></tr>
@@ -380,20 +417,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [14]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [14]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user14);?></td></tr>
 									<tr><td>Password : <?php print_r($pass14);?></td></tr>
@@ -401,20 +441,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [15]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [15]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user15);?></td></tr>
 									<tr><td>Password : <?php print_r($pass15);?></td></tr>
@@ -422,7 +465,10 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -431,13 +477,13 @@ table.tprintb td {
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [16]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [16]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user16);?></td></tr>
 									<tr><td>Password : <?php print_r($pass16);?></td></tr>
@@ -445,20 +491,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [17]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [17]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user17);?></td></tr>
 									<tr><td>Password : <?php print_r($pass17);?></td></tr>
@@ -466,20 +515,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [18]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [18]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user18);?></td></tr>
 									<tr><td>Password : <?php print_r($pass18);?></td></tr>
@@ -487,7 +539,10 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -496,13 +551,13 @@ table.tprintb td {
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [19]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [19]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user19);?></td></tr>
 									<tr><td>Password : <?php print_r($pass19);?></td></tr>
@@ -510,20 +565,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [20]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [20]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user20);?></td></tr>
 									<tr><td>Password : <?php print_r($pass20);?></td></tr>
@@ -531,20 +589,23 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
 				<td>
 					<table class="tprinta">
 						<tr>
-							<td style="text-align: right;"><?php print_r($headerv);?>  [21]</td>
+							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [21]</td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px;"><?php print_r($notev);?> </td>
+							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td>
+							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Username : <?php print_r($user21);?></td></tr>
 									<tr><td>Password : <?php print_r($pass21);?></td></tr>
@@ -552,7 +613,10 @@ table.tprintb td {
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						</tr>
+						<tr>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
