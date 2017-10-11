@@ -74,17 +74,18 @@ if ($blimit == $ubytelimit1){
 		<link rel="icon" href="favicon.ico" />
 		<link rel="stylesheet" href="css/style.css" media="screen">
 		<style>
-table.tprint { 
+table.tclists { 
   margin-left:auto; 
   margin-right:auto;
   width: 300px;
   height: 180px;
   border-collapse: collapse;
 }
-table.tprint td { 
-  padding: 10px; 
-  font-size: 14px;
+table.tclists td { 
+  padding: 4px; 
+  font-size: 12px;
   text-align: left; 
+  font-weight: bold;
 }
 table.tprinta { 
   margin-left:auto; 
@@ -139,7 +140,7 @@ table.tprintb td {
 			</table>
 			</table>
 			<form autocomplete="off" method="post" action="">
-				<table class="tnav" align="center"  >
+				<table class="tclists" align="center"  >
 					<tr><td>Header</td><td>
 						<select name="headerc" >
 							<option value="">Pilih...</option>
