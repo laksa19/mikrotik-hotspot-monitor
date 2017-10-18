@@ -1,7 +1,7 @@
 # MIKROTIK HOTSPOT MONITOR
 Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 
-## TENTANG  MIKROTIK HOTSPOT MONITOR
+## TENTANG  
 
 1. Aplikasi ini menggunakan dua koneksi ke Mikrotik
     - API port 8728 
@@ -11,7 +11,7 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 
 2. Pastikan Jam dan Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Dan isi Rate Limit pada User Profile "default". Untuk pengaturan Jam dan Tanggal bisa baca di sini http://www.mikrotik.co.id/artikel_lihat.php?id=55
 
-## FITUR  MIKROTIK HOTSPOT MONITOR
+## FITUR  
 
 1. Menampilkan User Hotspot yang aktif dan masa aktifnya.
 2. Membuat, edit dan hapus User Profile.
@@ -20,8 +20,13 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 5. Generate 1 Voucher.
 6. Generate 21 Voucher.
 7. Cetak Voucher. *Sebaiknya menggunakan kertas A4.
+8. Custom warna Voucher
 
-## PENGGUNAAN  MIKROTIK HOTSPOT MONITOR
+## MANAGEMEN USER
+
+Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, karena setiap user yang masa aktifnya sudah habis akan terhapus secara otomatis. Ini bekerja berkat script (on login script) yang ditambahkan pada setiap User Profile. Penjelasannya, ketika user login maka user akan membuat jadwal penghapusan sendiri di scheduler. Penghapusan tersebut mencakup penghapusan user dari daftar Users, Active, dan penghapusan di Scheduler. Dengan ini maka tidak perlu lagi melakukan kontrol terhadap user yang sudah habis masa aktifnya. 
+
+## PENGGUNAAN  
 1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP minimum versi 5.3.3. *Belum support PHP v7.
 
     Download web server :
