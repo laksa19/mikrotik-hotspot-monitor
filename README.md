@@ -54,9 +54,29 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
      - https://www.youtube.com/watch?v=ob0uYW2wT9k
 
 ## Changelog 
-03-10-2017
 
-  1. Upload pertama.
+10-10-2017
+
+   Penambahan form untuk pengaturan warna di cetak voucher (Perubahan: printv.php, genvouchers.php, vcolorconf.php, vcolors.php).
+
+09-10-2017
+
+   Perbaikan Setup (perubahan : index.php, setup.php).
+
+07-10-2017
+
+   1. Menambahkan opsi untuk auto reload laman index (perubahan: index.php).
+   2. Perbaikan dan penambahan setup aplikasi (perubahan : config.php, login.php, setup.php, conntest.php, resetconfig.php).
+
+06-10-2017
+
+   Menambahkan hak akses user :  1. Administrator,  2. Operator.
+   
+05-10-2017
+
+  1. Penambahan setup.php untuk memudahkan edit file config.php
+  2. Penambahan halaman login.
+  3. Beberapa penyesuaian lainnya.  
   
 04-10-2017
 
@@ -69,25 +89,6 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
        - Batasan Kuota (Limit Bytes Out)
   6. Penyesuaian cetak voucher
 
-05-10-2017
+03-10-2017
 
-  1. Penambahan setup.php untuk memudahkan edit file config.php
-  2. Penambahan halaman login.
-  3. Beberapa penyesuaian lainnya.
-
-06-10-2017
-
-   Menambahkan hak akses user :  1. Administrator,  2. Operator.
-
-07-10-2017
-
-   1. Menambahkan opsi untuk auto reload laman index (perubahan: index.php).
-   2. Perbaikan dan penambahan setup aplikasi (perubahan : config.php, login.php, setup.php, conntest.php, resetconfig.php).
-
-09-10-2017
-
-   Perbaikan Setup (perubahan : index.php, setup.php).
-   
-10-10-2017
-
-   Penambahan form untuk pengaturan warna di cetak voucher (Perubahan: printv.php, genvouchers.php, vcolorconf.php, vcolors.php).
+  1. Upload pertama.
