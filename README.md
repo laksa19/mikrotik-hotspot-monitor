@@ -55,6 +55,10 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 ## Changelog 
 
+28-10-2017
+
+   Perbaikan di file setup.php.
+
 10-10-2017
 
    Penambahan form untuk pengaturan warna di cetak voucher (Perubahan: printv.php, genvouchers.php, vcolorconf.php, vcolors.php).
