@@ -57,7 +57,8 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 28-10-2017
 
-   Perbaikan di file setup.php.
+   1. Perbaikan di file setup.php.
+   2. Penambahan jam Mikrotik, untuk mengetahui apakah jam di Mikrotik sudah sesuai. (Perubahan: index.php).
 
 10-10-2017
 
