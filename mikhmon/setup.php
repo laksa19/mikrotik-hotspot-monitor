@@ -50,8 +50,8 @@ include('./config.php');
 			if (substr($active1, -1) == "h"){
 				$uactiv = substr($active1, 0,-1);
 				$suactive1t = $uactiv ."". $h;
-			}elseif (substr($activ1, -1) == "d"){
-				$uactiv1 = substr($active1, 0,-1);
+			}elseif (substr($active1, -1) == "d"){
+				$uactiv = substr($active1, 0,-1);
 				$suactive1t = $uactiv ."". $d;
 			}
 		$active2 = ($_POST['active2']);
