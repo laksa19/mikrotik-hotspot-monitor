@@ -47,6 +47,8 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->write('?=profile='.$profile5.'');
 	$ARRAY7 = $API->read();
 
+	$ARRAY8 = $API->comm("/system/clock/print");
+	
     $API->disconnect();
 }
 ?>
@@ -83,6 +85,15 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						<button class="material-icons"	onclick="location.href='./genvoucher.php';" 	title="Generate 1 User">person_add</button>
 						<!-- -->
 					</td>
+				</tr>
+				<tr>
+				<td colspan=2>Mikrotik System Clock : 
+				
+							<?php
+								$TotalReg = count($ARRAY8);
+
+										for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY8[$i];echo "" . $regtable['time'] . "<br />";}echo "</td>";
+							?>
 				</tr>
 			</table>
 			<table class="tnav">
