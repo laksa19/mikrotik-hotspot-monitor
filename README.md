@@ -11,6 +11,8 @@ Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
 
 2. Pastikan Jam dan Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Dan isi Rate Limit pada User Profile "default". Untuk pengaturan Jam dan Tanggal bisa baca di sini http://www.mikrotik.co.id/artikel_lihat.php?id=55
 
+3. Khusus untuk yang masih menggunakan RouterOS versi 5, edit file uprofileadd.php, cari line 119 hapus "add-mac-cookie=no" kemudian simpan.
+
 ## FITUR  
 
 1. Menampilkan User Hotspot yang aktif dan masa aktifnya.
