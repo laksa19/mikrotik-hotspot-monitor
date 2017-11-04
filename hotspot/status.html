@@ -52,7 +52,7 @@ $(if login-by == 'trial')
 $(elif login-by != 'mac')
 	<br><b><div style="text-align: center;">Selamat datang $(username)!</div></b><br>
 $(endif)
-	<tr><td align="right">IP :</td><td>$(ip)</td></tr>
+	<tr><td align="right">IP Address:</td><td>$(ip)</td></tr>
 	<tr><td align="right">UL | DL :</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
 $(if session-time-left)
 	<tr><td align="right">Aktif | Sisa :</td><td>$(uptime) | $(session-time-left)</td></tr>
