@@ -94,7 +94,9 @@ table.tprintb {
   border-collapse: collapse; 
 }
 table.tprintb td { 
-  padding-left: 20px; 
+  padding-left: 20px;
+  padding-top: 17px;
+  padding-bottom: 20px;
   border: 0px;
   font-size: 18px;
   text-align: left; 
