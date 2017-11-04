@@ -85,7 +85,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					</td>
 				</tr>
 				<tr>
-					<td>Gen Kode Voucher</td>
+					<td>Generate Kode Voucher</td>
 					<td>
 						<button class="material-icons"	onclick="location.href='./genkvs.php';"	title="Ganerate Vouchers">group_add</button>
 						<button class="material-icons"	onclick="location.href='./genkv.php';" 	title="Generate 1 User">person_add</button>
@@ -93,7 +93,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					</td>
 				</tr>
 				<tr>
-					<td>Gen User Password</td>
+					<td>Generate User Password</td>
 					<td>
 						<button class="material-icons"	onclick="location.href='./genvouchers.php';"	title="Ganerate Vouchers">group_add</button>
 						<button class="material-icons"	onclick="location.href='./genvoucher.php';" 	title="Generate 1 User">person_add</button>
