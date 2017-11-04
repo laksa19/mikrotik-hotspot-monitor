@@ -81,6 +81,20 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
+						<!-- -->
+					</td>
+				</tr>
+				<tr>
+					<td>Gen Kode Voucher</td>
+					<td>
+						<button class="material-icons"	onclick="location.href='./genkvs.php';"	title="Ganerate Vouchers">group_add</button>
+						<button class="material-icons"	onclick="location.href='./genkv.php';" 	title="Generate 1 User">person_add</button>
+						<!-- -->
+					</td>
+				</tr>
+				<tr>
+					<td>Gen User Password</td>
+					<td>
 						<button class="material-icons"	onclick="location.href='./genvouchers.php';"	title="Ganerate Vouchers">group_add</button>
 						<button class="material-icons"	onclick="location.href='./genvoucher.php';" 	title="Generate 1 User">person_add</button>
 						<!-- -->
