@@ -57,6 +57,11 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 ## Changelog 
 
+04-11-2017
+
+   1. Penambahan fitur ganerate kode voucher, jadi pelanggan hanya memasukkan kode login saja untuk login. (Perubahan: index.php, file baru: genkv.php, genkvs.php, kvouchers.php, printkvs.php).
+   2. Upload template hotspot untuk mendukung login menggunakan kode voucher.
+
 28-10-2017
 
    1. Perbaikan di file setup.php.
