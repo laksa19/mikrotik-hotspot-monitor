@@ -50,7 +50,7 @@ $(endif)
 $(if login-by == 'trial')
 	<br><b><div style="text-align: center;">Selamat datang !</div></b><br>
 $(elif login-by != 'mac')
-	<br><b><div style="text-align: center;">Selamat datang $(username)!</div></b><br>
+	<br><b><div style="text-align: center;">Selamat datang $(username)</div></b><br>
 $(endif)
 	<tr><td align="right">IP Address:</td><td>$(ip)</td></tr>
 	<tr><td align="right">UL | DL :</td><td>$(bytes-in-nice) | $(bytes-out-nice)</td></tr>
@@ -65,7 +65,7 @@ $(if blocked == 'yes')
 $(elif refresh-timeout)
 	<tr><td align="right">Refresh :</td><td>$(refresh-timeout)</td>
 $(endif)
-
+<b><div class?"notice" style="font-size: 14px; text-align:center;">Masa Aktif Voucher  <a href="http://kemangi41.net:8451/status">Klik Disini</a></div><br>
 </table>
 $(if login-by-mac != 'yes')
 <br>
