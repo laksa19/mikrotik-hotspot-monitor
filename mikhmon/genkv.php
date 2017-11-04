@@ -206,7 +206,7 @@ table.tuserb td {
 		echo					"<tr>";
 		echo						"<td>";
 		echo							"<table class='tuserb'>";
-		echo								"<tr><td style='text-align: center;'>Kode Voucher : $u1 </td></tr>";
+		echo								"<tr><td>Kode Voucher : $u1 </td></tr>";
 		echo							"</table>";
 		echo						"</td>";
 		echo					"</tr>";
