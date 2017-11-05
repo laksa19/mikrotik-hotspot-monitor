@@ -134,7 +134,7 @@ table.tprintb td {
 					<td>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
-						<button class="material-icons"	onclick="location.href='./genvouchers.php';"	title="Ganerate Vouchers">group_add</button>
+						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 					</td>
 				</tr>
 			</table>
@@ -392,7 +392,7 @@ table.tprintb td {
 			<table class="tnav">
 				<tr>
 					<td>
-						<button class="btnsubmit" onclick="window.open('./vouchers/printvs.php','_blank');">Cetak Vouchers</button>
+						<!--<button class="btnsubmit" onclick="window.open('./vouchers/printvs.php','_blank');">Cetak Vouchers</button>-->
 					</td>
 				</tr>
 			</table>
