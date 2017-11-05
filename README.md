@@ -55,7 +55,7 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
      - https://www.youtube.com/watch?v=SyX5qRcNyj8
      - https://www.youtube.com/watch?v=ob0uYW2wT9k
 
-5. Penggunaan laman status untuk cek masa aktif voucher.
+5. Penggunaan laman status untuk cek masa aktif voucher. (Catatan laman status memerlukan web server yang aktif terus agar user bisa akses setiap saat).
      - Edit file index.php pada folder status, sesuaikan pada line 84 (ip mikrotik, user dan password).
      - Buka port di walled garden, agar user bisa akses tanpa harus login erlebih dahulu.
 
