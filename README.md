@@ -55,11 +55,20 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
      - https://www.youtube.com/watch?v=SyX5qRcNyj8
      - https://www.youtube.com/watch?v=ob0uYW2wT9k
 
+5. Penggunaan laman status untuk cek masa aktif voucher.
+     - Edit file index.php pada folder status, sesuaikan pada line 84 (ip mikrotik, user dan password).
+     - Buka port di walled garden, agar user bisa akses tanpa harus login erlebih dahulu.
+
 ## Changelog 
+
+
+05-11-2017
+
+   Penambahan laman status untuk cek masa aktif vouvher pelanggan. (Perubahan di status: index.php, api.php).
 
 04-11-2017
 
-   1. Penambahan fitur ganerate kode voucher, jadi pelanggan hanya memasukkan kode login saja untuk login. (Perubahan: index.php, file baru: genkv.php, genkvs.php, kvouchers.php, printkvs.php).
+   1. Penambahan fitur ganerate kode voucher, jadi pelanggan hanya memasukkan kode login saja untuk login. (Perubahan di mikhmon: index.php, file baru: genkv.php, genkvs.php, kvouchers.php, printkvs.php).
    2. Upload template hotspot untuk mendukung login menggunakan kode voucher.
 
 28-10-2017
