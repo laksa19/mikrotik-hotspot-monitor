@@ -18,6 +18,17 @@ body {
   margin-right:auto;
   height: 350px;
 }
+.content {
+  background-color: #FFFFFF;
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid #3D4241;
+  border-radius: 5px;
+  width:300px;
+  margin-left:auto; 
+  margin-right:auto;
+  height: 100%;
+}
 
 textarea,input,select {
   background-color: #FDFBFB;
@@ -26,8 +37,8 @@ textarea,input,select {
   margin: 2px;
   font-size: 14px;
   color: #808080;
-	outline: none;
-	border-radius: 5px;
+  outline: none;
+  border-radius: 5px;
 }
 
 .button {
@@ -67,18 +78,15 @@ div.tab button {
   font-size: 14px;
 }
 
-/* Change background color of buttons on hover */
 div.tab button:hover {
   background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
 div.tab button.active {
   background-color: #008CCA;
   color: #FFFFFF
 }
 
-/* Style the tab content */
 .tabcontent {
   display: none;
   padding: 6px 12px;
@@ -90,6 +98,30 @@ table.tlogin {
   height: 100px;
   border-radius: 5px;
   background: #f1f1f1;
+}
+
+table.tharga {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font: 14px sans-serif;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.tharga th {
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: #008CCA; 
+  color: white; 
+  font-weight: bold;
+  text-align: left;
+}
+
+table.tharga td {
+  border: 1px solid #ccc;
+  padding: 5px;
 }
 
 a:link {
