@@ -16,7 +16,7 @@ body {
   width:300px;
   margin-left:auto; 
   margin-right:auto;
-  height: 350px;
+  height: 100%px;
 }
 .content {
   background-color: #FFFFFF;
