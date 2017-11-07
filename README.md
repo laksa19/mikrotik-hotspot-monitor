@@ -1,5 +1,5 @@
 # MIKROTIK HOTSPOT MONITOR
-Mikrotik Hotspot Monitor untuk Mikrotik yang tidak support User Manager
+Mikrotik Hotspot Monitor adalah aplikasi pengganti untuk Mikrotik yang tidak mendukung User Manager.
 
 ## TENTANG  
 
