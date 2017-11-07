@@ -166,38 +166,8 @@ function openLogin(evt, loginName) {
 document.getElementById("defaultOpen").click();
 </script>
 <div class="content">
-	<table align="center" class="tharga">
+	<table id="paketwifi" align="center" class="tpaketwifi">
 		<div style="padding-top: 10px; padding-bottom:5px; font-size: 14px; font-weight: bold; text-align: center;">Daftar Paket Wifi Kemangi 41</div>
-		<tr>
-			<th>Paket</th>
-			<th>Masa Aktif</th>
-			<th>Harga</th>
-		</tr>
-		<tr> <!-- daftar 1 -->
-			<td>3H</td>
-			<td>3 Jam</td>
-			<td>Rp 1.000</td>
-		</tr>
-		<tr> <!-- daftar 2 -->
-			<td>1D</td>
-			<td>1 Hari</td>
-			<td>Rp 3.000</td>
-		</tr>
-		<tr> <!-- daftar 3 -->
-			<td>2D</td>
-			<td>2 Hari</td>
-			<td>Rp 5.000</td>
-		</tr>
-		<tr> <!-- daftar 4 -->
-			<td>1W</td>
-			<td>7 Hari</td>
-			<td>Rp 15.000</td>
-		</tr>
-		<tr> <!-- daftar 4 -->
-			<td>1M</td>
-			<td>30 Hari</td>
-			<td>Rp 35.000</td>
-		</tr>
 	</table>
 	<br>
 </div>
@@ -210,7 +180,23 @@ document.getElementById("defaultOpen").click();
 			</td>
 		</tr>
 </table>
+<script type="text/javascript" charset="utf-8">
+            d3.text("paket-wifi.csv", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
 
+                var container = d3.select("table.tpaketwifi")
+                    .append("div")
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+</script>
 <script type="text/javascript">
 <!--
   document.login.username.focus();
