@@ -61,7 +61,7 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 6. Template hotspot.
      - Logo hotspot dapat diganti dengan format (logo.png) yang diletakkan di folder "img".
-     - Edit "file paket-wifi.csv" untuk menampilkan daftar paket wifi.
+     - Edit file "paket-wifi.csv" untuk menampilkan daftar paket wifi.
 
 ## Changelog 
 
