@@ -186,8 +186,8 @@ table.tuserb td {
 				$vbytelimit= "";
 			}
 		$price = ($_POST['uprice']);
-		$a1= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -3);
-		$n1= rand(100,999);
+		$a1= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -4);
+		$n1= rand(1000,9999);
 		$u1 = "$a1$n1";
 		$p1 = $u1; 
 		$command = '/ip hotspot user add name='. $u1 . ' password=' . $p1 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '';
