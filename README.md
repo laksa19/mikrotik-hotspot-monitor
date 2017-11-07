@@ -1,5 +1,5 @@
 # MIKROTIK HOTSPOT MONITOR
-Mikrotik Hotspot Monitor adalah aplikasi pengganti untuk Mikrotik yang tidak mendukung User Manager.
+Mikrotik Hotspot Monitor adalah aplikasi berbasis PHP untuk menggantikan User Manager yang tidak didukung dibeberapa tipe RB Mikrotik.
 
 ## TENTANG  
 
