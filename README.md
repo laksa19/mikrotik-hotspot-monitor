@@ -59,8 +59,15 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
      - Edit file index.php pada folder status, sesuaikan pada line 84 (ip mikrotik, user dan password).
      - Buka port di walled garden, agar user bisa akses tanpa harus login erlebih dahulu.
 
+6. Template hotspot.
+     - Logo hotspot dapat diganti dengan format (logo.png) yang diletakkan di folder "img".
+     - Edit "file paket-wifi.csv" untuk menampilkan daftar paket wifi.
+
 ## Changelog 
 
+07-11-2017
+
+   Perbaikan tamplate hotspot. Penjelasan dibagian PENGGUNAAN poin 6.
 
 05-11-2017
 
