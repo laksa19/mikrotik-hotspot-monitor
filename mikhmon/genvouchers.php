@@ -46,7 +46,7 @@ if ($blimit == $ubytelimit1){
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Mikrotik Hotspot Generate Vouchers</title>
+		<title>Mikrotik Hotspot Generate User Password</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="pragma" content="no-cache" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
@@ -68,7 +68,7 @@ if ($blimit == $ubytelimit1){
 					<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
 				</tr>
 				<tr>
-					<td>Generate Vouchers</td>
+					<td>Generate User Password</td>
 					<td>
 						<button class="material-icons" onclick="location.href='genvouchers.php';" title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='./genvoucher.php';" title="Generate 1 User">person_add</button>
@@ -142,7 +142,7 @@ if ($blimit == $ubytelimit1){
 						<th>Generate Voucher Sebelumnya</th>
 					</tr>
 					<tr>
-						<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+						<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; "><?php print_r($vprice);?></td>
 					</tr>
 				</table>
 				<br>
@@ -261,7 +261,7 @@ if ($blimit == $ubytelimit1){
 		echo				"<tr>";
 		echo					"<th>Generate Voucher Sekarang</th>";
 		echo				"<tr>";
-		echo					"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '> Harga : $price</td>";
+		echo					"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$price</td>";
 		echo				"</tr>";
 		echo	"</table>";
 		echo	"<br>";

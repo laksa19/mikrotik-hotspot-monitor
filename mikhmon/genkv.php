@@ -215,7 +215,7 @@ table.tuserb td {
 		echo						"</td>";
 		echo					"</tr>";
 		echo					"<tr>";
-		echo						"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>Harga : $price</td>";
+		echo						"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$price</td>";
 		echo					"</tr>";
 		echo				"<tr>";
 		echo			"</table>";

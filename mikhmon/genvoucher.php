@@ -17,7 +17,7 @@ include('./config.php');
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Mikrotik Hotspot Generate 1 Voucher</title>
+		<title>Mikrotik Hotspot Generate 1 User Password</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="pragma" content="no-cache" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
@@ -67,7 +67,7 @@ table.tuserb td {
 					<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
 				</tr>
 				<tr>
-					<td>Generate 1 Voucher</td>
+					<td>Generate 1 User Password</td>
 					<td>
 						<button class="material-icons" onclick="location.href='genvoucher.php';" title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='./genvouchers.php';" title="Ganerate Vouchers">group_add</button>
@@ -212,7 +212,7 @@ table.tuserb td {
 		echo						"</td>";
 		echo					"</tr>";
 		echo					"<tr>";
-		echo						"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>Harga : $price</td>";
+		echo						"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$price</td>";
 		echo					"</tr>";
 		echo				"<tr>";
 		echo			"</table>";

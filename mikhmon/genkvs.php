@@ -142,7 +142,7 @@ if ($blimit == $ubytelimit1){
 						<th>Generate Voucher Sebelumnya</th>
 					</tr>
 					<tr>
-						<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; ">Harga : <?php print_r($vprice);?></td>
+						<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; "><?php print_r($vprice);?></td>
 					</tr>
 				</table>
 				<br>
@@ -303,7 +303,7 @@ if ($blimit == $ubytelimit1){
 		echo				"<tr>";
 		echo					"<th>Generate Voucher Sekarang</th>";
 		echo				"<tr>";
-		echo					"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '> Harga : $price</td>";
+		echo					"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$price</td>";
 		echo				"</tr>";
 		echo	"</table>";
 		echo	"<br>";
