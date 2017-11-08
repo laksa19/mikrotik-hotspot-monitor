@@ -32,11 +32,10 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP minimum versi 5.3.3. *Belum support PHP v7.
 
     Download web server :
-    * Windows USBWebserver : www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip
+    * Windows [USBWebserver](www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip "USBWebserver")
     * Android Web Server : 
-      - https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en (berbayar)
-      - https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma (gratis)
-      - https://play.google.com/store/apps/details?id=com.alfanla.android.pws (gratis, berbayar, berisi iklan)
+      - [PlayStore Bit Web Server](https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en "Bit Web Server") (berbayar)
+      - [allfreeapk.com Bit Web Server](https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma "Bit Web Server") (gratis)
 
 2. Untuk pertama kali Anda perlu menyesuaikan konfigurasi pada laman setup, dengan login terlebih dahulu
    menggunakan akun default. 
@@ -50,10 +49,10 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 4. Beberapa video untuk panduan.
 
-     - https://drive.google.com/open?id=0B-nJrksLMgOzUXdFNlp2dVdXQkU
-     - https://www.youtube.com/watch?v=k-mbO-7Yuck
-     - https://www.youtube.com/watch?v=SyX5qRcNyj8
-     - https://www.youtube.com/watch?v=ob0uYW2wT9k
+     - [Google Drive video panduan install di Windows](https://drive.google.com/open?id=0B-nJrksLMgOzUXdFNlp2dVdXQkU "Panduan Install di Windows")
+     - [YouTube video by Laksa19 panduan install di Windows](https://www.youtube.com/watch?v=k-mbO-7Yuck "Panduan Install di Windows")
+     - [YouTube video by Rizki Ari panduan install di Windows](https://www.youtube.com/watch?v=SyX5qRcNyj8 "Panduan Install di Windows")
+     - [YouTube video by Rizki Ari Panduan Install di Android](https://www.youtube.com/watch?v=ob0uYW2wT9k "Panduan Install di Android")
 
 5. Penggunaan laman status untuk cek masa aktif voucher. (Catatan laman status memerlukan web server yang aktif terus agar user bisa akses setiap saat).
      - Edit file index.php pada folder status, sesuaikan pada line 84 (ip mikrotik, user dan password).
