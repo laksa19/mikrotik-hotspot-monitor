@@ -67,7 +67,7 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 07-11-2017
 
-   Perbaikan tamplate hotspot. Penjelasan dibagian PENGGUNAAN poin 6.
+   Perbaikan tamplate hotspot. Penjelasan dibagian [PENGGUNAAN](https://github.com/laksa19/mikrotik-hotspot-monitor#changelog) poin 6.
 
 05-11-2017
 
