@@ -124,7 +124,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -148,7 +148,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -172,7 +172,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -198,7 +198,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -222,7 +222,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 							</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -246,7 +246,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -272,7 +272,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -296,7 +296,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -320,7 +320,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -346,7 +346,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -370,7 +370,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -394,7 +394,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -420,7 +420,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -444,7 +444,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -468,7 +468,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -494,7 +494,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -518,7 +518,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -542,7 +542,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -568,7 +568,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -592,7 +592,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
@@ -616,7 +616,7 @@ table.tprintb td {
 							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
