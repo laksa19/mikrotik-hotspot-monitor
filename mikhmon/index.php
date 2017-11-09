@@ -75,28 +75,21 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
 				</tr>
 				<tr>
-					<td>Dashboard</td>
-					<td>
+					<td colspan=2>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
-						<!-- -->
-					</td>
-				</tr>
-				<tr>
-					<td>Generate Kode Voucher</td>
-					<td>
-						<button class="material-icons"	onclick="location.href='./genkvs.php';"	title="Ganerate Vouchers">group_add</button>
-						<button class="material-icons"	onclick="location.href='./genkv.php';" 	title="Generate 1 User">person_add</button>
-						<!-- -->
-					</td>
-				</tr>
-				<tr>
-					<td>Generate User Password</td>
-					<td>
-						<button class="material-icons"	onclick="location.href='./genvouchers.php';"	title="Ganerate Vouchers">group_add</button>
-						<button class="material-icons"	onclick="location.href='./genvoucher.php';" 	title="Generate 1 User">person_add</button>
+						<div class="dropdown" style="float:right;">
+							<button class="material-icons">local_play</button>
+								<div class="dropdown-content">
+									<a class="material-icons" href="#">local_play</a>
+									<a href="genkv.php">1 Kode Voucher</a>
+									<a href="genkvs.php">21 Kode Voucher</a>
+									<a href="genvoucher.php">1 User Password</a>
+									<a href="genvouchers.php">21 User Password</a>
+								</div>
+						</div>
 						<!-- -->
 					</td>
 				</tr>

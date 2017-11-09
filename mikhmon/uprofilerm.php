@@ -42,14 +42,23 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		<div class="main">
 			<table class="tnav">
 				<tr>
-					<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
+					<td style="text-align: center;" colspan=2>Hapus User Profile</td>
 				</tr>
 				<tr>
-					<td>Hapus User Profile</td>
-					<td>
+					<td colspan=2>
 						<button class="material-icons" onclick="location.href='uprofilerm.php';" title="Reload">autorenew</button>
 						<button class="material-icons" onclick="location.href='./uprofileset.php';" title="Edit User Profile">mode_edit</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
+						<div class="dropdown" style="float:right;">
+							<button class="material-icons">local_play</button>
+								<div class="dropdown-content">
+									<a class="material-icons" href="#">local_play</a>
+									<a href="genkv.php">1 Kode Voucher</a>
+									<a href="genkvs.php">21 Kode Voucher</a>
+									<a href="genvoucher.php">1 User Password</a>
+									<a href="genvouchers.php">21 User Password</a>
+								</div>
+						</div>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 						<button class="material-icons" onclick="goBack()" title="Back">arrow_back</button>
 					</td>

@@ -65,13 +65,21 @@ if ($blimit == $ubytelimit1){
 		<div class="main">
 			<table class="tnav">
 				<tr>
-					<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
+					<td style="text-align: center;" colspan=2>Generate 21 User Password</td>
 				</tr>
 				<tr>
-					<td>Generate User Password</td>
-					<td>
+					<td colspan=2>
 						<button class="material-icons" onclick="location.href='genvouchers.php';" title="Reload">autorenew</button>
-						<button class="material-icons"	onclick="location.href='./genvoucher.php';" title="Generate 1 User">person_add</button>
+						<div class="dropdown" style="float:right;">
+							<button class="material-icons">local_play</button>
+								<div class="dropdown-content">
+									<a class="material-icons" href="#">local_play</a>
+									<a href="genkv.php">1 Kode Voucher</a>
+									<a href="genkvs.php">21 Kode Voucher</a>
+									<a href="genvoucher.php">1 User Password</a>
+									<a href="genvouchers.php">21 User Password</a>
+								</div>
+						</div>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 						<button class="material-icons" onclick="goBack()" title="Back">arrow_back</button>
 					</td>
