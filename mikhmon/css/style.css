@@ -131,9 +131,51 @@ textarea,input,select {
   border: 1px solid #008CCA;
   padding: 2px;
   margin: 2px;
-  font-size: 14px;
+  font-size: 12px;
   color: #808080;
   outline: none;
+}
+
+.dropbtn {
+    background-color: #008CCA;
+    color: white;
+    padding: 5px;
+    font-size: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #008CCA;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown-content a:hover {background-color: #3D4241}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #008CCA;
 }
 
 a:link {
