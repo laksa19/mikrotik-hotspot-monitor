@@ -96,7 +96,7 @@ textarea,input,select {
 		</style>
 	</head>
 		<body>
-			<div class="main">
+			<div class="login">
 				<table class="tnav">
 				<tr>
 					<td style="text-align: center;" >Mikrotik Hotspot Monitor</td>
