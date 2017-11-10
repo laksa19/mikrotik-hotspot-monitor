@@ -127,14 +127,23 @@ table.tprintb td {
 		<div class="main">
 			<table class="tnav">
 				<tr>
-					<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
+					<td style="text-align: center;" colspan=2>Pengaturan Warna Voucher</td>
 				</tr>
 				<tr>
-					<td>Warna Voucher</td>
-					<td>
+					<td colspan=2>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
+						<div class="dropdown" style="float:right;">
+							<button class="material-icons">local_play</button>
+								<div class="dropdown-content">
+									<a class="material-icons" href="#">local_play</a>
+									<a href="genkv.php">1 Kode Voucher</a>
+									<a href="genkvs.php">21 Kode Voucher</a>
+									<a href="genvoucher.php">1 User Password</a>
+									<a href="genvouchers.php">21 User Password</a>
+								</div>
+						</div>
 					</td>
 				</tr>
 			</table>
