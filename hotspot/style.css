@@ -112,28 +112,22 @@ table.tstatus td {
   padding: 10px;
 }
 
-table.tharga {
+table.tpaketwifi {
   border-collapse: collapse;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font: 14px sans-serif;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-table.tharga th {
+table.tpaketwifi td {
   border: 1px solid #ccc;
   padding: 5px;
-  background: #008CCA; 
-  color: white; 
+}
+
+table.tpaketwifi tr:first-child{
+  background:#008CCA;
   font-weight: bold;
-  text-align: left;
+  color: #FFFFFF;
 }
-
-table.tharga td {
-  border: 1px solid #ccc;
-  padding: 5px;
+table.tpaketwifi tr:nth-child(even){
+  background-color: #f1f1f1
 }
 
 a:link {
