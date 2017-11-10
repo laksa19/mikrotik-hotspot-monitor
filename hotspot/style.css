@@ -9,6 +9,7 @@ body {
 
 .main {
   background-color: #FFFFFF;
+  color: black;
   margin-top: 10px;
   border: 1px solid #3D4241;
   border-radius: 5px;
@@ -19,6 +20,7 @@ body {
 }
 .content {
   background-color: #FFFFFF;
+  color: black;
   margin-top: 10px;
   border: 1px solid #3D4241;
   border-radius: 5px;
@@ -98,6 +100,17 @@ table.tlogin {
   background: #f1f1f1;
 }
 
+table.tstatus {
+  width: 95%;
+  height: 100px;
+  border-radius: 5px;
+  background: #f1f1f1;
+  color: black;
+}
+
+table.tstatus td {
+  padding: 10px;
+  
 table.tharga {
   border-collapse: collapse;
   border: 1px solid #ccc;

@@ -9,11 +9,6 @@ $(endif)
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="expires" content="-1">
 <link rel="stylesheet" type="text/css" href="style.css">
-<style>
-th, td {
-    padding: 10px;
-}
-</style>
 <script language="JavaScript">
 <!--
 $(if advert-pending == 'yes')
@@ -46,7 +41,7 @@ $(endif)
 <tr>
 <td align="center" valign="middle">
 <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
-<table align="center" class="tlogin">
+<table class="tstatus" align="center" class="tlogin">
 $(if login-by == 'trial')
 	<br><b><div style="text-align: center;">Selamat datang !</div></b><br>
 $(elif login-by != 'mac')
