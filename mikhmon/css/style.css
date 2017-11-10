@@ -54,16 +54,9 @@ body {
   background-color: #FFFFFF;
   border: 1px solid #3D4241;
   border-radius: 5px;
-  padding-top: 5px;
-  padding-right: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
   width:330px;
   height: 100%;
-  margin-top:auto;
-  margin-bottom:auto;
-  margin-left:auto; 
-  margin-right:auto;
+  margin: 0 auto;
 }
 
 table.tprint { 
