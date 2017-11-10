@@ -68,7 +68,7 @@ table.tuserb td {
 				</tr>
 				<tr>
 					<td colspan=2>
-						<button class="material-icons" onclick="location.href='genvoucher.php';" title="Reload">autorenew</button>
+						<button class="material-icons" onclick="location.href='genupm.php';" title="Reload">autorenew</button>
 						<div class="dropdown" style="float:right;">
 							<button class="material-icons">local_play</button>
 								<div class="dropdown-content">
@@ -135,6 +135,8 @@ table.tuserb td {
 						</select>
 						</td>
 					</tr>
+					<tr><td>Username</td><td>:</td><td><input type="text" size="10" maxlength="10" name="uname" required="1"/></td></tr>
+					<tr><td>Password</td><td>:</td><td><input type="text" size="10" maxlength="10" name="passwd" required="1"/></td></tr>
 					<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Generate"/></td></tr>
 				<br>
 			</form>
@@ -193,8 +195,8 @@ table.tuserb td {
 				$vbytelimit= "";
 			}
 		$price = ($_POST['uprice']);
-		$u1 = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$p1 = rand(100000,999999); 
+		$u1 = ($_POST['uname']);
+		$p1 = ($_POST['passwd']);
 		$command = '/ip hotspot user add name='. $u1 . ' password=' . $p1 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '';
 		echo $ssh->exec($command);
 		

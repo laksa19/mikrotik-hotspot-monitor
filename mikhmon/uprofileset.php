@@ -57,6 +57,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 									<a href="genkvs.php">21 Kode Voucher</a>
 									<a href="genvoucher.php">1 User Password</a>
 									<a href="genvouchers.php">21 User Password</a>
+									<a href="genupm.php">1 User Pass Manual</a>
 								</div>
 						</div>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
