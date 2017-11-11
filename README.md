@@ -32,7 +32,7 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP minimum versi 5.3.3. *Belum support PHP v7.
 
     Download web server :
-    * Windows [USBWebserver](www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip "USBWebserver")
+    * Windows [USBWebserver](http://www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip "USBWebserver")
     * Android Web Server : 
       - [PlayStore Bit Web Server](https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en "Bit Web Server") (berbayar)
       - [allfreeapk.com Bit Web Server](https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma "Bit Web Server") (gratis)
