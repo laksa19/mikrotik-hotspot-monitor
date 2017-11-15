@@ -29,7 +29,7 @@ Mikrotik Hotspot Monitor adalah aplikasi berbasis PHP untuk menggantikan User Ma
 Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, karena setiap user yang masa aktifnya sudah habis akan terhapus secara otomatis. Ini bekerja berkat script (on login script) yang ditambahkan pada setiap User Profile. Penjelasannya, ketika user login maka user akan membuat jadwal penghapusan sendiri di scheduler. Penghapusan tersebut mencakup penghapusan user dari daftar Users, Active, dan penghapusan di Scheduler. Dengan ini maka tidak perlu lagi melakukan kontrol terhadap user yang sudah habis masa aktifnya. 
 
 ## PENGGUNAAN  
-1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP minimum versi 5.3.3. *Belum support PHP v7.
+1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP minimum versi 5.3.0 *Belum support PHP v7.
 
     Download web server :
     
