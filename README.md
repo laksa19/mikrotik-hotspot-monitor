@@ -7,7 +7,7 @@ Mikrotik Hotspot Monitor adalah aplikasi berbasis PHP untuk menggantikan User Ma
     - API port 8728 
       ([routeros-api](https://wiki.mikrotik.com/wiki/API_PHP_class))
     - SSH port 2219 disarankan untuk mengganti port default ssh di Mikrotik Anda. 
-      ([SSH2](http://phpseclib.sourceforge.net/ssh/intro.html))
+      ([phpseclib](http://phpseclib.sourceforge.net/ssh/intro.html))
 
 2. Pastikan Jam dan Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Dan isi Rate Limit pada User Profile "default". Untuk pengaturan Jam dan Tanggal bisa baca [di sini](http://www.mikrotik.co.id/artikel_lihat.php?id=55).
 
