@@ -8,7 +8,7 @@ $iphost="";
 $sshport="2219";
 
 // auto reload index page
-$reloadindex="0";
+$reloadindex="15";
 
 //user mikrotik
 $userhost="admin";
