@@ -76,7 +76,6 @@ div.tab button {
   padding: 6px 6px;
   transition: 0.3s;
   font-size: 14px;
-  width:50%;
 }
 
 div.tab button:hover {
