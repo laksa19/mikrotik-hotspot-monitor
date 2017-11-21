@@ -18,9 +18,7 @@ if(isset($_POST['login'])){
 			}	else
 				header("Location:./");
 			//echo '<script type="text/javascript"> window.open("./","_self");</script>';
-		}elseif ($user == $userop && $pass == $passwdop){
-			$_SESSION['usermikhmon']="Operator";
-			echo '<script type="text/javascript"> window.open("./","_self");</script>';
+		
 		}else{
 			$error = "Username atau Password tidak sesuai.";
 	}

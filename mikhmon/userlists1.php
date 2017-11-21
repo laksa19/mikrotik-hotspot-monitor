@@ -3,11 +3,6 @@
 if(!isset($_SESSION['usermikhmon'])){
 	header("Location:login.php");
 }
-
-	$validasi = ($_SESSION['usermikhmon']);
-		if ($validasi == "Operator"){
-	header("Location:userlistsmon/userlists1.php");
-}
 ?>
 <?php
 require('./api.php');

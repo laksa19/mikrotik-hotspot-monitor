@@ -3,11 +3,6 @@
 if(!isset($_SESSION['usermikhmon'])){
 	header("Location:login.php");
 }
-
-	$validasi = ($_SESSION['usermikhmon']);
-		if ($validasi == "Operator"){
-	header("Location:login.php");
-}
 ?>
 <?php
 include('./config.php');
@@ -172,7 +167,7 @@ include('./config.php');
 			}
 		$my_file = 'config.php';
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-		$data = '<?php $reloadindex="'.$sreloadindex.'"; $iphost="'.$siphost.'"; $sshport="'.$ssshport.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $userop="'.$suserop.'"; $passwdop="'.$spasswdop.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $speed1="'.$sspeed1.'"; $speed2="'.$sspeed2.'"; $speed3="'.$sspeed3.'"; $speed4="'.$sspeed4.'"; $speed5="'.$sspeed5.'"; $speed6="'.$sspeed6.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
+		$data = '<?php $reloadindex="'.$sreloadindex.'"; $iphost="'.$siphost.'"; $sshport="'.$ssshport.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $speed1="'.$sspeed1.'"; $speed2="'.$sspeed2.'"; $speed3="'.$sspeed3.'"; $speed4="'.$sspeed4.'"; $speed5="'.$sspeed5.'"; $speed6="'.$sspeed6.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
 		fwrite($handle, $data);
 		header('Location: setup.php');
 	}
@@ -251,17 +246,6 @@ table.tsetup td {
 					<tr>
 						<td><input type="text" size="12" maxlength="20" name="usermik" placeholder="User Mikrotik" value="<?php print_r($userhost);?>" required="1"/></td>
 						<td><input type="password" size="12" maxlength="100" name="passmik" placeholder="Password Mikrotik" value="<?php print_r($passwdhost);?>" required="1"/></td>
-					</tr>
-				</table>
-								<br>
-				<table class="tsetup" align="center"  >
-					<tr>
-						<th>USER OPERATOR</th>
-						<th>PASSWORD</th>
-					</tr>
-					<tr>
-						<td><input type="text" size="12" maxlength="20" name="userop" placeholder="User Operator" value="<?php print_r($userop);?>" required="1"/></td>
-						<td><input type="password" size="12" maxlength="100" name="passop" placeholder="Password Operator" value="<?php print_r($passwdop);?>" required="1"/></td>
 					</tr>
 				</table>
 				<br>
