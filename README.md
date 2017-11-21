@@ -67,7 +67,7 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 7. Update aplikasi.
      - Rename folder mikhmon yang lama.
      - Download dan extract folder mikhmon ke web server.
-     - Copy config.php dari folder mikhmon yg sudah di raname kemudian paste di folder mikhmon yang baru.
+     - Copy config.php dari folder mikhmon yang sudah di raname, kemudian paste di folder mikhmon yang baru.
 
 ## Changelog 
 
