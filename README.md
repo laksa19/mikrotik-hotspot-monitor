@@ -65,6 +65,10 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 ## Changelog 
 
+21-11-2017
+
+   Drop operator dan perbaikan resetconfig.
+   
 10-11-2017
 
    Penambahan generate user password manual input. (Perubahan di mikhmon: index.php, genkv.php, genkvs.php, genupm.php, genvoucher.php, genvouchers.php, profileadd.php, profilerm.php, profileset.php, vcolorconf.php).
