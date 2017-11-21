@@ -12,7 +12,7 @@ if(isset($_POST['login'])){
 	$user = $_POST['user'];
 	$pass = $_POST['pass'];
 		if($user == $userhost && $pass == $passwdhost){
-			$_SESSION['usermikhmon']="Administrator";
+			$_SESSION['usermikhmon']=$user;
 			if ($iphost == ""){
 				header("Location:setup.php");
 			}	else
