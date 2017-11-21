@@ -23,6 +23,7 @@ Mikrotik Hotspot Monitor adalah aplikasi berbasis PHP untuk menggantikan User Ma
 6. Generate 21 Voucher.
 7. Cetak Voucher. *Sebaiknya menggunakan kertas A4.
 8. Custom warna Voucher
+9. Add Remove DNS Static untuk blok website.
 
 ## MANAGEMEN USER
 
@@ -62,12 +63,18 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 6. Template hotspot.
      - Logo hotspot dapat diganti dengan format (logo.png) yang diletakkan di folder "img".
      - Edit file "paket-wifi.csv" untuk menampilkan daftar paket wifi.
+     
+7. Update aplikasi.
+     - Rename folder mikhmon yang lama.
+     - Download dan extract folder mikhmon ke web server.
+     - Copy config.php dari folder mikhmon yg sudah di raname kemudian paste di folder mikhmon yang baru.
 
 ## Changelog 
 
 21-11-2017
 
-   Drop operator dan perbaikan resetconfig.
+   1. Drop operator dan perbaikan resetconfig.
+   2. Add Remove DNS Static untuk blok website.
    
 10-11-2017
 
