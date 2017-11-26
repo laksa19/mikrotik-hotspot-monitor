@@ -76,7 +76,6 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
    1. Update setting warna voucher agar tetap menyimpan settingan sebelumnya.
    2. Penambahan cetak di setiap form generate 1 voucher.
    
-
 21-11-2017
 
    1. Drop operator dan perbaikan resetconfig.
