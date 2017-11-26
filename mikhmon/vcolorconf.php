@@ -91,7 +91,7 @@ table.tprinta {
 }
 table.tprinta td { 
   padding: 4px; 
-  border: 2px solid #000000;
+  border: 2px solid BLACK;
   font-size: 16px;
   text-align: left;
   font-weight: bold;
@@ -128,6 +128,7 @@ table.tprintb td {
 					<td colspan=2>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
+						<button class="material-icons" onclick="location.href='resetcolor.php';" title="Reset Warna Voucher">history</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 						<div class="dropdown" style="float:right;">
 							<button class="material-icons">local_play</button>
@@ -148,217 +149,217 @@ table.tprintb td {
 				<table class="tclists" align="center"  >
 					<tr><td>Header</td><td>
 						<select name="headerc" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($header);?>"><?php print_r($header);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 						<td>Font</td><td>
 						<select name="font1" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($font1);?>"><?php print_r($font1);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 					</tr>
 					<tr><td>Catatan</td><td>
 						<select name="notec" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($note);?>"><?php print_r($note);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 						<td>Font</td><td>
 						<select name="font2" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($font2);?>"><?php print_r($font2);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 					</tr>
 					<tr><td>User Pass</td><td>
 						<select name="userpassc" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($userpass);?>"><?php print_r($userpass);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 						<td>Font</td><td>
 						<select name="font3" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($font3);?>"><?php print_r($font3);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 					</tr>
 					</tr>
 					<tr><td>Keterangan</td><td>
 						<select name="detc" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($details);?>"><?php print_r($details);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 						<td>Font</td><td>
 						<select name="font4" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($font4);?>"><?php print_r($font4);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 					</tr>
 					<tr><td>Harga</td><td>
 						<select name="pricec" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($price);?>"><?php print_r($price);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 						<td>Font</td><td>
 						<select name="font5" >
-							<option value="">Pilih...</option>
-							<option style="color:#FFFFFF;" value=#FFFFFF	>WHITE</option>
-							<option style="color:#C0C0C0;" value=#C0C0C0	>SILVER</option>
-							<option style="color:#808080;" value=#808080	>GRAY</option>
-							<option style="color:#000000;" value=#000000	>BLACK</option>
-							<option style="color:#FF0000;" value=#FF0000	>RED</option>
-							<option style="color:#800000;" value=#800000	>MAROON</option>
-							<option style="color:#FFFF00;" value=#FFFF00	>YELLOW</option>
-							<option style="color:#808000;" value=#808000	>OLIVE</option>
-							<option style="color:#00FF00;" value=#00FF00	>LIME</option>
-							<option style="color:#008000;" value=#008000	>GREEN</option>
-							<option style="color:#00FFFF;" value=#00FFFF	>AQUA	</option>
-							<option style="color: #008080;" value=#008080	>TEAL</option>
-							<option style="color:#0000FF;" value=#0000FF	>BLUE	</option>
-							<option style="color:#000080;" value=#000080	>NAVY</option>
-							<option style="color:#FF00FF;" value=#FF00FF	>FUCHSIA</option>
-							<option style="color:#800080;" value=#800080	>PURPLE</option>
+							<option value="<?php print_r($font5);?>"><?php print_r($font5);?></option>
+							<option style="color:WHITE;" value=WHITE	>WHITE</option>
+							<option style="color:SILVER;" value=SILVER	>SILVER</option>
+							<option style="color:GRAY;" value=GRAY	>GRAY</option>
+							<option style="color:BLACK;" value=BLACK	>BLACK</option>
+							<option style="color:RED;" value=RED	>RED</option>
+							<option style="color:MAROON;" value=MAROON	>MAROON</option>
+							<option style="color:YELLOW;" value=YELLOW	>YELLOW</option>
+							<option style="color:OLIVE;" value=OLIVE	>OLIVE</option>
+							<option style="color:LIME;" value=LIME	>LIME</option>
+							<option style="color:GREEN;" value=GREEN	>GREEN</option>
+							<option style="color:AQUA;" value=AQUA	>AQUA	</option>
+							<option style="color: TEAL;" value=TEAL	>TEAL</option>
+							<option style="color:BLUE;" value=BLUE	>BLUE	</option>
+							<option style="color:NAVI;" value=NAVI	>NAVY</option>
+							<option style="color:FUCHSIA;" value=FUCHSIA	>FUCHSIA</option>
+							<option style="color:PURPLE;" value=PURPLE	>PURPLE</option>
 						</select>
 						</td>
 					</tr>
