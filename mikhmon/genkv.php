@@ -132,9 +132,20 @@ table.tuserb td {
 						</select>
 						</td>
 					</tr>
-					<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Generate"/></td></tr>
-				<br>
+					<td></td>
+						<td colspan=3>
+							<input type="submit" class="btnsubmit" value="Generate"/>
+						</td>
+					</tr>
 			</form>
+			<table>
+				<tr>
+					<td colspan=3>
+						<button class="btnsubmit" onclick="window.open('./vouchers/kvoucher.html','_blank');">Cetak</button>
+						</td>
+				</tr>
+			<br>
+			</table>
 
 <?php
 	if(isset($_POST['uprofile'])){
@@ -201,7 +212,12 @@ table.tuserb td {
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 		$data = '<?php $user1="' . $u1. '";$pass1="' . $p1. '";$vprofname="' . $profname. '";$vptimelimit="' . $vtimelimit. '"; $vpbytelimit="' . $vbytelimit. '"; $vprice="' . $price. '"; ?>';
 		fwrite($handle, $data);
-	
+		
+		$my_file1 = 'vouchers/kvoucher.html';
+		$handle1 = fopen($my_file1, 'w') or die('Cannot open file:  '.$my_file1);
+		$data1 = '<!DOCTYPE html><html><head><title>Mikrotik Hotspot Generate 1 Kode Voucher</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="pragma" content="no-cache" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/><link rel="icon" href="favicon.ico" /><link rel="stylesheet" href="css/style.css" media="screen"><style> table.tusera {width: 300px; height: 180px; border-collapse: collapse;}table.tusera td { padding: 4px; border: 2px solid #000000; font-size: 14px; text-align: left; font-weight: bold;}table.tuserb { width: 300px; border-collapse: collapse; }table.tuserb td { padding-left: 20px; padding-top: 17px; padding-bottom: 20px; border: 0px; font-size: 18px; text-align: left; }</style></head><body><div style="width: 300px; height: 180px;"><table><table class="tusera" ><tr><tr><td style="text-align: right; font-size: 16px;">'.$headerv.'</td></tr><tr><td style="font-size: 12px;">'.$notev.'</td></tr><tr><td><table class="tuserb"><tr><td>Kode Voucher : '.$u1.' </td></tr></table></td></tr><tr><td style="text-align: center; ">Aktif:'.$vprofile.' '.$vtimelimit.' '.$vbytelimit.'</td></tr><tr><td style="text-align: center; ">'.$price.'</td></tr><tr></tr></table></table></div></body></html>';
+		fwrite($handle1, $data1);
+		
 		echo	"<table>";
 		echo			"<table class='tusera' id='preview-table'>";
 		echo				"<tr>";
