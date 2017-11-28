@@ -66,6 +66,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			function Reload() {
 				location.reload();
 			}
+
 		</script>
 	</head>
 	<body>
@@ -79,6 +80,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
+						<button class="material-icons"	onclick="window.open('./log.php', '','toolbar=no');" 	title="Log Hotspot">subject</button>
 						<button class="material-icons" onclick="location.href='./dnsstaticadd.php';" title="Add DNS Static">cloud_queue</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<div class="dropdown" style="float:right;">
@@ -150,14 +152,15 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				</tr>
 			</table>
 			<table class="tnav">
-                <tr>
-			        <td><p>Masa Aktif User</p></td>
-				    <td><p style="text-align: right;" id="date1"></p>
+				<tr>
+					<td><p>Masa Aktif User</p></td>
+					<td><p style="text-align: right;" id="date1"></p>
 						<script>
 							var d = new Date();
 								document.getElementById("date1").innerHTML = d.toDateString();
 						</script>
-				    </td>
+					</td>
+					<td><button style="background-color: #008CCA;  border: none;  padding: 5px 5px;  color: white;  font-weight: bold;  text-align: center;  text-decoration: none;  display: inline-block;  font-size: 14px;  cursor: pointer;  margin: 2px 2px;  border-radius: 5px;  float: right;"	onclick="window.open('./history.php', '','toolbar=no');" 	title="History Remove User">History</button></td>
 				</tr>
 			</table>
 			<table class="tprint" >
