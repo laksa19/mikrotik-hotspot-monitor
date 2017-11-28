@@ -13,7 +13,7 @@ $ssh = new Net_SSH2($iphost,$sshport);
 				exit('Login Failed');
 		}
 
-$cmd=$ssh->exec('/system history print where action~"user"');
+$cmd=$ssh->exec('/system history print where action~"user" by=""');
 ?>
 <!DOCTYPE html>
 <html>
