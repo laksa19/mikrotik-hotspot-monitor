@@ -71,6 +71,11 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 ## Changelog 
 
+28-11-2017
+
+   1. Penambahan form Log Hotspot.
+   2. Penambahan form History Remove User, untuk melacak user yang telah dihapus.
+
 26-11-2017
 
    1. Update setting warna voucher agar tetap menyimpan settingan sebelumnya.
