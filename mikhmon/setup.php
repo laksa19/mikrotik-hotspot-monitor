@@ -205,6 +205,17 @@ table.tsetup td {
 				location.reload();
 			}
 		</script>
+		<script>
+		function resetConfig() {
+		var txt;
+		var r = confirm("Yakin akan me-reset config?\nUsername Password default\nusername : admin\npassword : 1234");
+		if (r == true) {
+			window.open("./resetconfig.php", "_self");
+		} else {
+			
+		}
+		}
+		</script>
 	</head>
 	<body>
 		<div class="main">
@@ -217,7 +228,7 @@ table.tsetup td {
 					<td>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
-						<button class="material-icons" onclick="location.href='resetconfig.php';" title="Reset Config">history</button>
+						<button class="material-icons" onclick="resetConfig()" title="Reset Config">history</button>
 						<button class="material-icons" onclick="location.href='conntest.php';" title="Tes Koneksi ke Mikrotik">settings_ethernet</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 						<button class="material-icons"	onclick="window.open('https://github.com/laksa19/mikrotik-hotspot-monitor','_blank');" 	title="Check Update">system_update_alt</button>

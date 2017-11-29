@@ -45,7 +45,7 @@ table.tprint td, th {
 	</head>
 	<body style="background: grey; color:white;">
 		<div>
-			<b>Log Hotspot by Mikrotik Hotspot Monitor</b><br>
+			<b>Log Hotspot by Mikrotik Hotspot Monitor | Refresh [F5]</b><br>
 			<textarea style="background: black; color:white;" rows="40" cols="150">
 				<?php print_r($cmd);?>
 			</textarea>
