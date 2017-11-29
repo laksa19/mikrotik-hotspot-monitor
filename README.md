@@ -71,6 +71,10 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 ## Changelog 
 
+29-11-2017
+
+   Perbaikan form setup, konfirmasi pada saat reset config.
+
 28-11-2017
 
    1. Penambahan form Log Hotspot.
