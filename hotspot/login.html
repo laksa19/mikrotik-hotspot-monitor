@@ -24,10 +24,11 @@
 <table align="center">
 	<tr>
 		<td>
-			<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center;">Voucher wifi Kemangi 41 bisa dibeli di</div>
+			<!--<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center; color:red;">Mohon Maaf Internet Telkom Sedang Gangguan!</div>-->
+			<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center;">Voucher wifi Kemangi 41 bisa didapatkan di</div>
 			<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center;">Gang Kemangi rumah No. 41</div>
 			<div class?"notice" style="font-size: 14px; padding-top:5px; text-align:center;">Gang Kluweh rumah No. 19 (Rosi)</div><br/>
-			<div class?"notice" style="font-size: 14px; text-align:center;">Masa Aktif Voucher  <a href="http://kemangi41.net:8451/status">Klik Disini</a></div><br />
+			<div class?"notice" style="font-size: 14px; text-align:center;">Masa Aktif Voucher  <a href="http://kemangi41.net/status">Klik Disini</a></div><br />
 		</td>
 	</tr>
 </table>
@@ -76,9 +77,9 @@ $(endif)
 							<td>&nbsp;</td>
 						</tr>
 						<tr>
-							<td colspan=2><input style="width: 200px; height: 25px; padding-left: 5px; text-align:center;" name="usernamekv" type="text" placeholder="Kode Voucher" value="$(username)"/></td>
+							<td colspan=2><input  name="usernamekv" type="text" placeholder="Kode Voucher" value="$(username)"/></td>
 						</tr>
-						<td align="center";><input type="submit" class="button" value=" Login " /></td>
+						<td colspan=2 align="center";><input type="submit" class="button" value=" Login " /></td>
 					</tr>
 					$(if error)<br /><div style="color: red; font-size: 14px">kode voucher tidak sesuai atau sudah dipakai!</div>$(endif)
 					</table>
@@ -127,13 +128,13 @@ $(endif)
 							<td>&nbsp;</td>
 						</tr>
 						<tr>
-							<td colspan=2><input style="width: 200px; height: 25px; padding-left: 5px; text-align:center;" name="usernameup" type="text" placeholder="Username" value="$(username)"/></td>
+							<td colspan=2><input  name="usernameup" type="text" placeholder="Username" value="$(username)"/></td>
 						</tr>
 						<tr>
-							<td colspan=2><input style="width: 200px; height: 25px; padding-left: 5px; text-align:center;" name="passwordup" type="password" placeholder="Password"/></td>
+							<td colspan=2><input  name="passwordup" type="password" placeholder="Password"/></td>
 						</tr>
 					<tr>
-						<td align="center";><input type="submit" class="button" value=" Login " /></td>
+						<td colspan=2 align="center";><input type="submit" class="button" value=" Login " /></td>
 					</tr>
 					$(if error)<br /><div style="color: red; font-size: 14px">$(error)</div>$(endif)
 					</table>
@@ -173,7 +174,7 @@ document.getElementById("defaultOpen").click();
 			<td align="center">
 				<br /><div style="font-size: 14px; color: white;">Alamat : Tanah Merah 4 Gang Kemangi No 41</div>
 				<br /><div style="font-size: 14px; color: white;">Powered by</div>
-				<br /><img src="img/sponsor.png"  style="border-radius: 5px" alt="sponsor" height="156" width="256"> 
+				<br /><img src="img/sponsor.png"  style="border-radius: 5px" alt="sponsor" height="175" width="300"> 
 			</td>
 		</tr>
 </table>

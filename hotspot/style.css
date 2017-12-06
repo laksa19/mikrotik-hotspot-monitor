@@ -33,24 +33,25 @@ body {
 textarea,input,select {
   background-color: #FDFBFB;
   border: 1px solid #008CCA;
-  padding: 2px;
-  margin: 2px;
-  font-size: 14px;
+  margin: 1px;
+  text-align:center;
+  font-size: 16px;
   color: #808080;
   outline: none;
+  width: 230px;
+  height: 30px;
   border-radius: 5px;
 }
 
 .button {
   background-color: #008CCA;
-  border: none;
-  padding: 5px 5px;
+  border: 1px solid #008CCA;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 10px 1px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -59,7 +60,7 @@ textarea,input,select {
 div.tab {
   overflow: hidden;
   background-color: #f1f1f1;
-  width: 85%;
+  width: 90%;
   margin-left:auto; 
   margin-right:auto;
   height: 100%;
@@ -90,7 +91,7 @@ div.tab button.active {
 
 .tabcontent {
   display: none;
-  padding: 6px 12px;
+  padding: 6px 10px;
   border-top: none;
 }
 
