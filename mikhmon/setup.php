@@ -13,8 +13,6 @@ include('./config.php');
 		$ssshport = ($_POST['portmik']);
 		$suserhost = ($_POST['usermik']);
 		$spasswdhost = ($_POST['passmik']);
-		$suserop = ($_POST['userop']);
-		$spasswdop = ($_POST['passop']);
 		$sprofile1 = ($_POST['prof1']);
 		$sprofile2 = ($_POST['prof2']);
 		$sprofile3 = ($_POST['prof3']);
@@ -208,7 +206,7 @@ table.tsetup td {
 		<script>
 		function resetConfig() {
 		var txt;
-		var r = confirm("Yakin akan me-reset config?\nUsername Password default\nusername : admin\npassword : 1234");
+		var r = confirm("Yakin akan me-reset config?\nUsername Password default\nusername : admin | password : 1234");
 		if (r == true) {
 			window.open("./resetconfig.php", "_self");
 		} else {
