@@ -23,6 +23,18 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->disconnect();
 }
 ?>
+<?php
+	if(isset($_POST['nama'])){
+		$ssh = new Net_SSH2($iphost,$sshport);
+			if (!$ssh->login($userhost, $passwdhost)) {
+					exit('Login Failed');
+			}
+			$profname = ($_POST['nama']);
+			$command = '/ip hotspot user remove [find name=' . $profname. ']';
+			echo $ssh->exec($command);
+			header('Location: userlists5.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -63,18 +75,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Hapus"></td></tr>
 			</table>
 		</form>
-<?php
-	if(isset($_POST['nama'])){
-		$ssh = new Net_SSH2($iphost,$sshport);
-			if (!$ssh->login($userhost, $passwdhost)) {
-					exit('Login Failed');
-			}
-			$profname = ($_POST['nama']);
-			$command = '/ip hotspot user remove [find name=' . $profname. ']';
-			echo $ssh->exec($command);
-			header('Location: userlists5.php');
-}
-?>
+
 		<div style="overflow-x:auto;">
 			<table class="tprint" >
 				<tr>

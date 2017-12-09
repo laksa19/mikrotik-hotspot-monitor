@@ -18,6 +18,18 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->disconnect();
 }
 ?>
+<?php
+	if(isset($_POST['name'])){
+		$ssh = new Net_SSH2($iphost,$sshport);
+			if (!$ssh->login($userhost, $passwdhost)) {
+					exit('Login Failed');
+			}
+			$dnsname = ($_POST['name']);
+			$command = '/ip dns static remove [find name=' . $dnsname. ']';
+			echo $ssh->exec($command);
+			header('Location: dnsstaticrm.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -58,18 +70,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Remove"/></td></tr>
 			</table>
 		</form>
-<?php
-	if(isset($_POST['name'])){
-		$ssh = new Net_SSH2($iphost,$sshport);
-			if (!$ssh->login($userhost, $passwdhost)) {
-					exit('Login Failed');
-			}
-			$dnsname = ($_POST['name']);
-			$command = '/ip dns static remove [find name=' . $dnsname. ']';
-			echo $ssh->exec($command);
-			header('Location: dnsstaticrm.php');
-}
-?>
+
 		<div style="overflow-x:auto;">
 			<table class="tprint" >
 				<tr>
