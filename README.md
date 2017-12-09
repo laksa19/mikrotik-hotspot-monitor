@@ -54,7 +54,7 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
      - [Google Drive video panduan install di Windows](https://drive.google.com/open?id=0B-nJrksLMgOzUXdFNlp2dVdXQkU "Panduan Install di Windows")
      - [YouTube video by Laksa19 panduan install di Windows](https://www.youtube.com/watch?v=k-mbO-7Yuck "Panduan Install di Windows")
      - [YouTube video by Rizki Ari panduan install di Windows](https://www.youtube.com/watch?v=SyX5qRcNyj8 "Panduan Install di Windows")
-     - [YouTube video by Rizki Ari Panduan Install di Android](https://www.youtube.com/watch?v=ob0uYW2wT9k "Panduan Install di Android")
+     - [YouTube video by Rizki Ari Panduan Install di Android](https://www.youtube.com/watch?v=EInXupzwJAI "Panduan Install di Android")
 
 5. Penggunaan laman status untuk cek masa aktif voucher. (Catatan laman status memerlukan web server yang aktif terus agar user bisa akses setiap saat).
      - Edit file index.php pada folder status, sesuaikan pada line 84 (ip mikrotik, user dan password).
