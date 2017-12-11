@@ -46,7 +46,7 @@ table.tprint td, th {
 	<body style="background: grey; color:white;">
 		<div>
 			<b>History Remove User by Mikrotik Hotspot Monitor | Refresh [F5]</b><br>
-			<textarea style="background: black; color:white;" rows="40" cols="70">
+			<textarea readonly style="background: black; color:white;" rows="40" cols="70">
 				<?php print_r($cmd);?>
 			</textarea>
 		</div>
