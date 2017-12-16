@@ -50,6 +50,14 @@ $vname8="3Hari";
 $vname9="4Hari"; 
 $vname10="5Hari";
 
+//hotspot server
+$server1="hotspot1"; 
+$server2="hotspot2"; 
+$server3="hotspot3"; 
+$server4="hotspot4"; 
+$server5="hotspot5"; 
+$server6="hotspot6";
+
 // durasi h=jam d=hari
 $utimelimit1="1h";
 $utimelimit2="2h";
