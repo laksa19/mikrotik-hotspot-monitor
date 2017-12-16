@@ -94,6 +94,7 @@ $price6="Rp25.000";
 $price7="Rp50.000";
 $price8="Rp70.000";
 $price9="Rp100.000";
+$price10="Rp150.000";
 
 // Internet Speed Upload/Download
 $speed1="512k/680k";
