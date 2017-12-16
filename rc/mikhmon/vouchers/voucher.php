@@ -1,0 +1,1 @@
+<?php $user1="PKKG9725";$pass1="PKKG9725";$vprofname="VIP1Hari";$vptimelimit=""; $vpbytelimit=""; $vprice="Rp1.000"; ?>

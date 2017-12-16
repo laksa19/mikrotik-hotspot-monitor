@@ -1,0 +1,214 @@
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/material.woff2) format('woff2');
+}
+@font-face {
+  font-family: Roboto;
+  src: url('fonts/Roboto-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body { 
+  background: url('../img/textures.png'); 
+  background-color: #3D4241;
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+.main {
+  background-color: #FFFFFF;
+  border: 1px solid #3D4241;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  width:600px;
+  height: 100%;
+  margin-top:auto;
+  margin-bottom:auto;
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+.login {
+  background-color: #FFFFFF;
+  border: 1px solid #3D4241;
+  border-radius: 5px;
+  width:330px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+table.tprint { 
+  margin-left:auto; 
+  margin-right:auto;
+  width: 100%; 
+  border-collapse: collapse; 
+}
+table.tprint th { 
+  background: #008CCA; 
+  color: white; 
+  font-weight: bold; 
+}
+table.tprint td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+
+table.tprinta { 
+  margin-left:auto; 
+  margin-right:auto;
+  width: 100%; 
+  border-collapse: collapse; 
+}
+table.tprinta th { 
+  background: #008CCA; 
+  color: white; 
+  font-weight: bold;
+  text-align: center;
+}
+table.tprinta td { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: center; 
+}
+
+table.tnav { 
+  margin-left:auto; 
+  margin-right:auto;
+  width: 100%; 
+  border-collapse: collapse; 
+}
+table.tnav td { 
+  padding: 3px; 
+  border: 0px; 
+  text-align: left; 
+  font-weight: bold; 
+}
+
+button {
+  background-color: #008CCA;
+  border: none;
+  padding: 1px 1px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 2px 2px;
+  border-radius: 5px;
+  float: right;
+}
+
+.btnsubmit {
+  background-color: #008CCA;
+  border: none;
+  padding: 5px 5px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 2px 2px;
+  border-radius: 5px;
+  float: left;
+}
+
+textarea,input,select {
+  background-color: #FDFBFB;
+  border: 1px solid #008CCA;
+  padding: 2px;
+  margin: 2px;
+  font-size: 12px;
+  color: #808080;
+  outline: none;
+}
+
+.dropbtn {
+    background-color: #008CCA;
+    color: white;
+    padding: 5px;
+    font-size: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #008CCA;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown-content a:hover {background-color: #3D4241}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #008CCA;
+}
+
+@media only screen and (max-width:450px) {
+  /* For mobile phones: */
+  .main  {
+    width:330px;
+  }
+}
+
+a:link {
+  color: #FFFFFF;
+}
+a:visited {
+  color: #FFFFFF;
+}
+a:hover {
+  color: #FFFFFF;
+}
+a:active {
+  color: #FFFFFF;
+}
+
+
