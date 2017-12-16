@@ -5,6 +5,7 @@ if(!isset($_SESSION['usermikhmon'])){
 }
 ?>
 <?php
+error_reporting(0);
 require('./api.php');
 include('./Net/SSH2.php');
 include('./config.php');
@@ -80,6 +81,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			<table class="tprint" >
 				<tr>
 					<th >User</th>
+					<th >Server</th>
 					<th >Profile</th>
 					<th >Uptime</th>
 				</tr>
@@ -88,6 +90,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					$TotalReg = count($ARRAY);
 
 					for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY[$i];echo "" . $regtable['name'] . "<br />";}echo "</td><td>";
+					for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY[$i];echo "" . $regtable['server'] . "<br />";}echo "</td><td>";
 					for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY[$i];echo "" . $regtable['profile'] . "<br />";}echo "</td><td>";
 					for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY[$i];echo "" . $regtable['uptime'] . "<br />";}echo "</td>";
 
