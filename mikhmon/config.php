@@ -21,6 +21,11 @@ $profile2="Voucher1Hari";
 $profile3="Voucher2Hari";
 $profile4="Voucher7Hari";
 $profile5="Voucher30Hari";
+$profile6="VIP1Hari"; 
+$profile7="VIP2Hari"; 
+$profile8="VIP3Hari"; 
+$profile9="VIP4Hari"; 
+$profile10="VIP5Hari"; 
 
 // masa aktif h=jam d=hari
 $uactive1="3h";
@@ -34,6 +39,11 @@ $vname2="1Hari";
 $vname3="2Hari";
 $vname4="7Hari";
 $vname5="30Hari";
+$vname6="1Hari"; 
+$vname7="2Hari"; 
+$vname8="3Hari"; 
+$vname9="4Hari"; 
+$vname10="5Hari";
 
 // durasi h=jam d=hari
 $utimelimit1="1h";
