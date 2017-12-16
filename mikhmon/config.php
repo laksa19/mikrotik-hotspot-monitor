@@ -33,6 +33,11 @@ $uactive2="1d";
 $uactive3="2d";
 $uactive4="7d";
 $uactive5="30d";
+$uactive6="1d"; 
+$uactive7="2d"; 
+$uactive8="3d"; 
+$uactive9="4d"; 
+$uactive10="5d";
 // teks masa aktif
 $vname1="3Jam"; 
 $vname2="1Hari";
