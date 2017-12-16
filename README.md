@@ -71,6 +71,13 @@ Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, k
 
 ## Changelog 
 
+16-12-2017
+
+   1. Penambahan 5 profile, total 10 profile yang bisa digunakan untuk berbagai macam paket hotspot wifi.
+   2. Penambahan kolom server hotspot ditiap form generate voucher, ini memungkinkan untuk membuat voucher atau user hotspot dengan batasan server hotspot. Jadi voucher hanya bisa digunakan di server hotspot tertentu. Catatan: Sesuaikan nama server  hotspot Mikrotik di laman setup mikhmon.
+   3. Perbaikan tampilan desktop, kini dibuat lebih lebar untuk tampilan desktop dan menyesuakan layar saat digunakan di Android.
+   4. Perubahan laman dashboard, Header tabel sisa voucher sekarang menggunakan nama profile, bertujuan untuk memudahkan admin mengenali sisa voucher.
+
 29-11-2017
 
    Perbaikan form setup, konfirmasi pada saat reset config.
