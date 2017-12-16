@@ -42,7 +42,7 @@ body {
   padding-right: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
-  width:330px;
+  width:600px;
   height: 100%;
   margin-top:auto;
   margin-bottom:auto;
@@ -189,6 +189,13 @@ textarea,input,select {
 
 .dropdown:hover .dropbtn {
     background-color: #008CCA;
+}
+
+@media only screen and (max-width:450px) {
+  /* For mobile phones: */
+  .main  {
+    width:330px;
+  }
 }
 
 a:link {
