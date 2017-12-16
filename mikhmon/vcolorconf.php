@@ -55,7 +55,7 @@ if ($blimit == $ubytelimit1){
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 		$data = '<?php $header="' . $headerc . '"; $note="' . $notec . '"; $userpass="' . $userpassc . '"; $details="' . $detailsc . '"; $price="' . $pricec. '"; $font1="' . $fontc1. '"; $font2="' . $fontc2. '"; $font3="' . $fontc3. '"; $font4="' . $fontc4. '"; $font5="' . $fontc5. '"; ?>';
 		fwrite($handle, $data);
-		header("Location:vcolorconf.php");
+		header('Location: vcolorconf.php');
 	}
 ?>
 <!DOCTYPE html>

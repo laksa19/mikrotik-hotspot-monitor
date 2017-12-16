@@ -84,6 +84,18 @@ table.tuserb td {
 			</table>
 			<form autocomplete="off" method="post" action="">
 				<table class="tnav" align="center"  >
+					<tr><td>Server Hotspot</td><td>:</td><td>
+						<select name="server" required="1">
+							<option value="all">all</option>
+							<option value=<?php print_r($server1);?>><?php print_r($server1);?></option>
+							<option value=<?php print_r($server2);?>><?php print_r($server2);?></option>
+							<option value=<?php print_r($server3);?>><?php print_r($server3);?></option>
+							<option value=<?php print_r($server4);?>><?php print_r($server4);?></option>
+							<option value=<?php print_r($server5);?>><?php print_r($server5);?></option>
+							<option value=<?php print_r($server6);?>><?php print_r($server6);?></option>
+						</select>
+						</td>
+					</tr>
 					<tr><td>Profile | Masa Aktif</td><td>:</td><td>
 						<select name="uprofile" required="1">
 							<option value="">Pilih...</option>
@@ -92,6 +104,11 @@ table.tuserb td {
 							<option value=<?php print_r($profile3);?>><?php print_r($profile3);?></option>
 							<option value=<?php print_r($profile4);?>><?php print_r($profile4);?></option>
 							<option value=<?php print_r($profile5);?>><?php print_r($profile5);?></option>
+							<option value=<?php print_r($profile6);?>><?php print_r($profile6);?></option>
+							<option value=<?php print_r($profile7);?>><?php print_r($profile7);?></option>
+							<option value=<?php print_r($profile8);?>><?php print_r($profile8);?></option>
+							<option value=<?php print_r($profile9);?>><?php print_r($profile9);?></option>
+							<option value=<?php print_r($profile10);?>><?php print_r($profile10);?></option>
 						</select>
 						</td>
 					</tr>
@@ -165,6 +182,16 @@ table.tuserb td {
 				$vprofile = $vname4;
 			}elseif ($uprofile == $profile5){
 				$vprofile = $vname5;
+			}elseif ($uprofile == $profile6){
+				$vprofile = $vname6;
+			}elseif ($uprofile == $profile7){
+				$vprofile = $vname7;
+			}elseif ($uprofile == $profile8){
+				$vprofile = $vname8;
+			}elseif ($uprofile == $profile9){
+				$vprofile = $vname9;
+			}elseif ($uprofile == $profile10){
+				$vprofile = $vname10;
 			}else {
 				$vprofile= "";
 			}
@@ -201,11 +228,12 @@ table.tuserb td {
 				$vbytelimit= "";
 			}
 		$price = ($_POST['uprice']);
-		$a1= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -4);
+		$serverh = ($_POST['server']);
+		$a1= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -4);
 		$n1= rand(1000,9999);
 		$u1 = "$a1$n1";
 		$p1 = $u1; 
-		$command = '/ip hotspot user add name='. $u1 . ' password=' . $p1 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '';
+		$command = '/ip hotspot user add  server=' . $serverh . ' name='. $u1 . ' password=' . $p1 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '';
 		echo $ssh->exec($command);
 		
 		$my_file = 'vouchers/voucher.php';
@@ -215,7 +243,7 @@ table.tuserb td {
 		
 		$my_file1 = 'vouchers/kvoucher.html';
 		$handle1 = fopen($my_file1, 'w') or die('Cannot open file:  '.$my_file1);
-		$data1 = '<!DOCTYPE html><html><head><title>Mikrotik Hotspot Generate 1 Kode Voucher</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="pragma" content="no-cache" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/><link rel="icon" href="favicon.ico" /><link rel="stylesheet" href="css/style.css" media="screen"><style> table.tusera {width: 300px; height: 180px; border-collapse: collapse;}table.tusera td { padding: 4px; border: 2px solid #000000; font-size: 14px; text-align: left; font-weight: bold;}table.tuserb { width: 300px; border-collapse: collapse; }table.tuserb td { padding-left: 20px; padding-top: 17px; padding-bottom: 20px; border: 0px; font-size: 18px; text-align: left; }</style></head><body><div style="width: 300px; height: 180px;"><table><table class="tusera" ><tr><tr><td style="text-align: right; font-size: 16px;">'.$headerv.'</td></tr><tr><td style="font-size: 12px;">'.$notev.'</td></tr><tr><td><table class="tuserb"><tr><td>Kode Voucher : '.$u1.' </td></tr></table></td></tr><tr><td style="text-align: center; ">Aktif:'.$vprofile.' '.$vtimelimit.' '.$vbytelimit.'</td></tr><tr><td style="text-align: center; ">'.$price.'</td></tr><tr></tr></table></table></div></body></html>';
+		$data1 = '<!DOCTYPE html><html><head><title>Mikrotik Hotspot Generate 1 Kode Voucher</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="pragma" content="no-cache" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/><link rel="icon" href="../favicon.ico" /><link rel="stylesheet" href="css/style.css" media="screen"><style> table.tusera {width: 300px; height: 180px; border-collapse: collapse;}table.tusera td { padding: 4px; border: 2px solid #000000; font-size: 14px; text-align: left; font-weight: bold;}table.tuserb { width: 300px; border-collapse: collapse; }table.tuserb td { padding-left: 20px; padding-top: 17px; padding-bottom: 20px; border: 0px; font-size: 18px; text-align: left; }</style></head><body><div style="width: 300px; height: 180px;"><table><table class="tusera" ><tr><tr><td style="text-align: right; font-size: 16px;">'.$headerv.'</td></tr><tr><td style="font-size: 12px;">'.$notev.'</td></tr><tr><td><table class="tuserb"><tr><td>Kode Voucher : '.$u1.' </td></tr></table></td></tr><tr><td style="text-align: center; ">Aktif:'.$vprofile.' '.$vtimelimit.' '.$vbytelimit.'</td></tr><tr><td style="text-align: center; ">'.$serverh.' '.$price.'</td></tr><tr></tr></table></table></div></body></html>';
 		fwrite($handle1, $data1);
 		
 		echo	"<table>";
@@ -235,7 +263,7 @@ table.tuserb td {
 		echo						"</td>";
 		echo					"</tr>";
 		echo					"<tr>";
-		echo						"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$price</td>";
+		echo						"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$serverh $price</td>";
 		echo					"</tr>";
 		echo				"<tr>";
 		echo			"</table>";

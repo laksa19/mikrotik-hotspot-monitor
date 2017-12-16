@@ -47,7 +47,32 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->write('?=profile='.$profile5.'');
 	$ARRAY7 = $API->read();
 
-	$ARRAY8 = $API->comm("/system/clock/print");
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile6.'');
+	$ARRAY8 = $API->read();
+	
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile7.'');
+	$ARRAY9 = $API->read();
+	
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile8.'');
+	$ARRAY10 = $API->read();
+
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile9.'');
+	$ARRAY11 = $API->read();
+
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile10.'');
+	$ARRAY12 = $API->read();
+
+	$ARRAY13 = $API->comm("/system/clock/print");
 	
     $API->disconnect();
 }
@@ -103,23 +128,24 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 							<?php
 								$TotalReg = count($ARRAY8);
 
-										for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY8[$i];echo "" . $regtable['time'] . "<br />";}echo "</td>";
+										for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY13[$i];echo "" . $regtable['time'] . "<br />";}echo "</td>";
 							?>
 				</tr>
 			</table>
 			<table class="tnav">
 				<tr>
-					<td><p>Sisa Voucher Aktif : <?php	$a=array($ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6,$ARRAY7);	echo array_sum($a);	?></p></td>
+					<td><p>Sisa Voucher Aktif : <?php	$a=array($ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6,$ARRAY7,$ARRAY8,$ARRAY9,$ARRAY10,$ARRAY11,$ARRAY12);	echo array_sum($a);	?></p></td>
 					<td style="text-align: right;"><?php print_r($_SESSION['usermikhmon']);?></td>
 				</tr>
 			</table>
+			<div style="overflow-x:auto;">
 			<table class="tprinta" >
 				<tr>
-					<th><a href="userlists1.php"><?php print_r($vname1);?></a></th>
-					<th><a href="userlists2.php"><?php print_r($vname2);?></a></th>
-					<th><a href="userlists3.php"><?php print_r($vname3);?></a></th>
-					<th><a href="userlists4.php"><?php print_r($vname4);?></a></th>
-					<th><a href="userlists5.php"><?php print_r($vname5);?></a></th>
+					<th><a href="userlist1.php"><?php print_r($profile1);?></a></th>
+					<th><a href="userlist2.php"><?php print_r($profile2);?></a></th>
+					<th><a href="userlist3.php"><?php print_r($profile3);?></a></th>
+					<th><a href="userlist4.php"><?php print_r($profile4);?></a></th>
+					<th><a href="userlist5.php"><?php print_r($profile5);?></a></th>
 				</tr>
 				<tr>
 					<td><?php print_r($ARRAY3); ?></td>
@@ -129,11 +155,32 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td><?php print_r($ARRAY7); ?></td>
 				</tr>
 			</table>
+			</div>
+			<br>
+			<div style="overflow-x:auto;">
+			<table class="tprinta" >
+				<tr>
+					<th><a href="userlist6.php"><?php print_r($profile6);?></a></th>
+					<th><a href="userlist7.php"><?php print_r($profile7);?></a></th>
+					<th><a href="userlist8.php"><?php print_r($profile8);?></a></th>
+					<th><a href="userlist9.php"><?php print_r($profile9);?></a></th>
+					<th><a href="userlist10.php"><?php print_r($profile10);?></a></th>
+				</tr>
+				<tr>
+					<td><?php print_r($ARRAY8); ?></td>
+					<td><?php print_r($ARRAY9); ?></td>
+					<td><?php print_r($ARRAY10); ?></td>
+					<td><?php print_r($ARRAY11); ?></td>
+					<td><?php print_r($ARRAY12); ?></td>
+				</tr>
+			</table>
+			</div>
 			<table class="tnav">
 				<tr>
 			        <td><p>User Aktif : <?php print_r($ARRAY2);?></p></td>
 				</tr>
 			</table>
+			<div style="overflow-x:auto;">
 			<table class="tprint" >
 				<tr>
 					<th >User</th>
@@ -151,6 +198,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 							?>
 				</tr>
 			</table>
+			</div>
 			<table class="tnav">
 				<tr>
 					<td><p>Masa Aktif User</p></td>
@@ -163,6 +211,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td><button style="background-color: #008CCA;  border: none;  padding: 5px 5px;  color: white;  font-weight: bold;  text-align: center;  text-decoration: none;  display: inline-block;  font-size: 14px;  cursor: pointer;  margin: 2px 2px;  border-radius: 5px;  float: right;"	onclick="history()" 	title="History Remove User">History</button></td>
 				</tr>
 			</table>
+			<div style="overflow-x:auto;">
 			<table class="tprint" >
 				<tr>
 					<th >User</th>
@@ -181,6 +230,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 							?>
 				</tr>
 			</table>
+			</div>
 		</div>
 <script>
 function history() {

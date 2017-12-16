@@ -42,6 +42,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				<tr>
 					<td colspan=2>
 						<button class="material-icons" onclick="location.href='uprofilerm.php';" title="Reload">autorenew</button>
+						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
 						<button class="material-icons" onclick="location.href='./uprofileset.php';" title="Edit User Profile">mode_edit</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<div class="dropdown" style="float:right;">

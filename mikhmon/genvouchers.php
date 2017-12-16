@@ -83,6 +83,18 @@ if ($blimit == $ubytelimit1){
 			</table>
 			<form autocomplete="off" method="post" action="">
 				<table class="tnav" align="center"  >
+					<tr><td>Server Hotspot</td><td>:</td><td>
+						<select name="server" required="1">
+							<option value="all">all</option>
+							<option value=<?php print_r($server1);?>><?php print_r($server1);?></option>
+							<option value=<?php print_r($server2);?>><?php print_r($server2);?></option>
+							<option value=<?php print_r($server3);?>><?php print_r($server3);?></option>
+							<option value=<?php print_r($server4);?>><?php print_r($server4);?></option>
+							<option value=<?php print_r($server5);?>><?php print_r($server5);?></option>
+							<option value=<?php print_r($server6);?>><?php print_r($server6);?></option>
+						</select>
+						</td>
+					</tr>
 					<tr><td>Profile | Masa Aktif</td><td>:</td><td>
 						<select name="uprofile" required="1">
 							<option value="">Pilih...</option>
@@ -91,6 +103,11 @@ if ($blimit == $ubytelimit1){
 							<option value=<?php print_r($profile3);?>><?php print_r($profile3);?></option>
 							<option value=<?php print_r($profile4);?>><?php print_r($profile4);?></option>
 							<option value=<?php print_r($profile5);?>><?php print_r($profile5);?></option>
+							<option value=<?php print_r($profile6);?>><?php print_r($profile6);?></option>
+							<option value=<?php print_r($profile7);?>><?php print_r($profile7);?></option>
+							<option value=<?php print_r($profile8);?>><?php print_r($profile8);?></option>
+							<option value=<?php print_r($profile9);?>><?php print_r($profile9);?></option>
+							<option value=<?php print_r($profile10);?>><?php print_r($profile10);?></option>
 						</select>
 						</td>
 					</tr>
@@ -136,6 +153,15 @@ if ($blimit == $ubytelimit1){
 						<td></td>
 						<td colspan=3>
 							<input type="submit" class="btnsubmit" value="Generate"/>
+						</td>
+					</tr>
+				</table>
+				<br>
+			</form>
+				<table class="tnav">
+					<tr>
+						<td>
+							<button class="btnsubmit" onclick="location.href='./vcolorconf.php';">Ganti Warna Voucher</button>
 							<button class="btnsubmit" onclick="window.open('./vouchers/printvs.php','_blank');">Cetak</button>
 						</td>
 					</tr>
@@ -146,18 +172,10 @@ if ($blimit == $ubytelimit1){
 						<th>Generate Voucher Sebelumnya</th>
 					</tr>
 					<tr>
-						<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; "><?php print_r($vprice);?></td>
+						<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; "><?php print_r($vserver);?> <?php print_r($vprice);?></td>
 					</tr>
 				</table>
 				<br>
-			</form>
-				<table class="tnav">
-					<tr>
-						<td>
-							<button class="btnsubmit" onclick="location.href='./vcolorconf.php';">Ganti Warna Voucher</button>
-						</td>
-					</tr>
-				</table>
 <?php
 	if(isset($_POST['uprofile'])){
 		$ssh = new Net_SSH2($iphost,$sshport);
@@ -176,6 +194,16 @@ if ($blimit == $ubytelimit1){
 				$vprofile = $vname4;
 			}elseif ($uprofile == $profile5){
 				$vprofile = $vname5;
+			}elseif ($uprofile == $profile6){
+				$vprofile = $vname6;
+			}elseif ($uprofile == $profile7){
+				$vprofile = $vname7;
+			}elseif ($uprofile == $profile8){
+				$vprofile = $vname8;
+			}elseif ($uprofile == $profile9){
+				$vprofile = $vname9;
+			}elseif ($uprofile == $profile10){
+				$vprofile = $vname10;
 			}else {
 				$vprofile= "";
 			}
@@ -212,27 +240,28 @@ if ($blimit == $ubytelimit1){
 				$vbytelimit= "";
 			}
 		$price = ($_POST['uprice']);
-		$u1 = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u2= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u3= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u4= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u5= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u6= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u7= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u8= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u9= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u10= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u11= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u12= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u13= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u14= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u15= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u16= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u17= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u18= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u19= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u20= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-		$u21= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$serverh = ($_POST['server']);
+		$u1 = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u2= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u3= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u4= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u5= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u6= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u7= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u8= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u9= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u10= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u11= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u12= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u13= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u14= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u15= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u16= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u17= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u18= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u19= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u20= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
+		$u21= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
 		$p1 = rand(100000,999999);
 		$p2= rand(100000,999999);
 		$p3= rand(100000,999999);
@@ -254,18 +283,18 @@ if ($blimit == $ubytelimit1){
 		$p19= rand(100000,999999);
 		$p20= rand(100000,999999);
 		$p21= rand(100000,999999);
-		$command = '/ip hotspot user add name='. $u1 . ' password=' . $p1 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u2 . ' password=' . $p2 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u3 . ' password=' . $p3 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u4 . ' password=' . $p4 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u5 . ' password=' . $p5 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u6 . ' password=' . $p6 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u7 . ' password=' . $p7 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u8 . ' password=' . $p8 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u9 . ' password=' . $p9 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u10 . ' password=' . $p10 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u11 . ' password=' . $p11 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u12 . ' password=' . $p12 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u13 . ' password=' . $p13 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u14 . ' password=' . $p14 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u15 . ' password=' . $p15 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u16 . ' password=' . $p16 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u17 . ' password=' . $p17 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u18 . ' password=' . $p18 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u19 . ' password=' . $p19 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u20 . ' password=' . $p20 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add name='. $u21 . ' password=' . $p21 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '';
+		$command = '/ip hotspot user add server=' . $serverh . ' name='. $u1 . ' password=' . $p1 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u2 . ' password=' . $p2 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u3 . ' password=' . $p3 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u4 . ' password=' . $p4 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u5 . ' password=' . $p5 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u6 . ' password=' . $p6 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u7 . ' password=' . $p7 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u8 . ' password=' . $p8 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u9 . ' password=' . $p9 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u10 . ' password=' . $p10 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u11 . ' password=' . $p11 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u12 . ' password=' . $p12 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u13 . ' password=' . $p13 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u14 . ' password=' . $p14 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u15 . ' password=' . $p15 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u16 . ' password=' . $p16 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u17 . ' password=' . $p17 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u18 . ' password=' . $p18 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u19 . ' password=' . $p19 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u20 . ' password=' . $p20 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '; /ip hotspot user add server=' . $serverh . ' name='. $u21 . ' password=' . $p21 . ' profile=' . $profname . ' limit-uptime=' . $timelimit . ' limit-bytes-out=' . $bytelimit . '';
 		echo $ssh->exec($command);
 		$my_file = 'vouchers/vouchers.php';
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-		$data = '<?php $vprofname="' . $vprofile . '"; $uptimelimit="' . $timelimit . '"; $upbytelimit="' . $bytelimit . '"; $vprice="' . $price . '"; $user1="' . $u1. '"; $pass1="' . $p1. '"; $user2="' . $u2. '";$pass2="' . $p2. '"; $user3="' . $u3. '";$pass3="' . $p3. '"; $user4="' . $u4. '";$pass4="' . $p4. '"; $user5="' . $u5. '";$pass5="' . $p5. '"; $user6="' . $u6. '";$pass6="' . $p6. '"; $user7="' . $u7. '";$pass7="' . $p7. '"; $user8="' . $u8. '";$pass8="' . $p8. '"; $user9="' . $u9. '";$pass9="' . $p9. '"; $user10="' . $u10. '";$pass10="' . $p10. '"; $user11="' . $u11. '";$pass11="' . $p11. '"; $user12="' . $u12. '";$pass12="' . $p12. '"; $user13="' . $u13. '";$pass13="' . $p13. '"; $user14="' . $u14. '";$pass14="' . $p14. '"; $user15="' . $u15. '";$pass15="' . $p15. '"; $user16="' . $u16. '";$pass16="' . $p16. '"; $user17="' . $u17. '";$pass17="' . $p17. '"; $user18="' . $u18. '";$pass18="' . $p18. '"; $user19="' . $u19. '";$pass19="' . $p19. '"; $user20="' . $u20. '";$pass20="' . $p20. '"; $user21="' . $u21. '";$pass21="' . $p21. '"; ?>';
+		$data = '<?php $vserver="' . $serverh . '"; $vprofname="' . $vprofile . '"; $uptimelimit="' . $timelimit . '"; $upbytelimit="' . $bytelimit . '"; $vprice="' . $price . '"; $user1="' . $u1. '"; $pass1="' . $p1. '"; $user2="' . $u2. '";$pass2="' . $p2. '"; $user3="' . $u3. '";$pass3="' . $p3. '"; $user4="' . $u4. '";$pass4="' . $p4. '"; $user5="' . $u5. '";$pass5="' . $p5. '"; $user6="' . $u6. '";$pass6="' . $p6. '"; $user7="' . $u7. '";$pass7="' . $p7. '"; $user8="' . $u8. '";$pass8="' . $p8. '"; $user9="' . $u9. '";$pass9="' . $p9. '"; $user10="' . $u10. '";$pass10="' . $p10. '"; $user11="' . $u11. '";$pass11="' . $p11. '"; $user12="' . $u12. '";$pass12="' . $p12. '"; $user13="' . $u13. '";$pass13="' . $p13. '"; $user14="' . $u14. '";$pass14="' . $p14. '"; $user15="' . $u15. '";$pass15="' . $p15. '"; $user16="' . $u16. '";$pass16="' . $p16. '"; $user17="' . $u17. '";$pass17="' . $p17. '"; $user18="' . $u18. '";$pass18="' . $p18. '"; $user19="' . $u19. '";$pass19="' . $p19. '"; $user20="' . $u20. '";$pass20="' . $p20. '"; $user21="' . $u21. '";$pass21="' . $p21. '"; ?>';
 		fwrite($handle, $data);
 		
 		echo	"<table class='tprinta'>";
 		echo				"<tr>";
 		echo					"<th>Generate Voucher Sekarang</th>";
 		echo				"<tr>";
-		echo					"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$price</td>";
+		echo					"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$serverh $price</td>";
 		echo				"</tr>";
 		echo	"</table>";
 		echo	"<br>";

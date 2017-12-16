@@ -18,6 +18,11 @@ include('./config.php');
 		$sprofile3 = ($_POST['prof3']);
 		$sprofile4 = ($_POST['prof4']);
 		$sprofile5 = ($_POST['prof5']);
+		$sprofile6 = ($_POST['prof6']);
+		$sprofile7 = ($_POST['prof7']);
+		$sprofile8 = ($_POST['prof8']);
+		$sprofile9 = ($_POST['prof9']);
+		$sprofile10 = ($_POST['prof10']);
 		$sprice1 = ($_POST['harga1']);
 		$sprice2 = ($_POST['harga2']);
 		$sprice3 = ($_POST['harga3']);
@@ -27,6 +32,12 @@ include('./config.php');
 		$sprice7 = ($_POST['harga7']);
 		$sprice8 = ($_POST['harga8']);
 		$sprice9 = ($_POST['harga9']);
+		$sserv1 = ($_POST['serv1']);
+		$sserv2 = ($_POST['serv2']);
+		$sserv3 = ($_POST['serv3']);
+		$sserv4 = ($_POST['serv4']);
+		$sserv5 = ($_POST['serv5']);
+		$sserv6 = ($_POST['serv6']);
 		$sspeed1 = ($_POST['trtx1']);
 		$sspeed2 = ($_POST['trtx2']);
 		$sspeed3 = ($_POST['trtx3']);
@@ -78,6 +89,46 @@ include('./config.php');
 			}elseif (substr($active5, -1) == "d"){
 				$uactiv = substr($active5, 0,-1);
 				$suactive5t = $uactiv ."". $d;
+			}
+		$active6 = ($_POST['active6']);
+			if (substr($active6, -1) == "h"){
+				$uactiv = substr($active6, 0,-1);
+				$suactive6t = $uactiv ."". $h;
+			}elseif (substr($active6, -1) == "d"){
+				$uactiv = substr($active6, 0,-1);
+				$suactive6t = $uactiv ."". $d;
+			}
+		$active7 = ($_POST['active7']);
+			if (substr($active7, -1) == "h"){
+				$uactiv = substr($active7, 0,-1);
+				$suactive7t = $uactiv ."". $h;
+			}elseif (substr($active7, -1) == "d"){
+				$uactiv = substr($active7, 0,-1);
+				$suactive7t = $uactiv ."". $d;
+			}
+		$active8 = ($_POST['active8']);
+			if (substr($active8, -1) == "h"){
+				$uactiv = substr($active8, 0,-1);
+				$suactive8t = $uactiv ."". $h;
+			}elseif (substr($active8, -1) == "d"){
+				$uactiv = substr($active8, 0,-1);
+				$suactive8t = $uactiv ."". $d;
+			}
+		$active9 = ($_POST['active9']);
+			if (substr($active9, -1) == "h"){
+				$uactiv = substr($active9, 0,-1);
+				$suactive9t = $uactiv ."". $h;
+			}elseif (substr($active9, -1) == "d"){
+				$uactiv = substr($active9, 0,-1);
+				$suactive9t = $uactiv ."". $d;
+			}
+		$active10 = ($_POST['active10']);
+			if (substr($active10, -1) == "h"){
+				$uactiv = substr($active10, 0,-1);
+				$suactive10t = $uactiv ."". $h;
+			}elseif (substr($active10, -1) == "d"){
+				$uactiv = substr($active10, 0,-1);
+				$suactive10t = $uactiv ."". $d;
 			}
 // Title Durasi
 		$tlimit1 = ($_POST['durasi1']);
@@ -165,7 +216,7 @@ include('./config.php');
 			}
 		$my_file = 'config.php';
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-		$data = '<?php $reloadindex="'.$sreloadindex.'"; $iphost="'.$siphost.'"; $sshport="'.$ssshport.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $speed1="'.$sspeed1.'"; $speed2="'.$sspeed2.'"; $speed3="'.$sspeed3.'"; $speed4="'.$sspeed4.'"; $speed5="'.$sspeed5.'"; $speed6="'.$sspeed6.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
+		$data = '<?php $reloadindex="'.$sreloadindex.'"; $iphost="'.$siphost.'"; $sshport="'.$ssshport.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $profile6="'.$sprofile6.'"; $profile7="'.$sprofile7.'"; $profile8="'.$sprofile8.'"; $profile9="'.$sprofile9.'"; $profile10="'.$sprofile10.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $uactive6="'.$active6.'"; $uactive7="'.$active7.'"; $uactive8="'.$active8.'"; $uactive9="'.$active9.'"; $uactive10="'.$active10.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $vname6="'.$suactive6t.'"; $vname7="'.$suactive7t.'"; $vname8="'.$suactive8t.'"; $vname9="'.$suactive9t.'"; $vname10="'.$suactive10t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $server1="'.$sserv1.'"; $server2="'.$sserv2.'"; $server3="'.$sserv3.'"; $server4="'.$sserv4.'"; $server5="'.$sserv5.'"; $server6="'.$sserv6.'"; $speed1="'.$sspeed1.'"; $speed2="'.$sspeed2.'"; $speed3="'.$sspeed3.'"; $speed4="'.$sspeed4.'"; $speed5="'.$sspeed5.'"; $speed6="'.$sspeed6.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
 		fwrite($handle, $data);
 		header('Location: setup.php');
 	}
@@ -183,7 +234,7 @@ include('./config.php');
 table.tsetup { 
   margin-left:auto; 
   margin-right:auto;
-  width: 330px; 
+  width: 100%; 
   border-collapse: collapse; 
 }
 table.tsetup th { 
@@ -228,6 +279,7 @@ table.tsetup td {
 						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
 						<button class="material-icons" onclick="resetConfig()" title="Reset Config">history</button>
 						<button class="material-icons" onclick="location.href='conntest.php';" title="Tes Koneksi ke Mikrotik">settings_ethernet</button>
+						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 						<button class="material-icons"	onclick="window.open('https://github.com/laksa19/mikrotik-hotspot-monitor','_blank');" 	title="Check Update">system_update_alt</button>
 					</td>
@@ -253,8 +305,8 @@ table.tsetup td {
 						<th>PASSWORD</th>
 					</tr>
 					<tr>
-						<td><input type="text" size="12" maxlength="20" name="usermik" placeholder="User Mikrotik" value="<?php print_r($userhost);?>" required="1"/></td>
-						<td><input type="password" size="12" maxlength="100" name="passmik" placeholder="Password Mikrotik" value="<?php print_r($passwdhost);?>" required="1"/></td>
+						<td><input type="text" size="15" maxlength="20" name="usermik" placeholder="User Mikrotik" value="<?php print_r($userhost);?>" required="1"/></td>
+						<td><input type="password" size="15" maxlength="100" name="passmik" placeholder="Password Mikrotik" value="<?php print_r($passwdhost);?>" required="1"/></td>
 					</tr>
 				</table>
 				<br>
@@ -267,24 +319,44 @@ table.tsetup td {
 						<th>MASA AKTIF</th>
 					</tr>
 					<tr>
-						<td><input type="text" size="10" maxlength="20" name="prof1" placeholder="Profile1" value="<?php print_r($profile1);?>" required="1"/></td>
+						<td><input type="text" size="15" maxlength="20" name="prof1" placeholder="Profile1" value="<?php print_r($profile1);?>" required="1"/></td>
 						<td><input type="text" size="3" maxlength="3" name="active1" placeholder="Masa Aktif1" value="<?php print_r($uactive1);?>" required="1"/></td>
 					</tr>
 					<tr>
-						<td><input type="text" size="10" maxlength="20" name="prof2" placeholder="Profile2" value="<?php print_r($profile2);?>" required="1"/></td>
+						<td><input type="text" size="15" maxlength="20" name="prof2" placeholder="Profile2" value="<?php print_r($profile2);?>" required="1"/></td>
 						<td><input type="text" size="3" maxlength="3" name="active2" placeholder="Masa Aktif2" value="<?php print_r($uactive2);?>" required="1"/></td>
 					</tr>
 					<tr>
-						<td><input type="text" size="10" maxlength="20" name="prof3" placeholder="Profile3" value="<?php print_r($profile3);?>" required="1"/></td>
+						<td><input type="text" size="15" maxlength="20" name="prof3" placeholder="Profile3" value="<?php print_r($profile3);?>" required="1"/></td>
 						<td><input type="text" size="3" maxlength="3" name="active3" placeholder="Masa Aktif3" value="<?php print_r($uactive3);?>" required="1"/></td>
 					</tr>
 					<tr>
-						<td><input type="text" size="10" maxlength="20" name="prof4" placeholder="Profile4" value="<?php print_r($profile4);?>" required="1"/></td>
+						<td><input type="text" size="15" maxlength="20" name="prof4" placeholder="Profile4" value="<?php print_r($profile4);?>" required="1"/></td>
 						<td><input type="text" size="3" maxlength="3" name="active4" placeholder="Masa Aktif4" value="<?php print_r($uactive4);?>" required="1"/></td>
 					</tr>
 					<tr>
-						<td><input type="text" size="10" maxlength="20" name="prof5" placeholder="Profile5" value="<?php print_r($profile5);?>" required="1"/></td>
+						<td><input type="text" size="15" maxlength="20" name="prof5" placeholder="Profile5" value="<?php print_r($profile5);?>" required="1"/></td>
 						<td><input type="text" size="3" maxlength="3" name="active5" placeholder="Masa Aktif5" value="<?php print_r($uactive5);?>" required="1"/></td>
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof6" placeholder="Profile6" value="<?php print_r($profile6);?>" required="1"/></td>
+						<td><input type="text" size="3" maxlength="3" name="active6" placeholder="Masa Aktif6" value="<?php print_r($uactive6);?>" required="1"/></td>
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof7" placeholder="Profile7" value="<?php print_r($profile7);?>" required="1"/></td>
+						<td><input type="text" size="3" maxlength="3" name="active7" placeholder="Masa Aktif7" value="<?php print_r($uactive7);?>" required="1"/></td>
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof8" placeholder="Profile8" value="<?php print_r($profile8);?>" required="1"/></td>
+						<td><input type="text" size="3" maxlength="3" name="active8" placeholder="Masa Aktif8" value="<?php print_r($uactive8);?>" required="1"/></td>
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof9" placeholder="Profile9" value="<?php print_r($profile9);?>" required="1"/></td>
+						<td><input type="text" size="3" maxlength="3" name="active9" placeholder="Masa Aktif9" value="<?php print_r($uactive9);?>" required="1"/></td>
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof10" placeholder="Profile10" value="<?php print_r($profile10);?>" required="1"/></td>
+						<td><input type="text" size="3" maxlength="3" name="active10" placeholder="Masa Aktif10" value="<?php print_r($uactive10);?>" required="1"/></td>
 					</tr>
 					<tr>
 						<td colspan=2>*Nama Profile dan Masa Aktif dibuat linier. Contoh: Profile 3Jam, Masa Aktif 3h (h=jam d=hari)</td>
@@ -293,14 +365,21 @@ table.tsetup td {
 				<br>
 				<table class="tsetup" align="center"  >
 					<tr>
-						<th>RATE LIMIT PROFILE UP/DOWN</th>
+						<th>SERVER HOTSPOT</th>
+						<th>RATE LIMIT UP/DOWN</th>
 					</tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="trtx1" placeholder="Upload/Download1" value="<?php print_r($speed1);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="trtx2" placeholder="Upload/Download2" value="<?php print_r($speed2);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="trtx3" placeholder="Upload/Download3" value="<?php print_r($speed3);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="trtx4" placeholder="Upload/Download4" value="<?php print_r($speed4);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="trtx5" placeholder="Upload/Download5" value="<?php print_r($speed5);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="trtx6" placeholder="Upload/Download5" value="<?php print_r($speed6);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="serv1" placeholder="Server Hotspot1" value="<?php print_r($server1);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="trtx1" placeholder="Upload/Download1" value="<?php print_r($speed1);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="serv2" placeholder="Server Hotspot2" value="<?php print_r($server2);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="trtx2" placeholder="Upload/Download2" value="<?php print_r($speed2);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="serv3" placeholder="Server Hotspot3" value="<?php print_r($server3);?>" required="1"/></td>
+					<td><input type="text" size="15"  axlength="20" name="trtx3" placeholder="Upload/Download3" value="<?php print_r($speed3);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="serv4" placeholder="Server Hotspot4" value="<?php print_r($server4);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="trtx4" placeholder="Upload/Download4" value="<?php print_r($speed4);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="serv5" placeholder="Server Hotspot5" value="<?php print_r($server5);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="trtx5" placeholder="Upload/Download5" value="<?php print_r($speed5);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="serv6" placeholder="Server Hotspot6" value="<?php print_r($server6);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="trtx6" placeholder="Upload/Download5" value="<?php print_r($speed6);?>" required="1"/></td></tr>
 					</tr>
 				</table>
 				<br>

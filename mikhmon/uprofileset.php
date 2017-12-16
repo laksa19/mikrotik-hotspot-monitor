@@ -42,6 +42,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				<tr>
 					<td colspan=2>
 						<button class="material-icons" onclick="location.href='uprofileset.php';" title="Reload">autorenew</button>
+						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
 						<button class="material-icons" onclick="location.href='./uprofilerm.php';" title="Delete User Profile">delete</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<div class="dropdown" style="float:right;">
@@ -70,6 +71,11 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 							<option value=<?php print_r($profile3);?>><?php print_r($profile3);?></option>
 							<option value=<?php print_r($profile4);?>><?php print_r($profile4);?></option>
 							<option value=<?php print_r($profile5);?>><?php print_r($profile5);?></option>
+							<option value=<?php print_r($profile6);?>><?php print_r($profile6);?></option>
+							<option value=<?php print_r($profile7);?>><?php print_r($profile7);?></option>
+							<option value=<?php print_r($profile8);?>><?php print_r($profile8);?></option>
+							<option value=<?php print_r($profile9);?>><?php print_r($profile9);?></option>
+							<option value=<?php print_r($profile10);?>><?php print_r($profile10);?></option>
 						</select>
 					</td></tr>
 					<!--<tr><td>Masa Aktif</td><td>:</td><td>
@@ -115,6 +121,16 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				$exptime = $uactive4;
 			}elseif ($uprofile == $profile5){
 				$exptime = $uactive5;
+			}elseif ($uprofile == $profile6){
+				$exptime = $uactive6;
+			}elseif ($uprofile == $profile7){
+				$exptime = $uactive7;
+			}elseif ($uprofile == $profile8){
+				$exptime = $uactive8;
+			}elseif ($uprofile == $profile9){
+				$exptime = $uactive9;
+			}elseif ($uprofile == $profile10){
+				$exptime = $uactive10;
 			}else {
 				$exptime= "";
 			}
