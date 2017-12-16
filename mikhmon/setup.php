@@ -32,6 +32,7 @@ include('./config.php');
 		$sprice7 = ($_POST['harga7']);
 		$sprice8 = ($_POST['harga8']);
 		$sprice9 = ($_POST['harga9']);
+		$sprice10 = ($_POST['harga10']);
 		$sserv1 = ($_POST['serv1']);
 		$sserv2 = ($_POST['serv2']);
 		$sserv3 = ($_POST['serv3']);
@@ -216,7 +217,7 @@ include('./config.php');
 			}
 		$my_file = 'config.php';
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-		$data = '<?php $reloadindex="'.$sreloadindex.'"; $iphost="'.$siphost.'"; $sshport="'.$ssshport.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $profile6="'.$sprofile6.'"; $profile7="'.$sprofile7.'"; $profile8="'.$sprofile8.'"; $profile9="'.$sprofile9.'"; $profile10="'.$sprofile10.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $uactive6="'.$active6.'"; $uactive7="'.$active7.'"; $uactive8="'.$active8.'"; $uactive9="'.$active9.'"; $uactive10="'.$active10.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $vname6="'.$suactive6t.'"; $vname7="'.$suactive7t.'"; $vname8="'.$suactive8t.'"; $vname9="'.$suactive9t.'"; $vname10="'.$suactive10t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $server1="'.$sserv1.'"; $server2="'.$sserv2.'"; $server3="'.$sserv3.'"; $server4="'.$sserv4.'"; $server5="'.$sserv5.'"; $server6="'.$sserv6.'"; $speed1="'.$sspeed1.'"; $speed2="'.$sspeed2.'"; $speed3="'.$sspeed3.'"; $speed4="'.$sspeed4.'"; $speed5="'.$sspeed5.'"; $speed6="'.$sspeed6.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
+		$data = '<?php $reloadindex="'.$sreloadindex.'"; $iphost="'.$siphost.'"; $sshport="'.$ssshport.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $profile6="'.$sprofile6.'"; $profile7="'.$sprofile7.'"; $profile8="'.$sprofile8.'"; $profile9="'.$sprofile9.'"; $profile10="'.$sprofile10.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $uactive6="'.$active6.'"; $uactive7="'.$active7.'"; $uactive8="'.$active8.'"; $uactive9="'.$active9.'"; $uactive10="'.$active10.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $vname6="'.$suactive6t.'"; $vname7="'.$suactive7t.'"; $vname8="'.$suactive8t.'"; $vname9="'.$suactive9t.'"; $vname10="'.$suactive10t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $price10="'.$sprice10.'"; $server1="'.$sserv1.'"; $server2="'.$sserv2.'"; $server3="'.$sserv3.'"; $server4="'.$sserv4.'"; $server5="'.$sserv5.'"; $server6="'.$sserv6.'"; $speed1="'.$sspeed1.'"; $speed2="'.$sspeed2.'"; $speed3="'.$sspeed3.'"; $speed4="'.$sspeed4.'"; $speed5="'.$sspeed5.'"; $speed6="'.$sspeed6.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
 		fwrite($handle, $data);
 		header('Location: setup.php');
 	}
@@ -419,17 +420,18 @@ table.tsetup td {
 				<br>
 				<table class="tsetup" align="center"  >
 					<tr>
-						<th>HARGA VOUCHER</th>
+						<th colspan=2 >HARGA VOUCHER</th>
 					</tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="harga1" placeholder="Harga Voucher1" value="<?php print_r($price1);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="harga2" placeholder="Harga Voucher2" value="<?php print_r($price2);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="harga3" placeholder="Harga Voucher3" value="<?php print_r($price3);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="harga4" placeholder="Harga Voucher4" value="<?php print_r($price4);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="harga5" placeholder="Harga Voucher5" value="<?php print_r($price5);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="harga6" placeholder="Harga Voucher6" value="<?php print_r($price6);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="harga7" placeholder="Harga Voucher7" value="<?php print_r($price7);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="harga8" placeholder="Harga Voucher8" value="<?php print_r($price8);?>" required="1"/></td></tr>
-					<tr><td><input type="text" size="30" maxlength="20" name="harga9" placeholder="Harga Voucher9" value="<?php print_r($price9);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="harga1" placeholder="Harga Voucher1" value="<?php print_r($price1);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="harga2" placeholder="Harga Voucher2" value="<?php print_r($price2);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="harga3" placeholder="Harga Voucher3" value="<?php print_r($price3);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="harga4" placeholder="Harga Voucher4" value="<?php print_r($price4);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="harga5" placeholder="Harga Voucher5" value="<?php print_r($price5);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="harga6" placeholder="Harga Voucher6" value="<?php print_r($price6);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="harga7" placeholder="Harga Voucher7" value="<?php print_r($price7);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="harga8" placeholder="Harga Voucher8" value="<?php print_r($price8);?>" required="1"/></td></tr>
+					<tr><td><input type="text" size="15" maxlength="20" name="harga9" placeholder="Harga Voucher9" value="<?php print_r($price9);?>" required="1"/></td>
+					<td><input type="text" size="15" maxlength="20" name="harga10" placeholder="Harga Voucher10" value="<?php print_r($price10);?>" required="1"/></td></tr>
 					</tr>
 				</table>
 				<br>

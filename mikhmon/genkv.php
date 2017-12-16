@@ -146,6 +146,7 @@ table.tuserb td {
 							<option value=<?php print_r($price7);?>><?php print_r($price7);?></option>
 							<option value=<?php print_r($price8);?>><?php print_r($price8);?></option>
 							<option value=<?php print_r($price9);?>><?php print_r($price9);?></option>
+							<option value=<?php print_r($price10);?>><?php print_r($price10);?></option>
 						</select>
 						</td>
 					</tr>
