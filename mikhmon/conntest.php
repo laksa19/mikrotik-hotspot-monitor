@@ -44,6 +44,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
+						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 					</td>
 				</tr>
 			</table>
