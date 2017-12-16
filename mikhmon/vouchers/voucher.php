@@ -1,1 +1,1 @@
-<?php $user1="RINGUV";$pass1="942885";$vprofname="Voucher30Hari";$vptimelimit="Durasi:12Jam"; $vpbytelimit="Kuota:5GB"; $vprice="Rp50.000"; ?>
+<?php $user1="PKKG9725";$pass1="PKKG9725";$vprofname="VIP1Hari";$vptimelimit=""; $vpbytelimit=""; $vprice="Rp1.000"; ?>
