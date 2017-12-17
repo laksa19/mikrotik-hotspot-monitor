@@ -184,6 +184,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			<table class="tprint" >
 				<tr>
 					<th >User</th>
+					<th >Server</th>
 					<th >IP</th>
 					<th >Uptime</th>
 					</tr>
@@ -193,6 +194,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 								$TotalReg = count($ARRAY);
 
 										for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY[$i];echo "" . $regtable['user'] . "<br />";}echo "</td><td>";
+										for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY[$i];echo "" . $regtable['server'] . "<br />";}echo "</td><td>";
 										for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY[$i];echo "" . $regtable['address'] . "<br />";}echo "</td><td>";
 										for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY[$i];echo "" . $regtable['uptime'] . "<br />";}echo "</td>";
 							?>
