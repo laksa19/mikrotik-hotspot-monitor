@@ -1,5 +1,5 @@
 # MIKROTIK HOTSPOT MONITOR (MIKHMON)
-Mikrotik Hotspot Monitor adalah aplikasi berbasis PHP untuk menggantikan User Manager yang tidak didukung dibeberapa tipe RB Mikrotik.
+Mikrotik Hotspot Monitor adalah aplikasi web berbasis PHP untuk menggantikan User Manager yang tidak didukung dibeberapa tipe RB Mikrotik.
 
 ## TENTANG  
 
@@ -61,9 +61,11 @@ Mikrotik Hotspot Monitor adalah aplikasi berbasis PHP untuk menggantikan User Ma
 30-12-2017
     
     1. Full menggunakan RouterOS API (Tidak memerlukan koneksi SSH lagi).
-    2. Perbaikan di generate voucher
-    3. Perbaikan di cetak voucher
-    4. Perbaikan laman status (untuk cek masa aktif voucher)
+    2. Perbaikan di generate voucher.
+    3. Perbaikan di cetak voucher.
+    4. Perbaikan Setup.
+    5. Perbaikan laman dashboard.
+    6. Perbaikan laman status (untuk cek masa aktif voucher)
 
 ### Versi Lama
 
