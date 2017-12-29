@@ -71,106 +71,101 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 30-12-2017
     
-    1. Full menggunakan RouterOS API (Tidak memerlukan koneksi SSH lagi).
-    2. Perbaikan di generate voucher.
-    3. Perbaikan di cetak voucher.
-    4. Perbaikan Setup.
-    5. Perbaikan laman dashboard.
-    6. Perbaikan laman status (untuk cek masa aktif voucher)
+   1. Full menggunakan RouterOS API (Tidak memerlukan koneksi SSH lagi).
+   2. Perbaikan di generate voucher.
+   3. Perbaikan di cetak voucher.
+   4. Perbaikan Setup.
+   5. Perbaikan laman dashboard.
+   6. Perbaikan laman status (untuk cek masa aktif voucher)
 
 ### Versi Lama
 
 16-12-2017
 
-    1. Penambahan 5 profile, total 10 profile yang bisa digunakan untuk berbagai macam paket hotspot wifi.
-    2. Penambahan kolom server hotspot ditiap form generate voucher, 
-    ini memungkinkan untuk membuat voucher atau user hotspot dengan batasan server hotspot. 
-    Jadi voucher hanya bisa digunakan di server hotspot tertentu. 
-    Catatan: Sesuaikan nama server  hotspot Mikrotik di laman setup mikhmon.
-    3. Perbaikan tampilan desktop, kini dibuat lebih lebar untuk tampilan desktop 
-    dan menyesuakan layar saat digunakan di Android.
-    4. Perubahan laman dashboard, Header tabel sisa voucher sekarang menggunakan nama profile, 
-    bertujuan untuk memudahkan admin mengenali sisa voucher.
+   1. Penambahan 5 profile, total 10 profile yang bisa digunakan untuk berbagai macam paket hotspot wifi.
+   2. Penambahan kolom server hotspot ditiap form generate voucher, ini memungkinkan untuk membuat voucher atau user hotspot dengan batasan server hotspot. Jadi voucher hanya bisa digunakan di server hotspot tertentu. Catatan: Sesuaikan nama server  hotspot Mikrotik di laman setup mikhmon.
+   3. Perbaikan tampilan desktop, kini dibuat lebih lebar untuk tampilan desktop dan menyesuakan layar saat digunakan di Android.
+   4. Perubahan laman dashboard, Header tabel sisa voucher sekarang menggunakan nama profile, bertujuan untuk memudahkan admin mengenali sisa voucher.
 
 29-11-2017
 
-    Perbaikan form setup, konfirmasi pada saat reset config.
+   Perbaikan form setup, konfirmasi pada saat reset config.
 
 28-11-2017
 
-    1. Penambahan form Log Hotspot.
-    2. Penambahan form History Remove User, untuk melacak user yang telah dihapus.
+   1. Penambahan form Log Hotspot.
+   2. Penambahan form History Remove User, untuk melacak user yang telah dihapus.
 
 26-11-2017
 
-    1. Update setting warna voucher agar tetap menyimpan settingan sebelumnya.
-    2. Penambahan cetak di setiap form generate 1 voucher.
+   1. Update setting warna voucher agar tetap menyimpan settingan sebelumnya.
+   2. Penambahan cetak di setiap form generate 1 voucher.
    
 21-11-2017
 
-    1. Drop operator dan perbaikan resetconfig.
-    2. Add Remove DNS Static untuk blok website.
+   1. Drop operator dan perbaikan resetconfig.
+   2. Add Remove DNS Static untuk blok website.
    
 10-11-2017
 
-    Penambahan generate user password manual input. 
+   Penambahan generate user password manual input. (Perubahan di mikhmon: index.php, genkv.php, genkvs.php, genupm.php, genvoucher.php, genvouchers.php, profileadd.php, profilerm.php, profileset.php, vcolorconf.php).
 
 09-11-2017
 
-    Perubahan struktur menu.
+   Perubahan struktur menu.
 
 07-11-2017
 
-    Perbaikan tamplate hotspot. Penjelasan dibagian [PENGGUNAAN](https://github.com/laksa19/mikrotik-hotspot-monitor#penggunaan) poin 6.
+   Perbaikan tamplate hotspot. Penjelasan dibagian [PENGGUNAAN](https://github.com/laksa19/mikrotik-hotspot-monitor#penggunaan) poin 6.
 
 05-11-2017
 
-    Penambahan laman status untuk cek masa aktif vouvher pelanggan. 
+   Penambahan laman status untuk cek masa aktif vouvher pelanggan. (Perubahan di status: index.php, api.php).
 
 04-11-2017
 
-    1. Penambahan fitur ganerate kode voucher, jadi pelanggan hanya memasukkan kode login saja untuk login. 
-    2. Upload template hotspot untuk mendukung login menggunakan kode voucher.
+   1. Penambahan fitur ganerate kode voucher, jadi pelanggan hanya memasukkan kode login saja untuk login. (Perubahan di mikhmon: index.php, file baru: genkv.php, genkvs.php, kvouchers.php, printkvs.php).
+   2. Upload template hotspot untuk mendukung login menggunakan kode voucher.
 
 28-10-2017
 
-    1. Perbaikan di file setup.php.
-    2. Penambahan jam Mikrotik, untuk mengetahui apakah jam di Mikrotik sudah sesuai. (Perubahan: index.php).
+   1. Perbaikan di file setup.php.
+   2. Penambahan jam Mikrotik, untuk mengetahui apakah jam di Mikrotik sudah sesuai. (Perubahan: index.php).
 
 10-10-2017
 
-    Penambahan form untuk pengaturan warna di cetak voucher. 
+   Penambahan form untuk pengaturan warna di cetak voucher (Perubahan: printv.php, genvouchers.php, vcolorconf.php, vcolors.php).
 
 09-10-2017
 
-    Perbaikan Setup (perubahan : index.php, setup.php).
+   Perbaikan Setup (perubahan : index.php, setup.php).
 
 07-10-2017
 
-    1. Menambahkan opsi untuk auto reload laman index
-    2. Perbaikan dan penambahan setup aplikasi 
+   1. Menambahkan opsi untuk auto reload laman index (perubahan: index.php).
+   2. Perbaikan dan penambahan setup aplikasi (perubahan : config.php, login.php, setup.php, conntest.php, resetconfig.php).
 
 06-10-2017
 
-    Menambahkan hak akses user :  1. Administrator,  2. Operator.
+   Menambahkan hak akses user :  1. Administrator,  2. Operator.
    
 05-10-2017
 
-    1. Penambahan setup.php untuk memudahkan edit file config.php
-    2. Penambahan halaman login.
-    3. Beberapa penyesuaian lainnya.  
+  1. Penambahan setup.php untuk memudahkan edit file config.php
+  2. Penambahan halaman login.
+  3. Beberapa penyesuaian lainnya.  
   
 04-10-2017
 
-    1. Penyesuaian config.php
-    2. Penyesuaian index.php
-    3. Penambahan User Lists, sekarang menjadi 5
-    4. Penyederhanaan pembuatan Profile
-    5. Penambahan fitur pada generate voucher
+  1. Penyesuaian config.php
+  2. Penyesuaian index.php
+  3. Penambahan User Lists, sekarang menjadi 5
+  4. Penyederhanaan pembuatan Profile
+  5. Penambahan fitur pada generate voucher
        - Batasan Durasi (Limit Uptime)
        - Batasan Kuota (Limit Bytes Out)
-    6. Penyesuaian cetak voucher
+  6. Penyesuaian cetak voucher
 
 03-10-2017
 
-    1. Upload pertama.
+  1. Upload pertama.
