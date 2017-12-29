@@ -83,9 +83,14 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 16-12-2017
 
     1. Penambahan 5 profile, total 10 profile yang bisa digunakan untuk berbagai macam paket hotspot wifi.
-    2. Penambahan kolom server hotspot ditiap form generate voucher, ini memungkinkan untuk membuat voucher atau user hotspot dengan batasan server hotspot. Jadi voucher hanya bisa digunakan di server hotspot tertentu. Catatan: Sesuaikan nama server  hotspot Mikrotik di laman setup mikhmon.
-    3. Perbaikan tampilan desktop, kini dibuat lebih lebar untuk tampilan desktop dan menyesuakan layar saat digunakan di Android.
-    4. Perubahan laman dashboard, Header tabel sisa voucher sekarang menggunakan nama profile, bertujuan untuk memudahkan admin mengenali sisa voucher.
+    2. Penambahan kolom server hotspot ditiap form generate voucher, 
+    ini memungkinkan untuk membuat voucher atau user hotspot dengan batasan server hotspot. 
+    Jadi voucher hanya bisa digunakan di server hotspot tertentu. 
+    Catatan: Sesuaikan nama server  hotspot Mikrotik di laman setup mikhmon.
+    3. Perbaikan tampilan desktop, kini dibuat lebih lebar untuk tampilan desktop 
+    dan menyesuakan layar saat digunakan di Android.
+    4. Perubahan laman dashboard, Header tabel sisa voucher sekarang menggunakan nama profile, 
+    bertujuan untuk memudahkan admin mengenali sisa voucher.
 
 29-11-2017
 
@@ -108,7 +113,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
    
 10-11-2017
 
-    Penambahan generate user password manual input. (Perubahan di mikhmon: index.php, genkv.php, genkvs.php, genupm.php, genvoucher.php, genvouchers.php, profileadd.php, profilerm.php, profileset.php, vcolorconf.php).
+    Penambahan generate user password manual input. 
 
 09-11-2017
 
@@ -120,11 +125,11 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 05-11-2017
 
-    Penambahan laman status untuk cek masa aktif vouvher pelanggan. (Perubahan di status: index.php, api.php).
+    Penambahan laman status untuk cek masa aktif vouvher pelanggan. 
 
 04-11-2017
 
-    1. Penambahan fitur ganerate kode voucher, jadi pelanggan hanya memasukkan kode login saja untuk login. (Perubahan di mikhmon: index.php, file baru: genkv.php, genkvs.php, kvouchers.php, printkvs.php).
+    1. Penambahan fitur ganerate kode voucher, jadi pelanggan hanya memasukkan kode login saja untuk login. 
     2. Upload template hotspot untuk mendukung login menggunakan kode voucher.
 
 28-10-2017
@@ -134,7 +139,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 10-10-2017
 
-    Penambahan form untuk pengaturan warna di cetak voucher (Perubahan: printv.php, genvouchers.php, vcolorconf.php, vcolors.php).
+    Penambahan form untuk pengaturan warna di cetak voucher. 
 
 09-10-2017
 
@@ -142,8 +147,8 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 07-10-2017
 
-    1. Menambahkan opsi untuk auto reload laman index (perubahan: index.php).
-    2. Perbaikan dan penambahan setup aplikasi (perubahan : config.php, login.php, setup.php, conntest.php, resetconfig.php).
+    1. Menambahkan opsi untuk auto reload laman index
+    2. Perbaikan dan penambahan setup aplikasi 
 
 06-10-2017
 
