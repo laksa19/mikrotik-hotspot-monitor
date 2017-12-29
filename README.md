@@ -22,7 +22,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
     - Generate User Password.
     - Generate Custom User Password.
     
-    (Generate Kode Voucher/User Password maksimal 99)
+    (Generate Kode Voucher/User Password maksimal 99 untuk sekali generate)
 8. Cetak Voucher. (Ukuran kertas A4 atau F4)
 9. Custom warna Voucher
 10. Menghapus otomatis user hotspot expired.
