@@ -72,7 +72,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 29-12-2017
     
    1. Full menggunakan RouterOS API (Tidak memerlukan koneksi SSH lagi).
-   2. Perbaikan di generate voucher.
+   2. Perbaikan di generate voucher. (custom jumlah voucher 1-99 untuk sekali generate).
    3. Perbaikan di cetak voucher.
    4. Perbaikan Setup.
    5. Perbaikan laman dashboard.
