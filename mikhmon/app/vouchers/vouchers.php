@@ -1,0 +1,1 @@
+<?php $vkkv="VIP1Hari12.21.17"; $vserver="hotspot1"; $vprofname="1Hari"; $uptimelimit="10h"; $upbytelimit="10000000000"; $vprice="Rp3.000"; ?>

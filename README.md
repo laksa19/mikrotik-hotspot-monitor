@@ -1,75 +1,84 @@
-# MIKROTIK HOTSPOT MONITOR
-Mikrotik Hotspot Monitor adalah aplikasi berbasis PHP untuk menggantikan User Manager yang tidak didukung dibeberapa tipe RB Mikrotik.
+# MIKROTIK HOTSPOT MONITOR (MIKHMON)
+Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager yang tidak didukung dibeberapa tipe RB Mikrotik.
 
 ## TENTANG  
 
-1. Aplikasi ini menggunakan dua koneksi ke Mikrotik
+1. Aplikasi ini menggunakan port API untuk terhubung ke Mikrotik
     - API port 8728 
       ([routeros-api](https://wiki.mikrotik.com/wiki/API_PHP_class))
-    - SSH port 2219 disarankan untuk mengganti port default ssh di Mikrotik Anda. 
-      ([phpseclib MIT-licensed](http://phpseclib.sourceforge.net/ssh/intro.html))
 
-2. Pastikan Jam dan Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Dan isi Rate Limit pada User Profile "default". Untuk pengaturan Jam dan Tanggal bisa baca [di sini](http://www.mikrotik.co.id/artikel_lihat.php?id=55).
+2. Pastikan port API sudah aktif dan Jam Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Untuk pengaturan Jam dan Tanggal bisa baca [di sini](http://www.mikrotik.co.id/artikel_lihat.php?id=55).
 
-3. Khusus untuk yang masih menggunakan RouterOS versi 5, edit file uprofileadd.php, cari line 119 hapus "add-mac-cookie=no" kemudian simpan.
+3. RouterOS yang didukung versi 6.3+
 
 ## FITUR  
-
-1. Menampilkan User Hotspot yang aktif dan masa aktifnya.
-2. Membuat, edit dan hapus User Profile.
-3. Menampilkan User Hotspot berdasarkan User Profile.
-4. Menghapus User Hotspot berdasarkan Username.
-5. Generate 1 Voucher.
-6. Generate 21 Voucher.
-7. Cetak Voucher. *Sebaiknya menggunakan kertas A4.
-8. Custom warna Voucher
-9. Add Remove DNS Static untuk blok website.
-
-## MANAGEMEN USER
-
-Jangan khawatir dengan user yang dibuat dari aplikasi ini akan terus menumpuk, karena setiap user yang masa aktifnya sudah habis akan terhapus secara otomatis. Ini bekerja berkat script (on login script) yang ditambahkan pada setiap User Profile. Penjelasannya, ketika user login maka user akan membuat jadwal penghapusan sendiri di scheduler. Penghapusan tersebut mencakup penghapusan user dari daftar Users, Active, dan penghapusan di Scheduler. Dengan ini maka tidak perlu lagi melakukan kontrol terhadap user yang sudah habis masa aktifnya. 
-
+1. Multi platform (Windows, GNU/Linux, Android)
+2. Menampilkan User Hotspot yang aktif dan masa aktifnya.
+3. Menambah, edit dan hapus User Profile.
+4. Menampilkan daftar User Hotspot berdasarkan User Profile.
+5. Menghapus User Hotspot berdasarkan Username.
+6. Generate Voucher.
+    - Generate Kode Voucher.
+    - Generate User Password.
+    - Generate Custom User Password.
+    
+    (Generate Kode Voucher/User Password maksimal 99)
+8. Cetak Voucher. (Ukuran kertas A4 atau F4)
+9. Custom warna Voucher
+10. Menghapus otomatis user hotspot expired.
+10. Tools :
+    - Add Remove DNS Static untuk blok website.
+    - Log Mikrotik
+    - History
+    
 ## PENGGUNAAN  
-1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP minimum versi 5.3.0 *Belum support PHP v7.
+1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP.
 
     Download web server :
-    
-    * Android Web Server : 
-      - [PlayStore Bit Web Server](https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en "Bit Web Server") (berbayar)
-      - [allfreeapk.com Bit Web Server](https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma "Bit Web Server") (gratis)
-    * Windows [USBWebserver](http://www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip "USBWebserver")
-
-2. Untuk pertama kali Anda perlu menyesuaikan konfigurasi pada laman setup, dengan login terlebih dahulu
-   menggunakan akun default. 
-   
-   http://localhost/mikhmon/login.php atau http://localhost:8080/mikhmon/login.php
-   
-      - Username : admin 
-      - Password : 1234
+    - Windows Web Server [USBWebserver](http://www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip "USBWebserver")
+    - Android Web Server [PlayStore Bit Web Server](https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en "Bit Web Server") (berbayar), [allfreeapk.com Bit Web Server](https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma "Bit Web Server") (gratis)
     
-3. Selanjutnya test koneksi ke Mikrotik, klik tombol tes koneksi (<--->) yaitu tombol kedua dari kiri. Jika koneksi gagal, maka akan muncul notifikasi error (ciri-ciri koneksi gagal, laman dimuat lebih dari 30 detik). Kembali ke laman setup dan sesuaikan kembali konfigurasi Anda.
 
-4. Beberapa video untuk panduan.
+2. Install Web Server
 
-     - [Google Drive video panduan install di Windows](https://drive.google.com/open?id=0B-nJrksLMgOzUXdFNlp2dVdXQkU "Panduan Install di Windows")
-     - [YouTube video by Laksa19 panduan install di Windows](https://www.youtube.com/watch?v=k-mbO-7Yuck "Panduan Install di Windows")
-     - [YouTube video by Rizki Ari panduan install di Windows](https://www.youtube.com/watch?v=SyX5qRcNyj8 "Panduan Install di Windows")
-     - [YouTube video by Rizki Ari Panduan Install di Android](https://www.youtube.com/watch?v=EInXupzwJAI "Panduan Install di Android")
+    Web Server Windows
+    - Download USBWebserver, buat folder webserver di drive D:, extract USBWebserver ke folder tersebut.
+    - Download Mikrotik Hotspot Monitor, extract folder mikhmon ke folder root webserver.
+    - Jalankan USBWebserver kemudian buka di browser http://localhost:8080/mikhmon/
+    
+    Web Server Android
+    - Download Bit Web Server, install di Android.
+    - Download Mikrotik Hotspot Monitor, extract folder mikhmon ke folder www memory internal Android.
+    - Jalankan Bit Web Server kemudian buka di browser http://localhost:8080/mikhmon/
+    
+3. Login dengan user admin Mikhmon (user: admin | pass:  1234).
 
-5. Penggunaan laman status untuk cek masa aktif voucher. (Catatan laman status memerlukan web server yang aktif terus agar user bisa akses setiap saat).
-     - Edit file index.php pada folder status, sesuaikan pada line 84 (ip mikrotik, user dan password).
-     - Buka port di walled garden, agar user bisa akses tanpa harus login erlebih dahulu.
+4. Sesuaikan User Profile, nama usaha harga voucher di laman setup.
+
+5. Tambahkan User Profile ke Mikrotik dari aplikasi Mikhmon. Seelah itu aplikasi siap untuk generate voucher.
+
+    Tutorial lebih lengkap kunungi [laksa19.github.io](http://laksa19.github.io/)
 
 6. Template hotspot.
      - Logo hotspot dapat diganti dengan format (logo.png) yang diletakkan di folder "img".
      - Edit file "paket-wifi.csv" untuk menampilkan daftar paket wifi.
      
-7. Update aplikasi.
-     - Rename folder mikhmon yang lama.
-     - Download dan extract folder mikhmon ke web server.
-     - Copy config.php dari folder mikhmon yang sudah di raname, kemudian paste di folder mikhmon yang baru.
+
 
 ## Changelog 
+
+### Versi Baru
+
+30-12-2017
+    
+   1. Full menggunakan RouterOS API (Tidak memerlukan koneksi SSH lagi).
+   2. Perbaikan di generate voucher.
+   3. Perbaikan di cetak voucher.
+   4. Perbaikan Setup.
+   5. Perbaikan laman dashboard.
+   6. Perbaikan laman status (untuk cek masa aktif voucher)
+
+### Versi Lama 2017
 
 16-12-2017
 

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=mikhmon-server
+Comment=Mikrotik Hotspot Monitor
+Exec=mikhmon-server
+Icon=web-browser
+Terminal=true
+Type=Application
+Categories=Network;
+MimeType=text/html;text/xml;application/xhtml+xml;
