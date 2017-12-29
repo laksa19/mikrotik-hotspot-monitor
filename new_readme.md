@@ -1,5 +1,5 @@
 # MIKROTIK HOTSPOT MONITOR (MIKHMON)
-Mikrotik Hotspot Monitor adalah aplikasi web berbasis PHP untuk menggantikan User Manager yang tidak didukung dibeberapa tipe RB Mikrotik.
+Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager yang tidak didukung dibeberapa tipe RB Mikrotik.
 
 ## TENTANG  
 
@@ -7,7 +7,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web berbasis PHP untuk menggantikan Use
     - API port 8728 
       ([routeros-api](https://wiki.mikrotik.com/wiki/API_PHP_class))
 
-2. Pastikan Jam dan Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Untuk pengaturan Jam dan Tanggal bisa baca [di sini](http://www.mikrotik.co.id/artikel_lihat.php?id=55).
+2. Pastikan port API sudah aktif dan Jam Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Untuk pengaturan Jam dan Tanggal bisa baca [di sini](http://www.mikrotik.co.id/artikel_lihat.php?id=55).
 
 3. RouterOS yang didukung versi 6.3+
 
@@ -21,6 +21,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web berbasis PHP untuk menggantikan Use
     - Generate Kode Voucher.
     - Generate User Password.
     - Generate Custom User Password.
+    
     (Generate Kode Voucher/User Password maksimal 99)
 8. Cetak Voucher. (Ukuran kertas A4 atau F4)
 9. Custom warna Voucher
@@ -40,15 +41,25 @@ Mikrotik Hotspot Monitor adalah aplikasi web berbasis PHP untuk menggantikan Use
       - [allfreeapk.com Bit Web Server](https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma "Bit Web Server") (gratis)
     * Windows [USBWebserver](http://www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip "USBWebserver")
 
-2. Jalankan Web Server kemudian buka di browser  
-   
-   http://localhost/mikhmon/ atau http://localhost:8080/mikhmon/
+2. Install Web Server
+
+    Web Server Windows
+    - Download USBWebserver, buat folder webserver di drive D:, extract USBWebserver ke folder tersebut.
+    - Download Mikrotik Hotspot Monitor, extract folder mikhmon ke folder root webserver.
+    - Jalankan USBWebserver kemudian buka di browser http://localhost:8080/mikhmon/
+    
+    Web Server Android
+    - Download Bit Web Server, install di Android.
+    - Download Mikrotik Hotspot Monitor, extract folder mikhmon ke folder www memory internal Android.
+    - Jalankan Bit Web Server kemudian buka di browser http://localhost:8080/mikhmon/
     
 3. Login dengan user admin Mikhmon (user: admin | pass:  1234).
 
 4. Sesuaikan User Profile, nama usaha harga voucher di laman setup.
 
-5. Tambahkan User Profile ke Mikrotik dari aplikasi Mikhmon. Seelah itu aplikasi siap untuk generate voucher
+5. Tambahkan User Profile ke Mikrotik dari aplikasi Mikhmon. Seelah itu aplikasi siap untuk generate voucher.
+
+    Tutorial lebih lengkap kunungi ([laksa19.github.io](http://laksa19.github.io/))
 
 6. Template hotspot.
      - Logo hotspot dapat diganti dengan format (logo.png) yang diletakkan di folder "img".
@@ -57,6 +68,8 @@ Mikrotik Hotspot Monitor adalah aplikasi web berbasis PHP untuk menggantikan Use
 
 
 ## Changelog 
+
+### Versi Baru
 
 30-12-2017
     
