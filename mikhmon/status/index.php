@@ -9,7 +9,7 @@ $API->debug = false;
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cek Masa Aktif Voucher <?php print_r($headerv);?></title>
+<title>Cek Voucher <?php print_r($headerv);?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="pragma" content="no-cache" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
@@ -23,7 +23,9 @@ function goBack() {
 table { 
   table-layout: fixed;
   width: 330; 
-  border-collapse: collapse; 
+  border-collapse: collapse;
+  margin-left:auto; 
+  margin-right:auto;
 }
 /* Zebra striping */
 tr:nth-of-type(odd) { 
@@ -70,14 +72,13 @@ textarea,input,select {
 }
 </style>
 </head>
-<body>
-</div>
-<h3>Cek Masa Aktif Voucher <?php print_r($headerv);?></h3>
-<p align="left" id="date1"></p>
+<body align="center">
+<h3>Cek Voucher<br><?php print_r($headerv);?></h3>
+<p id="date1"><?php echo "Tanggal : " . date("d-m-Y") . "<br>";?></p>
 <form autocomplete="off" method="post" action="">
 	<table class="tnav">
 		<tr><td>User/Kode Voucher :</td><td><input type="text" size="15" name="nama" required="1"/></td></tr>
-		<tr><td><?php echo "Tanggal " . date("d-m-Y") . "<br>";?></td><td><input type="submit" class="button" value="Cek Masa Aktif "/></td></tr>
+		<tr><td></td><td><input type="submit" class="button" value="Cek Masa Aktif "/></td></tr>
 	</table>
 </form>
 <?php
@@ -87,46 +88,67 @@ textarea,input,select {
 	$API->write('/system/scheduler/print', false);
 	$API->write('?=name='.$name.'');
 	$ARRAY1 = $API->read();
-    $API->disconnect();
+	$regtable = $ARRAY1[0];
+				$exp = $regtable['next-run'];
+				$cek = $regtable['interval'];
+					$ceklen = strlen(substr($cek,0));
+					$cekw = substr($cek, 0,2);
+					$cekw1 = substr($cekw, 0,1) ."Minggu";
+					$cekd = substr($cek, 2,2);
+					$cekd1 = substr($cek, 2,1) ."Hari";
+				if ($ceklen > 2){
+					$cekall = $cekw1 ." ".$cekd1; 
+				}elseif (substr($cek, -1) == "h"){
+					$cek1 = substr($cek, 0,-1);
+					$cekall = $cek1 ." Jam";
+				}elseif (substr($cek, -1) == "d"){
+					$cek1 = substr($cek, 0,-1);
+					$cekall = $cek1 ."Hari";
+				}elseif (substr($cek, -1) == "w"){
+					$cek1 = substr($cek, 0,-1);
+					$cekall = $cek1 ."Minggu";
+				}elseif($cekall == ""){
+					}
+				 $cekall;
+				
+
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('?=name='.$name.'');
+	$ARRAY2 = $API->read();
+	$regtable = $ARRAY2[0];
+	$user = $regtable['name'];
+	$pass = $regtable['password'];
+	if($user == $pass){
+		$pass1 = "";
+	}else{
+		$pass1 = $pass;
+	}
+
+	echo "<div style='overflow-x:auto;'>";
+	echo "<table>";
+	echo "	<tr>";
+	echo "		<td >User/Kode Voucher</td>";
+	echo "		<td > $user</td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Password</td>";
+	echo "		<td > $pass1</td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Masa Aktif</td>";
+	echo "		<td >$cekall</td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Berakhir</td>";
+	echo "		<td >$exp</td>";
+	echo "	</tr>";
+	echo "</table>";
+	echo "</div>";
+	
+	$API->disconnect();
 }
 }
 ?>
-<div style="overflow-x:auto;">
-<table>
-<tr>
-<td >User/Kode Voucher</td>
-<td >Masa Aktif</td>
-<td >Berakhir</td>
-</tr>
-<tr><td align=left>
-<?php
-$TotalReg = count($ARRAY1);
-
-for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY1[$i];echo "" . $regtable['name'] . "<br />";}echo "</td><td>";
-for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY1[$i];
-	$cek = $regtable['interval'];
-		$ceklen = strlen(substr($cek,0));
-		$cekw = substr($cek, 0,2);
-		$cekw1 = substr($cekw, 0,1) ."Minggu";
-		$cekd = substr($cek, 2,2);
-		$cekd1 = substr($cek, 2,1) ."Hari";
-	if ($ceklen > 2){
-		$cekall = $cekw1 ." ".$cekd1; 
-	}elseif (substr($cek, -1) == "h"){
-		$cek1 = substr($cek, 0,-1);
-		$cekall = $cek1 ." Jam";
-	}elseif (substr($cek, -1) == "d"){
-		$cek1 = substr($cek, 0,-1);
-				$cekall = $cek1 ."Hari";
-	}elseif (substr($cek, -1) == "w"){
-		$cek1 = substr($cek, 0,-1);
-		$cekall = $cek1 ."Minggu";
-			}
-				echo "" . $cekall . "<br />";}echo "</td><td>";
-for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY1[$i];echo "" . $regtable['next-run'] . "<br />";}echo "</td>";
-
-?>
-</table>
 </div>
 </body>
 </html>
