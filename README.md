@@ -28,7 +28,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 10. Menghapus otomatis user hotspot expired.
 10. Tools :
     - Add Remove DNS Static untuk blok website.
-    - Log Mikrotik.
+    - Log Hotspot Mikrotik.
     - History.
     - Status, untuk cek voucher dari sisi client.
     
