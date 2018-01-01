@@ -122,6 +122,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 									<a href="genupm.php">1 Custom User Pass</a>
 								</div>
 						</div>
+						<button class="material-icons"	onclick="location.href='../status';"	title="Status User">account_box</button>
 						<!-- -->
 					</td>
 				</tr>
