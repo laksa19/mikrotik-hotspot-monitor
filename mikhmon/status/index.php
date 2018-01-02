@@ -78,7 +78,7 @@ textarea,input,select {
 <form autocomplete="off" method="post" action="">
 	<table class="tnav">
 		<tr><td>User/Kode Voucher :</td><td><input type="text" size="15" name="nama" required="1"/></td></tr>
-		<tr><td></td><td><input type="submit" class="button" value="Cek Masa Aktif "/></td></tr>
+		<tr><td></td><td><input type="submit" class="button" value="Cek Voucher"/></td></tr>
 	</table>
 </form>
 <?php
