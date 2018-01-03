@@ -90,6 +90,8 @@ textarea,input,select {
 	$ARRAY1 = $API->read();
 	$regtable = $ARRAY1[0];
 				$exp = $regtable['next-run'];
+				$strd = $regtable['start-date'];
+				$strt = $regtable['start-time'];
 				$cek = $regtable['interval'];
 					$ceklen = strlen(substr($cek,0));
 					$cekw = substr($cek, 0,2);
@@ -139,7 +141,11 @@ textarea,input,select {
 	echo "		<td >$cekall</td>";
 	echo "	</tr>";
 	echo "	<tr>";
-	echo "		<td >Berakhir</td>";
+	echo "		<td >Dari</td>";
+	echo "		<td >$strd $strt</td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Sampai</td>";
 	echo "		<td >$exp</td>";
 	echo "	</tr>";
 	echo "</table>";
