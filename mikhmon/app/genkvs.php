@@ -314,7 +314,7 @@ if ($blimit == $ubytelimit1){
 							<input type="submit" class="btnsubmit" value="Generate"/>
 						</td>
 					</tr>
-					<tr><td colspan=3><p style="color:red;">Catatan: Maksimal jumlah voucher per lembar [A4=21 F4=24]</p></td></tr>
+					<tr><td colspan=3><p style="color:green;">Catatan: Maksimal jumlah voucher per lembar [A4=18 Legal/F4=21]<br>Google Chrome: Gunakan margin minimum. Firefox: Gunakan margin 5mm.</p></td></tr>
 				</table>
 			</form>
 				<table class="tnav">
