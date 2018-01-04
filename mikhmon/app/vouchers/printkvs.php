@@ -20,6 +20,36 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->disconnect();
 }
 $TotalReg = count($ARRAY);
+
+$tlimit = $uptimelimit;
+if ($tlimit == $utimelimit1){
+	$vtimelimit = "Durasi:$utimelimit1t";
+}elseif ($tlimit == $utimelimit2){
+	$vtimelimit = "Durasi:$utimelimit2t";
+}elseif ($tlimit == $utimelimit3){
+	$vtimelimit = "Durasi:$utimelimit3t";
+}elseif ($tlimit == $utimelimit4){
+	$vtimelimit = "Durasi:$utimelimit4t";
+}elseif ($tlimit == $utimelimit5){
+	$vtimelimit = "Durasi:$utimelimit5t";
+}else {
+	$vtimelimit= "";
+}
+
+$blimit = $upbytelimit;
+if ($blimit == $ubytelimit1){
+	$vbytelimit = "Kuota:$ubytelimit1t";
+}elseif ($blimit == $ubytelimit2){
+	$vbytelimit = "Kuota:$ubytelimit2t";
+}elseif ($blimit == $ubytelimit3){
+	$vbytelimit = "Kuota:$ubytelimit3t";
+}elseif ($blimit == $ubytelimit4){
+	$vbytelimit = "Kuota:$ubytelimit4t";
+}elseif ($blimit == $ubytelimit5){
+	$vbytelimit = "Kuota:$ubytelimit5t";
+}else {
+	$vbytelimit= "";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,23 +123,24 @@ table.tprintb td {
 				<td>
 					<table class="tprinta">
 						<tr>
+							<td style="text-align: left; background-color:<?php print_r($header);?>"><img src="../img/logo.png" alt="logo" style="height:43px;border:0;"></td>
 							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv); $no = $indx+1; echo "  [$no]";?></td>
 						</tr>
 						<tr>
-							<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
+							<td colspan=2 style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 						</tr>
 						<tr>
-							<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
+							<td colspan=2 style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr><td>Kode Voucher : <?php $regtable = $ARRAY[$indx];echo "" . $regtable['name'];?></td></tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+							<td colspan=2 style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 						</tr>
 						<tr>
-							<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vserver);?> <?php print_r($vprice);?></td>
+							<td colspan=2 style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vserver);?> <?php print_r($vprice);?></td>
 						</tr>
 					</table>
 				</td>
