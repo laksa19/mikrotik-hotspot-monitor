@@ -64,7 +64,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
      - Logo hotspot dapat diganti dengan format (logo.png) yang diletakkan di folder "img".
      - Edit file "paket-wifi.csv" untuk menampilkan daftar paket wifi.
      
-
+7. Logo di cetak voucher di letakkan di folder img dalam folder app dengan format (logo.png).
 
 ## Changelog 
 
