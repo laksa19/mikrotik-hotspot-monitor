@@ -8,6 +8,12 @@ if(!isset($_SESSION['usermikhmon'])){
 error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
+
+$oldbuild = 2024;
+$build = file_get_contents('https://laksa19.github.io/download/build.txt');
+				$getbuild = explode("\n",$build);
+				$newbuild = $getbuild[0];
+				
 if ($reloadindex == ""){ 
 } else
 header("Refresh: $reloadindex ; url='./'");
@@ -81,6 +87,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$a=array($ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6,$ARRAY7,$ARRAY8,$ARRAY9,$ARRAY10,$ARRAY11,$ARRAY12);
 	$aa = array_sum($a);
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -123,6 +130,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 								</div>
 						</div>
 						<button class="material-icons"	onclick="location.href='../status';"	title="Status User">account_box</button>
+						<button class="material-icons"	onclick="location.href='#cek-update';"	title="Cek Update">system_update_alt</button>
 						<!-- -->
 					</td>
 				</tr>
@@ -137,12 +145,13 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 								}
 							?>
 				</tr>
-				<td colspan=2>
+				<td>
 							<?php
 									$regtable = $ARRAY14[0];echo "" . $regtable['board-name'] . " ";
 									$regtable = $ARRAY14[0];echo "" . $regtable['version'] . "";
 									echo "</td>";
 							?>
+				<td style="text-align:right;"><?php if($newbuild != $oldbuild){echo "<i style='color:red;'>New update! | Build : $newbuild</i><br>";}else{echo "Mikhmon Build : $oldbuild";} ?></td>
 				</tr>
 			</table>
 			<table class="tnav">
@@ -327,7 +336,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				</tr>
 			</table>
 			<div style="overflow-x:auto;">
-			<table class="zebra" >
+			<table style="white-space: nowrap;" class="zebra" >
 				<tr>
 					<th >User</th>
 					<th >Server</th>
@@ -341,7 +350,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 										$regtable = $ARRAY[$i];echo "<tr><td>" . $regtable['user'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['address'];echo "</td>";
-										$regtable = $ARRAY[$i];echo "<td>" . $regtable['uptime'];echo "</td> </tr>";
+										$regtable = $ARRAY[$i];echo "<td>" . $regtable['uptime'];echo "</td></tr>";
 										}
 							?>
 			</table>
@@ -394,6 +403,35 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			</div>
 		</div>
 	</div>
+	<div id="cek-update" class="modal-window">
+		<div>
+			<a href="#close" title="Close" class="modal-close">Close</a>
+			<h1>Mikhmon Update</h1>
+			<?php
+				if($newbuild != $oldbuild){
+					echo "New update! | Build : $newbuild<br>";
+				for ($i=1;$i<count($getbuild);$i++) {
+					echo $getbuild[$i].'<br> ';
+					}
+					}else{
+					echo "Build : $oldbuild | no update yet.<br>";
+				for ($i=1;$i<count($getbuild);$i++) {
+					echo $getbuild[$i].'<br> ';
+					}
+				}
+			?>
+			<div>
+				+++++++++++++++++++<br>
+				Cara update :
+				<ol>
+				<li><a href="https://laksa19.github.io/download/update.zip" target="_blank">Download update.zip.</a></li>
+				<li>Extract update.zip.</li>
+				<li>Copy folder app dan status.</li>
+				<li>Paste di folder mikhmon,timpa saja folder yang lama.</li>
+				</ol>
+			</div>
+    </div>
+	</div>
 	<script>
 	function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
@@ -412,6 +450,44 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
+<?php
+
+function formatBytes($bytes, $precision = 2) { 
+$units = array('B', 'KB', 'MB', 'GB', 'TB'); 
+
+$bytes = max($bytes, 0); 
+$pow = floor(($bytes ? log($bytes) : 0) / log(1024)); 
+$pow = min($pow, count($units) - 1); 
+
+// Uncomment one of the following alternatives
+// $bytes /= pow(1024, $pow);
+// $bytes /= (1 << (10 * $pow)); 
+
+return round($bytes, $precision) . ' ' . $units[$pow]; 
+} 
+
+function formatBytes2($size, $decimals = 0){
+$unit = array(
+'0' => 'Byte',
+'1' => 'KiB',
+'2' => 'MiB',
+'3' => 'GiB',
+'4' => 'TiB',
+'5' => 'PiB',
+'6' => 'EiB',
+'7' => 'ZiB',
+'8' => 'YiB'
+);
+
+for($i = 0; $size >= 1024 && $i <= count($unit); $i++){
+$size = $size/1024;
+}
+
+return round($size, $decimals).' '.$unit[$i];
+}
+
+?>
+
 	</body>
 </html>
 
