@@ -70,6 +70,12 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 ### Versi Baru
 
+5-1-2018
+
+1. Penambahan notifikasi update.
+2. Perbaikan laman status.
+3. Drop support mikhmon-standalone.
+
 4-1-2018
 
 Perbaikan cetak voucher (perbaikan detail voucher dan penambahan logo).
