@@ -73,8 +73,8 @@ textarea,input,select {
 </style>
 </head>
 <body align="center">
-<h3>Cek Voucher<br><?php print_r($headerv);?></h3>
-<p id="date1"><?php echo "Tanggal : " . date("d-m-Y") . "<br>";?></p>
+<h3 style="text-align:center;">Cek Voucher<br><?php print_r($headerv);?></h3>
+<p style="text-align:center;" id="date1"><?php echo "Tanggal : " . date("d-m-Y") . "<br>";?></p>
 <form autocomplete="off" method="post" action="">
 	<table class="tnav">
 		<tr><td>User/Kode Voucher :</td><td><input type="text" size="15" name="nama" required="1"/></td></tr>
