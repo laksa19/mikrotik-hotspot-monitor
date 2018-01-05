@@ -104,7 +104,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<th >Server</th>
 					<th >Profile</th>
 					<th >Uptime</th>
-					<th >Generate</th>
+					<th >Generated</th>
 				</tr>
 				<?php
 					$TotalReg = count($ARRAY);
