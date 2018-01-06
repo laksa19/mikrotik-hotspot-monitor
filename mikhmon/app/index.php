@@ -151,7 +151,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 									$regtable = $ARRAY14[0];echo "" . $regtable['version'] . "";
 									echo "</td>";
 							?>
-				<td style="text-align:right;"><?php if($newbuild != $oldbuild){echo "<i style='color:red;'>New update! | Build : $newbuild</i><br>";}else{echo "Mikhmon Build : $oldbuild";} ?></td>
+				<td style="text-align:right;"><?php if($newbuild > $oldbuild){echo "<i style='color:red;'>New update! | Build : $newbuild</i><br>";}else{echo "Mikhmon Build : $oldbuild";} ?></td>
 				</tr>
 			</table>
 			<table class="tnav">
