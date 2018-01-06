@@ -408,7 +408,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			<a href="#close" title="Close" class="modal-close">Close</a>
 			<h1>Mikhmon Update</h1>
 			<?php
-				if($newbuild != $oldbuild){
+				if($newbuild > $oldbuild){
 					echo "New update! | Build : $newbuild<br>";
 				for ($i=1;$i<count($getbuild);$i++) {
 					echo $getbuild[$i].'<br> ';
