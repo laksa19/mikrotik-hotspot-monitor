@@ -5,6 +5,7 @@ if(!isset($_SESSION['usermikhmon'])){
 }
 ?>
 <?php
+error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
@@ -287,7 +288,7 @@ table.tsetup td {
 						<button class="material-icons" onclick="location.href='conntest.php';" title="Tes Koneksi ke Mikrotik">settings_ethernet</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
-						<button class="material-icons"	onclick="window.open('https://github.com/laksa19/mikrotik-hotspot-monitor','_blank');" 	title="Check Update">system_update_alt</button>
+						<!--<button class="material-icons"	onclick="window.open('https://github.com/laksa19/mikrotik-hotspot-monitor','_blank');" 	title="Check Update">system_update_alt</button>-->
 					</td>
 				</tr>
 			</table>
