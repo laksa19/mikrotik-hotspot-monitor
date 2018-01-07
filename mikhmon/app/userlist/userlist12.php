@@ -44,7 +44,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				 
 			$API->disconnect();	
 			
-			header('Location: userlist10.php');
+			header('Location: userlist12.php');
 }
 ?>
 <!DOCTYPE html>
