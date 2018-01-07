@@ -9,8 +9,8 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2024;
-$build = file_get_contents('https://laksa19.github.io/download/build.txt');
+$oldbuild = 2026;
+$build = file_get_contents('https://raw.githubusercontent.com/laksa19/laksa19.github.io/master/download/build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
 				
@@ -79,12 +79,37 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->write('?=profile='.$profile10.'');
 	$ARRAY12 = $API->read();
 
-	$ARRAY13 = $API->comm("/system/clock/print");
-	$ARRAY14 = $API->comm("/system/resource/print");
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile11.'');
+	$ARRAY13 = $API->read();
+
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile12.'');
+	$ARRAY14 = $API->read();
+
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile13.'');
+	$ARRAY15 = $API->read();
+
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile14.'');
+	$ARRAY16 = $API->read();
+
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('=count-only=', false);
+	$API->write('?=profile='.$profile15.'');
+	$ARRAY17 = $API->read();
+
+	$ARRAY18 = $API->comm("/system/clock/print");
+	$ARRAY19 = $API->comm("/system/resource/print");
 	
     $API->disconnect();
     
-	$a=array($ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6,$ARRAY7,$ARRAY8,$ARRAY9,$ARRAY10,$ARRAY11,$ARRAY12);
+	$a=array($ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6,$ARRAY7,$ARRAY8,$ARRAY9,$ARRAY10,$ARRAY11,$ARRAY12,$ARRAY13,$ARRAY14,$ARRAY15,$ARRAY16,$ARRAY17);
 	$aa = array_sum($a);
 }
 
@@ -138,8 +163,8 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				<td colspan=2>Mikrotik System Date : 
 				
 							<?php
-								$regtable = $ARRAY13[0]; echo " " . $regtable['date']; echo " " . $regtable['time'] . "<br />"; echo "</td>";
-								$timemk = ($ARRAY13[0]['time']);
+								$regtable = $ARRAY18[0]; echo " " . $regtable['date']; echo " " . $regtable['time'] . "<br />"; echo "</td>";
+								$timemk = ($ARRAY18[0]['time']);
 								if($timemk == ""){
 								?><meta http-equiv="refresh" content="0; url=logout.php"><?php
 								}
@@ -147,8 +172,8 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				</tr>
 				<td>
 							<?php
-									$regtable = $ARRAY14[0];echo "" . $regtable['board-name'] . " ";
-									$regtable = $ARRAY14[0];echo "" . $regtable['version'] . "";
+									$regtable = $ARRAY19[0];echo "" . $regtable['board-name'] . " ";
+									$regtable = $ARRAY19[0];echo "" . $regtable['version'] . "";
 									echo "</td>";
 							?>
 				<td style="text-align:right;"><?php if($newbuild > $oldbuild){echo "<i style='color:red;'>New update! | Build : $newbuild</i><br>";}else{echo "Mikhmon Build : $oldbuild";} ?></td>
@@ -323,8 +348,90 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				echo "</tr>";
 			echo "</table>";
 			echo "</div>";
+			echo"<br>";
 				}
 			?>
+			<?php if ($profile11 == ""){
+			}elseif ($profile12 == ""){
+				echo "<div style='overflow-x:auto;'>";
+				echo "<table class='tprinta' >";
+				echo "	<tr>";
+				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
+				echo "</tr>";
+				echo "<tr>";
+				echo "	<td>$ARRAY13</td>";
+				echo "</tr>";
+				echo "</table>";
+				echo "</div>";
+			}elseif ($profile13 == ""){
+				echo "<div style='overflow-x:auto;'>";
+				echo "<table class='tprinta' >";
+				echo "	<tr>";
+				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
+				echo "	<th><a href='userlist/userlist12.php'>$profile12</a></th>";
+				echo "</tr>";
+				echo "<tr>";
+				echo "	<td>$ARRAY13</td>";
+				echo "	<td>$ARRAY14</td>";
+				echo "</tr>";
+				echo "</table>";
+				echo "</div>";
+			}elseif ($profile14 == ""){
+				echo "<div style='overflow-x:auto;'>";
+				echo "<table class='tprinta' >";
+				echo "	<tr>";
+				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
+				echo "	<th><a href='userlist/userlist12.php'>$profile12</a></th>";
+				echo "	<th><a href='userlist/userlist13.php'>$profile13</a></th>";
+				echo "</tr>";
+				echo "<tr>";
+				echo "	<td>$ARRAY13</td>";
+				echo "	<td>$ARRAY14</td>";
+				echo "	<td>$ARRAY15</td>";
+				echo "</tr>";
+				echo "</table>";
+			echo "</div>";
+			}elseif ($profile15 == ""){
+				echo "<div style='overflow-x:auto;'>";
+				echo "<table class='tprinta' >";
+				echo "	<tr>";
+				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
+				echo "	<th><a href='userlist/userlist12.php'>$profile12</a></th>";
+				echo "	<th><a href='userlist/userlist13.php'>$profile13</a></th>";
+				echo "	<th><a href='userlist/userlist14.php'>$profile14</a></th>";
+				echo "</tr>";
+				echo "<tr>";
+				echo "	<td>$ARRAY13</td>";
+				echo "	<td>$ARRAY14</td>";
+				echo "	<td>$ARRAY15</td>";
+				echo "	<td>$ARRAY16</td>";
+				echo "</tr>";
+				echo "</table>";
+			echo "</div>";
+		}else{
+			echo "<div style='overflow-x:auto;'>";
+			echo "<table class='tprinta' >";
+				echo "	<tr>";
+				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
+				echo "	<th><a href='userlist/userlist12.php'>$profile12</a></th>";
+				echo "	<th><a href='userlist/userlist13.php'>$profile13</a></th>";
+				echo "	<th><a href='userlist/userlist14.php'>$profile14</a></th>";
+				echo "	<th><a href='userlist/userlist15.php'>$profile15</a></th>";
+				echo "</tr>";
+				echo "</tr>";
+				echo "<tr>";
+				echo "	<td>$ARRAY13</td>";
+				echo "	<td>$ARRAY14</td>";
+				echo "	<td>$ARRAY15</td>";
+				echo "	<td>$ARRAY16</td>";
+				echo "	<td>$ARRAY17</td>";
+				echo "</tr>";
+			echo "</table>";
+			echo "</div>";
+				}
+			?>
+			
+			
 			<div class="tab">
 				<button class="tablinks" onclick="openTab(event, 'UA')" id="defaultOpen">User Aktif</button>
 				<button class="tablinks" onclick="openTab(event, 'MA')">Masa Aktif</button>
@@ -342,6 +449,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<th >Server</th>
 					<th >IP</th>
 					<th >Uptime</th>
+					<th >Bytes Out</th>
 					</tr>
 							<?php
 								$TotalReg = count($ARRAY);
@@ -350,7 +458,9 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 										$regtable = $ARRAY[$i];echo "<tr><td>" . $regtable['user'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['address'];echo "</td>";
-										$regtable = $ARRAY[$i];echo "<td>" . $regtable['uptime'];echo "</td></tr>";
+										$regtable = $ARRAY[$i];echo "<td>" . $regtable['uptime'];echo "</td>";
+										$regtable = $ARRAY[$i];echo "<td style='text-align:right;'>" . formatBytes2($regtable['bytes-out'], 0) ;echo "</td>";
+										echo "</tr>";
 										}
 							?>
 			</table>

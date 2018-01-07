@@ -12,13 +12,8 @@ include('./config.php');
 $API = new RouterosAPI();
 $API->debug = false;
 if ($API->connect( $iphost, $userhost, $passwdhost )) {
-	$ARRAY = $API->comm("/ip/hotspot/print");
+	$srvlist = $API->comm("/ip/hotspot/print");
 	$API->disconnect();
-	$server1 = ($ARRAY[0]['name']);
-	$server2 = ($ARRAY[1]['name']);
-	$server3 = ($ARRAY[2]['name']);
-	$server4 = ($ARRAY[3]['name']);
-	$server5 = ($ARRAY[4]['name']);
 }
 ?>
 <!DOCTYPE html>
@@ -132,28 +127,13 @@ table.tuserd td {
 					<tr><td>Server Hotspot</td><td>:</td><td>
 						<select name="server" required="1">
 							<option value="all">all</option>
-							<?php if($server1 == ""){
-								}elseif ($server2 == ""){
-									echo "<option>$server1</option>";
-								}elseif ($server3 == ""){
-									echo "<option>$server1</option>";
-									echo "<option>$server2</option>";
-								}elseif ($serverh4 == ""){
-									echo "<option>$server1</option>";
-									echo "<option>$server2</option>";
-									echo "<option>$server3</option>";
-								}elseif ($server5 == ""){
-									echo "<option>$server1</option>";
-									echo "<option>$server2</option>";
-									echo "<option>$server3</option>";
-									echo "<option>$server4</option>";
-								}else{
-									echo "<option>$server1</option>";
-									echo "<option>$server2</option>";
-									echo "<option>$server3</option>";
-									echo "<option>$server4</option>";
-									echo "<option>$server5</option>";
-									}
+							
+							<?php
+							$TotalReg = count($srvlist);
+
+							for ($i=0; $i<$TotalReg; $i++){
+							$regtable = $srvlist[$i];echo "<option>" . $regtable['name'];echo "</option>";
+							}
 								?>
 						</select>
 						</td>
@@ -161,72 +141,70 @@ table.tuserd td {
 					<tr><td>Profile | Masa Aktif</td><td>:</td><td>
 						<select name="uprofile" required="1">
 							<option value="">Pilih...</option>
-							<?php if($profile1 == ""){
-								}elseif ($profile2 == ""){
-									echo "<option>$profile1</option>";
-								}elseif ($profile3 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-								}elseif ($profile4 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-								}elseif ($profile5 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-								}elseif ($profile6 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-								}elseif ($profile7 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-								}elseif ($profile8 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-								}elseif ($profile9 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-								}elseif ($profile10 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-									echo "<option>$profile9</option>";
-								}else{
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-									echo "<option>$profile9</option>";
-									echo "<option>$profile10</option>";
+							<?php
+								$proflist = array ('1'=>$profile1,$profile2,$profile3,$profile4,$profile5,$profile6,$profile7,$profile8,$profile9,$profile10,$profile11,$profile12,$profile13,$profile14,$profile15);
+								
+									if($profile1 == ""){
+									}elseif ($profile2 == ""){
+										for ($i = 1; $i <= 1; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile3 == ""){
+										for ($i = 1; $i <= 2; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile4 == ""){
+										for ($i = 1; $i <= 3; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile5 == ""){
+										for ($i = 1; $i <= 4; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile6 == ""){
+										for ($i = 1; $i <= 5; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile7 == ""){
+										for ($i = 1; $i <= 6; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile8 == ""){
+										for ($i = 1; $i <= 7; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile9 == ""){
+										for ($i = 1; $i <= 8; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile10 == ""){
+										for ($i = 1; $i <= 9; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile11 == ""){
+										for ($i = 1; $i <= 10; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile12 == ""){
+										for ($i = 1; $i <= 11; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile13 == ""){
+										for ($i = 1; $i <= 12; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile14 == ""){
+										for ($i = 1; $i <= 13; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile15 == ""){
+										for ($i = 1; $i <= 14; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}else{
+										for ($i = 1; $i <= 15; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
 									}
 								?>
 						</select>
@@ -235,22 +213,108 @@ table.tuserd td {
 					<tr><td>Durasi</td><td>:</td><td>
 						<select name="utimelimit" required="1">
 							<option value="0">Pilih...</option>
-							<option value=<?php print_r($utimelimit1);?>><?php print_r($utimelimit1t);?></option>
-							<option value=<?php print_r($utimelimit2);?>><?php print_r($utimelimit2t);?></option>
-							<option value=<?php print_r($utimelimit3);?>><?php print_r($utimelimit3t);?></option>
-							<option value=<?php print_r($utimelimit4);?>><?php print_r($utimelimit4t);?></option>
-							<option value=<?php print_r($utimelimit5);?>><?php print_r($utimelimit5t);?></option>
+							<?php
+								$timelist = array ('1'=>$utimelimit1,$utimelimit2,$utimelimit3,$utimelimit4,$utimelimit5,$utimelimit6,$utimelimit7,$utimelimit8,$utimelimit9,$utimelimit10);
+								
+								$timetlist = array ('1'=>$utimelimit1t,$utimelimit2t,$utimelimit3t,$utimelimit4t,$utimelimit5t,$utimelimit6t,$utimelimit7t,$utimelimit8t,$utimelimit9t,$utimelimit10t);
+								
+									if($utimelimit1 == ""){
+									}elseif ($utimelimit2 == ""){
+										for ($i = 1; $i <= 1; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}elseif ($utimelimit3 == ""){
+										for ($i = 1; $i <= 2; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}elseif ($utimelimit4 == ""){
+										for ($i = 1; $i <= 3; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}elseif ($utimelimit5 == ""){
+										for ($i = 1; $i <= 4; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}elseif ($utimelimit6 == ""){
+										for ($i = 1; $i <= 5; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}elseif ($utimelimit7 == ""){
+										for ($i = 1; $i <= 6; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}elseif ($utimelimit8 == ""){
+										for ($i = 1; $i <= 7; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}elseif ($utimelimit9 == ""){
+										for ($i = 1; $i <= 8; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}elseif ($utimelimit10 == ""){
+										for ($i = 1; $i <= 9; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}else{
+										for ($i = 1; $i <= 10; $i++) {
+										echo "<option value=$timelist[$i]>$timetlist[$i]</option>";
+									}
+									}
+								?>
 						</select>
 						</td>
 					</tr>
 					<tr><td>Kuota</td><td>:</td><td>
 						<select name="ubytelimit" required="1">
 							<option value="0">Pilih...</option>
-							<option value=<?php print_r($ubytelimit1);?>><?php print_r($ubytelimit1t);?></option>
-							<option value=<?php print_r($ubytelimit2);?>><?php print_r($ubytelimit2t);?></option>
-							<option value=<?php print_r($ubytelimit3);?>><?php print_r($ubytelimit3t);?></option>
-							<option value=<?php print_r($ubytelimit4);?>><?php print_r($ubytelimit4t);?></option>
-							<option value=<?php print_r($ubytelimit5);?>><?php print_r($ubytelimit5t);?></option>
+							<?php
+								$bytelist = array ('1'=>$ubytelimit1,$ubytelimit2,$ubytelimit3,$ubytelimit4,$ubytelimit5,$ubytelimit6,$ubytelimit7,$ubytelimit8,$ubytelimit9,$ubytelimit10);
+								
+								$bytetlist = array ('1'=>$ubytelimit1t,$ubytelimit2t,$ubytelimit3t,$ubytelimit4t,$ubytelimit5t,$ubytelimit6t,$ubytelimit7t,$ubytelimit8t,$ubytelimit9t,$ubytelimit10t);
+								
+									if($ubytelimit1 == ""){
+									}elseif ($ubytelimit2 == ""){
+										for ($i = 1; $i <= 1; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}elseif ($ubytelimit3 == ""){
+										for ($i = 1; $i <= 2; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}elseif ($ubytelimit4 == ""){
+										for ($i = 1; $i <= 3; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}elseif ($ubytelimit5 == ""){
+										for ($i = 1; $i <= 4; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}elseif ($ubytelimit6 == ""){
+										for ($i = 1; $i <= 5; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}elseif ($ubytelimit7 == ""){
+										for ($i = 1; $i <= 6; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}elseif ($ubytelimit8 == ""){
+										for ($i = 1; $i <= 7; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}elseif ($ubytelimit9 == ""){
+										for ($i = 1; $i <= 8; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}elseif ($ubytelimit10 == ""){
+										for ($i = 1; $i <= 9; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}else{
+										for ($i = 1; $i <= 10; $i++) {
+										echo "<option value=$bytelist[$i]>$bytetlist[$i]</option>";
+									}
+									}
+								?>
 						</select>
 						</td>
 					</tr>
@@ -258,72 +322,70 @@ table.tuserd td {
 						<select name="uprice" required="1">
 							<option value="">Pilih...</option>
 							<option>Free</option>
-							<?php if($price1 == ""){
-								}elseif ($price2 == ""){
-									echo "<option>$price1</option>";
-								}elseif ($price3 == ""){
-									echo "<option>$price1</option>";
-									echo "<option>$price2</option>";
-								}elseif ($price4 == ""){
-									echo "<option>$price1</option>";
-									echo "<option>$price2</option>";
-									echo "<option>$price3</option>";
-								}elseif ($price5 == ""){
-									echo "<option>$price1</option>";
-									echo "<option>$price2</option>";
-									echo "<option>$price3</option>";
-									echo "<option>$price4</option>";
-								}elseif ($price6 == ""){
-									echo "<option>$price1</option>";
-									echo "<option>$price2</option>";
-									echo "<option>$price3</option>";
-									echo "<option>$price4</option>";
-									echo "<option>$price5</option>";
-								}elseif ($price7 == ""){
-									echo "<option>$price1</option>";
-									echo "<option>$price2</option>";
-									echo "<option>$price3</option>";
-									echo "<option>$price4</option>";
-									echo "<option>$price5</option>";
-									echo "<option>$price6</option>";
-								}elseif ($price8 == ""){
-									echo "<option>$price1</option>";
-									echo "<option>$price2</option>";
-									echo "<option>$price3</option>";
-									echo "<option>$price4</option>";
-									echo "<option>$price5</option>";
-									echo "<option>$price6</option>";
-									echo "<option>$price7</option>";
-								}elseif ($price9 == ""){
-									echo "<option>$price1</option>";
-									echo "<option>$price2</option>";
-									echo "<option>$price3</option>";
-									echo "<option>$price4</option>";
-									echo "<option>$price5</option>";
-									echo "<option>$price6</option>";
-									echo "<option>$price7</option>";
-									echo "<option>$price8</option>";
-								}elseif ($price10 == ""){
-									echo "<option>$price1</option>";
-									echo "<option>$price2</option>";
-									echo "<option>$price3</option>";
-									echo "<option>$price4</option>";
-									echo "<option>$price5</option>";
-									echo "<option>$price6</option>";
-									echo "<option>$price7</option>";
-									echo "<option>$price8</option>";
-									echo "<option>$price9</option>";
-								}else{
-									echo "<option>$price1</option>";
-									echo "<option>$price2</option>";
-									echo "<option>$price3</option>";
-									echo "<option>$price4</option>";
-									echo "<option>$price5</option>";
-									echo "<option>$price6</option>";
-									echo "<option>$price7</option>";
-									echo "<option>$price8</option>";
-									echo "<option>$price9</option>";
-									echo "<option>$price10</option>";
+							<?php
+								$pricelist = array ('1'=>$price1,$price2,$price3,$price4,$price5,$price6,$price7,$price8,$price9,$price10,$price11,$price12,$price13,$price14,$price15);
+								
+									if($price1 == ""){
+									}elseif ($price2 == ""){
+										for ($i = 1; $i <= 1; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price3 == ""){
+										for ($i = 1; $i <= 2; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price4 == ""){
+										for ($i = 1; $i <= 3; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price5 == ""){
+										for ($i = 1; $i <= 4; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price6 == ""){
+										for ($i = 1; $i <= 5; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price7 == ""){
+										for ($i = 1; $i <= 6; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price8 == ""){
+										for ($i = 1; $i <= 7; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price9 == ""){
+										for ($i = 1; $i <= 8; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price10 == ""){
+										for ($i = 1; $i <= 9; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price11 == ""){
+										for ($i = 1; $i <= 10; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price12 == ""){
+										for ($i = 1; $i <= 11; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price13 == ""){
+										for ($i = 1; $i <= 12; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price14 == ""){
+										for ($i = 1; $i <= 13; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}elseif ($price15 == ""){
+										for ($i = 1; $i <= 14; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
+									}else{
+										for ($i = 1; $i <= 15; $i++) {
+										echo "<option>$pricelist[$i]</option>";
+									}
 									}
 								?>
 						</select>
@@ -373,6 +435,16 @@ table.tuserd td {
 				$vprofile = $vname9;
 			}elseif ($uprofile == $profile10){
 				$vprofile = $vname10;
+			}elseif ($uprofile == $profile11){
+				$vprofile = $vname11;
+			}elseif ($uprofile == $profile12){
+				$vprofile = $vname12;
+			}elseif ($uprofile == $profile13){
+				$vprofile = $vname13;
+			}elseif ($uprofile == $profile14){
+				$vprofile = $vname14;
+			}elseif ($uprofile == $profile15){
+				$vprofile = $vname15;
 			}else {
 				$vprofile= "";
 			}
@@ -388,6 +460,16 @@ table.tuserd td {
 				$vtimelimit = "Durasi:$utimelimit4t";
 			}elseif ($tlimit == $utimelimit5){
 				$vtimelimit = "Durasi:$utimelimit5t";
+			}elseif ($tlimit == $utimelimit6){
+				$vtimelimit = "Durasi:$utimelimit6t";
+			}elseif ($tlimit == $utimelimit7){
+				$vtimelimit = "Durasi:$utimelimit7t";
+			}elseif ($tlimit == $utimelimit8){
+				$vtimelimit = "Durasi:$utimelimit8t";
+			}elseif ($tlimit == $utimelimit9){
+				$vtimelimit = "Durasi:$utimelimit9t";
+			}elseif ($tlimit == $utimelimit10){
+				$vtimelimit = "Durasi:$utimelimit10t";
 			}else {
 				$vtimelimit= "";
 		}
@@ -403,8 +485,16 @@ table.tuserd td {
 				$vbytelimit = "Kuota:$ubytelimit4t";
 			}elseif ($blimit == $ubytelimit5){
 				$vbytelimit = "Kuota:$ubytelimit5t";
-			}elseif ($blimit == $ubytelimit5){
-				$vbytelimit = "Kuota:$ubytelimit5t";
+			}elseif ($blimit == $ubytelimit6){
+				$vbytelimit = "Kuota:$ubytelimit6t";
+			}elseif ($blimit == $ubytelimit7){
+				$vbytelimit = "Kuota:$ubytelimit7t";
+			}elseif ($blimit == $ubytelimit8){
+				$vbytelimit = "Kuota:$ubytelimit8t";
+			}elseif ($blimit == $ubytelimit9){
+				$vbytelimit = "Kuota:$ubytelimit9t";
+			}elseif ($blimit == $ubytelimit10){
+				$vbytelimit = "Kuota:$ubytelimit10t";
 			}else {
 				$vbytelimit= "";
 			}

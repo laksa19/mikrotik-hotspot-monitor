@@ -119,6 +119,71 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 									echo "<option>$profile7</option>";
 									echo "<option>$profile8</option>";
 									echo "<option>$profile9</option>";
+								}elseif ($profile11 == ""){
+									echo "<option>$profile1</option>";
+									echo "<option>$profile2</option>";
+									echo "<option>$profile3</option>";
+									echo "<option>$profile4</option>";
+									echo "<option>$profile5</option>";
+									echo "<option>$profile6</option>";
+									echo "<option>$profile7</option>";
+									echo "<option>$profile8</option>";
+									echo "<option>$profile9</option>";
+									echo "<option>$profile10</option>";
+								}elseif ($profile12 == ""){
+									echo "<option>$profile1</option>";
+									echo "<option>$profile2</option>";
+									echo "<option>$profile3</option>";
+									echo "<option>$profile4</option>";
+									echo "<option>$profile5</option>";
+									echo "<option>$profile6</option>";
+									echo "<option>$profile7</option>";
+									echo "<option>$profile8</option>";
+									echo "<option>$profile9</option>";
+									echo "<option>$profile10</option>";
+									echo "<option>$profile11</option>";
+								}elseif ($profile13 == ""){
+									echo "<option>$profile1</option>";
+									echo "<option>$profile2</option>";
+									echo "<option>$profile3</option>";
+									echo "<option>$profile4</option>";
+									echo "<option>$profile5</option>";
+									echo "<option>$profile6</option>";
+									echo "<option>$profile7</option>";
+									echo "<option>$profile8</option>";
+									echo "<option>$profile9</option>";
+									echo "<option>$profile10</option>";
+									echo "<option>$profile11</option>";
+									echo "<option>$profile12</option>";
+								}elseif ($profile14 == ""){
+									echo "<option>$profile1</option>";
+									echo "<option>$profile2</option>";
+									echo "<option>$profile3</option>";
+									echo "<option>$profile4</option>";
+									echo "<option>$profile5</option>";
+									echo "<option>$profile6</option>";
+									echo "<option>$profile7</option>";
+									echo "<option>$profile8</option>";
+									echo "<option>$profile9</option>";
+									echo "<option>$profile10</option>";
+									echo "<option>$profile11</option>";
+									echo "<option>$profile12</option>";
+									echo "<option>$profile13</option>";
+								}elseif ($profile15 == ""){
+									echo "<option>$profile1</option>";
+									echo "<option>$profile2</option>";
+									echo "<option>$profile3</option>";
+									echo "<option>$profile4</option>";
+									echo "<option>$profile5</option>";
+									echo "<option>$profile6</option>";
+									echo "<option>$profile7</option>";
+									echo "<option>$profile8</option>";
+									echo "<option>$profile9</option>";
+									echo "<option>$profile10</option>";
+									echo "<option>$profile11</option>";
+									echo "<option>$profile12</option>";
+									echo "<option>$profile13</option>";
+									echo "<option>$profile14</option>";
 								}else{
 									echo "<option>$profile1</option>";
 									echo "<option>$profile2</option>";
@@ -130,22 +195,17 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 									echo "<option>$profile8</option>";
 									echo "<option>$profile9</option>";
 									echo "<option>$profile10</option>";
+									echo "<option>$profile11</option>";
+									echo "<option>$profile12</option>";
+									echo "<option>$profile13</option>";
+									echo "<option>$profile14</option>";
+									echo "<option>$profile15</option>";
 									}
 								?>
 						</select>
 					</td></tr>
 					<tr><td>Shared Users</td><td>:</td><td><input type="text" size="3" maxlength="3" name="sharedu" value="1" required="1"/></td></tr>
-					<tr><td>Upload/Download</td><td>:</td><td>
-						<select name="updown" required="1">
-							<option value="">Pilih...</option>
-							<option value=<?php print_r($speed1);?>><?php print_r($speed1);?></option>
-							<option value=<?php print_r($speed2);?>><?php print_r($speed2);?></option>
-							<option value=<?php print_r($speed3);?>><?php print_r($speed3);?></option>
-							<option value=<?php print_r($speed4);?>><?php print_r($speed4);?></option>
-							<option value=<?php print_r($speed5);?>><?php print_r($speed5);?></option>
-							<option value=<?php print_r($speed6);?>><?php print_r($speed6);?></option>
-						</select>
-					</td></tr>
+					<tr><td>Upload/Download</td><td>:</td><td><input type="text" size="12"  name="updown" placeholder="contoh:512k/1M" required="1"/></td></tr>
 					<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Simpan"/></td></tr>
 				</table>
 			</form>
@@ -176,6 +236,16 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				$exptime = $uactive9;
 			}elseif ($uprofile == $profile10){
 				$exptime = $uactive10;
+			}elseif ($uprofile == $profile11){
+				$exptime = $uactive11;
+			}elseif ($uprofile == $profile12){
+				$exptime = $uactive12;
+			}elseif ($uprofile == $profile13){
+				$exptime = $uactive13;
+			}elseif ($uprofile == $profile14){
+				$exptime = $uactive14;
+			}elseif ($uprofile == $profile15){
+				$exptime = $uactive15;
 			}else {
 				$exptime= "";
 			}
