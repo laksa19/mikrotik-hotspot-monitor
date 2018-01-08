@@ -5,9 +5,9 @@ include('./config.php');
 $API = new RouterosAPI();
 $API->debug = false;
 if ($API->connect( $iphost, $userhost, $passwdhost )) {
-	$ARRAY = $API->comm("/system/history/print", array(
-));
-
+	$API->write('/system/history/print', false);
+	$API->write('?=by=');
+	$ARRAY = $API->read();
 	$API->disconnect();
 }
 ?>

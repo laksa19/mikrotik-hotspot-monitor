@@ -8,7 +8,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->write('/log/print', false);
 	$API->write('?=topics=hotspot,info,debug');
 	$ARRAY = $API->read();
-
+	$log = array_reverse($ARRAY);
 	$API->disconnect();
 }
 ?>
@@ -52,11 +52,11 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<th >Message</th>
 				</tr>
 				<?php
-					$TotalReg = count($ARRAY);
+					$TotalReg = count($log);
 
 						for ($i=0; $i<$TotalReg; $i++){
-							$regtable = $ARRAY[$i];echo "<tr><td>" . $regtable['time'];echo "</td>";
-							$regtable = $ARRAY[$i];echo "<td>" . $regtable['message'];echo "</td> </tr>";
+							$regtable = $log[$i];echo "<tr><td>" . $regtable['time'];echo "</td>";
+							$regtable = $log[$i];echo "<td>" . $regtable['message'];echo "</td> </tr>";
 							}
 				?>
 			</table>
