@@ -9,7 +9,7 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2026;
+$oldbuild = 2028;
 $build = file_get_contents('https://raw.githubusercontent.com/laksa19/laksa19.github.io/master/download/build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
