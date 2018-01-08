@@ -64,142 +64,70 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<tr><td>Profile | Masa Aktif</td><td>:</td><td>
 						<select name="nama" required="1">
 							<option value="">Pilih...</option>
-							<?php if($profile1 == ""){
-								}elseif ($profile2 == ""){
-									echo "<option>$profile1</option>";
-								}elseif ($profile3 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-								}elseif ($profile4 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-								}elseif ($profile5 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-								}elseif ($profile6 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-								}elseif ($profile7 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-								}elseif ($profile8 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-								}elseif ($profile9 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-								}elseif ($profile10 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-									echo "<option>$profile9</option>";
-								}elseif ($profile11 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-									echo "<option>$profile9</option>";
-									echo "<option>$profile10</option>";
-								}elseif ($profile12 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-									echo "<option>$profile9</option>";
-									echo "<option>$profile10</option>";
-									echo "<option>$profile11</option>";
-								}elseif ($profile13 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-									echo "<option>$profile9</option>";
-									echo "<option>$profile10</option>";
-									echo "<option>$profile11</option>";
-									echo "<option>$profile12</option>";
-								}elseif ($profile14 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-									echo "<option>$profile9</option>";
-									echo "<option>$profile10</option>";
-									echo "<option>$profile11</option>";
-									echo "<option>$profile12</option>";
-									echo "<option>$profile13</option>";
-								}elseif ($profile15 == ""){
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-									echo "<option>$profile9</option>";
-									echo "<option>$profile10</option>";
-									echo "<option>$profile11</option>";
-									echo "<option>$profile12</option>";
-									echo "<option>$profile13</option>";
-									echo "<option>$profile14</option>";
-								}else{
-									echo "<option>$profile1</option>";
-									echo "<option>$profile2</option>";
-									echo "<option>$profile3</option>";
-									echo "<option>$profile4</option>";
-									echo "<option>$profile5</option>";
-									echo "<option>$profile6</option>";
-									echo "<option>$profile7</option>";
-									echo "<option>$profile8</option>";
-									echo "<option>$profile9</option>";
-									echo "<option>$profile10</option>";
-									echo "<option>$profile11</option>";
-									echo "<option>$profile12</option>";
-									echo "<option>$profile13</option>";
-									echo "<option>$profile14</option>";
-									echo "<option>$profile15</option>";
+							<?php
+								$proflist = array ('1'=>$profile1,$profile2,$profile3,$profile4,$profile5,$profile6,$profile7,$profile8,$profile9,$profile10,$profile11,$profile12,$profile13,$profile14,$profile15);
+								
+									if($profile1 == ""){
+									}elseif ($profile2 == ""){
+										for ($i = 1; $i <= 1; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile3 == ""){
+										for ($i = 1; $i <= 2; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile4 == ""){
+										for ($i = 1; $i <= 3; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile5 == ""){
+										for ($i = 1; $i <= 4; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile6 == ""){
+										for ($i = 1; $i <= 5; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile7 == ""){
+										for ($i = 1; $i <= 6; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile8 == ""){
+										for ($i = 1; $i <= 7; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile9 == ""){
+										for ($i = 1; $i <= 8; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile10 == ""){
+										for ($i = 1; $i <= 9; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile11 == ""){
+										for ($i = 1; $i <= 10; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile12 == ""){
+										for ($i = 1; $i <= 11; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile13 == ""){
+										for ($i = 1; $i <= 12; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile14 == ""){
+										for ($i = 1; $i <= 13; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}elseif ($profile15 == ""){
+										for ($i = 1; $i <= 14; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
+									}else{
+										for ($i = 1; $i <= 15; $i++) {
+										echo "<option>$proflist[$i]</option>";
+									}
 									}
 								?>
 						</select>
