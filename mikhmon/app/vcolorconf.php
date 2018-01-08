@@ -7,7 +7,7 @@ if(!isset($_SESSION['usermikhmon'])){
 <?php
 include('config.php');
 include('css/vcolors.php');
-include('vouchers/vouchers.php');
+include('vouchers/kvouchers.php');
 
 $tlimit = $uptimelimit;
 if ($tlimit == $utimelimit1){
@@ -371,31 +371,33 @@ table.tprintb td {
 			<br>
 			<table class="tprinta">
 					<tr>
+						<td style="text-align: left; background-color:<?php print_r($header);?>"><img src="./img/logo.png" alt="logo" style="height:43px;border:0;"></td>
 						<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [1]</td>
 					</tr>
 					<tr>
-						<td style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
+						<td colspan=2 style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
 					</tr>
 					<tr>
-						<td style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
+						<td colspan=2 style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 							<table class="tprintb">
-								<tr><td>Username : <?php print_r($user1);?></td></tr>
-								<tr><td>Password : <?php print_r($pass1);?></td></tr>
+								<tr><td>Username : MIKHMON</td></tr>
+								<tr><td>Password : MIKHMON</td></tr>
 							</table>
 						</td>
 					</tr>
 					<tr>
-						<td style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
+						<td colspan=2 style="text-align: center; color:<?php print_r($font4);?>; background-color:<?php print_r($details);?>">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td>
 					</tr>
 					<tr>
-						<td style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>">Harga : <?php print_r($vprice);?></td>
+						<td colspan=2 style="text-align: center; color:<?php print_r($font5);?>; background-color:<?php print_r($price);?>"><?php print_r($vserver);?> <?php print_r($vprice);?></td>
 					</tr>
 			</table>
 			<br>
 		</form>
 			<table class="tnav">
 				<tr>
-					<td>
+					<td style="color:green;">
+						Logo dapat diganti, diletakkan di folder img dalam folder app dengan format (logo.png).
 						<!--<button class="btnsubmit" onclick="window.open('./vouchers/printvs.php','_blank');">Cetak Vouchers</button>-->
 					</td>
 				</tr>
