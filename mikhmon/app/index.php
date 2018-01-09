@@ -106,6 +106,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 
 	$ARRAY18 = $API->comm("/system/clock/print");
 	$ARRAY19 = $API->comm("/system/resource/print");
+	$ARRAY20 = $API->comm("/system/routerboard/print");
 	
     $API->disconnect();
     
@@ -172,7 +173,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				</tr>
 				<td>
 							<?php
-									$regtable = $ARRAY19[0];echo "" . $regtable['board-name'] . " ";
+									$regtable = $ARRAY20[0];echo "" . $regtable['model'] . " ";
 									$regtable = $ARRAY19[0];echo "" . $regtable['version'] . "";
 									echo "</td>";
 							?>
