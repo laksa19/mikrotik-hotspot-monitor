@@ -183,7 +183,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			$onlogin1 = '{:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
 			$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
 			$API->comm("/ip/hotspot/user/profile/add", array(
-					  "add-mac-cookie" => "no",
+					  "add-mac-cookie" => "yes",
 					  "name" => "$profname",
 					  "rate-limit" => "$rxtx",
 					  "shared-users" => "$sharuser",

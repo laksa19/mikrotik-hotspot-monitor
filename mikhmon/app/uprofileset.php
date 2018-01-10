@@ -192,7 +192,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			$API->comm("/ip/hotspot/user/profile/set",
 				  array(
 						  ".id" => $arrID[0][".id"],
-						  "add-mac-cookie" => "no",
+						  "add-mac-cookie" => "yes",
 						  "rate-limit" => "$rxtx",
 						  "shared-users" => "$sharuser",
 						  "status-autorefresh" => "15",
