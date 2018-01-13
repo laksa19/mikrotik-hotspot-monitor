@@ -405,7 +405,7 @@ table.tsetup td {
 					<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
 				</tr>
 				<tr>
-					<td>Konfigurasi</td>
+					<td>Setup</td>
 					<td>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
@@ -450,7 +450,7 @@ table.tsetup td {
 				<table class="tsetup" align="center"  >
 					<tr>
 						<th>NAMA HOTSPOT</th>
-						<th>VOUCHER NOTE</th>
+						<th>DNS NAME</th>
 						<th>AUTO RELOAD</th>
 					</tr>
 					<tr>

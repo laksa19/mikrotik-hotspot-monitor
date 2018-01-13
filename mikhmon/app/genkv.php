@@ -138,6 +138,16 @@ table.tuserd td {
 						</select>
 						</td>
 					</tr>
+					<tr><td>Panjang Username</td><td>:</td><td>
+						<select name="pjguser" required="1">
+							<option value="">Pilih...</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select>
+						</td>
+					</tr>
 					<tr><td>Profile | Masa Aktif</td><td>:</td><td>
 						<select name="uprofile" required="1">
 							<option value="">Pilih...</option>
@@ -396,7 +406,8 @@ table.tuserd td {
 							<input type="submit" class="btnsubmit" value="Generate"/>
 						</td>
 					</tr>
-			</form>
+					</tr>
+					<tr><td colspan=3><p style="color:green;">Catatan:<br>Kode Voucher 2x panjang Username.</td></tr>
 			<br>
 			<!--<table>
 				<tr>
@@ -502,9 +513,19 @@ table.tuserd td {
 		$serverh = ($_POST['server']);
 		$kkv = "$profname-". rand(100,999) . "-" . date("d.m.y");
 		$genall = ($_POST['genall']);
+		$pjguser = ($_POST['pjguser']);
 	if($genall=="kv"){
-			$a = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -4);
-			$n = rand(1000,9999);
+
+			$a = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);
+			if($pjguser == 3){
+				$n = rand(100,999);
+			}elseif($pjguser == 4){
+				$n = rand(1000,9999);
+			}elseif($pjguser == 5){
+				$n = rand(10000,99999);
+			}elseif($pjguser == 6){
+				$n = rand(100000,999999);
+			}
 			$u = "$a$n";
 			
 			$API->comm("/ip/hotspot/user/add", array(
@@ -529,7 +550,7 @@ table.tuserd td {
 		echo						"<td style='text-align: right;'><?php print_r($headerv);? font-size: 16px;'>$headerv</td>";
 		echo					"</tr>";
 		echo					"<tr>";
-		echo						"<td style='font-size: 12px;'>$notev</td>";
+		echo						"<td style='font-size: 12px;'>Login dan Logout buka http://$notev</td>";
 		echo					"</tr>";
 		echo					"<tr>";
 		echo						"<td>";
@@ -547,8 +568,16 @@ table.tuserd td {
 		echo	"<br>";
 	}
 	if($genall=="up"){
-			$a = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-			$n = rand(100000,999999);
+			$a = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);
+			if($pjguser == 3){
+				$n = rand(100,999);
+			}elseif($pjguser == 4){
+				$n = rand(1000,9999);
+			}elseif($pjguser == 5){
+				$n = rand(10000,99999);
+			}elseif($pjguser == 6){
+				$n = rand(100000,999999);
+			}
 			
 			$API->comm("/ip/hotspot/user/add", array(
 			"server" => "$serverh",

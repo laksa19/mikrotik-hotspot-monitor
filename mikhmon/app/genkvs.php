@@ -13,13 +13,9 @@ include('./vouchers/kvouchers.php');
 $API = new RouterosAPI();
 $API->debug = false;
 if ($API->connect( $iphost, $userhost, $passwdhost )) {
-	$ARRAY = $API->comm("/ip/hotspot/print");
+	$srvlist = $API->comm("/ip/hotspot/print");
 	$API->disconnect();
-	$server1 = ($ARRAY[0]['name']);
-	$server2 = ($ARRAY[1]['name']);
-	$server3 = ($ARRAY[2]['name']);
-	$server4 = ($ARRAY[3]['name']);
-	$server5 = ($ARRAY[4]['name']);
+
 }
 
 $tlimit = $uptimelimit;
@@ -113,6 +109,16 @@ if ($blimit == $ubytelimit1){
 							$regtable = $srvlist[$i];echo "<option>" . $regtable['name'];echo "</option>";
 							}
 								?>
+						</select>
+						</td>
+					</tr>
+					<tr><td>Panjang Username</td><td>:</td><td>
+						<select name="pjguser" required="1">
+							<option value="">Pilih...</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
 						</select>
 						</td>
 					</tr>
@@ -380,16 +386,32 @@ if ($blimit == $ubytelimit1){
 							<input type="submit" class="btnsubmit" value="Generate"/>
 						</td>
 					</tr>
-					<tr><td colspan=3><p style="color:green;">Catatan: Maksimal jumlah voucher per lembar [A4=18 Legal/F4=21]<br>Sesuaikan margin agar hasil maksimal.<br>Segera cetak voucher setelah geneate atau simpan ke PDF.<br>Mikhmon hanya bisa cetak voucher yang terakhir di generate.</p></td></tr>
+					<tr>
+						<td colspan=3>
+							<p style="color:green;">Catatan:</p>
+							<ol style="color:green;">
+								<li >Kode Voucher 2x panajang Username.</li><li>Sebelum cetak sesuaikan margin agar hasil maksimal.</li><li>Segera cetak voucher setelah geneate atau simpan ke PDF.</li><li>Mikhmon hanya bisa cetak voucher yang terakhir di generate.</li>
+							</ol>
+						</td>
+					</tr>
 				</table>
 			</form>
-				<table class="tnav">
+				<table class="tprinta">
 					<tr>
-						<td>
-							<button class="btnsubmit" onclick="location.href='./vcolorconf.php';">Ganti Warna</button>
-							<button class="btnsubmit" onclick="window.open('./vouchers/printkvs.php','_blank');">Cetak Kode Voucher</button>
-							<button class="btnsubmit" onclick="window.open('./vouchers/printvs.php','_blank');">Cetak User Password</button>
+						<th colspan=2>Cetak</th>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							<button class="btnsubmit" onclick="window.open('./vouchers/printkvs.php','_blank');">Kode Voucher</button>
+							<button class="btnsubmit" onclick="window.open('./vouchers/printkvsqr.php','_blank');">Kode Voucher QR</button>
 						</td>
+						<td style="text-align:center;">
+							<button class="btnsubmit" onclick="window.open('./vouchers/printvs.php','_blank');">User Password</button>
+							<button class="btnsubmit" onclick="window.open('./vouchers/printvsqr.php','_blank');">User Password QR</button>
+						</td>
+					</tr>
+					<tr>
+						<td colspan=2 style="text-align:center;"><button class="btnsubmit" onclick="location.href='./vcolorconf.php';">Ganti Warna</button></td>
 					</tr>
 				</table>
 				<br>
@@ -498,10 +520,19 @@ if ($blimit == $ubytelimit1){
 		$jmlv = ($_POST['jumlahv']);
 		$kkv = "$profname-". rand(100,999) . "-" . date("d.m.y");
 		$genall = ($_POST['genall']);
+		$pjguser = ($_POST['pjguser']);
 	if($genall=="kv"){
 		for($i=1;$i<=$jmlv;$i++){
-			$a[$i]= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -4);
-			$n[$i]= rand(1000,9999);
+			$a[$i]= substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);
+			if($pjguser == 3){
+				$n[$i]= rand(100,999);
+			}elseif($pjguser == 4){
+				$n[$i]= rand(1000,9999);
+			}elseif($pjguser == 5){
+				$n[$i]= rand(10000,99999);
+			}elseif($pjguser == 6){
+				$n[$i]= rand(100000,999999);
+			}
 			$u[$i] = "$a[$i]$n[$i]";
 		}
 		for($i=1;$i<=$jmlv;$i++){
@@ -521,8 +552,16 @@ if ($blimit == $ubytelimit1){
 	}
 	if($genall=="up"){
 		for($i=1;$i<=$jmlv;$i++){
-			$a[$i]= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -6);
-			$n[$i]= rand(100000,999999);
+			$a[$i]= substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);
+			if($pjguser == 3){
+				$n[$i]= rand(100,999);
+			}elseif($pjguser == 4){
+				$n[$i]= rand(1000,9999);
+			}elseif($pjguser == 5){
+				$n[$i]= rand(10000,99999);
+			}elseif($pjguser == 6){
+				$n[$i]= rand(100000,999999);
+			}
 		}
 		for($i=1;$i<=$jmlv;$i++){
 			$API->comm("/ip/hotspot/user/add", array(

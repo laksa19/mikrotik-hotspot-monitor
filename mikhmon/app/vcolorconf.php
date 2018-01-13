@@ -375,7 +375,7 @@ table.tprintb td {
 						<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv);?>  [1]</td>
 					</tr>
 					<tr>
-						<td colspan=2 style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
+						<td colspan=2 style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>">Login dan Logout buka http://<?php print_r($notev);?> </td>
 					</tr>
 					<tr>
 						<td colspan=2 style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
