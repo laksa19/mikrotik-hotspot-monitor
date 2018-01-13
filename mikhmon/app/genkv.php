@@ -601,7 +601,7 @@ table.tuserd td {
 		echo						"<td style='text-align: right;'><?php print_r($headerv);? font-size: 16px;'>$headerv</td>";
 		echo					"</tr>";
 		echo					"<tr>";
-		echo						"<td style='font-size: 12px;'>$notev</td>";
+		echo						"<td style='font-size: 12px;'>Login dan Logout buka http://$notev</td>";
 		echo					"</tr>";
 		echo					"<tr>";
 		echo						"<td>";
