@@ -537,8 +537,8 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				<ol>
 				<li><a href="https://laksa19.github.io/download/update.zip" target="_blank">Download update.zip.</a></li>
 				<li>Extract update.zip.</li>
-				<li>Copy folder app dan status.</li>
-				<li>Paste di folder mikhmon,timpa saja folder yang lama.</li>
+				<li>Copy folder mikhmon.</li>
+				<li>Paste folder root webserver,timpa saja folder yang lama.</li>
 				</ol>
 			</div>
     </div>
