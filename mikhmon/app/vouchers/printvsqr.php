@@ -124,8 +124,9 @@ table.tprintb {
   width: 300px; 
   border-collapse: collapse; 
 }
-table.tprintb td { 
-  padding-left: 30px; 
+table.tprintb td {
+  padding-top: 1px;
+  padding-left: 30px;
   border: 0px;
   font-size: 18px;
   text-align: left; 
@@ -150,8 +151,29 @@ table.tprintb td {
 						<tr>
 							<td colspan=2 style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
-									<tr><td>Username : <?php $regtable = $ARRAY[$indx];echo "" . $regtable['name'];?></td></tr>
-									<tr><td>Password : <?php $regtable = $ARRAY[$indx];echo "" . $regtable['password'];?></td></tr>
+									<tr><td>Username :<br><?php $regtable = $ARRAY[$indx];echo "" . $regtable['name'];?><br>Password :<br><?php $regtable = $ARRAY[$indx];echo "" . $regtable['password'];?>
+									</td>
+									<td rowspan=2 style="text-align:right;">
+										<?php
+										$regtable = $ARRAY[$indx]; $uname = $regtable['name']; $upass = $regtable['password'];
+										// Source: http://stackoverflow.com/questions/5943368/dynamically-generating-a-qr-code-with-php
+										// Google Charts Documentation: https://developers.google.com/chart/infographics/docs/qr_codes?csw=1#overview
+										// CHart Type
+										$cht = "qr";
+										// CHart Size
+										$chs = "80x80";
+										// CHart Link
+										// the url-encoded string you want to change into a QR code
+										$chl = urlencode("http://$notev/login?username=$uname&password=$upass");
+										// CHart Output Encoding (optional)
+										// default: UTF-8
+										$choe = "UTF-8";
+										$qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chld=L|0&chl=' . $chl . '&choe=' . $choe;
+										//echo $qrcode . '<br>';
+										?>
+											<img src="<?php echo $qrcode ?>" alt="vcrqrcode">
+										</td>
+									</tr>
 								</table>
 							</td>
 						</tr>

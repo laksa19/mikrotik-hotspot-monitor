@@ -11,6 +11,7 @@ require('../lib/api.php');
 include('../config.php');
 include('./kvouchers.php');
 include('../css/vcolors.php');
+include('..lib/phpqrcode/qrlib.php');
 $API = new RouterosAPI();
 $API->debug = false;
 if ($API->connect( $iphost, $userhost, $passwdhost )) {
@@ -32,10 +33,19 @@ if ($tlimit == $utimelimit1){
 	$vtimelimit = "Durasi:$utimelimit4t";
 }elseif ($tlimit == $utimelimit5){
 	$vtimelimit = "Durasi:$utimelimit5t";
+}elseif ($tlimit == $utimelimit6){
+	$vtimelimit = "Durasi:$utimelimit6t";
+}elseif ($tlimit == $utimelimit7){
+	$vtimelimit = "Durasi:$utimelimit7t";
+}elseif ($tlimit == $utimelimit8){
+	$vtimelimit = "Durasi:$utimelimit8t";
+}elseif ($tlimit == $utimelimit9){
+	$vtimelimit = "Durasi:$utimelimit9t";
+}elseif ($tlimit == $utimelimit10){
+	$vtimelimit = "Durasi:$utimelimit10t";
 }else {
 	$vtimelimit= "";
 }
-
 $blimit = $upbytelimit;
 if ($blimit == $ubytelimit1){
 	$vbytelimit = "Kuota:$ubytelimit1t";
@@ -47,6 +57,16 @@ if ($blimit == $ubytelimit1){
 	$vbytelimit = "Kuota:$ubytelimit4t";
 }elseif ($blimit == $ubytelimit5){
 	$vbytelimit = "Kuota:$ubytelimit5t";
+}elseif ($blimit == $ubytelimit6){
+	$vbytelimit = "Kuota:$ubytelimit6t";
+}elseif ($blimit == $ubytelimit7){
+	$vbytelimit = "Kuota:$ubytelimit7t";
+}elseif ($blimit == $ubytelimit8){
+	$vbytelimit = "Kuota:$ubytelimit8t";
+}elseif ($blimit == $ubytelimit9){
+	$vbytelimit = "Kuota:$ubytelimit9t";
+}elseif ($blimit == $ubytelimit10){
+	$vbytelimit = "Kuota:$ubytelimit10t";
 }else {
 	$vbytelimit= "";
 }
@@ -112,6 +132,10 @@ table.tprintb td {
   font-size: 18px;
   text-align: left; 
 }
+#qrcode {
+  width:32px;
+  height:32px;
+}
 		</style>
 	</head>
 	<body>
@@ -127,7 +151,7 @@ table.tprintb td {
 							<td style="text-align: right; color:<?php print_r($font1);?>; background-color:<?php print_r($header);?>"><?php print_r($headerv); $no = $indx+1; echo "  [$no]";?></td>
 						</tr>
 						<tr>
-							<td colspan=2 style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>"><?php print_r($notev);?> </td>
+							<td colspan=2 style="font-size: 12px; color:<?php print_r($font2);?>; background-color:<?php print_r($note);?>">Login dan Logout buka http://<?php print_r($notev);?> </td>
 						</tr>
 						<tr>
 							<td colspan=2 style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
@@ -147,6 +171,35 @@ table.tprintb td {
 					<?php $indx++; } ?>
 			</tr>
 	<?php } ?>
-</table>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 100,
+	height : 100
+});
+
+function makeCode () {		
+	var elText = document.getElementById("text");
+	
+	if (!elText.value) {
+		alert("Input a text");
+		elText.focus();
+		return;
+	}
+	
+	qrcode.makeCode(elText.value);
+}
+
+makeCode();
+
+$("#text").
+	on("blur", function () {
+		makeCode();
+	}).
+	on("keydown", function (e) {
+		if (e.keyCode == 13) {
+			makeCode();
+		}
+	});
+</script>
 </body>
 </html>

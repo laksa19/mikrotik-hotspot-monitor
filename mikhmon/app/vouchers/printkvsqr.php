@@ -7,9 +7,9 @@ if(!isset($_SESSION['usermikhmon'])){
 ?>
 <?php
 error_reporting(0);
-require('../lib/api.php');;
+require('../lib/api.php');
 include('../config.php');
-include('./vouchers.php');
+include('./kvouchers.php');
 include('../css/vcolors.php');
 $API = new RouterosAPI();
 $API->debug = false;
@@ -117,15 +117,15 @@ table.tprinta td {
   text-align: left;
   font-weight: bold;
 }
-table.tprintb {
-  table-layout:fixed;
+table.tprintb { 
   margin-left:auto; 
   margin-right:auto;
   width: 300px; 
   border-collapse: collapse; 
 }
-table.tprintb td { 
-  padding-left: 30px; 
+table.tprintb td {
+  padding-top: 2px;
+  padding-left: 30px;
   border: 0px;
   font-size: 18px;
   text-align: left; 
@@ -150,8 +150,29 @@ table.tprintb td {
 						<tr>
 							<td colspan=2 style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
-									<tr><td>Username : <?php $regtable = $ARRAY[$indx];echo "" . $regtable['name'];?></td></tr>
-									<tr><td>Password : <?php $regtable = $ARRAY[$indx];echo "" . $regtable['password'];?></td></tr>
+									<tr>
+										<td>Kode Voucher :<br><?php $regtable = $ARRAY[$indx];echo "" . $regtable['name'];?></td>
+										<td rowspan=2 style="text-align:right;">
+										<?php
+										$regtable = $ARRAY[$indx]; $uname = $regtable['name'];
+										// Source: http://stackoverflow.com/questions/5943368/dynamically-generating-a-qr-code-with-php
+										// Google Charts Documentation: https://developers.google.com/chart/infographics/docs/qr_codes?csw=1#overview
+										// CHart Type
+										$cht = "qr";
+										// CHart Size
+										$chs = "80x80";
+										// CHart Link
+										// the url-encoded string you want to change into a QR code
+										$chl = urlencode("http://$notev/login?username=$uname&password=$uname");
+										// CHart Output Encoding (optional)
+										// default: UTF-8
+										$choe = "UTF-8";
+										$qrcode = 'https://chart.googleapis.com/chart?cht=' . $cht . '&chs=' . $chs . '&chld=|0&chl=' . $chl . '&choe=' . $choe;
+										//echo $qrcode . '<br>';
+										?>
+											<img src="<?php echo $qrcode ?>" alt="vcrqrcode">
+										</td>
+									</tr>
 								</table>
 							</td>
 						</tr>
