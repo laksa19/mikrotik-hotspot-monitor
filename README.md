@@ -70,6 +70,13 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 ### Versi 2018
 
+13-1-2018
+
+1. Perbaikan Generate Voucher (Penambahan pilihan panajang Username). Untuk Kode Voucher 2x panjang Username.
+2. Perubahan Setup Voucher Note menjadi DNS NAME. (Sesuaikan DNS Name di laman Setup).
+3. Perbaikan Cetak Voucher.
+4. Penambahan QR Code di cetak Voucher
+
 1-10-2018
 
 Perbaikan untuk dukungan login by mac. Setelah update Mikhmon, silahkan update user profile dari Mikhmon.
