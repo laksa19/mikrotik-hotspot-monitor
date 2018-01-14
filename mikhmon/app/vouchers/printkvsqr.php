@@ -116,7 +116,7 @@ table.tprinta {
   border-collapse: collapse;
 }
 table.tprinta td { 
-  padding: 4px; 
+  padding: 2px 4px;
   border: 2px solid #000000;
   font-size: 16px;
   text-align: left;
@@ -134,6 +134,11 @@ table.tprintb td {
   border: 0px;
   font-size: 18px;
   text-align: left; 
+}
+div{
+  padding:2px;
+  border: 1px solid #000000;
+  border-radius:5px;
 }
 		</style>
 	</head>
@@ -156,7 +161,7 @@ table.tprintb td {
 							<td colspan=2 style="color:<?php print_r($font3);?>; background-color:<?php print_r($userpass);?>">
 								<table class="tprintb">
 									<tr>
-										<td>Kode Voucher :<br><?php $regtable = $ARRAY[$indx];echo "" . $regtable['name'];?></td>
+										<td style="font-size: 14px;">Kode Voucher :<br><div style="font-size: 18px;"><?php $regtable = $ARRAY[$indx];echo "" . $regtable['name'];?></div></td>
 										<td rowspan=2 style="text-align:right;">
 										<?php
 										$regtable = $ARRAY[$indx]; $uname = $regtable['name'];
