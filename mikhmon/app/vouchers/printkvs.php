@@ -97,6 +97,11 @@ table.tprint {
   width: 300px;
   height: 180px;
   border-collapse: collapse;
+  page-break-inside:auto;
+}
+table.tprint tr {
+  page-break-inside:avoid;
+  page-break-after:auto;
 }
 table.tprint td { 
   padding: 10px; 
