@@ -77,11 +77,11 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 3. Perbaikan Cetak Voucher.
 4. Penambahan QR Code di cetak Voucher
 
-1-10-2018
+10-1-2018
 
 Perbaikan untuk dukungan login by mac. Setelah update Mikhmon, silahkan update user profile dari Mikhmon.
 
-1-9-2018
+9-1-2018
 
 1. Perubahan form user profile. Rate limit Upload/Downlod menjadi input manual. Bertujuan agar lebih leluasa membuat rate limit.
 2. Perubahan Log Hotspot. Sekarang menampilkan log terbaru diuruan teratas.
