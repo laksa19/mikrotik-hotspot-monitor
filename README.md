@@ -74,7 +74,7 @@ Download [update.zip](https://laksa19.github.io/download/update.zip)
 
 19-1-2018
 
-Perbaikan laman setup (durasi kolom kedua).
+Perbaikan laman setup (durasi kolom kedua). Setelah update klik Simpan dilaman setup.
 
 14-1-2018
 
