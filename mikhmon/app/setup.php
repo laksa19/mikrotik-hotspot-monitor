@@ -188,7 +188,7 @@ include('./config.php');
 				$stimelimit2t = $timel ."". $h;
 			}elseif (substr($tlimit2, -1) == "d"){
 				$timel = substr($tlimit2, 0,-1);
-				$stimelimit2 = $timel ."". $d;
+				$stimelimit2t = $timel ."". $d;
 			}
 		$tlimit3 = ($_POST['durasi3']);
 			if (substr($tlimit3, -1) == "h"){
@@ -343,7 +343,7 @@ include('./config.php');
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 		$handle1 = fopen($my_file1, 'w') or die('Cannot open file:  '.$my_file1);
 		
-		$data = '<?php $iphost="'.$siphost.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $useradm="'.$suseradm.'"; $passadm="'.$spassadm.'"; $reloadindex="'.$sreloadindex.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $profile6="'.$sprofile6.'"; $profile7="'.$sprofile7.'"; $profile8="'.$sprofile8.'"; $profile9="'.$sprofile9.'"; $profile10="'.$sprofile10.'"; $profile11="'.$sprofile11.'"; $profile12="'.$sprofile12.'"; $profile13="'.$sprofile13.'"; $profile14="'.$sprofile14.'"; $profile15="'.$sprofile15.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $uactive6="'.$active6.'"; $uactive7="'.$active7.'"; $uactive8="'.$active8.'"; $uactive9="'.$active9.'"; $uactive10="'.$active10.'"; $uactive11="'.$active11.'"; $uactive12="'.$active12.'"; $uactive13="'.$active13.'"; $uactive14="'.$active14.'"; $uactive15="'.$active15.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $vname6="'.$suactive6t.'"; $vname7="'.$suactive7t.'"; $vname8="'.$suactive8t.'"; $vname9="'.$suactive9t.'"; $vname10="'.$suactive10t.'";  $vname11="'.$suactive11t.'"; $vname12="'.$suactive12t.'"; $vname13="'.$suactive13t.'"; $vname14="'.$suactive14t.'"; $vname15="'.$suactive15t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit6="'.$tlimit6.'"; $utimelimit7="'.$tlimit7.'";  $utimelimit8="'.$tlimit8.'"; $utimelimit9="'.$tlimit9.'"; $utimelimit10="'.$tlimit10.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $utimelimit6t="'.$stimelimit6t.'"; $utimelimit7t="'.$stimelimit7t.'"; $utimelimit8t="'.$stimelimit8t.'"; $utimelimit9t="'.$stimelimit9t.'"; $utimelimit10t="'.$stimelimit10t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit6="'.$bytelimit6.'"; $ubytelimit7="'.$bytelimit7.'";  $ubytelimit8="'.$bytelimit8.'"; $ubytelimit9="'.$bytelimit9.'"; $ubytelimit10="'.$bytelimit10.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $ubytelimit6t="'.$blimit6.'"; $ubytelimit7t="'.$blimit7.'"; $ubytelimit8t="'.$blimit8.'"; $ubytelimit9t="'.$blimit9.'"; $ubytelimit10t="'.$blimit10.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $price10="'.$sprice10.'";  $price11="'.$sprice11.'"; $price12="'.$sprice12.'"; $price13="'.$sprice13.'"; $price14="'.$sprice14.'"; $price15="'.$sprice15.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';		
+		$data = '<?php $iphost="'.$siphost.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $useradm="'.$suseradm.'"; $passadm="'.$spassadm.'"; $reloadindex="'.$sreloadindex.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $profile6="'.$sprofile6.'"; $profile7="'.$sprofile7.'"; $profile8="'.$sprofile8.'"; $profile9="'.$sprofile9.'"; $profile10="'.$sprofile10.'"; $profile11="'.$sprofile11.'"; $profile12="'.$sprofile12.'"; $profile13="'.$sprofile13.'"; $profile14="'.$sprofile14.'"; $profile15="'.$sprofile15.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $uactive6="'.$active6.'"; $uactive7="'.$active7.'"; $uactive8="'.$active8.'"; $uactive9="'.$active9.'"; $uactive10="'.$active10.'"; $uactive11="'.$active11.'"; $uactive12="'.$active12.'"; $uactive13="'.$active13.'"; $uactive14="'.$active14.'"; $uactive15="'.$active15.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $vname6="'.$suactive6t.'"; $vname7="'.$suactive7t.'"; $vname8="'.$suactive8t.'"; $vname9="'.$suactive9t.'"; $vname10="'.$suactive10t.'";  $vname11="'.$suactive11t.'"; $vname12="'.$suactive12t.'"; $vname13="'.$suactive13t.'"; $vname14="'.$suactive14t.'"; $vname15="'.$suactive15t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit6="'.$tlimit6.'"; $utimelimit7="'.$tlimit7.'";  $utimelimit8="'.$tlimit8.'"; $utimelimit9="'.$tlimit9.'"; $utimelimit10="'.$tlimit10.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $utimelimit6t="'.$stimelimit6t.'"; $utimelimit7t="'.$stimelimit7t.'"; $utimelimit8t="'.$stimelimit8t.'"; $utimelimit9t="'.$stimelimit9t.'"; $utimelimit10t="'.$stimelimit10t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit6="'.$bytelimit6.'"; $ubytelimit7="'.$bytelimit7.'";  $ubytelimit8="'.$bytelimit8.'"; $ubytelimit9="'.$bytelimit9.'"; $ubytelimit10="'.$bytelimit10.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $ubytelimit6t="'.$blimit6.'"; $ubytelimit7t="'.$blimit7.'"; $ubytelimit8t="'.$blimit8.'"; $ubytelimit9t="'.$blimit9.'"; $ubytelimit10t="'.$blimit10.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $price10="'.$sprice10.'";  $price11="'.$sprice11.'"; $price12="'.$sprice12.'"; $price13="'.$sprice13.'"; $price14="'.$sprice14.'"; $price15="'.$sprice15.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
 		
 		$data1 = '<?php  $iphost="'.$siphost.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $headerv="'.$sheaderv.'";?>';
 		fwrite($handle, $data);
@@ -362,22 +362,22 @@ include('./config.php');
 		<link rel="icon" href="img/favicon.png" />
 		<link rel="stylesheet" href="css/style.css" media="screen">
 		<style>
-table.tsetup { 
-  margin-left:auto; 
+table.tsetup {
+  margin-left:auto;
   margin-right:auto;
-  width: 100%; 
-  border-collapse: collapse; 
+  width: 100%;
+  border-collapse: collapse;
 }
-table.tsetup th { 
-  background: #008CCA; 
-  color: white; 
+table.tsetup th {
+  background: #008CCA;
+  color: white;
   font-weight: bold;
   text-align: center;
 }
-table.tsetup td { 
-  padding: 2px; 
-  border: 1px solid #ccc; 
-  text-align: center; 
+table.tsetup td {
+  padding: 2px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 		</style>
 		<script>
@@ -562,7 +562,7 @@ table.tsetup td {
 					</tr>
 					<tr>
 						<td style="text-align:left" colspan=3>
-							Nama Profile dan Masa Aktif dibuat linier, agar dapat mengnali masa aktif Profile dengan mudah. Contoh: Profile 3Jam, Masa Aktif 3h (h=jam d=hari). 
+							Nama Profile dan Masa Aktif dibuat linier, agar dapat mengnali masa aktif Profile dengan mudah. Contoh: Profile 3Jam, Masa Aktif 3h (h=jam d=hari).
 						</td>
 					</tr>
 				</table>
