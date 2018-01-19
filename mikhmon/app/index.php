@@ -9,12 +9,12 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2033;
+$oldbuild = 2038;
 $build = file_get_contents('https://raw.githubusercontent.com/laksa19/laksa19.github.io/master/download/build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
 				
-if ($reloadindex == ""){ 
+if ($reloadindex == ""){
 } else
 header("Refresh: $reloadindex ; url='./'");
 $API = new RouterosAPI();
@@ -161,7 +161,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					</td>
 				</tr>
 				<tr>
-				<td colspan=2>Mikrotik System Date : 
+				<td colspan=2>Mikrotik System Date :
 				
 							<?php
 								$regtable = $ARRAY18[0]; echo " " . $regtable['date']; echo " " . $regtable['time'] . "<br />"; echo "</td>";
@@ -494,7 +494,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 													$cekd = substr($cek, 2,2);
 													$cekd1 = substr($cek, 2,1) ."Hari";
 												if ($ceklen > 2){
-													$cekall = $cekw1 ." ".$cekd1; 
+													$cekall = $cekw1 ." ".$cekd1;
 												}elseif (substr($cek, -1) == "h"){
 													$cek1 = substr($cek, 0,-1);
 													$cekall = $cek1 ." Jam";
@@ -563,19 +563,19 @@ document.getElementById("defaultOpen").click();
 </script>
 <?php
 
-function formatBytes($bytes, $precision = 2) { 
-$units = array('B', 'KB', 'MB', 'GB', 'TB'); 
+function formatBytes($bytes, $precision = 2) {
+$units = array('B', 'KB', 'MB', 'GB', 'TB');
 
-$bytes = max($bytes, 0); 
-$pow = floor(($bytes ? log($bytes) : 0) / log(1024)); 
-$pow = min($pow, count($units) - 1); 
+$bytes = max($bytes, 0);
+$pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+$pow = min($pow, count($units) - 1);
 
 // Uncomment one of the following alternatives
 // $bytes /= pow(1024, $pow);
-// $bytes /= (1 << (10 * $pow)); 
+// $bytes /= (1 << (10 * $pow));
 
-return round($bytes, $precision) . ' ' . $units[$pow]; 
-} 
+return round($bytes, $precision) . ' ' . $units[$pow];
+}
 
 function formatBytes2($size, $decimals = 0){
 $unit = array(
