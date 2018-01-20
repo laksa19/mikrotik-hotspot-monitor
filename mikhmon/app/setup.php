@@ -396,6 +396,17 @@ table.tsetup td {
 		}
 		}
 		</script>
+		<script>
+		function rebootMikrotik() {
+		var txt;
+		var r = confirm("Mikrotik akan di-Reboot!\nYakin melakukannya?");
+		if (r == true) {
+			window.open("./reboot.php", "_self");
+		} else {
+			
+		}
+		}
+		</script>
 	</head>
 	<body>
 		<div class="main">
@@ -408,6 +419,7 @@ table.tsetup td {
 					<td>Setup</td>
 					<td>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
+						<button class="material-icons" onclick="rebootMikrotik()" title="Reboot Mikrotik">power_settings_new</button>
 						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
 						<button class="material-icons" onclick="resetConfig()" title="Reset Config">history</button>
 						<button class="material-icons" onclick="location.href='conntest.php';" title="Tes Koneksi ke Mikrotik">settings_ethernet</button>

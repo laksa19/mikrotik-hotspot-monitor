@@ -9,7 +9,7 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2038;
+$oldbuild = 2039;
 $build = file_get_contents('https://raw.githubusercontent.com/laksa19/laksa19.github.io/master/download/build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -142,7 +142,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td colspan=2>
 						<button class="material-icons" onclick="Reload()"	title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='logout.php';" 	title="Logout">lock</button>
-						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
+						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Setup Edit Config">settings</button>
 						<button class="material-icons"	onclick="location.href='./hotspotlog.php';" 	title="Log Hotspot">subject</button>
 						<button class="material-icons" onclick="location.href='./dnsstaticadd.php';" title="Add DNS Static">cloud_queue</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
@@ -174,7 +174,8 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				<td>
 							<?php
 									$regtable = $ARRAY20[0];echo "" . $regtable['model'] . " ";
-									$regtable = $ARRAY19[0];echo "" . $regtable['version'] . "";
+									$regtable = $ARRAY19[0];echo "" . $regtable['version'] . "<br>";
+									$regtable = $ARRAY19[0];echo "Free Memory : " . formatBytes2($regtable['free-memory'], 0); echo "<br>";
 									echo "</td>";
 							?>
 				<td style="text-align:right;"><?php if($newbuild > $oldbuild){echo "<i style='color:red;'>New update! | Build : $newbuild</i><br>";}else{echo "Mikhmon Build : $oldbuild";} ?></td>
@@ -449,8 +450,10 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<th >User</th>
 					<th >Server</th>
 					<th >IP</th>
+					<th >MAC Address</th>
 					<th >Uptime</th>
 					<th >Bytes Out</th>
+					<th >Login By</th>
 					</tr>
 							<?php
 								$TotalReg = count($ARRAY);
@@ -459,8 +462,10 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 										$regtable = $ARRAY[$i];echo "<tr><td>" . $regtable['user'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['address'];echo "</td>";
+										$regtable = $ARRAY[$i];echo "<td>" . $regtable['mac-address'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['uptime'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td style='text-align:right;'>" . formatBytes2($regtable['bytes-out'], 0) ;echo "</td>";
+										$regtable = $ARRAY[$i];echo "<td>" . $regtable['login-by'];echo "</td>";
 										echo "</tr>";
 										}
 							?>
@@ -493,11 +498,11 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 													$cekw1 = substr($cekw, 0,1) ."Minggu";
 													$cekd = substr($cek, 2,2);
 													$cekd1 = substr($cek, 2,1) ."Hari";
-												if ($ceklen > 2){
+												if ($ceklen > 3){
 													$cekall = $cekw1 ." ".$cekd1;
 												}elseif (substr($cek, -1) == "h"){
 													$cek1 = substr($cek, 0,-1);
-													$cekall = $cek1 ." Jam";
+													$cekall = $cek1 ."Jam";
 												}elseif (substr($cek, -1) == "d"){
 													$cek1 = substr($cek, 0,-1);
 													$cekall = $cek1 ."Hari";
