@@ -20,26 +20,26 @@ function goBack() {
 }
 </script>
 <style>
-table { 
+table {
   table-layout: fixed;
-  width: 330; 
+  width: 330;
   border-collapse: collapse;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
 }
 /* Zebra striping */
-tr:nth-of-type(odd) { 
-  background: #eee; 
+tr:nth-of-type(odd) {
+  background: #eee;
 }
-th { 
-  background: #333; 
-  color: white; 
-  font-weight: bold; 
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
 }
-td, th { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 .button {
     background-color: #008CCA;
@@ -53,17 +53,17 @@ td, th {
     cursor: pointer;
     border-radius: 5px;
 }
-table.tnav { 
+table.tnav {
   table-layout: fixed;
   white-space: nowrap;
-  width: 200; 
-  border-collapse: collapse; 
+  width: 200;
+  border-collapse: collapse;
   
 }
-table.tnav td { 
-  padding: 3px; 
-  border: 0px; 
-  text-align: left; 
+table.tnav td {
+  padding: 3px;
+  border: 0px;
+  text-align: left;
 }
 textarea,input,select {
   padding: 2px;
@@ -98,11 +98,11 @@ textarea,input,select {
 					$cekw1 = substr($cekw, 0,1) ."Minggu";
 					$cekd = substr($cek, 2,2);
 					$cekd1 = substr($cek, 2,1) ."Hari";
-				if ($ceklen > 2){
-					$cekall = $cekw1 ." ".$cekd1; 
+				if ($ceklen > 3){
+					$cekall = $cekw1 ." ".$cekd1;
 				}elseif (substr($cek, -1) == "h"){
 					$cek1 = substr($cek, 0,-1);
-					$cekall = $cek1 ." Jam";
+					$cekall = $cek1 ."Jam";
 				}elseif (substr($cek, -1) == "d"){
 					$cek1 = substr($cek, 0,-1);
 					$cekall = $cek1 ."Hari";
