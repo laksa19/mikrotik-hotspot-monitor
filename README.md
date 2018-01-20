@@ -74,9 +74,11 @@ Download [update.zip](https://laksa19.github.io/download/update.zip)
 
 20-1-2018
 
-1. Penambahan kolom MAC Address dan Login By di laman dashboard.
-2. Perbaikan cek masa aktif di laman dashboard dan status.
-3. Penambahan tombol reboot Mikrotik di laman setup.
+1. Perubahan cek update Mikhmon dan perbaikan performa.
+2. Penambahan kolom MAC Address dan Login By di laman dashboard.
+3. Perbaikan cek masa aktif di laman dashboard dan status.
+4. Penambahan tombol reboot Mikrotik di laman setup.
+
 
 19-1-2018
 
