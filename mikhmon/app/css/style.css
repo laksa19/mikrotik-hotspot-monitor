@@ -36,8 +36,8 @@
   float: right;
 }
 
-body { 
-  background: url('../img/textures.png'); 
+body {
+  background: url('../img/textures.png');
   background-color: #3D4241;
   font-family: Roboto;
   font-size: 14px;
@@ -51,11 +51,11 @@ body {
   padding-right: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
-  width:600px;
+  width:650px;
   height: 100%;
   margin-top:auto;
   margin-bottom:auto;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
 }
 
@@ -66,77 +66,77 @@ body {
   width:300px;
   height: 100%;
   margin-top:5%;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
 }
 
 /* Zebra striping */
 table.zebra{
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
-  width: 100%; 
-  border-collapse: collapse; 
+  width: 100%;
+  border-collapse: collapse;
 }
-table.zebra tr:nth-of-type(odd) { 
-  background: #f1f1f1; 
+table.zebra tr:nth-of-type(odd) {
+  background: #f1f1f1;
 }
-table.zebra th { 
-  background: #008CCA; 
-  color: white; 
-  font-weight: bold; 
+table.zebra th {
+  background: #008CCA;
+  color: white;
+  font-weight: bold;
 }
-table.zebra td, th { 
-  padding: 2px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
+table.zebra td, th {
+  padding: 2px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 
 table.tprint {
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
-  width: 100%; 
-  border-collapse: collapse; 
+  width: 100%;
+  border-collapse: collapse;
 }
-table.tprint th { 
-  background: #008CCA; 
-  color: white; 
-  font-weight: bold; 
+table.tprint th {
+  background: #008CCA;
+  color: white;
+  font-weight: bold;
 }
-table.tprint td, th { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
+table.tprint td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 
 table.tprinta {
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
-  width: 100%; 
-  border-collapse: collapse; 
+  width: 100%;
+  border-collapse: collapse;
 }
-table.tprinta th { 
-  background: #008CCA; 
-  color: white; 
+table.tprinta th {
+  background: #008CCA;
+  color: white;
   font-weight: bold;
   text-align: center;
 }
-table.tprinta td { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: center; 
+table.tprinta td {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
-table.tnav { 
-  margin-left:auto; 
+table.tnav {
+  margin-left:auto;
   margin-right:auto;
-  width: 100%; 
-  border-collapse: collapse; 
+  width: 100%;
+  border-collapse: collapse;
 }
-table.tnav td { 
-  padding: 3px; 
-  border: 0px; 
-  text-align: left; 
-  font-weight: bold; 
+table.tnav td {
+  padding: 3px;
+  border: 0px;
+  text-align: left;
+  font-weight: bold;
 }
 
 .btnsubmit {
@@ -170,7 +170,7 @@ div.tab {
   overflow: hidden;
   width: 100%;
   margin-top:7px;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
   height: 100%;
   background-color: #008CCA;
