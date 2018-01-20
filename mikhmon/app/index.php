@@ -9,8 +9,8 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2039;
-$build = file_get_contents('https://raw.githubusercontent.com/laksa19/laksa19.github.io/master/download/build.txt');
+$oldbuild = 2040;
+$build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
 				
@@ -113,6 +113,12 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$a=array($ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6,$ARRAY7,$ARRAY8,$ARRAY9,$ARRAY10,$ARRAY11,$ARRAY12,$ARRAY13,$ARRAY14,$ARRAY15,$ARRAY16,$ARRAY17);
 	$aa = array_sum($a);
 }
+?>
+<?php
+  if(isset($_POST['btnupdate'])){
+   copy("http://laksa.mooo.com/build.txt","build.txt");
+   echo "<script>location.href='';</script>";
+  }
 
 ?>
 <!DOCTYPE html>
@@ -129,7 +135,6 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			function Reload() {
 				location.reload();
 			}
-
 		</script>
 	</head>
 	<body>
@@ -156,7 +161,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 								</div>
 						</div>
 						<button class="material-icons"	onclick="location.href='../status';"	title="Status User">account_box</button>
-						<button class="material-icons"	onclick="location.href='#cek-update';"	title="Cek Update">system_update_alt</button>
+						<form  method="post"><input type="submit" name="btnupdate" class="material-icons"	title="Cek Update" value="system_update_alt"></form>
 						<!-- -->
 					</td>
 				</tr>
@@ -178,7 +183,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 									$regtable = $ARRAY19[0];echo "Free Memory : " . formatBytes2($regtable['free-memory'], 0); echo "<br>";
 									echo "</td>";
 							?>
-				<td style="text-align:right;"><?php if($newbuild > $oldbuild){echo "<i style='color:red;'>New update! | Build : $newbuild</i><br>";}else{echo "Mikhmon Build : $oldbuild";} ?></td>
+				<td style="text-align:right;"><?php if($newbuild > $oldbuild){echo "<a href='#cek-update' title='Download update, klik di sini!'><i style='color:red;'>New update! | Build : $newbuild</i></a>";}else{echo "Mikhmon Build : $oldbuild";} ?></td>
 				</tr>
 			</table>
 			<table class="tnav">
