@@ -9,7 +9,7 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2040;
+$oldbuild = 2041;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -452,6 +452,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			<div style="overflow-x:auto;">
 			<table style="white-space: nowrap;" class="zebra" >
 				<tr>
+					<th style='text-align:center;'>X</th>
 					<th >User</th>
 					<th >Server</th>
 					<th >IP</th>
@@ -464,7 +465,9 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 								$TotalReg = count($ARRAY);
 
 										for ($i=0; $i<$TotalReg; $i++){
-										$regtable = $ARRAY[$i];echo "<tr><td>" . $regtable['user'];echo "</td>";
+										echo "<tr>";
+										$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=remuser.php?id=".$regtable['.id'] . ">X</a></td>";
+										$regtable = $ARRAY[$i];echo "<td>" . $regtable['user'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['address'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['mac-address'];echo "</td>";

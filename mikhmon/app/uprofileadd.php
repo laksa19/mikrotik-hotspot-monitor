@@ -43,7 +43,6 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td colspan=2>
 						<button class="material-icons" onclick="location.href='uprofileadd.php';" title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
-						<button class="material-icons" onclick="location.href='./uprofilerm.php';" title="Delete User Profile">delete</button>
 						<button class="material-icons" onclick="location.href='./uprofileset.php';" title="Edit User Profile">mode_edit</button>
 						<div class="dropdown" style="float:right;">
 							<button class="material-icons">local_play</button>
@@ -199,6 +198,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			<div>
 				<table class="zebra" align="center"  >
 					<tr>
+				    <th style='text-align:center;'>X</th>
 						<th >Name</th>
 						<th >Shared Users</th>
 						<th >Rate Limit</th>
@@ -207,7 +207,9 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					$TotalReg = count($ARRAY);
 
 						for ($i=0; $i<$TotalReg; $i++){
-							$regtable = $ARRAY[$i];echo "<tr><td>" . $regtable['name'];echo "</td>";
+						  echo "<tr>";
+							$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=uprofilerm.php?id=".$regtable['.id'] . ">X</a></td>";
+							$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['shared-users'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['rate-limit'];echo "</td> </tr>";
 							}

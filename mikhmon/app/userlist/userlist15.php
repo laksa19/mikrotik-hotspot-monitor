@@ -23,29 +23,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 
 	$API->disconnect();
 }
-?>
-<?php
-	if(isset($_POST['nama'])){
-		
-			$uname = ($_POST['nama']);
-			if ($API->connect($iphost, $userhost, $passwdhost)) {
-			}
-			
-			$arrID=$API->comm("/ip/hotspot/user/getall", 
-							  array(
-								  ".proplist"=> ".id",
-								  "?name" => "$uname",
-								  ));
-
-			$API->comm("/ip/hotspot/user/remove",
-				  array(
-			      ".id" => $arrID[0][".id"],
-			     ));
-				 
-			$API->disconnect();	
-			
-			header('Location: userlist15.php');
-}
+$listphp = "userlist15.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,7 +45,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	</head>
 	<body>
 	<div class="main">
-	<table style="white-space: nowrap;" class="tnav">
+	<table class="tnav">
 		<tr>
 			<td style="text-align: center;" colspan=2>Mikrotik Hotspot Monitor</td>
 		</tr>
@@ -89,17 +67,10 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			</td>
 		</tr>
 	</table>
-		<form autocomplete="off" method="post" action="">
-				<table class="tnav" align="center"  >
-				<!--<tr><td>ID</td><td><td>:</td><input type="text" size="20" maxlength="20" name="id" required="1"/></td></tr>-->
-				<tr><td>Hapus User</td><td>:</td><td><input type="text" size="15" maxlength="15" name="nama" placeholder="Nama User" required="1"/></td></tr>
-				<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Hapus"></td></tr>
-			</table>
-		</form>
-
 		<div style="overflow-x:auto;">
-				<table style="white-space: nowrap;" class="zebra" >
+			<table style="white-space: nowrap;" class="zebra" >
 				<tr>
+				  <th style='text-align:center;'>X</th>
 					<th >User</th>
 					<th >Server</th>
 					<th >Profile</th>
@@ -110,11 +81,14 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					$TotalReg = count($ARRAY);
 
 						for ($i=0; $i<$TotalReg; $i++){
-							$regtable = $ARRAY[$i];echo "<tr><td>" . $regtable['name'];echo "</td>";
+						  echo "<tr>";
+						  $regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=remuser.php?id=".$regtable['.id'] . "&list=".$listphp.">X</a></td>";
+							$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['profile'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['uptime'];echo "</td>";
-							$regtable = $ARRAY[$i];echo "<td>" . substr($regtable['comment'],strlen($regtable['comment'],0) - 8,8);echo "</td> </tr>";
+							$regtable = $ARRAY[$i];echo "<td>" . substr($regtable['comment'],strlen($regtable['comment'],0) - 8,8);echo "</td>";
+							echo"</tr>";
 							}
 					?>
 			</table>

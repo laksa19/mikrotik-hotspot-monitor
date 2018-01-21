@@ -18,34 +18,6 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 
 }
 
-$tlimit = $uptimelimit;
-if ($tlimit == $utimelimit1){
-	$vtimelimit = "Durasi:$utimelimit1t";
-}elseif ($tlimit == $utimelimit2){
-	$vtimelimit = "Durasi:$utimelimit2t";
-}elseif ($tlimit == $utimelimit3){
-	$vtimelimit = "Durasi:$utimelimit3t";
-}elseif ($tlimit == $utimelimit4){
-	$vtimelimit = "Durasi:$utimelimit4t";
-}else {
-	$vtimelimit= "";
-}
-
-$blimit = $upbytelimit;
-if ($blimit == $ubytelimit1){
-	$vbytelimit = "Kuota:$ubytelimit1t";
-}elseif ($blimit == $ubytelimit2){
-	$vbytelimit = "Kuota:$ubytelimit2t";
-}elseif ($blimit == $ubytelimit3){
-	$vbytelimit = "Kuota:$ubytelimit3t";
-}elseif ($blimit == $ubytelimit4){
-	$vbytelimit = "Kuota:$ubytelimit4t";
-}elseif ($blimit == $ubytelimit5){
-	$vbytelimit = "Kuota:$ubytelimit5t";
-}else {
-	$vbytelimit= "";
-}
-
 ?>
 <!DOCTYPE html>
 <html>

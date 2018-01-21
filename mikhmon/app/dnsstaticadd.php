@@ -60,7 +60,6 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		<tr>
 			<td>
 				<button class="material-icons" onclick="Reload()" title="Reload">autorenew</button>
-				<button class="material-icons" onclick="location.href='./dnsstaticrm.php';" title="Remove DNS Static">cloud_off</button>
 				<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 				<button class="material-icons" onclick="goBack()" title="Back">arrow_back</button>
 			</td>
@@ -75,18 +74,21 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		</form>
 
 		<div style="overflow-x:auto;">
-			<table class="tprint" >
+			<table style="white-space: nowrap;" class="zebra" >
 				<tr>
+				  <th style='text-align:center;'>X</th>
 					<th >Name</th>
 				</tr>
-				<tr><td>
 				<?php
 					$TotalReg = count($ARRAY);
 
-					for ($i=0; $i<$TotalReg; $i++){$regtable = $ARRAY[$i];echo "" . $regtable['name'] . "<br />";}echo "</td>";
-
-				?>
-				</tr>
+						for ($i=0; $i<$TotalReg; $i++){
+						  echo "<tr>";
+						  $regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=dnsstaticrm.php?id=".$regtable['.id'] . ">X</a></td>";
+							$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
+							echo"</tr>";
+							}
+					?>
 			</table>
 		</div>
 	</div>

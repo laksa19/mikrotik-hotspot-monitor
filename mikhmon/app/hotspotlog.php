@@ -1,3 +1,9 @@
+<?php session_start(); ?>
+<?php
+if(!isset($_SESSION['usermikhmon'])){
+	header("Location:login.php");
+}
+?>
 <?php
 error_reporting(0);
 require('./lib/api.php');

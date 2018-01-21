@@ -43,7 +43,6 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td colspan=2>
 						<button class="material-icons" onclick="location.href='uprofileset.php';" title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
-						<button class="material-icons" onclick="location.href='./uprofilerm.php';" title="Delete User Profile">delete</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<div class="dropdown" style="float:right;">
 							<button class="material-icons">local_play</button>
@@ -183,7 +182,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			$onlogin1 = '{:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
 			$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
 			
-			$arrID=$API->comm("/ip/hotspot/user/profile/getall", 
+			$arrID=$API->comm("/ip/hotspot/user/profile/getall",
 						  array(
 				  ".proplist"=> ".id",
 				  "?name" => "$profname",
@@ -208,6 +207,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			<div>
 				<table class="zebra" align="center"  >
 					<tr>
+				    <th style='text-align:center;'>X</th>
 						<th >Name</th>
 						<th >Shared Users</th>
 						<th >Rate Limit</th>
@@ -216,7 +216,9 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					$TotalReg = count($ARRAY);
 
 						for ($i=0; $i<$TotalReg; $i++){
-							$regtable = $ARRAY[$i];echo "<tr><td>" . $regtable['name'];echo "</td>";
+						  echo "<tr>";
+							$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=uprofilerm.php?id=".$regtable['.id'] . ">X</a></td>";
+							$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['shared-users'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['rate-limit'];echo "</td> </tr>";
 							}

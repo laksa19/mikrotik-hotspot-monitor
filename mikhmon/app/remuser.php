@@ -16,12 +16,12 @@ $id = $_GET['id'];
 
 if ($API->connect( $iphost, $userhost, $passwdhost )) {
 
-$API->comm("/ip/hotspot/user/profile/remove", array(
+$API->comm("/ip/hotspot/active/remove", array(
 ".id"=> "$id",));
 
 $API->disconnect();
 
-header("Location:./uprofileadd.php");
+header("Location:/");
 
 }
 ?>
