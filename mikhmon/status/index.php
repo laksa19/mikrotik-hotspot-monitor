@@ -119,7 +119,6 @@ textarea,input,select {
 	$ARRAY2 = $API->read();
 	$regtable = $ARRAY2[0];
 	$user = $regtable['name'];
-	$pass = $regtable['password'];
 	if($user == $pass){
 		$pass1 = "";
 	}else{
@@ -131,10 +130,6 @@ textarea,input,select {
 	echo "	<tr>";
 	echo "		<td >User/Kode Voucher</td>";
 	echo "		<td > $user</td>";
-	echo "	</tr>";
-	echo "	<tr>";
-	echo "		<td >Password</td>";
-	echo "		<td > $pass1</td>";
 	echo "	</tr>";
 	echo "	<tr>";
 	echo "		<td >Masa Aktif</td>";
