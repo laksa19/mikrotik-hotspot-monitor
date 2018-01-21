@@ -74,7 +74,7 @@ Download [update.zip](https://laksa19.github.io/download/update.zip)
 
 21-1-2018
 
-Penambahan kolom X untuk menghapus user, user acive, profile, dan dns.
+Penambahan kolom X untuk menghapus user, user acive, profile, dan dns di dns static.
 
 20-1-2018
 
