@@ -1,1 +1,0 @@
-<?php $vkkv="Voucher7Hari-507-06.12.17"; $vserver="all"; $vprofname="7Hari"; $uptimelimit="0"; $upbytelimit="0"; $vprice="Rp15.000"; ?>
