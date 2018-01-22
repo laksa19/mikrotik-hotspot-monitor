@@ -56,7 +56,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 4. Sesuaikan User Profile, nama usaha harga voucher di laman setup.
 
-5. Tambahkan User Profile ke Mikrotik dari aplikasi Mikhmon. Seelah itu aplikasi siap untuk generate voucher.
+5. Tambahkan User Profile ke Mikrotik dari aplikasi Mikhmon. Setelah itu aplikasi siap untuk generate voucher.
 
     Tutorial lebih lengkap kunungi [laksa19.github.io](https://laksa19.github.io/)
 
@@ -71,6 +71,10 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 ### Versi 2018
 
 Download [update.zip](https://laksa19.github.io/download/update.zip)
+
+22-1-2018
+
+Menghilangkan barihs password di laman status (cek detail voucher).
 
 21-1-2018
 
