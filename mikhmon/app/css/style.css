@@ -103,7 +103,7 @@ table.tprint th {
   font-weight: bold;
 }
 table.tprint td, th {
-  padding: 6px;
+  padding: 3px;
   border: 1px solid #ccc;
   text-align: left;
 }
@@ -119,9 +119,10 @@ table.tprinta th {
   color: white;
   font-weight: bold;
   text-align: center;
+  padding: 3px;
 }
 table.tprinta td {
-  padding: 6px;
+  padding: 3px;
   border: 1px solid #ccc;
   text-align: center;
 }

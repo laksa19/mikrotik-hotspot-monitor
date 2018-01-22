@@ -1,4 +1,22 @@
-<?php session_start(); ?>
+<?php
+/*
+ *  Copyright (C) 2017, 2018 Laksamadi Guko.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+session_start();
+?>
 <?php
 if(!isset($_SESSION['usermikhmon'])){
 	header("Location:login.php");
@@ -9,7 +27,7 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2041;
+$oldbuild = 2042;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -440,15 +458,11 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			
 			
 			<div class="tab">
-				<button class="tablinks" onclick="openTab(event, 'UA')" id="defaultOpen">User Aktif</button>
+				<button class="tablinks" onclick="openTab(event, 'UA')" id="defaultOpen">User Aktif  <?php print_r($ARRAY2);?></button>
 				<button class="tablinks" onclick="openTab(event, 'MA')">Masa Aktif</button>
 			</div>
+			<br>
 			<div id="UA" class="tabcontent">
-			<table class="tnav">
-				<tr>
-					<td><p>User Aktif : <?php print_r($ARRAY2);?></p></td>
-				</tr>
-			</table>
 			<div style="overflow-x:auto;">
 			<table style="white-space: nowrap;" class="zebra" >
 				<tr>
@@ -481,12 +495,6 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			</div>
 		</div>
 		<div id="MA" class="tabcontent">
-			<table class="tnav">
-				<tr>
-					<td colspan=2><p>Masa Aktif User</p></td>
-					<td><button style="background-color: #008CCA;  border: none;  padding: 5px 5px;  color: white;  font-weight: bold;  text-align: center;  text-decoration: none;  display: inline-block;  font-size: 14px;  cursor: pointer;  margin: 2px 2px;  border-radius: 5px;  float: right;"	onclick="location.href='./history.php';" 	title="History Remove User">History</button></td>
-				</tr>
-			</table>
 			<div style="overflow-x:auto;">
 			<table class="zebra" >
 				<tr>
