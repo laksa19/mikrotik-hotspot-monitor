@@ -27,7 +27,7 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2042;
+$oldbuild = 2043;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -134,7 +134,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 ?>
 <?php
   if(isset($_POST['btnupdate'])){
-   copy("http://laksa.mooo.com/build.txt","build.txt");
+   copy("http://laksa.mooo.com/ota-update/app/build.txt","build.txt");
    echo "<script>location.href='';</script>";
   }
 
@@ -201,7 +201,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 									$regtable = $ARRAY19[0];echo "Free Memory : " . formatBytes2($regtable['free-memory'], 0); echo "<br>";
 									echo "</td>";
 							?>
-				<td style="text-align:right;"><?php if($newbuild > $oldbuild){echo "<a href='#cek-update' title='Download update, klik di sini!'><i style='color:red;'>New update! | Build : $newbuild</i></a>";}else{echo "Mikhmon Build : $oldbuild";} ?></td>
+				<td style="text-align:right;"><?php if($newbuild > $oldbuild){echo "<a href='otaupdate.php' title='Download update, klik di sini!'><i style='color:red;'>New update! | Build : $newbuild</i></a>";}else{echo "Mikhmon Build : $oldbuild";} ?></td>
 				</tr>
 			</table>
 			<table class="tnav">
