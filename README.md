@@ -74,7 +74,7 @@ Download [update.zip](https://laksa19.github.io/download/update.zip)
 
 22-1-2018
 
-Menghilangkan barihs password di laman status (cek detail voucher).
+Menghilangkan baris password di laman status (cek detail voucher).
 
 21-1-2018
 
