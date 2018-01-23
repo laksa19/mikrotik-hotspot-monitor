@@ -1,4 +1,22 @@
-<?php session_start(); ?>
+<?php
+/*
+ *  Copyright (C) 2017, 2018 Laksamadi Guko.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+session_start();
+?>
 <?php
 if(!isset($_SESSION['usermikhmon'])){
 	header("Location:../login.php");
@@ -82,7 +100,7 @@ $listphp = "userlist14.php";
 
 						for ($i=0; $i<$TotalReg; $i++){
 						  echo "<tr>";
-						  $regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=remuser.php?id=".$regtable['.id'] . "&list=".$listphp.">X</a></td>";
+						  $regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=remuserl.php?id=".$regtable['.id'] . "&list=".$listphp.">X</a></td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['profile'];echo "</td>";
