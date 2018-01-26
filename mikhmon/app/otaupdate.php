@@ -135,7 +135,7 @@ $dstpath4."printvsqr.php",
 // final
 "./index.php",
 // path5
-$dstpath4."index.php"
+$dstpath5."index.php"
 );
 if(isset($_POST['btnupdate'])){
   for ($i = 1; $i <= count($src); $i++) {
