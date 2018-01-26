@@ -184,20 +184,19 @@ if(isset($_POST['btnupdate'])){
         </h3>
         <br>
 			<?php
-					echo "<b style='font-size:16px;'>Changelog | Build : $newbuild</b><br>";
+					echo "<p><b style='font-size:16px;'>Changelog | Build : $newbuild</b></p>";
 				for ($i=1;$i<count($getbuild);$i++) {
 					echo  $getbuild[$i].'<br> ';
 					}
 			?>
     </div>
-    <div>
-				+++++++++++++++++++<br>
-				Update Manual :
+    <div style='padding:10px;'>
+				<h3>Update Manual</h3>
 				<ol>
-				<li><a href="https://laksa19.github.io/download/update.zip" target="_blank">Download update.zip.</a></li>
+				<li>Download <a style="color:#000;" title="Download update.zip" href="https://laksa19.github.io/download/update.zip" target="_blank">update.zip</a></li>
 				<li>Extract update.zip.</li>
 				<li>Copy folder mikhmon.</li>
-				<li>Paste folder root webserver, timpa saja folder yang lama.</li>
+				<li>Paste folder root webserver, timpa folder mikhmon yang lama.</li>
 				</ol>
 			</div>
     </div>
