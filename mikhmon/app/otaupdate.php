@@ -29,56 +29,61 @@ $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
 // server
-$srcpath ="http://laksa.mooo.com/ota-update/app/";
+$srcpath1 ="http://laksa.mooo.com/ota-update/app/";
+$srcpath2 ="http://laksa.mooo.com/ota-update/status/";
 // local
 $dstpath2 ="./css/";
 $dstpath3 ="./userlist/";
 $dstpath4 ="./vouchers/";
+$dstpath5 ="../status/";
 //array server
 $src = array ('1'=>
-$srcpath."conntest.dat",
-$srcpath."dnsstaticadd.dat",
-$srcpath."dnsstaticrm.dat",
-$srcpath."genkv.dat",
-$srcpath."genkvs.dat",
-$srcpath."genupm.dat",
-$srcpath."history.dat",
-$srcpath."hotspotlog.dat",
-$srcpath."login.dat",
-$srcpath."logout.dat",
-$srcpath."reboot.dat",
-$srcpath."remuser.dat",
-$srcpath."resetcolor.dat",
-$srcpath."resetconfig.dat",
-$srcpath."setup.dat",
-$srcpath."uprofileadd.dat",
-$srcpath."uprofilerm.dat",
-$srcpath."uprofileset.dat",
-$srcpath."vcolorconf.dat",
-$srcpath."ota.dat",
-$srcpath."style.css",
-$srcpath."vcolors.dat",
-$srcpath."remuserl.dat",
-$srcpath."userlist1.dat",
-$srcpath."userlist2.dat",
-$srcpath."userlist3.dat",
-$srcpath."userlist4.dat",
-$srcpath."userlist5.dat",
-$srcpath."userlist6.dat",
-$srcpath."userlist7.dat",
-$srcpath."userlist8.dat",
-$srcpath."userlist9.dat",
-$srcpath."userlist10.dat",
-$srcpath."userlist11.dat",
-$srcpath."userlist12.dat",
-$srcpath."userlist13.dat",
-$srcpath."userlist14.dat",
-$srcpath."userlist15.dat",
-$srcpath."printkvs.dat",
-$srcpath."printkvsqr.dat",
-$srcpath."printvs.dat",
-$srcpath."printvsqr.dat",
-$srcpath."index.dat"
+// path1
+$srcpath1."conntest.dat",
+$srcpath1."dnsstaticadd.dat",
+$srcpath1."dnsstaticrm.dat",
+$srcpath1."genkv.dat",
+$srcpath1."genkvs.dat",
+$srcpath1."genupm.dat",
+$srcpath1."history.dat",
+$srcpath1."hotspotlog.dat",
+$srcpath1."login.dat",
+$srcpath1."logout.dat",
+$srcpath1."reboot.dat",
+$srcpath1."remuser.dat",
+$srcpath1."resetcolor.dat",
+$srcpath1."resetconfig.dat",
+$srcpath1."setup.dat",
+$srcpath1."uprofileadd.dat",
+$srcpath1."uprofilerm.dat",
+$srcpath1."uprofileset.dat",
+$srcpath1."vcolorconf.dat",
+$srcpath1."otaupdate.dat",
+$srcpath1."style.css",
+$srcpath1."vcolors.dat",
+$srcpath1."remuserl.dat",
+$srcpath1."userlist1.dat",
+$srcpath1."userlist2.dat",
+$srcpath1."userlist3.dat",
+$srcpath1."userlist4.dat",
+$srcpath1."userlist5.dat",
+$srcpath1."userlist6.dat",
+$srcpath1."userlist7.dat",
+$srcpath1."userlist8.dat",
+$srcpath1."userlist9.dat",
+$srcpath1."userlist10.dat",
+$srcpath1."userlist11.dat",
+$srcpath1."userlist12.dat",
+$srcpath1."userlist13.dat",
+$srcpath1."userlist14.dat",
+$srcpath1."userlist15.dat",
+$srcpath1."printkvs.dat",
+$srcpath1."printkvsqr.dat",
+$srcpath1."printvs.dat",
+$srcpath1."printvsqr.dat",
+$srcpath1."index.dat",
+// path2
+$srcpath2."index.dat"
 );
 // array local
 $dst = array ('1'=>
@@ -101,7 +106,7 @@ $dst = array ('1'=>
 "./uprofilerm.php",
 "./uprofileset.php",
 "./vcolorconf.php",
-"./ota.php",
+"./otaupdate.php",
 // path2
 $dstpath2."style.css",
 $dstpath2."vcolors.php",
@@ -128,7 +133,9 @@ $dstpath4."printkvsqr.php",
 $dstpath4."printvs.php",
 $dstpath4."printvsqr.php",
 // final
-"./index.php"
+"./index.php",
+// path5
+$dstpath4."index.php"
 );
 if(isset($_POST['btnupdate'])){
   for ($i = 1; $i <= count($src); $i++) {
