@@ -190,6 +190,16 @@ if(isset($_POST['btnupdate'])){
 					}
 			?>
     </div>
+    <div>
+				+++++++++++++++++++<br>
+				Update Manual :
+				<ol>
+				<li><a href="https://laksa19.github.io/download/update.zip" target="_blank">Download update.zip.</a></li>
+				<li>Extract update.zip.</li>
+				<li>Copy folder mikhmon.</li>
+				<li>Paste folder root webserver, timpa saja folder yang lama.</li>
+				</ol>
+			</div>
     </div>
   </body>
 </html>
