@@ -1,4 +1,22 @@
-<?php session_start(); ?>
+<?php
+/*
+ *  Copyright (C) 2017, 2018 Laksamadi Guko.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+session_start();
+?>
 <?php
 if(!isset($_SESSION['usermikhmon'])){
 	header("Location:login.php");
@@ -425,6 +443,7 @@ table.tsetup td {
 						<button class="material-icons" onclick="location.href='conntest.php';" title="Tes Koneksi ke Mikrotik">settings_ethernet</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
+						<button class="material-icons" onclick="location.href='otaupdate.php';" title="OTA Update">system_update_alt</button>
 						<!--<button class="material-icons"	onclick="window.open('https://github.com/laksa19/mikrotik-hotspot-monitor','_blank');" 	title="Check Update">system_update_alt</button>-->
 					</td>
 				</tr>
