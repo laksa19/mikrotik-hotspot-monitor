@@ -74,7 +74,8 @@ Download [update.zip](https://laksa19.github.io/download/update.zip)
 
 26-1-2018
 
-Perbaikan OTA Update.
+1. Perbaikan OTA Update. Catatan hak akses penuh pada flder root web server.
+2. Penambahan filter di userlist.
 
 23-1-2018
 
