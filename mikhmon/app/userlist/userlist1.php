@@ -86,7 +86,8 @@ $listphp = "userlist1.php";
 		</tr>
 	</table>
 		<div style="overflow-x:auto;">
-			<table style="white-space: nowrap;" class="zebra" >
+		  <input type="text" id="Cari" onkeyup="fCari()" placeholder="Filter user hotspot" title="User Hotspot">
+			<table id="tUser" style="white-space: nowrap;" class="zebra" >
 				<tr>
 				  <th style='text-align:center;'>X</th>
 					<th >User</th>
@@ -112,5 +113,24 @@ $listphp = "userlist1.php";
 			</table>
 		</div>
 	</div>
+<script>
+function fCari() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("Cari");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tUser");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 	</body>
 </html>
