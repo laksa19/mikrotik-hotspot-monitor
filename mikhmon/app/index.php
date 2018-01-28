@@ -27,7 +27,7 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2043;
+$oldbuild = 2045;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -135,6 +135,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 <?php
   if(isset($_POST['btnupdate'])){
    copy("http://laksa.mooo.com/ota-update/app/build.txt","build.txt");
+   copy("http://laksa.mooo.com/ota-update/app/otaupdate.dat","otaupdate.php");
    echo "<script>location.href='';</script>";
   }
 
