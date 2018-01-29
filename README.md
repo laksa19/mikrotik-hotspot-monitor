@@ -59,12 +59,8 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 5. Tambahkan User Profile ke Mikrotik dari aplikasi Mikhmon. Setelah itu aplikasi siap untuk generate voucher.
 
     Tutorial lebih lengkap kunungi [laksa19.github.io](https://laksa19.github.io/)
-
-6. Template hotspot.
-     - Logo hotspot dapat diganti dengan format (logo.png) yang diletakkan di folder "img".
-     - Edit file "paket-wifi.csv" untuk menampilkan daftar paket wifi.
      
-7. Logo di cetak voucher di letakkan di folder img dalam folder app dengan format (logo.png).
+6. Logo di cetak voucher di letakkan di folder img dalam folder app dengan format (logo.png).
 
 ## Changelog 
 
