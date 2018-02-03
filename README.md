@@ -68,6 +68,11 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 Download [update.zip](https://laksa19.github.io/download/update.zip)
 
+3-2-2018
+
+1. Remove tab User aktif dan Masa Aktif di laman Dashboard.
+2. Menambahkan modal untuk cek massa aktif user, dengan klik/tap user yang aktif.
+
 1-2-2018
 
 1. Perbaikan OTA Update.
