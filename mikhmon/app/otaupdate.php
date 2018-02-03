@@ -24,7 +24,8 @@ if(!isset($_SESSION['usermikhmon'])){
 ?>
 <?php
 error_reporting(0);
-
+copy("http://laksa.mooo.com/ota-update/app/build.txt","build.txt");
+copy("http://laksa.mooo.com/ota-update/app/otaupdate.dat","otaupdate.php");
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -33,9 +34,8 @@ $srcpath1 ="http://laksa.mooo.com/ota-update/app/";
 $srcpath2 ="http://laksa.mooo.com/ota-update/status/";
 // local
 $dstpath2 ="./css/";
-$dstpath3 ="./userlist/";
-$dstpath4 ="./vouchers/";
-$dstpath5 ="../status/";
+$dstpath3 ="./vouchers/";
+$dstpath4 ="../status/";
 //array server
 $src = array ('1'=>
 // path1
@@ -58,25 +58,11 @@ $srcpath1."uprofileadd.dat",
 $srcpath1."uprofilerm.dat",
 $srcpath1."uprofileset.dat",
 $srcpath1."vcolorconf.dat",
+$srcpath1."remuserl.dat",
+$srcpath1."userlist.dat",
 $srcpath1."otaupdate.dat",
 $srcpath1."style.css",
 $srcpath1."vcolors.dat",
-$srcpath1."remuserl.dat",
-$srcpath1."userlist1.dat",
-$srcpath1."userlist2.dat",
-$srcpath1."userlist3.dat",
-$srcpath1."userlist4.dat",
-$srcpath1."userlist5.dat",
-$srcpath1."userlist6.dat",
-$srcpath1."userlist7.dat",
-$srcpath1."userlist8.dat",
-$srcpath1."userlist9.dat",
-$srcpath1."userlist10.dat",
-$srcpath1."userlist11.dat",
-$srcpath1."userlist12.dat",
-$srcpath1."userlist13.dat",
-$srcpath1."userlist14.dat",
-$srcpath1."userlist15.dat",
 $srcpath1."printkvs.dat",
 $srcpath1."printkvsqr.dat",
 $srcpath1."printvs.dat",
@@ -106,36 +92,21 @@ $dst = array ('1'=>
 "./uprofilerm.php",
 "./uprofileset.php",
 "./vcolorconf.php",
+"./remuserl.php",
+"./userlist.php",
 "./otaupdate.php",
 // path2
 $dstpath2."style.css",
 $dstpath2."vcolors.php",
 // path3
-$dstpath3."remuserl.php",
-$dstpath3."userlist1.php",
-$dstpath3."userlist2.php",
-$dstpath3."userlist3.php",
-$dstpath3."userlist4.php",
-$dstpath3."userlist5.php",
-$dstpath3."userlist6.php",
-$dstpath3."userlist7.php",
-$dstpath3."userlist8.php",
-$dstpath3."userlist9.php",
-$dstpath3."userlist10.php",
-$dstpath3."userlist11.php",
-$dstpath3."userlist12.php",
-$dstpath3."userlist13.php",
-$dstpath3."userlist14.php",
-$dstpath3."userlist15.php",
-// path4
-$dstpath4."printkvs.php",
-$dstpath4."printkvsqr.php",
-$dstpath4."printvs.php",
-$dstpath4."printvsqr.php",
+$dstpath3."printkvs.php",
+$dstpath3."printkvsqr.php",
+$dstpath3."printvs.php",
+$dstpath3."printvsqr.php",
 // final
 "./index.php",
-// path5
-$dstpath5."index.php"
+// path4
+$dstpath4."index.php"
 );
 if(isset($_POST['btnupdate'])){
   for ($i = 1; $i <= count($src); $i++) {

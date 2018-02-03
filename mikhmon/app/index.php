@@ -27,7 +27,7 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2047;
+$oldbuild = 2048;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -211,251 +211,120 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td style="text-align: right;"><?php print_r($_SESSION['usermikhmon']);?></td>
 				</tr>
 			</table>
-			
-			<?php if ($profile1 == ""){
-			}elseif ($profile2 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist1.php'>$profile1</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY3</td>";
-				echo "</tr>";
-				echo "</table>";
-				echo "</div>";
-				echo"<br>";
-			}elseif ($profile3 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist1.php'>$profile1</a></th>";
-				echo "	<th><a href='userlist/userlist2.php'>$profile2</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY3</td>";
-				echo "	<td>$ARRAY4</td>";
-				echo "</tr>";
-				echo "</table>";
-				echo "</div>";
-				echo"<br>";
-			}elseif ($profile4 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist1.php'>$profile1</a></th>";
-				echo "	<th><a href='userlist/userlist2.php'>$profile2</a></th>";
-				echo "	<th><a href='userlist/userlist3.php'>$profile3</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY3</td>";
-				echo "	<td>$ARRAY4</td>";
-				echo "	<td>$ARRAY5</td>";
-				echo "</tr>";
-				echo "</table>";
-			echo "</div>";
-			echo"<br>";
-			}elseif ($profile5 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist1.php'>$profile1</a></th>";
-				echo "	<th><a href='userlist/userlist2.php'>$profile2</a></th>";
-				echo "	<th><a href='userlist/userlist3.php'>$profile3</a></th>";
-				echo "	<th><a href='userlist/userlist4.php'>$profile4</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY3</td>";
-				echo "	<td>$ARRAY4</td>";
-				echo "	<td>$ARRAY5</td>";
-				echo "	<td>$ARRAY6</td>";
-				echo "</tr>";
-				echo "</table>";
-			echo "</div>";
-			echo"<br>";
-		}else{
-			echo "<div style='overflow-x:auto;'>";
-			echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist1.php'>$profile1</a></th>";
-				echo "	<th><a href='userlist/userlist2.php'>$profile2</a></th>";
-				echo "	<th><a href='userlist/userlist3.php'>$profile3</a></th>";
-				echo "	<th><a href='userlist/userlist4.php'>$profile4</a></th>";
-				echo "	<th><a href='userlist/userlist5.php'>$profile5</a></th>";
-				echo "</tr>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY3</td>";
-				echo "	<td>$ARRAY4</td>";
-				echo "	<td>$ARRAY5</td>";
-				echo "	<td>$ARRAY6</td>";
-				echo "	<td>$ARRAY7</td>";
-				echo "</tr>";
-			echo "</table>";
-			echo "</div>";
-			echo"<br>";
-				}
-			?>
-			
-			<?php if ($profile6 == ""){
-			}elseif ($profile7 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist6.php'>$profile6</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY8</td>";
-				echo "</tr>";
-				echo "</table>";
-				echo "</div>";
-			}elseif ($profile8 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist6.php'>$profile6</a></th>";
-				echo "	<th><a href='userlist/userlist7.php'>$profile7</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY8</td>";
-				echo "	<td>$ARRAY9</td>";
-				echo "</tr>";
-				echo "</table>";
-				echo "</div>";
-			}elseif ($profile9 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist6.php'>$profile6</a></th>";
-				echo "	<th><a href='userlist/userlist7.php'>$profile7</a></th>";
-				echo "	<th><a href='userlist/userlist8.php'>$profile8</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY8</td>";
-				echo "	<td>$ARRAY9</td>";
-				echo "	<td>$ARRAY10</td>";
-				echo "</tr>";
-				echo "</table>";
-			echo "</div>";
-			}elseif ($profile10 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist6.php'>$profile6</a></th>";
-				echo "	<th><a href='userlist/userlist7.php'>$profile7</a></th>";
-				echo "	<th><a href='userlist/userlist8.php'>$profile8</a></th>";
-				echo "	<th><a href='userlist/userlist9.php'>$profile9</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY8</td>";
-				echo "	<td>$ARRAY9</td>";
-				echo "	<td>$ARRAY10</td>";
-				echo "	<td>$ARRAY11</td>";
-				echo "</tr>";
-				echo "</table>";
-			echo "</div>";
-		}else{
-			echo "<div style='overflow-x:auto;'>";
-			echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist6.php'>$profile6</a></th>";
-				echo "	<th><a href='userlist/userlist7.php'>$profile7</a></th>";
-				echo "	<th><a href='userlist/userlist8.php'>$profile8</a></th>";
-				echo "	<th><a href='userlist/userlist9.php'>$profile9</a></th>";
-				echo "	<th><a href='userlist/userlist10.php'>$profile10</a></th>";
-				echo "</tr>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY8</td>";
-				echo "	<td>$ARRAY9</td>";
-				echo "	<td>$ARRAY10</td>";
-				echo "	<td>$ARRAY11</td>";
-				echo "	<td>$ARRAY12</td>";
-				echo "</tr>";
-			echo "</table>";
-			echo "</div>";
-			echo"<br>";
-				}
-			?>
-			<?php if ($profile11 == ""){
-			}elseif ($profile12 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY13</td>";
-				echo "</tr>";
-				echo "</table>";
-				echo "</div>";
-			}elseif ($profile13 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
-				echo "	<th><a href='userlist/userlist12.php'>$profile12</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY13</td>";
-				echo "	<td>$ARRAY14</td>";
-				echo "</tr>";
-				echo "</table>";
-				echo "</div>";
-			}elseif ($profile14 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
-				echo "	<th><a href='userlist/userlist12.php'>$profile12</a></th>";
-				echo "	<th><a href='userlist/userlist13.php'>$profile13</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY13</td>";
-				echo "	<td>$ARRAY14</td>";
-				echo "	<td>$ARRAY15</td>";
-				echo "</tr>";
-				echo "</table>";
-			echo "</div>";
-			}elseif ($profile15 == ""){
-				echo "<div style='overflow-x:auto;'>";
-				echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
-				echo "	<th><a href='userlist/userlist12.php'>$profile12</a></th>";
-				echo "	<th><a href='userlist/userlist13.php'>$profile13</a></th>";
-				echo "	<th><a href='userlist/userlist14.php'>$profile14</a></th>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY13</td>";
-				echo "	<td>$ARRAY14</td>";
-				echo "	<td>$ARRAY15</td>";
-				echo "	<td>$ARRAY16</td>";
-				echo "</tr>";
-				echo "</table>";
-			echo "</div>";
-		}else{
-			echo "<div style='overflow-x:auto;'>";
-			echo "<table class='tprinta' >";
-				echo "	<tr>";
-				echo "	<th><a href='userlist/userlist11.php'>$profile11</a></th>";
-				echo "	<th><a href='userlist/userlist12.php'>$profile12</a></th>";
-				echo "	<th><a href='userlist/userlist13.php'>$profile13</a></th>";
-				echo "	<th><a href='userlist/userlist14.php'>$profile14</a></th>";
-				echo "	<th><a href='userlist/userlist15.php'>$profile15</a></th>";
-				echo "</tr>";
-				echo "</tr>";
-				echo "<tr>";
-				echo "	<td>$ARRAY13</td>";
-				echo "	<td>$ARRAY14</td>";
-				echo "	<td>$ARRAY15</td>";
-				echo "	<td>$ARRAY16</td>";
-				echo "	<td>$ARRAY17</td>";
-				echo "</tr>";
-			echo "</table>";
-			echo "</div>";
-				}
-			?>
+              <?php
+								$proflist = array ('1'=>$profile1,$profile2,$profile3,$profile4,$profile5,$profile6,$profile7,$profile8,$profile9,$profile10,$profile11,$profile12,$profile13,$profile14,$profile15);
+								$sisa = array('1'=>$ARRAY3,$ARRAY4,$ARRAY5,$ARRAY6,$ARRAY7,$ARRAY8,$ARRAY9,$ARRAY10,$ARRAY11,$ARRAY12,$ARRAY13,$ARRAY14,$ARRAY15,$ARRAY16,$ARRAY17);
+								
+								echo "<div style='overflow-x:auto;'><table class='tprinta' ><tr>";
+				            
+									if($profile1 == ""){
+									}elseif ($profile2 == ""){
+									  ?>
+									  <?php for ($i = 1; $i <= 1; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 1; $i <= 1; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									
+									}elseif ($profile3 == ""){
+									  ?>
+										<?php for ($i = 1; $i <= 2; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 1; $i <= 2; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									}elseif ($profile4 == ""){
+									  ?>
+										<?php for ($i = 1; $i <= 3; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 1; $i <= 3; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									}elseif ($profile5 == ""){
+									  ?>
+										<?php for ($i = 1; $i <= 4; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 1; $i <= 4; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									}else{
+									  ?>
+									  <?php for ($i = 1; $i <= 5; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 1; $i <= 5; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";?>
+				            <?php
+									}
+									  echo "</table></div><div style='overflow-x:auto;padding-top:5px;'><table class='tprinta' ><tr>";
+									?>
+									<?php if ($profile6 == ""){
+									}elseif ($profile7 == ""){
+										?>
+									  <?php for ($i = 6; $i <= 6; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 6; $i <= 6; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									
+									}elseif ($profile8 == ""){
+									  ?>
+										<?php for ($i = 6; $i <= 7; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 6; $i <= 7; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									}elseif ($profile9 == ""){
+									  ?>
+										<?php for ($i = 6; $i <= 8; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 6; $i <= 8; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									}elseif ($profile10 == ""){
+									  ?>
+										<?php for ($i = 6; $i <= 9; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 6; $i <= 9; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									}else{
+									  ?>
+									  <?php for ($i = 6; $i <= 10; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 6; $i <= 10; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";?>
+				            <?php
+									}
+									  echo "</table></div><div style='overflow-x:auto;padding-top:5px;'><table class='tprinta' ><tr>";
+									?>
+									<?php if ($profile11 == ""){
+									}elseif ($profile12 == ""){
+										?>
+									  <?php for ($i = 11; $i <= 11; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 11; $i <= 11; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									
+									}elseif ($profile13 == ""){
+									  ?>
+										<?php for ($i = 11; $i <= 12; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 11; $i <= 12; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									}elseif ($profile14 == ""){
+									  ?>
+										<?php for ($i = 11; $i <= 13; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 11; $i <= 13; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									}elseif ($profile15 == ""){
+									  ?>
+										<?php for ($i = 11; $i <= 14; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 11; $i <= 14; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";
+									}else{
+									  ?>
+									  <?php for ($i = 11; $i <= 15; $i++) {echo "	<th><a href='userlist.php?profile=$proflist[$i]'>$proflist[$i]</a></th>";}?>
+				            <?php echo "</tr> <tr>";?>
+				            <?php for ($i = 11; $i <= 15; $i++) {echo "	<td>$sisa[$i]</td>";}?>
+				            <?php echo "</tr>";?>
+				            <?php
+									}
+									  echo "</table></div>";
+								?>
 			<table class="tnav">
 				<tr>
 					<td>User Aktif : <?php print_r($ARRAY2);?></td>
@@ -480,7 +349,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 										for ($i=0; $i<$TotalReg; $i++){
 										echo "<tr>";
 										$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' title='Klik X untuk disconnect user' href=remuser.php?id=".$regtable['.id'] . "&name=" . $regtable['user']. ">X</a></td>";
-										$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik user untuk melihat masa aktifnya' href=./?usr=" . $regtable['user'] . "#cekuser>". $regtable['user']. "</a></td>";
+										$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik user untuk melihat masa aktifnya' href=?usr=" . $regtable['user'] . "#cekuser>". $regtable['user']. "</a></td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['address'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['mac-address'];echo "</td>";
@@ -493,7 +362,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			</table>
 			</div>
 			
-	<div id="cekuser" class="modal-window">
+	  <div id="cekuser" class="modal-window">
 		<div>
 			<a style="font-wight:bold;"href="#x" title="Close" class="modal-close">X</a>
 			<h3>Masa Aktif Voucher</h3>
@@ -565,7 +434,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 }
 }
 ?>
-</div>
+    </div>
     </div>
 	</div>
 <?php

@@ -29,6 +29,14 @@ include('./config.php');
 
 ?>
 <?php
+  if(isset($_POST['btnupdate'])){
+   copy("http://laksa.mooo.com/ota-update/app/build.txt","build.txt");
+   copy("http://laksa.mooo.com/ota-update/app/otaupdate.dat","otaupdate.php");
+   echo "<script>location.href='otaupdate.php';</script>";
+  }
+
+?>
+<?php
 	if(isset($_POST['setup'])){
 		$siphost = ($_POST['ipmik']);
 		$suserhost = ($_POST['usermik']);
@@ -443,7 +451,7 @@ table.tsetup td {
 						<button class="material-icons" onclick="location.href='conntest.php';" title="Tes Koneksi ke Mikrotik">settings_ethernet</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
-						<button class="material-icons" onclick="location.href='otaupdate.php';" title="OTA Update">system_update_alt</button>
+						<form  method="post"><input type="submit" name="btnupdate" class="material-icons"	title="Cek Update" value="system_update_alt"></form>
 						<!--<button class="material-icons"	onclick="window.open('https://github.com/laksa19/mikrotik-hotspot-monitor','_blank');" 	title="Check Update">system_update_alt</button>-->
 					</td>
 				</tr>
