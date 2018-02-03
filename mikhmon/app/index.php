@@ -27,7 +27,7 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2048;
+$oldbuild = 2049;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -171,9 +171,9 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						<button class="material-icons" onclick="location.href='./dnsstaticadd.php';" title="Add DNS Static">cloud_queue</button>
 						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<div class="dropdown" style="float:right;">
-							<button class="material-icons">local_play</button>
+							<button class="material-icons dropbtn">local_play</button>
 								<div class="dropdown-content">
-									<a class="material-icons" href="#">local_play</a>
+									<a style="border-bottom: 1px solid #ccc;" href="#">Ganerate</a>
 									<a href="genkv.php">1 Voucher</a>
 									<a href="genkvs.php">1-99 Voucher</a>
 									<a href="genupm.php">1 Custom User Pass</a>

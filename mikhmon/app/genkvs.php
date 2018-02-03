@@ -1,4 +1,22 @@
-<?php session_start(); ?>
+<?php
+/*
+ *  Copyright (C) 2017, 2018 Laksamadi Guko.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+session_start();
+?>
 <?php
 if(!isset($_SESSION['usermikhmon'])){
 	header("Location:login.php");
@@ -47,12 +65,84 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td colspan=2>
 						<button class="material-icons" onclick="location.href='genkvs.php';" title="Reload">autorenew</button>
 						<div class="dropdown" style="float:right;">
-							<button class="material-icons">local_play</button>
+							<button class="material-icons dropbtn">local_play</button>
 								<div class="dropdown-content">
-									<a class="material-icons" href="#">local_play</a>
+									<a style="border-bottom: 1px solid #ccc;" href="#">Ganerate</a>
 									<a href="genkv.php">1 Voucher</a>
 									<a href="genkvs.php">1-99 Voucher</a>
 									<a href="genupm.php">1 Custom User Pass</a>
+								</div>
+						</div>
+						<div class="dropdown" style="float:right;">
+							<button class="material-icons dropbtn">find_in_page</button>
+								<div class="dropdown-content">
+									<a style="border-bottom: 1px solid #ccc;" href="#">User by profile</a>
+									<?php
+								$proflist = array ('1'=>$profile1,$profile2,$profile3,$profile4,$profile5,$profile6,$profile7,$profile8,$profile9,$profile10,$profile11,$profile12,$profile13,$profile14,$profile15);
+								
+									if($profile1 == ""){
+									}elseif ($profile2 == ""){
+										for ($i = 1; $i <= 1; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile3 == ""){
+										for ($i = 1; $i <= 2; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile4 == ""){
+										for ($i = 1; $i <= 3; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile5 == ""){
+										for ($i = 1; $i <= 4; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile6 == ""){
+										for ($i = 1; $i <= 5; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile7 == ""){
+										for ($i = 1; $i <= 6; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile8 == ""){
+										for ($i = 1; $i <= 7; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile9 == ""){
+										for ($i = 1; $i <= 8; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile10 == ""){
+										for ($i = 1; $i <= 9; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile11 == ""){
+										for ($i = 1; $i <= 10; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile12 == ""){
+										for ($i = 1; $i <= 11; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile13 == ""){
+										for ($i = 1; $i <= 12; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile14 == ""){
+										for ($i = 1; $i <= 13; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}elseif ($profile15 == ""){
+										for ($i = 1; $i <= 14; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}else{
+										for ($i = 1; $i <= 15; $i++) {
+										echo "<a href='./userlist.php?profile=$proflist[$i]'>$proflist[$i]</a>";
+									}
+									}
+								?>
 								</div>
 						</div>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
