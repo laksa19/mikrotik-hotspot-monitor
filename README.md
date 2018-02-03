@@ -72,6 +72,9 @@ Download [update.zip](https://laksa19.github.io/download/update.zip)
 
 1. Remove tab User Aktif dan Masa Aktif di laman Dashboard.
 2. Menambahkan modal untuk cek massa aktif user, dengan klik/tap user yang aktif.
+3. Remove folder userlist (merampingkan aplikasi)
+4. Perbaikan laman Dahsboard.
+5. Penambahan modal untuk info user di laman userlist.
 
 1-2-2018
 
