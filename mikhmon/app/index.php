@@ -27,7 +27,7 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-$oldbuild = 2046;
+$oldbuild = 2047;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -456,14 +456,12 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			echo "</div>";
 				}
 			?>
-			
-			
-			<div class="tab">
-				<button class="tablinks" onclick="openTab(event, 'UA')" id="defaultOpen">User Aktif  <?php print_r($ARRAY2);?></button>
-				<button class="tablinks" onclick="openTab(event, 'MA')">Masa Aktif</button>
-			</div>
-			<br>
-			<div id="UA" class="tabcontent">
+			<table class="tnav">
+				<tr>
+					<td>User Aktif : <?php print_r($ARRAY2);?></td>
+				</tr>
+			</table>
+
 			<div style="overflow-x:auto;">
 			<table style="white-space: nowrap;" class="zebra" >
 				<tr>
@@ -481,8 +479,8 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 
 										for ($i=0; $i<$TotalReg; $i++){
 										echo "<tr>";
-										$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=remuser.php?id=".$regtable['.id'] . ">X</a></td>";
-										$regtable = $ARRAY[$i];echo "<td>" . $regtable['user'];echo "</td>";
+										$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' title='Klik X untuk disconnect user' href=remuser.php?id=".$regtable['.id'] . "&name=" . $regtable['user']. ">X</a></td>";
+										$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik user untuk melihat masa aktifnya' href=./?usr=" . $regtable['user'] . "#cekuser>". $regtable['user']. "</a></td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['address'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['mac-address'];echo "</td>";
@@ -494,95 +492,82 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 							?>
 			</table>
 			</div>
-		</div>
-		<div id="MA" class="tabcontent">
-			<div style="overflow-x:auto;">
-			<table class="zebra" >
-				<tr>
-					<th >User</th>
-					<th >Aktif</th>
-					<th >Berakhir</th>
-				</tr>
-							<?php
-								$TotalReg = count($ARRAY1);
-
-										for ($i=0; $i<$TotalReg; $i++){
-										$regtable = $ARRAY1[$i];echo "<tr><td>" . $regtable['name'];echo "</td>";
-										$regtable = $ARRAY1[$i];
-										$cek = $regtable['interval'];
-													$ceklen = strlen(substr($cek,0));
-													$cekw = substr($cek, 0,2);
-													$cekw1 = substr($cekw, 0,1) ."Minggu";
-													$cekd = substr($cek, 2,2);
-													$cekd1 = substr($cek, 2,1) ."Hari";
-												if ($ceklen > 3){
-													$cekall = $cekw1 ." ".$cekd1;
-												}elseif (substr($cek, -1) == "h"){
-													$cek1 = substr($cek, 0,-1);
-													$cekall = $cek1 ."Jam";
-												}elseif (substr($cek, -1) == "d"){
-													$cek1 = substr($cek, 0,-1);
-													$cekall = $cek1 ."Hari";
-												}elseif (substr($cek, -1) == "w"){
-													$cek1 = substr($cek, 0,-1);
-													$cekall = $cek1 ."Minggu";
-												}
-
-										echo "<td>" . $cekall;echo "</td>";
-										$regtable = $ARRAY1[$i];echo "<td>" . $regtable['next-run'];echo "</td> </tr>";
-										}
-							?>
-			</table>
-			</div>
-		</div>
-	</div>
-	<div id="cek-update" class="modal-window">
+			
+	<div id="cekuser" class="modal-window">
 		<div>
-			<a href="#close" title="Close" class="modal-close">Close</a>
-			<h1>Mikhmon Update</h1>
-			<?php
-				if($newbuild > $oldbuild){
-					echo "New update! | Build : $newbuild<br>";
-				for ($i=1;$i<count($getbuild);$i++) {
-					echo $getbuild[$i].'<br> ';
+			<a style="font-wight:bold;"href="#x" title="Close" class="modal-close">X</a>
+			<h3>Masa Aktif Voucher</h3>
+	<?php
+	$name = $_GET['usr'];
+	if(isset($_GET['usr'])){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	$API->write('/system/scheduler/print', false);
+	$API->write('?=name='.$name.'');
+	$ARRAY1 = $API->read();
+	$regtable = $ARRAY1[0];
+	      $user = $regtable['name'];
+				$exp = $regtable['next-run'];
+				$strd = $regtable['start-date'];
+				$strt = $regtable['start-time'];
+				$cek = $regtable['interval'];
+					$ceklen = strlen(substr($cek,0));
+					$cekw = substr($cek, 0,2);
+					$cekw1 = substr($cekw, 0,1) ."Minggu";
+					$cekd = substr($cek, 2,2);
+					$cekd1 = substr($cek, 2,1) ."Hari";
+				if ($ceklen > 3){
+					$cekall = $cekw1 ." ".$cekd1;
+				}elseif (substr($cek, -1) == "h"){
+					$cek1 = substr($cek, 0,-1);
+					$cekall = $cek1 ."Jam";
+				}elseif (substr($cek, -1) == "d"){
+					$cek1 = substr($cek, 0,-1);
+					$cekall = $cek1 ."Hari";
+				}elseif (substr($cek, -1) == "w"){
+					$cek1 = substr($cek, 0,-1);
+					$cekall = $cek1 ."Minggu";
+				}elseif($cekall == ""){
 					}
-					}else{
-					echo "Build : $oldbuild | no update yet.<br>";
-				for ($i=1;$i<count($getbuild);$i++) {
-					echo $getbuild[$i].'<br> ';
-					}
-				}
-			?>
-			<div>
-				+++++++++++++++++++<br>
-				Cara update :
-				<ol>
-				<li><a href="https://laksa19.github.io/download/update.zip" target="_blank">Download update.zip.</a></li>
-				<li>Extract update.zip.</li>
-				<li>Copy folder mikhmon.</li>
-				<li>Paste folder root webserver, timpa saja folder yang lama.</li>
-				</ol>
-			</div>
+				 $cekall;
+/*
+	$API->write('/ip/hotspot/user/print', false);
+	$API->write('?=name='.$name.'');
+	$ARRAY2 = $API->read();
+	$regtable = $ARRAY2[0];
+	$user = $regtable['name'];
+*/
+	echo "<div style='overflow-x:auto;'>";
+	echo "<table>";
+	echo "	<tr>";
+	echo "		<td >User/Kode Voucher</td>";
+	echo "		<td >:</td>";
+	echo "		<td > $user</td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Masa Aktif</td>";
+	echo "		<td >:</td>";
+	echo "		<td >$cekall</td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Dari</td>";
+	echo "		<td >:</td>";
+	echo "		<td >$strd $strt</td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Sampai</td>";
+	echo "		<td >:</td>";
+	echo "		<td >$exp</td>";
+	echo "	</tr>";
+	echo "</table>";
+	echo "</div>";
+	
+	$API->disconnect();
+}
+}
+?>
+</div>
     </div>
 	</div>
-	<script>
-	function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
 <?php
 
 function formatBytes($bytes, $precision = 2) {
