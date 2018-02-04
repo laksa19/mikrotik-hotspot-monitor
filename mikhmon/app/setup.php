@@ -21,15 +21,11 @@ session_start();
 error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
-if($_SESSION['usermikhmon'] !== $userhost){
-  }else if($_SESSION['usermikhmon'] !== $useradm){
-		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
-		exit();
-	}else if($_SESSION['usermikhmon'] == ''){
+
+if($_SESSION['usermikhmon'] == ""){
 		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
 		exit();
 	}
-
 
 ?>
 <?php
@@ -483,7 +479,7 @@ table.tsetup td {
 					</tr>
 					<tr>
 						<td style="text-align:left" colspan=3>
-						Ganti Username Password Admin untuk keamanan.
+						Ganti Username Password Admin untuk keamanan. <b style="color:red;">Disarankan  user Admin berbeda dengan user Mikrotik.</b>
 						</td>
 					</tr>
 				</table>

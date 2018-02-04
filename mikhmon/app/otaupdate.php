@@ -19,14 +19,14 @@ session_start();
 ?>
 <?php
 error_reporting(0);
+require('./lib/api.php');
 include('./config.php');
-if($_SESSION['usermikhmon'] !== $userhost){
-		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
-		exit();
-	}else if($_SESSION['usermikhmon'] == ''){
+
+if($_SESSION['usermikhmon'] == ""){
 		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
 		exit();
 	}
+
 
 ?>
 <?php

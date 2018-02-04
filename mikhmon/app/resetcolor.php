@@ -19,12 +19,11 @@ session_start();
 ?>
 <?php
 error_reporting(0);
-if($_SESSION['usermikhmon'] !== $userhost){
+
+if($_SESSION['usermikhmon'] == ""){
 		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
 		exit();
-	}else if($_SESSION['usermikhmon'] == ''){
-		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
-		exit();
+
 
 }else{
 $my_file = 'css/vcolors.php';
