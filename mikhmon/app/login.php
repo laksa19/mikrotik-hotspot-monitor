@@ -31,7 +31,7 @@ if(isset($_POST['login'])){
 			$_SESSION['usermikhmon']=$user;
 				header("Location:./");
 		}elseif ($user == $useradm && $pass == $passadm){
-			$_SESSION['usermikhmon']="Admin";
+			$_SESSION['usermikhmon']=$user;
 			header("Location:setup.php");
 		}else{
 			$error = "Username atau Password tidak sesuai.";
