@@ -18,9 +18,16 @@
 session_start();
 ?>
 <?php
-if(!isset($_SESSION['usermikhmon'])){
-	header("Location:login.php");
-}
+error_reporting(0);
+include('./config.php');
+if($_SESSION['usermikhmon'] !== $userhost){
+		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
+		exit();
+	}else if($_SESSION['usermikhmon'] == ''){
+		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
+		exit();
+	}
+
 ?>
 <?php
 error_reporting(0);

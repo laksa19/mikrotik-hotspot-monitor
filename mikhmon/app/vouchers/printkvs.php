@@ -1,17 +1,36 @@
-<?php session_start(); ?>
 <?php
-error_reporting(0);
-if(!isset($_SESSION['usermikhmon'])){
-	header("Location:../login.php");
-}
+/*
+ *  Copyright (C) 2017, 2018 Laksamadi Guko.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+session_start();
 ?>
 <?php
 error_reporting(0);
 require('../lib/api.php');
 include('../config.php');
+if($_SESSION['usermikhmon'] !== $userhost){
+		echo "<meta http-equiv='refresh' content='0;url=../logout.php' />";
+		exit();
+	}else if($_SESSION['usermikhmon'] == ''){
+		echo "<meta http-equiv='refresh' content='0;url=../logout.php' />";
+		exit();
+	}
+
 include('./kvouchers.php');
 include('../css/vcolors.php');
-include('..lib/phpqrcode/qrlib.php');
 $API = new RouterosAPI();
 $API->debug = false;
 if ($API->connect( $iphost, $userhost, $passwdhost )) {
@@ -86,13 +105,13 @@ if ($blimit == $ubytelimit1){
   font-style: normal;
 }
 body {
-  color: #000000; 
-  background-color: #FFFFFF; 
-  font-size: 14px; 
+  color: #000000;
+  background-color: #FFFFFF;
+  font-size: 14px;
   font-family: Roboto;
 }
-table.tprint { 
-  margin-left:auto; 
+table.tprint {
+  margin-left:auto;
   margin-right:auto;
   width: 300px;
   height: 180px;
@@ -103,39 +122,39 @@ table.tprint tr {
   page-break-inside:avoid;
   page-break-after:auto;
 }
-table.tprint td { 
-  padding: 10px; 
+table.tprint td {
+  padding: 10px;
   border: 1px solid #000000;
   font-size: 14px;
-  text-align: left; 
+  text-align: left;
 }
-table.tprinta { 
-  margin-left:auto; 
+table.tprinta {
+  margin-left:auto;
   margin-right:auto;
   width: 300px;
   height: 180px;
   border-collapse: collapse;
 }
-table.tprinta td { 
-  padding: 4px; 
+table.tprinta td {
+  padding: 4px;
   border: 2px solid #000000;
   font-size: 16px;
   text-align: left;
   font-weight: bold;
 }
-table.tprintb { 
-  margin-left:auto; 
+table.tprintb {
+  margin-left:auto;
   margin-right:auto;
-  width: 300px; 
-  border-collapse: collapse; 
+  width: 300px;
+  border-collapse: collapse;
 }
-table.tprintb td { 
+table.tprintb td {
   padding-left: 20px;
   padding-top: 17px;
   padding-bottom: 20px;
   border: 0px;
   font-size: 18px;
-  text-align: left; 
+  text-align: left;
 }
 #qrcode {
   width:32px;
@@ -182,7 +201,7 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 	height : 100
 });
 
-function makeCode () {		
+function makeCode () {
 	var elText = document.getElementById("text");
 	
 	if (!elText.value) {

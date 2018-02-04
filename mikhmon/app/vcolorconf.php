@@ -1,12 +1,34 @@
-<?php session_start(); ?>
 <?php
-if(!isset($_SESSION['usermikhmon'])){
-	header("Location:login.php");
-}
+/*
+ *  Copyright (C) 2017, 2018 Laksamadi Guko.
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+session_start();
 ?>
 <?php
-include('config.php');
-include('css/vcolors.php');
+error_reporting(0);
+require('./lib/api.php');
+include('./config.php');
+if($_SESSION['usermikhmon'] !== $userhost){
+		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
+		exit();
+	}else if($_SESSION['usermikhmon'] == ''){
+		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
+		exit();
+	}
+
 include('vouchers/kvouchers.php');
 
 $tlimit = $uptimelimit;
@@ -69,44 +91,44 @@ if ($blimit == $ubytelimit1){
 		<link rel="icon" href="./img/favicon.png" />
 		<link rel="stylesheet" href="css/style.css" media="screen">
 		<style>
-table.tclists { 
-  margin-left:auto; 
+table.tclists {
+  margin-left:auto;
   margin-right:auto;
   width: 300px;
   height: 180px;
   border-collapse: collapse;
 }
-table.tclists td { 
-  padding: 4px; 
+table.tclists td {
+  padding: 4px;
   font-size: 12px;
-  text-align: left; 
+  text-align: left;
   font-weight: bold;
 }
-table.tprinta { 
-  margin-left:auto; 
+table.tprinta {
+  margin-left:auto;
   margin-right:auto;
   width: 300px;
   height: 180px;
   border-collapse: collapse;
 }
-table.tprinta td { 
-  padding: 4px; 
+table.tprinta td {
+  padding: 4px;
   border: 2px solid BLACK;
   font-size: 16px;
   text-align: left;
   font-weight: bold;
 }
-table.tprintb { 
-  margin-left:auto; 
+table.tprintb {
+  margin-left:auto;
   margin-right:auto;
-  width: 300px; 
-  border-collapse: collapse; 
+  width: 300px;
+  border-collapse: collapse;
 }
-table.tprintb td { 
-  padding-left: 20px; 
+table.tprintb td {
+  padding-left: 20px;
   border: 0px;
   font-size: 18px;
-  text-align: left; 
+  text-align: left;
 }
 		</style>
 		<script>
@@ -131,9 +153,9 @@ table.tprintb td {
 						<button class="material-icons" onclick="location.href='resetcolor.php';" title="Reset Warna Voucher">history</button>
 						<button class="material-icons" onclick="location.href='./';" title="Dashboard">dashboard</button>
 						<div class="dropdown" style="float:right;">
-							<button class="material-icons">local_play</button>
+							<button class="material-icons dropbtn">local_play</button>
 								<div class="dropdown-content">
-									<a class="material-icons" href="#">local_play</a>
+									<a style="border-bottom: 1px solid #ccc;" href="#">Ganerate</a>
 									<a href="genkv.php">1 Voucher</a>
 									<a href="genkvs.php">1-99 Voucher</a>
 									<a href="genupm.php">1 Custom User Pass</a>

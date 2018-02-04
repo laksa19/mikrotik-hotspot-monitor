@@ -15,7 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-header('Location: ../login.php');
-exit;
+echo "<meta http-equiv='refresh' content='0;url=../' />";
 ?>
 

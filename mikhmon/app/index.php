@@ -18,23 +18,23 @@
 session_start();
 ?>
 <?php
-if(!isset($_SESSION['usermikhmon'])){
-	header("Location:login.php");
-}
-?>
-<?php
 error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
+if($_SESSION['usermikhmon'] !== $userhost){
+		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
+		exit();
+	}else if($_SESSION['usermikhmon'] == ''){
+		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
+		exit();
+	}
+
 
 $oldbuild = 2049;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
-				
-if ($reloadindex == ""){
-} else
-header("Refresh: $reloadindex ; url='./'");
+
 $API = new RouterosAPI();
 $API->debug = false;
 if ($API->connect( $iphost, $userhost, $passwdhost )) {
@@ -139,6 +139,12 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
    echo "<script>location.href='';</script>";
   }
 
+?>
+<?php
+if ($reloadindex == ""){
+} else
+$url1=$_SERVER['REQUEST_URI'];
+header("Refresh: $reloadindex ; url='$url1'");
 ?>
 <!DOCTYPE html>
 <html>
