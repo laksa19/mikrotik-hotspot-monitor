@@ -1,1 +1,1 @@
-<?php $vkkv="Voucher3Jam-677-04.02.18"; $vserver="all"; $vprofname="3Jam"; $uptimelimit="1h"; $upbytelimit="1000000000"; $vprice="Rp1.000"; ?>
+<?php $vkkv="Voucher7Hari-471-05.02.18"; $vserver="all"; $vprofname="7Hari"; $uptimelimit="1h"; $upbytelimit="500000000"; $vprice="Free"; ?>
