@@ -22,11 +22,9 @@ error_reporting(0);
 require('./lib/api.php');
 include('./config.php');
 
-if($_SESSION['usermikhmon'] == ""){
-		echo "<meta http-equiv='refresh' content='0;url=logout.php' />";
-		exit();
-	}
-
+if(!isset($_SESSION['usermikhmon'])){
+	header("Location:login.php");
+}
 
 
 $API = new RouterosAPI();
