@@ -44,6 +44,43 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 }
 $listphp = "userlist.php";
 ?>
+<?php
+	//remove user
+	$id = $_GET['id'];
+	$prof = $_GET['profile'];
+	if(isset($id)){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	  $API->comm("/ip/hotspot/user/remove", array(
+	    ".id"=> "$id",));
+	    $API->disconnect();
+	    header("Location:userlist.php?profile=$prof");
+	}
+	}
+	// disable user
+	$id = $_GET['d'];
+	if(isset($id)){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	  $API->write('/ip/hotspot/user/set', false);
+	  $API->write('=.id='.$id, false);
+	  $API->write('=disabled=yes');
+	  $API->read();
+	  $API->disconnect();
+	  header("Location:userlist.php?profile=$prof");
+	}
+	}
+	//enable user
+	$id = $_GET['e'];
+	if(isset($id)){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	  $API->write('/ip/hotspot/user/set', false);
+	  $API->write('=.id='.$id, false);
+	  $API->write('=disabled=no');
+	  $API->read();
+	  $API->disconnect();
+	  header("Location:userlist.php?profile=$prof");
+	}
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -159,22 +196,37 @@ $listphp = "userlist.php";
 		</tr>
 	</table>
 		<div style="overflow-x:auto;">
-		  <input style="" type="text" id="Cari" onkeyup="fCari()" placeholder="Filter user hotspot" title="User Hotspot">
+		  
+		  
 			<table id="tUser" style="white-space: nowrap;" class="zebra" >
 				<tr>
-				  <th style='text-align:center;'>X</th>
-					<th >User</th>
-					<th >Server</th>
+				  <th title="Hapus User" style="text-align:center;">X</th>
+				  <th title="Disable | Enable User" style='text-align:center;'>D/E</th>
+					<th >
+					  <div style="width:90%;">
+					    <input style="width:90%;"<input style="" type="text" id="CariU" size="auto" onkeyup="fCariU()" placeholder="User" title="Filter User berdasarkan Username">
+					  </div>
+					</th>
+					<th >
+					  <div style="width:90%;">
+					    <input style="width:90%;" type="text" id="CariS" onkeyup="fCariS()" placeholder="Server" title="Filter User berdasarkan Server">
+					  </div>
+					</th>
 					<th >Profile</th>
 					<th >Uptime</th>
-					<th >Generated</th>
+					<th >
+					  <div style="width:90%;">
+					    <input style="width:90%;" type="text" id="CariG" onkeyup="fCariG()" placeholder="Generated" title="Filter User berdasarkan tanggal Generate">
+					  </div>
+					</th>
 				</tr>
 				<?php
 					$TotalReg = count($ARRAY);
 
 						for ($i=0; $i<$TotalReg; $i++){
 						  echo "<tr>";
-						  $regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=remuserl.php?profile=$prof&id=".$regtable['.id'] . ">X</a></td>";
+						  $regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a title='Hapus User' style='color:#000;' href=userlist.php?profile=$prof&id=".$regtable['.id'] . ">X</a></td>";
+						  $regtable = $ARRAY[$i];if($regtable['disabled'] == "true"){echo "<td style='text-align:center;'><a title='Enable User'style='color:#000;' href=userlist.php?profile=$prof&e=".$regtable['.id'] . ">E</a></td>";}else{echo "<td style='text-align:center;'><a title='Disable User' style='color:#000;' href=userlist.php?profile=$prof&d=".$regtable['.id'] . ">D</a></td>";}
 							$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik user untuk melihat masa aktifnya' href=userlist.php?profile=$prof&usr=" . $regtable['name'] . "#cekuser>". $regtable['name']. "</a></td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['profile'];echo "</td>";
@@ -191,7 +243,7 @@ $listphp = "userlist.php";
 			<h3>Info User</h3>
 	<?php
 	$name = $_GET['usr'];
-	if(isset($_GET['usr'])){
+	if(isset($name)){
 	if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->write('/system/scheduler/print', false);
 	$API->write('?=name='.$name.'');
@@ -284,14 +336,48 @@ $listphp = "userlist.php";
     </div>
 	</div>
 <script>
-function fCari() {
+function fCariU() {
   var input, filter, table, tr, td, i;
-  input = document.getElementById("Cari");
+  input = document.getElementById("CariU");
   filter = input.value.toUpperCase();
   table = document.getElementById("tUser");
   tr = table.getElementsByTagName("tr");
   for (i = 1; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function fCariS() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("CariS");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tUser");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function fCariG() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("CariG");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tUser");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[6];
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";

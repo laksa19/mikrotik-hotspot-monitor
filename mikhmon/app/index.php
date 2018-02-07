@@ -28,7 +28,7 @@ if(!isset($_SESSION['usermikhmon'])){
 
 
 
-$oldbuild = 2049;
+$oldbuild = 2050;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -143,6 +143,51 @@ if ($reloadindex == ""){
 } else
 $url1=$_SERVER['REQUEST_URI'];
 header("Refresh: $reloadindex ; url='$url1'");
+
+// Kick User
+$id = $_GET['id'];
+if(isset($id)){
+if ($API->connect( $iphost, $userhost, $passwdhost )) {
+$API->comm("/ip/hotspot/active/remove", array(
+".id"=> "$id",));
+$API->disconnect();
+header("Location:./");
+}
+}
+// Get User
+$name = $_GET['usr'];
+	if(isset($name)){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	$API->write('/system/scheduler/print', false);
+	$API->write('?=name='.$name.'');
+	$ARRAY1 = $API->read();
+	$regtable = $ARRAY1[0];
+	      $user = $regtable['name'];
+				$exp = $regtable['next-run'];
+				$strd = $regtable['start-date'];
+				$strt = $regtable['start-time'];
+				$cek = $regtable['interval'];
+					$ceklen = strlen(substr($cek,0));
+					$cekw = substr($cek, 0,2);
+					$cekw1 = substr($cekw, 0,1) ."Minggu";
+					$cekd = substr($cek, 2,2);
+					$cekd1 = substr($cek, 2,1) ."Hari";
+				if ($ceklen > 3){
+					$cekall = $cekw1 ." ".$cekd1;
+				}elseif (substr($cek, -1) == "h"){
+					$cek1 = substr($cek, 0,-1);
+					$cekall = $cek1 ."Jam";
+				}elseif (substr($cek, -1) == "d"){
+					$cek1 = substr($cek, 0,-1);
+					$cekall = $cek1 ."Hari";
+				}elseif (substr($cek, -1) == "w"){
+					$cek1 = substr($cek, 0,-1);
+					$cekall = $cek1 ."Minggu";
+				}elseif($cekall == ""){
+					}
+				 $cekall;
+				 $API->disconnect();
+	}}
 ?>
 <!DOCTYPE html>
 <html>
@@ -352,7 +397,7 @@ header("Refresh: $reloadindex ; url='$url1'");
 
 										for ($i=0; $i<$TotalReg; $i++){
 										echo "<tr>";
-										$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' title='Klik X untuk disconnect user' href=remuser.php?id=".$regtable['.id'] . "&name=" . $regtable['user']. ">X</a></td>";
+										$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' title='Klik X untuk disconnect user' href=index.php?id=".$regtable['.id'] . "&name=" . $regtable['user']. ">X</a></td>";
 										$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik user untuk melihat masa aktifnya' href=?usr=" . $regtable['user'] . "#cekuser>". $regtable['user']. "</a></td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 										$regtable = $ARRAY[$i];echo "<td>" . $regtable['address'];echo "</td>";
@@ -371,44 +416,6 @@ header("Refresh: $reloadindex ; url='$url1'");
 			<a style="font-wight:bold;"href="#x" title="Close" class="modal-close">X</a>
 			<h3>Masa Aktif Voucher</h3>
 	<?php
-	$name = $_GET['usr'];
-	if(isset($_GET['usr'])){
-	if ($API->connect( $iphost, $userhost, $passwdhost )) {
-	$API->write('/system/scheduler/print', false);
-	$API->write('?=name='.$name.'');
-	$ARRAY1 = $API->read();
-	$regtable = $ARRAY1[0];
-	      $user = $regtable['name'];
-				$exp = $regtable['next-run'];
-				$strd = $regtable['start-date'];
-				$strt = $regtable['start-time'];
-				$cek = $regtable['interval'];
-					$ceklen = strlen(substr($cek,0));
-					$cekw = substr($cek, 0,2);
-					$cekw1 = substr($cekw, 0,1) ."Minggu";
-					$cekd = substr($cek, 2,2);
-					$cekd1 = substr($cek, 2,1) ."Hari";
-				if ($ceklen > 3){
-					$cekall = $cekw1 ." ".$cekd1;
-				}elseif (substr($cek, -1) == "h"){
-					$cek1 = substr($cek, 0,-1);
-					$cekall = $cek1 ."Jam";
-				}elseif (substr($cek, -1) == "d"){
-					$cek1 = substr($cek, 0,-1);
-					$cekall = $cek1 ."Hari";
-				}elseif (substr($cek, -1) == "w"){
-					$cek1 = substr($cek, 0,-1);
-					$cekall = $cek1 ."Minggu";
-				}elseif($cekall == ""){
-					}
-				 $cekall;
-/*
-	$API->write('/ip/hotspot/user/print', false);
-	$API->write('?=name='.$name.'');
-	$ARRAY2 = $API->read();
-	$regtable = $ARRAY2[0];
-	$user = $regtable['name'];
-*/
 	echo "<div style='overflow-x:auto;'>";
 	echo "<table>";
 	echo "	<tr>";
@@ -433,11 +440,7 @@ header("Refresh: $reloadindex ; url='$url1'");
 	echo "	</tr>";
 	echo "</table>";
 	echo "</div>";
-	
-	$API->disconnect();
-}
-}
-?>
+  ?>
     </div>
     </div>
 	</div>

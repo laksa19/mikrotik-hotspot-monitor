@@ -33,6 +33,52 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$ARRAY = $API->comm("/ip/hotspot/user/profile/print");
 	$API->disconnect();
 }
+// Remove Profile
+  $id = $_GET['id'];
+	if(isset($id)){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	  $API->comm("/ip/hotspot/user/profile/remove", array(
+	    ".id"=> "$id",));
+	    $API->disconnect();
+	    header("Location:uprofileadd.php");
+	}
+	}
+	// Get Profile
+  $name = $_GET['name'];
+	if(isset($name)){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	$API->write('/ip/hotspot/user/profile/print', false);
+	$API->write('?=name='.$name.'');
+	$ARRAY1 = $API->read();
+	$regtable = $ARRAY1[0];
+	  $profn = $regtable['name'];
+	  $sharedu = $regtable['shared-users'];
+	  $ratel = $regtable['rate-limit'];
+	  $API->disconnect();
+	}
+	}
+	//Update Profile
+  if(isset($_POST['profupdate'])){
+  $nsharuser=($_POST['nsharedu']);
+	$nrxtx = ($_POST['nupdown']);
+	$id = $_GET['idp'];
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	$arrID=$API->comm("/ip/hotspot/user/profile/getall",
+						  array(
+				  ".proplist"=> ".id",
+				  "?name" => "$profn",
+				  ));
+
+			$API->comm("/ip/hotspot/user/profile/set",
+				  array(
+						  ".id" => $arrID[0][".id"],
+						  /*"add-mac-cookie" => "yes",*/
+						  "rate-limit" => "$nrxtx",
+						  "shared-users" => "$nsharuser",
+						 ));
+	}
+	header("Location:uprofileadd.php#x");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,7 +108,6 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					<td colspan=2>
 						<button class="material-icons" onclick="location.href='uprofileadd.php';" title="Reload">autorenew</button>
 						<button class="material-icons"	onclick="location.href='./setup.php';" 	title="Edit Config">settings</button>
-						<button class="material-icons" onclick="location.href='./uprofileset.php';" title="Edit User Profile">mode_edit</button>
 						<div class="dropdown" style="float:right;">
 							<button class="material-icons dropbtn">local_play</button>
 								<div class="dropdown-content">
@@ -299,14 +344,49 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 
 						for ($i=0; $i<$TotalReg; $i++){
 						  echo "<tr>";
-							$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=uprofilerm.php?id=".$regtable['.id'] . ">X</a></td>";
-							$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
+							$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=?id=".$regtable['.id'] . ">X</a></td>";
+							$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik user untuk edit Profile' href=?idp=".$regtable['.id']."&name=" . $regtable['name'] . "#edit-profile>". $regtable['name']. "</a></td>";
+							//$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['shared-users'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['rate-limit'];echo "</td> </tr>";
 							}
 					?>
 				</table>
 			</div>
+			<div id="edit-profile" class="modal-window">
+		  <div>
+			<a style="font-wight:bold;"href="#x" title="Close" class="modal-close">X</a>
+			<h3>Edit Profile</h3>
+	<?php
+	echo "<div style='overflow-x:auto;'>";
+	echo "<form autocomplete='off' method='post' action=''>";
+	echo "<table>";
+	echo "	<tr>";
+	echo "		<td >Profile</td>";
+	echo "		<td >:</td>";
+	echo "		<td>$profn</td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Shared User</td>";
+	echo "		<td >:</td>";
+	echo "		<td ><input type='text' size='3' maxlength='3' name='nsharedu' value=$sharedu></td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Upload/Download</td>";
+	echo "		<td >:</td>";
+	echo "		<td ><input type='text' size='12'  name='nupdown' placeholder='contoh:512k/1M' value=$ratel ></td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td ></td>";
+	echo "		<td ></td>";
+	echo "		<td ><input type='submit' name='profupdate' class='btnsubmit' value='Simpan'/></td>";
+	echo "	</tr>";
+	echo "</table>";
+	echo "</form>";
+	echo "</div>";
+  ?>
+    </div>
+    </div>
 		</div>
 	</body>
 </html>
