@@ -227,7 +227,7 @@ $listphp = "userlist.php";
 						  echo "<tr>";
 						  $regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a title='Hapus User' style='color:#000;' href=userlist.php?profile=$prof&id=".$regtable['.id'] . ">X</a></td>";
 						  $regtable = $ARRAY[$i];if($regtable['disabled'] == "true"){echo "<td style='text-align:center;'><a title='Enable User'style='color:#000;' href=userlist.php?profile=$prof&e=".$regtable['.id'] . ">E</a></td>";}else{echo "<td style='text-align:center;'><a title='Disable User' style='color:#000;' href=userlist.php?profile=$prof&d=".$regtable['.id'] . ">D</a></td>";}
-							$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik user untuk melihat masa aktifnya' href=userlist.php?profile=$prof&usr=" . $regtable['name'] . "#cekuser>". $regtable['name']. "</a></td>";
+							$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik untuk melihat masa aktifnya' href=userlist.php?profile=$prof&usr=" . $regtable['name'] . "#cekuser>". $regtable['name']. "</a></td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['profile'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['uptime'];echo "</td>";
