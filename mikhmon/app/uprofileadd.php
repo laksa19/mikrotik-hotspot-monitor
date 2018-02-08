@@ -345,7 +345,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						for ($i=0; $i<$TotalReg; $i++){
 						  echo "<tr>";
 							$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=?id=".$regtable['.id'] . ">X</a></td>";
-							$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik user untuk edit Profile' href=?idp=".$regtable['.id']."&name=" . $regtable['name'] . "#edit-profile>". $regtable['name']. "</a></td>";
+							$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik untuk edit Profile' href=?idp=".$regtable['.id']."&name=" . $regtable['name'] . "#edit-profile>". $regtable['name']. "</a></td>";
 							//$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['shared-users'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['rate-limit'];echo "</td> </tr>";
