@@ -70,6 +70,10 @@ Download [update.zip](https://laksa19.github.io/download/update.zip)
 
 7-2-2018
 
+Perbaikan update profile.
+
+7-2-2018
+
 1. Perubahan edit User Profile.
 2. Penambahan Disable/Enable user di userlist.
 3. Penambahan filter berdasarkan server hotspot dan tanggal generate.
