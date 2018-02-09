@@ -62,6 +62,41 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
   $nsharuser=($_POST['nsharedu']);
 	$nrxtx = ($_POST['nupdown']);
 	$id = $_GET['idp'];
+	if ($profn == $profile1){
+				$exptime = $uactive1;
+			}elseif ($profn == $profile2){
+				$exptime = $uactive2;
+			}elseif ($profn == $profile3){
+				$exptime = $uactive3;
+			}elseif ($profn == $profile4){
+				$exptime = $uactive4;
+			}elseif ($profn == $profile5){
+				$exptime = $uactive5;
+			}elseif ($profn == $profile6){
+				$exptime = $uactive6;
+			}elseif ($profn == $profile7){
+				$exptime = $uactive7;
+			}elseif ($profn == $profile8){
+				$exptime = $uactive8;
+			}elseif ($profn == $profile9){
+				$exptime = $uactive9;
+			}elseif ($profn == $profile10){
+				$exptime = $uactive10;
+			}elseif ($profn == $profile11){
+				$exptime = $uactive11;
+			}elseif ($profn == $profile12){
+				$exptime = $uactive12;
+			}elseif ($profn == $profile13){
+				$exptime = $uactive13;
+			}elseif ($profn == $profile14){
+				$exptime = $uactive14;
+			}elseif ($profn == $profile15){
+				$exptime = $uactive15;
+			}else {
+				$exptime= "";
+			}
+	$onlogin1 = '{:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
+	$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
 	if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$arrID=$API->comm("/ip/hotspot/user/profile/getall",
 						  array(
@@ -75,6 +110,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						  /*"add-mac-cookie" => "yes",*/
 						  "rate-limit" => "$nrxtx",
 						  "shared-users" => "$nsharuser",
+						  "on-login" => "$onlogin1$exptime$onlogin2",
 						 ));
 	}
 	header("Location:uprofileadd.php#x");
@@ -379,7 +415,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	echo "	<tr>";
 	echo "		<td ></td>";
 	echo "		<td ></td>";
-	echo "		<td ><input type='submit' name='profupdate' class='btnsubmit' value='Simpan'/></td>";
+	echo "		<td ><input type='submit' name='profupdate' class='btnsubmit' value='Update'/></td>";
 	echo "	</tr>";
 	echo "</table>";
 	echo "</form>";

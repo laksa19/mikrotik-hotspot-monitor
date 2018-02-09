@@ -600,7 +600,7 @@ table.tsetup td {
 					</tr>
 					<tr>
 						<td style="text-align:left" colspan=3>
-							Nama Profile dan Masa Aktif dibuat linier, agar dapat mengnali masa aktif Profile dengan mudah. Contoh: Profile 3Jam, Masa Aktif 3h (h=jam d=hari).
+							Nama Profile dan Masa Aktif dibuat linier, agar dapat mengnali masa aktif Profile dengan mudah. Contoh: Profile 3Jam, Masa Aktif 3h (h=jam d=hari).<b style="color:red">Nama Profle tidak menggunakan spasi</b>
 						</td>
 					</tr>
 				</table>
