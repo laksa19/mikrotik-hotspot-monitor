@@ -9,7 +9,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 2. Pastikan port API sudah aktif dan Jam Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Untuk pengaturan Jam dan Tanggal bisa baca [di sini](http://www.mikrotik.co.id/artikel_lihat.php?id=55).
 
-3. RouterOS yang didukung versi 3.25, 5.22, 6.3+
+3. Sudah dites di Router OS 3.25, 5.22, 6.3+
 
 ## FITUR  
 1. Multi platform (Windows, GNU/Linux, Android)
