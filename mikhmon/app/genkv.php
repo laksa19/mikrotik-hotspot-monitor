@@ -601,9 +601,9 @@ table.tuserd td {
 			}
 		$price = ($_POST['uprice']);
 		$serverh = ($_POST['server']);
-		$kkv = "$profname-". rand(100,999) . "-" . date("d.m.y");
 		$genall = ($_POST['genall']);
 		$pjguser = ($_POST['pjguser']);
+		$kkv = "--" . $serverh . "-" . $vprofile . "-" . $timelimit . "-" . $bytelimit . "-" . $price . "-" . date("d.m.y") . "-" . rand(100,999);
 	if($genall=="kv"){
 
 			$a = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);

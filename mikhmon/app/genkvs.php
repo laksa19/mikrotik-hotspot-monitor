@@ -453,7 +453,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						<td colspan=3>
 							<p style="color:green;">Catatan:</p>
 							<ol style="color:green;">
-								<li >Kode Voucher 2x panajang Username.</li><li>Sebelum cetak sesuaikan margin agar hasil maksimal.</li><li>Segera cetak voucher setelah geneate atau simpan ke PDF.</li><li>Mikhmon hanya bisa cetak voucher yang terakhir di generate.</li>
+								<li >Kode Voucher 2x panajang Username.</li><li>Sebelum cetak sesuaikan margin agar hasil maksimal.</li>
 							</ol>
 						</td>
 					</tr>
@@ -475,15 +475,6 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					</tr>
 					<tr>
 						<td colspan=2 style="text-align:center;"><button class="btnsubmit" onclick="location.href='./vcolorconf.php';">Ganti Warna</button></td>
-					</tr>
-				</table>
-				<br>
-				<table class="tprinta">
-					<tr>
-						<th>Generate Voucher Sebelumnya</th>
-					</tr>
-					<tr>
-						<td style="text-align: center; ">Aktif:<?php print_r($vprofname);?> <?php print_r($vtimelimit);?> <?php print_r($vbytelimit);?></td></tr><tr><td style="text-align: center; "><?php print_r($vserver);?> <?php print_r($vprice);?></td>
 					</tr>
 				</table>
 				<br>
@@ -581,9 +572,9 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		$price = ($_POST['uprice']);
 		$serverh = ($_POST['server']);
 		$jmlv = ($_POST['jumlahv']);
-		$kkv = "$profname-". rand(100,999) . "-" . date("d.m.y");
 		$genall = ($_POST['genall']);
 		$pjguser = ($_POST['pjguser']);
+		$kkv = $genall . "-" . $serverh . "-" . $vprofile . "-" . $timelimit . "-" . $bytelimit . "-" . $price . "-" . date("d.m.y") . "-" . rand(100,999);
 	if($genall=="kv"){
 		for($i=1;$i<=$jmlv;$i++){
 			$a[$i]= substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);
@@ -646,14 +637,13 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		$API->disconnect();
 		
 		
-		
 		fwrite($handle, $data);
 		
 		echo	"<table class='tprinta'>";
 		echo				"<tr>";
-		echo					"<th>Generate Voucher Sekarang</th>";
+		echo					"<th>Generated</th>";
 		echo				"<tr>";
-		echo					"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$serverh $price</td>";
+		echo					"<td style='text-align: center; '>$genall Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$serverh $price</td>";
 		echo				"</tr>";
 		echo	"</table>";
 		echo	"<br>";

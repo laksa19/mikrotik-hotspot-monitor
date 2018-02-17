@@ -231,7 +231,15 @@ $listphp = "userlist.php";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['profile'];echo "</td>";
 							$regtable = $ARRAY[$i];echo "<td>" . $regtable['uptime'];echo "</td>";
-							$regtable = $ARRAY[$i];echo "<td>" . substr($regtable['comment'],strlen($regtable['comment'],0) - 8,8);echo "</td>";
+							$regtable = $ARRAY[$i]; $vt = substr($regtable['comment'],0,2); echo "<td>" . substr($regtable['comment'],strlen($regtable['comment'],0) - 12,12) . "-" . $vt;
+							if($vt == "kv"){
+							  echo " | <a style='color:#000;' title='Cetak' href=vouchers/printkvs.php?id=" . $regtable['comment'] . " target='_blank'>Cetak</a>";echo " | <a style='color:#000;' title='Cetak QR' href=vouchers/printkvsqr.php?id=" . $regtable['comment'] . " target='_blank'> QR</a>";
+							  
+							}elseif($vt == "up"){
+							  echo " | <a style='color:#000;' title='Klik untuk melihat masa aktifnya' href=vouchers/printvs.php?id=" . $regtable['comment'] . " target='_blank'>Cetak</a>";echo " | <a style='color:#000;' title='Klik untuk melihat masa aktifnya' href=vouchers/printvsqr.php?id=" . $regtable['comment'] . " target='_blank'> QR</a>";
+							  
+							}echo " |</td>";
+							
 							echo"</tr>";
 							}
 					?>

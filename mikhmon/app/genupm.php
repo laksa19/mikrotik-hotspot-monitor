@@ -557,7 +557,7 @@ table.tuserb td {
 		$serverh = ($_POST['server']);
 		$u1 = ($_POST['uname']);
 		$p1 = ($_POST['passwd']);
-		$kkv = "$profname-".  rand(100,999) . "-" . date("d.m.y");
+		$kkv = "--" . $serverh . "-" . $vprofile . "-" . $timelimit . "-" . $bytelimit . "-" . $price . "-" . date("d.m.y") . "-" . rand(100,999);
 		
 		$API->comm("/ip/hotspot/user/add", array(
 		  "server" => "$serverh",
