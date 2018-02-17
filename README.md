@@ -68,6 +68,10 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 Download [update.zip](https://laksa19.github.io/download/update.zip)
 
+17-2-2018
+
+Penambahan fitur cetak voucher yang digenerate sebelumnya. Diakses melalui userlist. <br> Fitur ini hanya bisa digunakan setelah generate voucher dari Mikhmon build 2052. <br> Cetak kembali berdasarkan tanggal dan kode unik saat genetare.
+
 7-2-2018
 
 Perbaikan update profile.
