@@ -25,9 +25,21 @@ include('../config.php');
 if(!isset($_SESSION['usermikhmon'])){
 	header("Location:../login.php");
 }
-
-
+$id = $_GET['id'];
+if($id == ""){
 include('./vouchers.php');
+}else{
+  $detv = explode('-', $id);
+  for ($i=0;$i<count($detv);$i++) {
+  $vkkv=$id;
+  $vserver=$detv[1];
+  $vprofname=$detv[2];
+  $uptimelimit=$detv[3];
+  $upbytelimit=$detv[4];
+  $vprice=$detv[5];
+  }
+}
+
 include('../css/vcolors.php');
 $API = new RouterosAPI();
 $API->debug = false;
