@@ -468,7 +468,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				      <p>Catatan:</p>
 							<ol>
 							  <li>Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.</li>
-							  <li>Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.<br>(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan meode yang sama).</li>
+							  <li>Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.<br>(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan metode yang sama).</li>
 							  <li>Profile yang bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi" adalah profile yang terdaftar di laman Setup.</li>
 								<li>Profile yang dibuat manual silahkan pilih "No Expired" pada kolom Mode Expired.</li>
 								<li>Profile yang dibuat manual tidak akan bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi".</li>
