@@ -68,7 +68,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 Download [update.zip](https://laksa19.github.io/download/update.zip)
 
-19-2-2018
+20-2-2018
 
 Penambahan Mode Expired, menjadi mode Hapus dan Notifikasi.
 1. Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.
