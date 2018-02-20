@@ -53,7 +53,7 @@ $listphp = "userlist.php";
 	  $API->comm("/ip/hotspot/user/remove", array(
 	    ".id"=> "$id",));
 	    $API->disconnect();
-	    header("Location:userlist.php?profile=$prof");
+	    header("Location:userlist.php?profile=$prof#");
 	}
 	}
 	// disable user
@@ -65,7 +65,7 @@ $listphp = "userlist.php";
 	  $API->write('=disabled=yes');
 	  $API->read();
 	  $API->disconnect();
-	  header("Location:userlist.php?profile=$prof");
+	  header("Location:userlist.php?profile=$prof#");
 	}
 	}
 	//enable user
@@ -77,8 +77,21 @@ $listphp = "userlist.php";
 	  $API->write('=disabled=no');
 	  $API->read();
 	  $API->disconnect();
-	  header("Location:userlist.php?profile=$prof");
+	  header("Location:userlist.php?profile=$prof#");
 	}
+	}
+	//reset user
+	$id = $_GET['idr'];
+	$sname = $_GET['usr'];
+	if(isset($_POST['resetuser'])){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	  $API->write('/ip/hotspot/user/set', false);
+	  $API->write('=.id='.$id, false);
+	  $API->write('=limit-uptime=0');
+	  $API->read();
+	  $API->disconnect();
+	}
+	header("Location:userlist.php?profile=$prof#");
 	}
 ?>
 <!DOCTYPE html>
@@ -225,13 +238,14 @@ $listphp = "userlist.php";
 
 						for ($i=0; $i<$TotalReg; $i++){
 						  echo "<tr>";
-						  $regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a title='Hapus User' style='color:#000;' href=userlist.php?profile=$prof&id=".$regtable['.id'] . ">X</a></td>";
-						  $regtable = $ARRAY[$i];if($regtable['disabled'] == "true"){echo "<td style='text-align:center;'><a title='Enable User'style='color:#000;' href=userlist.php?profile=$prof&e=".$regtable['.id'] . ">E</a></td>";}else{echo "<td style='text-align:center;'><a title='Disable User' style='color:#000;' href=userlist.php?profile=$prof&d=".$regtable['.id'] . ">D</a></td>";}
-							$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik untuk melihat masa aktifnya' href=userlist.php?profile=$prof&usr=" . $regtable['name'] . "#cekuser>". $regtable['name']. "</a></td>";
-							$regtable = $ARRAY[$i];echo "<td>" . $regtable['server'];echo "</td>";
-							$regtable = $ARRAY[$i];echo "<td>" . $regtable['profile'];echo "</td>";
-							$regtable = $ARRAY[$i];echo "<td>" . $regtable['uptime'];echo "</td>";
-							$regtable = $ARRAY[$i]; $vt = substr($regtable['comment'],0,2); echo "<td>" . substr($regtable['comment'],strlen($regtable['comment'],0) - 12,12) . "-" . $vt;
+						  $regtable = $ARRAY[$i];
+						  echo "<td style='text-align:center;'><a title='Hapus User' style='color:#000;' href=userlist.php?profile=$prof&id=".$regtable['.id'] . ">X</a></td>";
+						  if($regtable['disabled'] == "true"){echo "<td style='text-align:center;'><a title='Enable User'style='color:#000;' href=userlist.php?profile=$prof&e=".$regtable['.id'] . ">E</a></td>";}else{echo "<td style='text-align:center;'><a title='Disable User' style='color:#000;' href=userlist.php?profile=$prof&d=".$regtable['.id'] . ">D</a></td>";}
+							echo "<td><a style='color:#000;' title='Klik untuk melihat masa aktifnya' href=userlist.php?profile=$prof&usr=" . $regtable['name'] . "&idr=" . $regtable['.id'] . "#cekuser>". $regtable['name']. "</a></td>";
+							echo "<td>" . $regtable['server'];echo "</td>";
+							echo "<td>" . $regtable['profile'];echo "</td>";
+							echo "<td>" . $regtable['uptime'];echo "</td>";
+							$vt = substr($regtable['comment'],0,2); echo "<td>" . substr($regtable['comment'],strlen($regtable['comment'],0) - 12,12) . "-" . $vt;
 							if($vt == "kv"){
 							  echo " | <a style='color:#000;' title='Cetak' href=vouchers/printkvs.php?id=" . $regtable['comment'] . " target='_blank'>Cetak</a>";echo " | <a style='color:#000;' title='Cetak QR' href=vouchers/printkvsqr.php?id=" . $regtable['comment'] . " target='_blank'> QR</a>";
 							  
@@ -247,7 +261,7 @@ $listphp = "userlist.php";
 		</div>
 		<div id="cekuser" class="modal-window">
 		<div>
-			<a style="font-wight:bold;"href="#x" title="Close" class="modal-close">X</a>
+			<a style="font-wight:bold;"href="userlist.php?profile=<?php echo $prof;?>#" title="Close" class="modal-close">X</a>
 			<h3>Info User</h3>
 	<?php
 	$name = $_GET['usr'];
@@ -257,7 +271,6 @@ $listphp = "userlist.php";
 	$API->write('?=name='.$name.'');
 	$ARRAY1 = $API->read();
 	$regtable = $ARRAY1[0];
-	      $user = $regtable['name'];
 				$exp = $regtable['next-run'];
 				$strd = $regtable['start-date'];
 				$strt = $regtable['start-time'];
@@ -288,15 +301,25 @@ $listphp = "userlist.php";
 	$regtable = $ARRAY2[0];
 	  $uptime = $regtable['uptime'];
 	  $uptimelimit = $regtable['limit-uptime'];
+	  if($uptimelimit == "1s"){
+	    $uplimit = "Expired";
+	    $uplimitt = "Status";
+	    $resetuser = "<td ><input type='submit' name='resetuser' class='btnsubmit' value='Reset'/></td>";
+	  }else{
+	    $uplimit = "$uptimelimit";
+	    $uplimitt = "Limit Uptime";
+	    $resetuser = "";
+	  }
 	  $byteo =  formatBytes2($regtable['bytes-out'],0);
 	  $byteolimit = formatBytes2($regtable['limit-bytes-out'],0);
 
 	echo "<div style='overflow-x:auto;'>";
+	echo "<form autocomplete='off' method='post' action=''>";
 	echo "<table>";
 	echo "	<tr>";
 	echo "		<td >User/Kode Voucher</td>";
 	echo "		<td >:</td>";
-	echo "		<td > $user</td>";
+	echo "		<td > $name</td>";
 	echo "	</tr>";
 	echo "	<tr>";
 	echo "		<td >Masa Aktif</td>";
@@ -314,9 +337,9 @@ $listphp = "userlist.php";
 	echo "		<td >$exp</td>";
 	echo "	</tr>";
 	echo "	<tr>";
-	echo "		<td >Limit Uptime</td>";
+	echo "		<td >$uplimitt</td>";
 	echo "		<td >:</td>";
-	echo "		<td >$uptimelimit</td>";
+	echo "		<td >$uplimit</td>";
 	echo "	</tr>";
 	echo "	<tr>";
 	echo "		<td >Uptime</td>";
@@ -333,7 +356,12 @@ $listphp = "userlist.php";
 	echo "		<td >:</td>";
 	echo "		<td >$byteo</td>";
 	echo "	</tr>";
+	echo "		<td ></td>";
+	echo "		<td ></td>";
+	echo "		$resetuser";
+	echo "	</tr>";
 	echo "</table>";
+	echo "</form>";
 	echo "</div>";
 	
 	$API->disconnect();

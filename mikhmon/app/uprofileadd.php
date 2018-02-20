@@ -54,6 +54,17 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	  $profn = $regtable['name'];
 	  $sharedu = $regtable['shared-users'];
 	  $ratel = $regtable['rate-limit'];
+	  $modeexpu = $regtable['on-login'];
+	  if(substr($modeexpu,0,9) == ":put rem;"){
+							  $mdexpv = "rem";
+							  $mdexpt = "Hapus";
+							}elseif(substr($modeexpu,0,9) == ":put ntf;"){
+							  $mdexpv = "ntf";
+							  $mdexpt = "Notifikasi";
+							}else{
+							  $mdexpv = "0";
+							  $mdexpt = "No Expired";
+							}
 	  $API->disconnect();
 	}
 	}
@@ -61,6 +72,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
   if(isset($_POST['profupdate'])){
   $nsharuser=($_POST['nsharedu']);
 	$nrxtx = ($_POST['nupdown']);
+	$mode = ($_POST['expmodeu']);
 	$id = $_GET['idp'];
 	if ($profn == $profile1){
 				$exptime = $uactive1;
@@ -93,11 +105,21 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			}elseif ($profn == $profile15){
 				$exptime = $uactive15;
 			}else {
-				$exptime= "";
+				$exptime= "x";
 			}
-	$onlogin1 = '{:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
+	$onlogin1 = ':put rem; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
 	$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
+	
+	$onlogin3 = ':put ntf; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
+	$onlogin4 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
+	
+	if($mode == "rem"){
+			$onlogin = "$onlogin1$exptime$onlogin2";
+			}elseif($mode == "ntf"){
+			$onlogin = "$onlogin3$exptime$onlogin4";
+			}
 	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	  if($exptime == "x"){
 	$arrID=$API->comm("/ip/hotspot/user/profile/getall",
 						  array(
 				  ".proplist"=> ".id",
@@ -110,8 +132,23 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						  /*"add-mac-cookie" => "yes",*/
 						  "rate-limit" => "$nrxtx",
 						  "shared-users" => "$nsharuser",
-						  "on-login" => "$onlogin1$exptime$onlogin2",
 						 ));
+	}else{
+	  $arrID=$API->comm("/ip/hotspot/user/profile/getall",
+						  array(
+				  ".proplist"=> ".id",
+				  "?name" => "$profn",
+				  ));
+
+			$API->comm("/ip/hotspot/user/profile/set",
+				  array(
+						  ".id" => $arrID[0][".id"],
+						  /*"add-mac-cookie" => "yes",*/
+						  "rate-limit" => "$nrxtx",
+						  "shared-users" => "$nsharuser",
+						  "on-login" => "$onlogin",
+						 ));
+	}
 	}
 	header("Location:uprofileadd.php#x");
 }
@@ -233,8 +270,8 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			<form autocomplete="off" method="post" action="">
 				<table class="tnav" align="center"  >
 					<tr><td>Profile | Masa Aktif</td><td>:</td><td>
-						<select name="nama" required="1">
-							<option value="">Pilih...</option>
+					  <input type="text" placeholder="Pilih / Manual" name="nama" required="1" list="profilename">
+					  <datalist id="profilename">
 							<?php
 								$proflist = array ('1'=>$profile1,$profile2,$profile3,$profile4,$profile5,$profile6,$profile7,$profile8,$profile9,$profile10,$profile11,$profile12,$profile13,$profile14,$profile15);
 								
@@ -301,18 +338,22 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 									}
 									}
 								?>
-						</select>
+						</datalist>
 					</td></tr>
 					<tr><td>Shared Users</td><td>:</td><td><input type="text" size="3" maxlength="3" name="sharedu" value="1" required="1"/></td></tr>
 					<tr><td>Upload/Download</td><td>:</td><td><input type="text" size="12"  name="updown" placeholder="contoh:512k/1M" required="1"/></td></tr>
+					<tr><td>Mode Expired</td><td>:</td><td>
+						<select name="expmode" required="1">
+							<option value="">Pilih...</option>
+							<option value="rem">Hapus</option>
+							<option value="ntf">Notifikasi</option>
+							<option value="nul">No Expired</option>
+						</select>
 					<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Simpan"/></td></tr>
 				</table>
 			</form>
 <?php
 	if(isset($_POST['nama'])){
-		$API = new RouterosAPI();
-		if ($API->connect($iphost, $userhost, $passwdhost)) {
-			}
 			$profname = ($_POST['nama']);
 			$uprofile = $profname;
 			if ($uprofile == $profile1){
@@ -346,23 +387,44 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			}elseif ($uprofile == $profile15){
 				$exptime = $uactive15;
 			}else {
-				$exptime= "";
+				$exptime = "";
 			}
 			//$exptime = ($_POST['aktif']);
 			$sharuser=($_POST['sharedu']);
 			$rxtx = ($_POST['updown']);
-			$onlogin1 = '{:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
+			$mode = ($_POST['expmode']);
+			$onlogin1 = ':put rem; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
 			$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
+			$onlogin3 = ':put ntf; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
+			$onlogin4 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
+			if($mode == "rem"){
+			$onlogin = "$onlogin1$exptime$onlogin2";
+			}elseif($mode == "ntf"){
+			$onlogin = "$onlogin3$exptime$onlogin4";
+			}
+			if ($API->connect($iphost, $userhost, $passwdhost)) {
+			  if($exptime == ""){
 			$API->comm("/ip/hotspot/user/profile/add", array(
+			  
 					  /*"add-mac-cookie" => "yes",*/
 					  "name" => "$profname",
 					  "rate-limit" => "$rxtx",
 					  "shared-users" => "$sharuser",
 					  "status-autorefresh" => "15",
 					  "transparent-proxy" => "yes",
-					  "on-login" => "$onlogin1$exptime$onlogin2",
 			));
-			
+			}else{
+			 $API->comm("/ip/hotspot/user/profile/add", array(
+			  		  /*"add-mac-cookie" => "yes",*/
+					  "name" => "$profname",
+					  "rate-limit" => "$rxtx",
+					  "shared-users" => "$sharuser",
+					  "status-autorefresh" => "15",
+					  "transparent-proxy" => "yes",
+					  "on-login" => "$onlogin",
+			));
+			}
+			}
 			$ARRAY = $API->comm("/ip/hotspot/user/profile/print");
 			$API->disconnect();
 			}
@@ -374,24 +436,50 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						<th >Name</th>
 						<th >Shared Users</th>
 						<th >Rate Limit</th>
+						<th >Mode Expired</th>
 					</tr>
 					<?php
 					$TotalReg = count($ARRAY);
 
 						for ($i=0; $i<$TotalReg; $i++){
 						  echo "<tr>";
-							$regtable = $ARRAY[$i];echo "<td style='text-align:center;'><a style='color:#000;' href=?id=".$regtable['.id'] . ">X</a></td>";
-							$regtable = $ARRAY[$i];echo "<td><a style='color:#000;' title='Klik untuk edit Profile' href=?idp=".$regtable['.id']."&name=" . $regtable['name'] . "#edit-profile>". $regtable['name']. "</a></td>";
+							$regtable = $ARRAY[$i];
+							echo "<td style='text-align:center;'><a style='color:#000;' href=?id=".$regtable['.id'] . ">X</a></td>";
+							echo "<td><a style='color:#000;' title='Klik untuk edit Profile' href=?idp=".$regtable['.id']."&name=" . $regtable['name'] . "#edit-profile>". $regtable['name']. "</a></td>";
 							//$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
-							$regtable = $ARRAY[$i];echo "<td>" . $regtable['shared-users'];echo "</td>";
-							$regtable = $ARRAY[$i];echo "<td>" . $regtable['rate-limit'];echo "</td> </tr>";
+							echo "<td>" . $regtable['shared-users'];echo "</td>";
+							echo "<td>" . $regtable['rate-limit'];echo "</td>";
+							echo "<td>";
+							$modeexp = $regtable['on-login'];
+							if(substr($modeexp,0,9) == ":put rem;"){
+							  echo "Hapus";
+							}elseif(substr($modeexp,0,9) == ":put ntf;"){
+							  echo "Notifikasi";
+							}else{
+							  
+							}
+							  echo "</td> </tr>";
 							}
 					?>
 				</table>
+				<div>
+				  <tr>
+				    <td>
+				      <p>Catatan:</p>
+							<ol>
+							  <li>Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.</li>
+							  <li>Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.<br>(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan meode yang sama).</li>
+							  <li>Profile yang bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi" adalah profile yang terdaftar di laman Setup.</li>
+								<li>Profile yang dibuat manual silahkan pilih "No Expired" pada kolom Mode Expired.</li>
+								<li>Profile yang dibuat manual tidak akan bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi".</li>
+							</ol>
+				    </td>
+				  </tr>
+				</div>
 			</div>
 			<div id="edit-profile" class="modal-window">
 		  <div>
-			<a style="font-wight:bold;"href="#x" title="Close" class="modal-close">X</a>
+			<a style="font-wight:bold;"href="uprofileadd.php#x" title="Close" class="modal-close">X</a>
 			<h3>Edit Profile</h3>
 	<?php
 	echo "<div style='overflow-x:auto;'>";
@@ -411,6 +499,18 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	echo "		<td >Upload/Download</td>";
 	echo "		<td >:</td>";
 	echo "		<td ><input type='text' size='12'  name='nupdown' placeholder='contoh:512k/1M' value=$ratel ></td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "		<td >Mode Expired</td>";
+	echo "		<td >:</td>";
+	echo "		<td >";
+	echo "	  <select name='expmodeu' required='1'>";
+	echo "						<option value='$mdexpv'>$mdexpt</option>";
+	echo "						<option value='rem'>Hapus</option>";
+	echo "						<option value='ntf'>Notifikasi</option>";
+	echo "						<option value='nul'>No Expired</option>";
+	echo "		</select>";
+	echo "		</td >";
 	echo "	</tr>";
 	echo "	<tr>";
 	echo "		<td ></td>";

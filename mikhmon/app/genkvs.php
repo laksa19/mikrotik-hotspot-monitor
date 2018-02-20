@@ -451,9 +451,10 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					</tr>
 					<tr>
 						<td colspan=3>
-							<p style="color:green;">Catatan:</p>
-							<ol style="color:green;">
-								<li >Kode Voucher 2x panajang Username.</li><li>Sebelum cetak sesuaikan margin agar hasil maksimal.</li>
+							<p>Catatan:</p>
+							<ol>
+								<li >Kode Voucher 2x panajang Username.</li>
+								<li>Sebelum cetak sesuaikan margin agar hasil maksimal.</li>
 							</ol>
 						</td>
 					</tr>
