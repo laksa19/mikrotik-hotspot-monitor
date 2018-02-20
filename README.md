@@ -72,7 +72,7 @@ Download [update.zip](https://laksa19.github.io/download/update.zip)
 
 Penambahan Mode Expired, menjadi mode Hapus dan Notifikasi.
 1. Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.
-2. Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan meode yang sama).
+2. Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan metode yang sama).
 3. Profile yang bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi" adalah profile yang terdaftar di laman Setup.
 4. Profile yang dibuat manual silahkan pilih "No Expired" pada kolom Mode Expired.
 5. Profile yang dibuat manual tidak akan bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi".
