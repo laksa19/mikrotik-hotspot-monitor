@@ -68,6 +68,16 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 Download [update.zip](https://laksa19.github.io/download/update.zip)
 
+19-2-2018
+
+Penambahan Mode Expired, menjadi mode Hapus dan Notifikasi.
+1. Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.
+2. Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan meode yang sama).
+3. Profile yang bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi" adalah profile yang terdaftar di laman Setup.
+4. Profile yang dibuat manual silahkan pilih "No Expired" pada kolom Mode Expired.
+5. Profile yang dibuat manual tidak akan bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi".
+6. Untuk mengaktifkan kembali user expired cukup klik tombol Reset di info user, ini bisa diakses dari user list.
+
 17-2-2018
 
 Penambahan fitur cetak voucher yang digenerate sebelumnya. Diakses melalui userlist. <br> Fitur ini hanya bisa digunakan setelah generate voucher dari Mikhmon build 2052. <br> Cetak kembali berdasarkan tanggal dan kode unik saat genetare.
