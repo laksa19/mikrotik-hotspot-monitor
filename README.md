@@ -71,7 +71,7 @@ Download [update.zip](https://laksa19.github.io/download/update.zip)
 23-2-2018
 
 1. Pembaruan User Profile mode expired Hapus.
-    - Sekarang diambahkan  jeda atau tenggang untuk menghapus user dari Mikrotik. Jadi ada kesempatan untuk notifikasi Expired saat user mencoba login kembali.
+    - Sekarang diambahkan  jeda atau tenggang untuk menghapus user dari Mikrotik, default 5menit. Jadi ada kesempatan untuk notifikasi Expired saat user mencoba login kembali.
     - Tutorial Membuat Login Hotspot dengan notifikasi Expired : [YouTube Laksa19](https://goo.gl/uuFZfd)
     - Template jadi dengan notifikasi Expired [hotspot3](https://goo.gl/Qw88vK)
 2. Penambahan opsi Huruf saat generate. Sekarang ada 3 pilihan [abcd, ABCD, aBcD]
