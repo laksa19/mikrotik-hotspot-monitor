@@ -68,6 +68,16 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 Download [update.zip](https://laksa19.github.io/download/update.zip)
 
+23-2-2018
+
+1. Pembaruan User Profile mode expired Hapus.
+    - Sekarang diambahkan jeda untuk hapus user default 5menit. Jadi ada kesempatan untuk notifikasi Expired saat user mencoba login kembali.
+    - Tutorial Membuat Login Hotspot dengan notifikasi Expired : [YouTube Laksa19](https://goo.gl/uuFZfd)
+    - Template jadi dengan notifikasi Expired [hotspot3](https://goo.gl/Qw88vK)
+2. Penambahan opsi Huruf saat generate. Sekarang ada 3 pilihan [abcd, ABCD, aBcD]
+3. Penambahan Show/Hide Passworddi user list.
+4. Penambahan opsi Export/Import Setup Mikhmon.Export ke Mikrotik/Import dari Mikrotik.
+
 20-2-2018
 
 Penambahan Mode Expired, menjadi mode Hapus dan Notifikasi.
