@@ -12,7 +12,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 3. Sudah dites di Router OS 3.25, 5.22, 6.3+
 
 ## FITUR  
-1. Multi platform (Windows, GNU/Linux, Android)
+1. Multi platform (Windows, GNU/Linux, Android, OpenWRT)
 2. Menampilkan User Hotspot yang aktif dan masa aktifnya.
 3. Menambah, edit dan hapus User Profile.
 4. Tersedia dua mode expired (Hapus dan Notifikasi)
