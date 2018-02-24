@@ -15,18 +15,27 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 1. Multi platform (Windows, GNU/Linux, Android)
 2. Menampilkan User Hotspot yang aktif dan masa aktifnya.
 3. Menambah, edit dan hapus User Profile.
-4. Menampilkan daftar User Hotspot berdasarkan User Profile.
-5. Menghapus User Hotspot berdasarkan Username.
+4. Tersedia dua mode expired (Hapus dan Notifikasi)
+    - Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.
+    - Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.
+    - Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan metode yang sama. Tutorial login hotspot dengan expired bisa di cek di  [Video](https://goo.gl/hVUnjD).
+5. Menampilkan daftar User Hotspot berdasarkan User Profile.
+    - Filter berdasarkan Username, Server, dan Tanggal/Kode Generate.
+    - Hapus User.
+    - Disable/Enable User.
+    - Show/Hide Password.
 6. Generate Voucher.
     - Generate Kode Voucher.
     - Generate User Password.
     - Generate Custom User Password.
-    
-    (Generate Kode Voucher/User Password maksimal 99 untuk sekali generate)
-8. Cetak Voucher. (Ukuran kertas A4 atau F4)
-9. Custom warna Voucher
-10. Menghapus otomatis user hotspot expired.
-10. Tools :
+7. Cetak Voucher. (Ukuran kertas A4 atau F4)
+    - Generate Kode Voucher.
+    - Generate User Password.
+    - Generate Custom User Password.
+    - Pilihan Huruf untuk Kode Voucher dan User Password [abcd, ABCD, aBcD].
+    - Generate Kode Voucher/User Password maksimal 99 untuk sekali generate, bisa diulangi lagi.
+8. Custom warna Voucher.
+9. Tools :
     - Add Remove DNS Static untuk blok website.
     - Log Hotspot Mikrotik.
     - History.
