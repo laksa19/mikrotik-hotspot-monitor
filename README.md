@@ -17,7 +17,8 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 3. Menambah, edit dan hapus User Profile.
 4. Tersedia dua mode expired (Hapus dan Notifikasi)
     - Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.
-    - Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.
+    - Mode Expired "Notifikasi" tdak akan menghapus data user.
+    - Mode Expired Hapus dan Notifikasi akan menampilkan notifikasi expired di laman login hotspot, untuk user yang sudah habis masa aktifnya.
     - Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan metode yang sama. Tutorial login hotspot dengan expired bisa di cek di  [Video](https://goo.gl/hVUnjD).
 5. Menampilkan daftar User Hotspot berdasarkan User Profile.
     - Filter berdasarkan Username, Server, dan Tanggal/Kode Generate.
