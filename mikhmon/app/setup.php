@@ -26,17 +26,24 @@ if(!isset($_SESSION['usermikhmon'])){
 	header("Location:login.php");
 }
 
+$API = new RouterosAPI();
+$API->debug = false;
+
 ?>
 <?php
+  // Cek OTA Update
   if(isset($_POST['btnupdate'])){
    copy("http://laksa.mooo.com/ota-update/app/build.txt","build.txt");
    copy("http://laksa.mooo.com/ota-update/app/otaupdate.dat","otaupdate.php");
    echo "<script>location.href='otaupdate.php';</script>";
   }
+  
 
 ?>
 <?php
+
 	if(isset($_POST['setup'])){
+	  $setupdata = ($_POST['setupdata']);
 		$siphost = ($_POST['ipmik']);
 		$suserhost = ($_POST['usermik']);
 		$spasswdhost = ($_POST['passmik']);
@@ -362,6 +369,8 @@ if(!isset($_SESSION['usermikhmon'])){
 				$bytel = substr($blimit10, 0,-2);
 				$bytelimit10 = $bytel ."". $GB;
 			}
+		// Simpan Local
+		if($setupdata == "local"){
 		$my_file = 'config.php';
 		$my_file1 = '../status/config.php';
 		
@@ -371,10 +380,158 @@ if(!isset($_SESSION['usermikhmon'])){
 		$data = '<?php $iphost="'.$siphost.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $useradm="'.$suseradm.'"; $passadm="'.$spassadm.'"; $reloadindex="'.$sreloadindex.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $profile6="'.$sprofile6.'"; $profile7="'.$sprofile7.'"; $profile8="'.$sprofile8.'"; $profile9="'.$sprofile9.'"; $profile10="'.$sprofile10.'"; $profile11="'.$sprofile11.'"; $profile12="'.$sprofile12.'"; $profile13="'.$sprofile13.'"; $profile14="'.$sprofile14.'"; $profile15="'.$sprofile15.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $uactive6="'.$active6.'"; $uactive7="'.$active7.'"; $uactive8="'.$active8.'"; $uactive9="'.$active9.'"; $uactive10="'.$active10.'"; $uactive11="'.$active11.'"; $uactive12="'.$active12.'"; $uactive13="'.$active13.'"; $uactive14="'.$active14.'"; $uactive15="'.$active15.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $vname6="'.$suactive6t.'"; $vname7="'.$suactive7t.'"; $vname8="'.$suactive8t.'"; $vname9="'.$suactive9t.'"; $vname10="'.$suactive10t.'";  $vname11="'.$suactive11t.'"; $vname12="'.$suactive12t.'"; $vname13="'.$suactive13t.'"; $vname14="'.$suactive14t.'"; $vname15="'.$suactive15t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit6="'.$tlimit6.'"; $utimelimit7="'.$tlimit7.'";  $utimelimit8="'.$tlimit8.'"; $utimelimit9="'.$tlimit9.'"; $utimelimit10="'.$tlimit10.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $utimelimit6t="'.$stimelimit6t.'"; $utimelimit7t="'.$stimelimit7t.'"; $utimelimit8t="'.$stimelimit8t.'"; $utimelimit9t="'.$stimelimit9t.'"; $utimelimit10t="'.$stimelimit10t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit6="'.$bytelimit6.'"; $ubytelimit7="'.$bytelimit7.'";  $ubytelimit8="'.$bytelimit8.'"; $ubytelimit9="'.$bytelimit9.'"; $ubytelimit10="'.$bytelimit10.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $ubytelimit6t="'.$blimit6.'"; $ubytelimit7t="'.$blimit7.'"; $ubytelimit8t="'.$blimit8.'"; $ubytelimit9t="'.$blimit9.'"; $ubytelimit10t="'.$blimit10.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $price10="'.$sprice10.'";  $price11="'.$sprice11.'"; $price12="'.$sprice12.'"; $price13="'.$sprice13.'"; $price14="'.$sprice14.'"; $price15="'.$sprice15.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
 		
 		$data1 = '<?php  $iphost="'.$siphost.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $headerv="'.$sheaderv.'";?>';
+		
+	
 		fwrite($handle, $data);
 		fwrite($handle1, $data1);
+	// Export ke Mikrotik
+	}elseif($setupdata == "export"){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	   $arrID=$API->comm("/system/script/getall",
+						  array(
+				  ".proplist"=> ".id",
+				  "?name" => "mikhmon",
+				  ));
+	  $API->comm("/system/script/remove", array(
+	    ".id" => $arrID[0][".id"],
+	    ));
+	    $API->disconnect();
+	}
+	  
+  $export = "$sreloadindex-|-$sheaderv-|-$snotev-|-$sprofile1-|-$sprofile2-|-$sprofile3-|-$sprofile4-|-$sprofile5-|-$sprofile6-|-$sprofile7-|-$sprofile8-|-$sprofile9-|-$sprofile10-|-$sprofile11-|-$sprofile12-|-$sprofile13-|-$sprofile14-|-$sprofile15-|-$active1-|-$active2-|-$active3-|-$active4-|-$active5-|-$active6-|-$active7-|-$active8-|-$active9-|-$active10-|-$active11-|-$active12-|-$active13-|-$active14-|-$active15-|-$sprice1-|-$sprice2-|-$sprice3-|-$sprice4-|-$sprice5-|-$sprice6-|-$sprice7-|-$sprice8-|-$sprice9-|-$sprice10-|-$sprice11-|-$sprice12-|-$sprice13-|-$sprice14-|-$sprice15-|-$tlimit1-|-$tlimit2-|-$tlimit3-|-$tlimit4-|-$tlimit5-|-$tlimit6-|-$tlimit7-|-$tlimit8-|-$tlimit9-|-$tlimit10-|-$bytelimit1-|-$bytelimit2-|-$bytelimit3-|-$bytelimit4-|-$bytelimit5-|-$bytelimit6-|-$bytelimit7-|-$bytelimit8-|-$bytelimit9-|-$bytelimit10-|-$blimit1-|-$blimit2-|-$blimit3-|-$blimit4-|-$blimit5-|-$blimit6-|-$blimit7-|-$blimit8-|-$blimit9-|-$blimit10-|-$suactive1t-|-$suactive2t-|-$suactive3t-|-$suactive4t-|-$suactive5t-|-$suactive6t-|-$suactive7t-|-$suactive8t-|-$suactive9t-|-$suactive10t-|-$suactive11t-|-$suactive12t-|-$suactive13t-|-$suactive14t-|-$suactive15t-|-$stimelimit1t-|-$stimelimit2t-|-$stimelimit3t-|-$stimelimit4t-|-$stimelimit5t-|-$stimelimit6t-|-$stimelimit7t-|-$stimelimit8t-|-$stimelimit9t-|-$stimelimit10t";
+  
+  if ($API->connect($iphost, $userhost, $passwdhost)) {
+  $API->comm("/system/script/add", array(
+					  "name" => "mikhmon",
+					  "source" => "$export",
+			));
+  }
+//Import dari Mikrotik
+	}elseif($setupdata == "import"){
+	if ($API->connect( $iphost, $userhost, $passwdhost )) {
+	$API->write('/system/script/print', false);
+	$API->write('?=name=mikhmon');
+	$ARRAY = $API->read();
+	}
+  $regtable = $ARRAY[0];
+  $import = $regtable['source'];
+  if($import == ""){}else{
+  $importl = explode("-|-",$import);
+   $sreloadindex = $importl[0];
+   $sheaderv = $importl[1];
+   $snotev = $importl[2];
+   $sprofile1 = $importl[3];
+   $sprofile2 = $importl[4];
+   $sprofile3 = $importl[5];
+   $sprofile4 = $importl[6];
+   $sprofile5 = $importl[7];
+   $sprofile6 = $importl[8];
+   $sprofile7 = $importl[9];
+   $sprofile8 = $importl[10];
+   $sprofile9 = $importl[11];
+   $sprofile10 = $importl[12];
+   $sprofile11 = $importl[13];
+   $sprofile12 = $importl[14];
+   $sprofile13 = $importl[15];
+   $sprofile14 = $importl[16];
+   $sprofile15 = $importl[17];
+   $active1 = $importl[18];
+   $active2 = $importl[19];
+   $active3 = $importl[20];
+   $active4 = $importl[21];
+   $active5 = $importl[22];
+   $active6 = $importl[23];
+   $active7 = $importl[24];
+   $active8 = $importl[25];
+   $active9 = $importl[26];
+   $active10 = $importl[27];
+   $active11 = $importl[28];
+   $active12 = $importl[29];
+   $active13 = $importl[30];
+   $active14 = $importl[31];
+   $active15 = $importl[32];
+   $sprice1 = $importl[33];
+   $sprice2 = $importl[34];
+   $sprice3 = $importl[35];
+   $sprice4 = $importl[36];
+   $sprice5 = $importl[37];
+   $sprice6 = $importl[38];
+   $sprice7 = $importl[39];
+   $sprice8 = $importl[40];
+   $sprice9 = $importl[41];
+   $sprice10 = $importl[42];
+   $sprice11 = $importl[43];
+   $sprice12 = $importl[44];
+   $sprice13 = $importl[45];
+   $sprice14 = $importl[46];
+   $sprice15 = $importl[47];
+   $tlimit1 = $importl[48];
+   $tlimit2 = $importl[49];
+   $tlimit3 = $importl[50];
+   $tlimit4 = $importl[51];
+   $tlimit5 = $importl[52];
+   $tlimit6 = $importl[53];
+   $tlimit7 = $importl[54];
+   $tlimit8 = $importl[55];
+   $tlimit9 = $importl[56];
+   $tlimit10 = $importl[57];
+   $bytelimit1 = $importl[58];
+   $bytelimit2 = $importl[59];
+   $bytelimit3 = $importl[60];
+   $bytelimit4 = $importl[61];
+   $bytelimit5 = $importl[62];
+   $bytelimit6 = $importl[63];
+   $bytelimit7 = $importl[64];
+   $bytelimit8 = $importl[65];
+   $bytelimit9 = $importl[66];
+   $bytelimit10 = $importl[67];
+   $blimit1 = $importl[68];
+   $blimit2 = $importl[69];
+   $blimit3 = $importl[70];
+   $blimit4 = $importl[71];
+   $blimit5 = $importl[72];
+   $blimit6 = $importl[73];
+   $blimit7 = $importl[74];
+   $blimit8 = $importl[75];
+   $blimit9 = $importl[76];
+   $blimit10 = $importl[77];
+   $suactive1t = $importl[78];
+   $suactive2t = $importl[79];
+   $suactive3t = $importl[80];
+   $suactive4t = $importl[81];
+   $suactive5t = $importl[82];
+   $suactive6t = $importl[83];
+   $suactive7t = $importl[84];
+   $suactive8t = $importl[85];
+   $suactive9t = $importl[86];
+   $suactive10t = $importl[87];
+   $suactive11t = $importl[88];
+   $suactive12t = $importl[89];
+   $suactive13t = $importl[90];
+   $suactive14t = $importl[91];
+   $suactive15t = $importl[92];
+   $stimelimit1t = $importl[93];
+   $stimelimit2t = $importl[94];
+	 $stimelimit3t = $importl[95];
+	 $stimelimit4t = $importl[96];
+	 $stimelimit5t = $importl[97];
+	 $stimelimit6t = $importl[98];
+	 $stimelimit7t = $importl[99];
+	 $stimelimit8t = $importl[100];
+	 $stimelimit9t = $importl[101];
+	 $stimelimit10t = $importl[102];
+	  $my_file = 'config.php';
+		$my_file1 = '../status/config.php';
 		
-		header('Location: setup.php');
+		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
+
+		$data = '<?php $iphost="'.$siphost.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $useradm="'.$suseradm.'"; $passadm="'.$spassadm.'"; $reloadindex="'.$sreloadindex.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $profile6="'.$sprofile6.'"; $profile7="'.$sprofile7.'"; $profile8="'.$sprofile8.'"; $profile9="'.$sprofile9.'"; $profile10="'.$sprofile10.'"; $profile11="'.$sprofile11.'"; $profile12="'.$sprofile12.'"; $profile13="'.$sprofile13.'"; $profile14="'.$sprofile14.'"; $profile15="'.$sprofile15.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $uactive6="'.$active6.'"; $uactive7="'.$active7.'"; $uactive8="'.$active8.'"; $uactive9="'.$active9.'"; $uactive10="'.$active10.'"; $uactive11="'.$active11.'"; $uactive12="'.$active12.'"; $uactive13="'.$active13.'"; $uactive14="'.$active14.'"; $uactive15="'.$active15.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $vname6="'.$suactive6t.'"; $vname7="'.$suactive7t.'"; $vname8="'.$suactive8t.'"; $vname9="'.$suactive9t.'"; $vname10="'.$suactive10t.'";  $vname11="'.$suactive11t.'"; $vname12="'.$suactive12t.'"; $vname13="'.$suactive13t.'"; $vname14="'.$suactive14t.'"; $vname15="'.$suactive15t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit6="'.$tlimit6.'"; $utimelimit7="'.$tlimit7.'";  $utimelimit8="'.$tlimit8.'"; $utimelimit9="'.$tlimit9.'"; $utimelimit10="'.$tlimit10.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $utimelimit6t="'.$stimelimit6t.'"; $utimelimit7t="'.$stimelimit7t.'"; $utimelimit8t="'.$stimelimit8t.'"; $utimelimit9t="'.$stimelimit9t.'"; $utimelimit10t="'.$stimelimit10t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit6="'.$bytelimit6.'"; $ubytelimit7="'.$bytelimit7.'";  $ubytelimit8="'.$bytelimit8.'"; $ubytelimit9="'.$bytelimit9.'"; $ubytelimit10="'.$bytelimit10.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $ubytelimit6t="'.$blimit6.'"; $ubytelimit7t="'.$blimit7.'"; $ubytelimit8t="'.$blimit8.'"; $ubytelimit9t="'.$blimit9.'"; $ubytelimit10t="'.$blimit10.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $price10="'.$sprice10.'";  $price11="'.$sprice11.'"; $price12="'.$sprice12.'"; $price13="'.$sprice13.'"; $price14="'.$sprice14.'"; $price15="'.$sprice15.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
+		
+		fwrite($handle, $data);
+	}
+	}
+  
+  header('Location: setup.php');
 	}
 ?>
 <!DOCTYPE html>
@@ -457,7 +614,16 @@ table.tsetup td {
 			</table>
 			<form autocomplete="off" method="post" action="">
 				<table class="tnav">
-					<tr><td><input type="submit" class="btnsubmit" name="setup" value="Simpan"/></td></tr>
+					<tr>
+					  <td>
+					  <select style="float:left;" name="setupdata" required="1">
+							<option value="local">Local Server</option>
+							<option value="export">Export ke Mikrotik</option>
+							<option value="import">Import dari Mikrotik</option>
+						</select>
+						<input type="submit" class="btnsubmit" name="setup" value="Simpan"/>
+					  </td>
+					</tr>
 				</table>
 				<div style="overflow-x:auto;">
 				<table class="tsetup" align="center"  >

@@ -238,6 +238,14 @@ table.tuserd td {
 						</select>
 						</td>
 					</tr>
+					<tr><td>Huruf</td><td>:</td><td>
+						<select name="huruf" required="1">
+							<option value="lower">abcd</option>
+							<option Value="upper">ABCD</option>
+							<option Value="upplow">aBcD</option>
+						</select>
+						</td>
+					</tr>
 					<tr><td>Profile | Masa Aktif</td><td>:</td><td>
 						<select name="uprofile" required="1">
 							<option value="">Pilih...</option>
@@ -603,10 +611,17 @@ table.tuserd td {
 		$serverh = ($_POST['server']);
 		$genall = ($_POST['genall']);
 		$pjguser = ($_POST['pjguser']);
+		$huruf = ($_POST['huruf']);
 		$kkv = "--" . $serverh . "-" . $vprofile . "-" . $timelimit . "-" . $bytelimit . "-" . $price . "-" . date("d.m.y") . "-" . rand(100,999);
 	if($genall=="kv"){
 
+			if($huruf == "lower"){
 			$a = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);
+		  }elseif($huruf == "upper"){
+		  $a = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -$pjguser);
+		  }elseif($huruf == "upplow"){
+		  $a = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -$pjguser);
+		  }
 			if($pjguser == 3){
 				$n = rand(100,999);
 			}elseif($pjguser == 4){
@@ -658,7 +673,13 @@ table.tuserd td {
 		echo	"<br>";
 	}
 	if($genall=="up"){
+			if($huruf == "lower"){
 			$a = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);
+		  }elseif($huruf == "upper"){
+		  $a = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -$pjguser);
+		  }elseif($huruf == "upplow"){
+		  $a = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -$pjguser);
+		  }
 			if($pjguser == 3){
 				$n = rand(100,999);
 			}elseif($pjguser == 4){

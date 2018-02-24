@@ -110,6 +110,7 @@ $listphp = "userlist.php";
 			function goBack() {
 				window.history.back();
 			}
+			
 		</script>
 	</head>
 	<body>
@@ -220,6 +221,7 @@ $listphp = "userlist.php";
 					    <input style="width:90%;"<input style="" type="text" id="CariU" size="auto" onkeyup="fCariU()" placeholder="User" title="Filter User berdasarkan Username">
 					  </div>
 					</th>
+					<th >Password</th>
 					<th >
 					  <div style="width:90%;">
 					    <input style="width:90%;" type="text" id="CariS" onkeyup="fCariS()" placeholder="Server" title="Filter User berdasarkan Server">
@@ -233,6 +235,7 @@ $listphp = "userlist.php";
 					  </div>
 					</th>
 				</tr>
+				
 				<?php
 					$TotalReg = count($ARRAY);
 
@@ -242,6 +245,8 @@ $listphp = "userlist.php";
 						  echo "<td style='text-align:center;'><a title='Hapus User' style='color:#000;' href=userlist.php?profile=$prof&id=".$regtable['.id'] . ">X</a></td>";
 						  if($regtable['disabled'] == "true"){echo "<td style='text-align:center;'><a title='Enable User'style='color:#000;' href=userlist.php?profile=$prof&e=".$regtable['.id'] . ">E</a></td>";}else{echo "<td style='text-align:center;'><a title='Disable User' style='color:#000;' href=userlist.php?profile=$prof&d=".$regtable['.id'] . ">D</a></td>";}
 							echo "<td><a style='color:#000;' title='Klik untuk melihat masa aktifnya' href=userlist.php?profile=$prof&usr=" . $regtable['name'] . "&idr=" . $regtable['.id'] . "#cekuser>". $regtable['name']. "</a></td>";
+							echo "<td><input disabled style='border:none; clolor:black;' type='password' value='" . $regtable['password'];
+							echo "' id='".$regtable['name'] ."'><input title='Show/Hide Password' type='checkbox' onclick='".$regtable['name'] ."()'><script>function ".$regtable['name'] ."(){var x = document.getElementById('".$regtable['name'] ."');if (x.type === 'password') {x.type = 'text';} else {x.type = 'password';}}</script></td>";
 							echo "<td>" . $regtable['server'];echo "</td>";
 							echo "<td>" . $regtable['profile'];echo "</td>";
 							echo "<td>" . $regtable['uptime'];echo "</td>";
@@ -396,7 +401,7 @@ function fCariS() {
   table = document.getElementById("tUser");
   tr = table.getElementsByTagName("tr");
   for (i = 1; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[3];
+    td = tr[i].getElementsByTagName("td")[4];
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
@@ -413,7 +418,7 @@ function fCariG() {
   table = document.getElementById("tUser");
   tr = table.getElementsByTagName("tr");
   for (i = 1; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[6];
+    td = tr[i].getElementsByTagName("td")[7];
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";

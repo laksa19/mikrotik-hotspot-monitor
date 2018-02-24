@@ -185,6 +185,14 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						</select>
 						</td>
 					</tr>
+					<tr><td>Huruf</td><td>:</td><td>
+						<select name="huruf" required="1">
+							<option value="lower">abcd</option>
+							<option Value="upper">ABCD</option>
+							<option Value="upplow">aBcD</option>
+						</select>
+						</td>
+					</tr>
 					<tr><td>Profile | Masa Aktif</td><td>:</td><td>
 						<select name="uprofile" required="1">
 							<option value="">Pilih...</option>
@@ -575,10 +583,17 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		$jmlv = ($_POST['jumlahv']);
 		$genall = ($_POST['genall']);
 		$pjguser = ($_POST['pjguser']);
+		$huruf = ($_POST['huruf']);
 		$kkv = $genall . "-" . $serverh . "-" . $vprofile . "-" . $timelimit . "-" . $bytelimit . "-" . $price . "-" . date("d.m.y") . "-" . rand(100,999);
 	if($genall=="kv"){
 		for($i=1;$i<=$jmlv;$i++){
+		  if($huruf == "lower"){
 			$a[$i]= substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);
+		  }elseif($huruf == "upper"){
+		  $a[$i]= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -$pjguser);
+		  }elseif($huruf == "upplow"){
+		  $a[$i]= substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -$pjguser);
+		  }
 			if($pjguser == 3){
 				$n[$i]= rand(100,999);
 			}elseif($pjguser == 4){
@@ -607,7 +622,13 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	}
 	if($genall=="up"){
 		for($i=1;$i<=$jmlv;$i++){
+			if($huruf == "lower"){
 			$a[$i]= substr(str_shuffle("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"), -$pjguser);
+		  }elseif($huruf == "upper"){
+		  $a[$i]= substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), -$pjguser);
+		  }elseif($huruf == "upplow"){
+		  $a[$i]= substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), -$pjguser);
+		  }
 			if($pjguser == 3){
 				$n[$i]= rand(100,999);
 			}elseif($pjguser == 4){

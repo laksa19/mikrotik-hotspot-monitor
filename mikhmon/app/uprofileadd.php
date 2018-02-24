@@ -73,7 +73,9 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
   $nsharuser=($_POST['nsharedu']);
 	$nrxtx = ($_POST['nupdown']);
 	$mode = ($_POST['expmodeu']);
+	$tenggangu = ($_POST['tengremu']);
 	$id = $_GET['idp'];
+	
 	if ($profn == $profile1){
 				$exptime = $uactive1;
 			}elseif ($profn == $profile2){
@@ -108,13 +110,14 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				$exptime= "x";
 			}
 	$onlogin1 = ':put rem; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
-	$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
+	$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event="[/ip hotspot active remove [find where user=$user]];[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/sys sch re [find where name=$user]];[/sys script run [find where name=$user]];[/sys script re [find where name=$user]]" start-date=$date start-time=$time];[/system script add name=$user source=":local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
+	$onlogin2a = ');[/system scheduler add disabled=no interval=\$uptime name=$user on-event= \":local date [/system clock get date ];:local time [/system clock get time ];[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]] start-date=\$date start-time=\$time]\"]"] }}';
 	
 	$onlogin3 = ':put ntf; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
 	$onlogin4 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
 	
 	if($mode == "rem"){
-			$onlogin = "$onlogin1$exptime$onlogin2";
+			$onlogin = "$onlogin1$exptime$onlogin2$tenggangu$onlogin2a";
 			}elseif($mode == "ntf"){
 			$onlogin = "$onlogin3$exptime$onlogin4";
 			}
@@ -349,6 +352,19 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 							<option value="ntf">Notifikasi</option>
 							<option value="nul">No Expired</option>
 						</select>
+						</td>
+						</tr>
+						<tr><td>Tenggang Penghapusan</td><td>:</td><td>
+						<select name="tengrem" required="1">
+						  <option value="5m">5Menit</option>
+						  <option value="10m">10Menit</option>
+							<option value="15m">15Menit</option>
+							<option value="30m">30Menit</option>
+							<option value="1h">1Jam</option>
+							<option value="2Jam">2Jam</option>
+						</select>
+						</td>
+						</tr>
 					<tr><td></td><td></td><td><input type="submit" class="btnsubmit" value="Simpan"/></td></tr>
 				</table>
 			</form>
@@ -393,12 +409,14 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			$sharuser=($_POST['sharedu']);
 			$rxtx = ($_POST['updown']);
 			$mode = ($_POST['expmode']);
+			$tenggang = ($_POST['tengrem']);
 			$onlogin1 = ':put rem; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
-			$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
+			$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event="[/ip hotspot active remove [find where user=$user]];[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/sys sch re [find where name=$user]];[/sys script run [find where name=$user]];[/sys script re [find where name=$user]]" start-date=$date start-time=$time];[/system script add name=$user source=":local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
+			$onlogin2a = ');[/system scheduler add disabled=no interval=\$uptime name=$user on-event= \":local date [/system clock get date ];:local time [/system clock get time ];[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]] start-date=\$date start-time=\$time]\"]"] }}';
 			$onlogin3 = ':put ntf; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
 			$onlogin4 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
 			if($mode == "rem"){
-			$onlogin = "$onlogin1$exptime$onlogin2";
+			$onlogin = "$onlogin1$exptime$onlogin2$tenggang$onlogin2a";
 			}elseif($mode == "ntf"){
 			$onlogin = "$onlogin3$exptime$onlogin4";
 			}
@@ -467,8 +485,8 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				    <td>
 				      <p>Catatan:</p>
 							<ol>
-							  <li>Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.</li>
-							  <li>Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.<br>(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan metode yang sama).</li>
+							  <li>Mode Expired "Hapus" akan  menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya, dan  menghapus data user sesuai dengan tenggang penghapusan.</li>
+							  <li>Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.<br>(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan meode yang sama).</li>
 							  <li>Profile yang bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi" adalah profile yang terdaftar di laman Setup.</li>
 								<li>Profile yang dibuat manual silahkan pilih "No Expired" pada kolom Mode Expired.</li>
 								<li>Profile yang dibuat manual tidak akan bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi".</li>
@@ -509,6 +527,21 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	echo "						<option value='rem'>Hapus</option>";
 	echo "						<option value='ntf'>Notifikasi</option>";
 	echo "						<option value='nul'>No Expired</option>";
+	echo "		</select>";
+	echo "		</td >";
+	echo "	</tr>";
+	echo "	<tr>";
+	echo "	<tr>";
+	echo "		<td >Tenggang Penghapusan</td>";
+	echo "		<td >:</td>";
+	echo "		<td >";
+	echo "	  <select name='tengremu' required='1'>";
+	echo "						<option value='5m'>5Menit</option>";
+	echo "						<option value='10m'>10Menit</option>";
+	echo "						<option value='15m'>15Menit</option>";
+	echo "						<option value='30m'>30Menit</option>";
+	echo "						<option value='1h'>1Jam</option>";
+	echo "						<option value='2h'>2Jam</option>";
 	echo "		</select>";
 	echo "		</td >";
 	echo "	</tr>";
