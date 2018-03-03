@@ -90,6 +90,7 @@ table.tuserb td {
 				<tr>
 					<td colspan=2>
 						<button class="material-icons" onclick="location.href='genupm.php';" title="Reload">autorenew</button>
+						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<div class="dropdown" style="float:right;">
 							<button class="material-icons dropbtn">local_play</button>
 								<div class="dropdown-content">
@@ -372,7 +373,7 @@ table.tuserb td {
 						</select>
 						</td>
 					</tr>
-					<tr><td>Harga</td><td>:</td><td>
+					<!--<tr><td>Harga</td><td>:</td><td>
 						<select name="uprice" required="1">
 							<option value="">Pilih...</option>
 							<option>Free</option>
@@ -443,7 +444,7 @@ table.tuserb td {
 									}
 								?>
 						</select>
-						</td>
+						</td>-->
 					</tr>
 					<tr><td>Username</td><td>:</td><td><input type="text" size="10" maxlength="10" name="uname" required="1"/></td></tr>
 					<tr><td>Password</td><td>:</td><td><input type="text" size="10" maxlength="10" name="passwd" required="1"/></td></tr>
@@ -558,6 +559,31 @@ table.tuserb td {
 		$u1 = ($_POST['uname']);
 		$p1 = ($_POST['passwd']);
 		$kkv = "--" . $serverh . "-" . $vprofile . "-" . $timelimit . "-" . $bytelimit . "-" . $price . "-" . date("d.m.y") . "-" . rand(100,999);
+	$API->write('/ip/hotspot/user/profile/print', false);
+	$API->write('?=name='.$uprofile.'');
+	$cekprice = $API->read();
+
+	$regtable = $cekprice[0];
+	$getprice = explode(",",$regtable['on-login']);
+	$price = $getprice[2];
+	$cur = "Rp";
+	if($price == "" ){
+	  $vprice = "Free";
+	}elseif(strlen($price) == 4){
+	  $vprice = $cur.substr($price,0,1).".".substr($price,1,3);
+	}elseif(strlen($price) == 5){
+	  $vprice = $cur.substr($price,0,2).".".substr($price,2,3);
+	}elseif(strlen($price) == 6){
+	  $vprice = $cur.substr($price,0,3).".".substr($price,3,3);
+	}elseif(strlen($price) == 7){
+	  $vprice = $cur.substr($price,0,1).".".substr($price,1,3).".".substr($price,4,3);
+	}elseif(strlen($price) == 8){
+	  $vprice = $cur.substr($price,0,2).".".substr($price,2,3).".".substr($price,5,3);
+	}elseif(strlen($price) == 9){
+	  $vprice = $cur.substr($price,0,3).".".substr($price,3,3).".".substr($price,6,3);
+	}else{
+	  $vprice = $price;
+	}
 		
 		$API->comm("/ip/hotspot/user/add", array(
 		  "server" => "$serverh",
@@ -597,7 +623,7 @@ table.tuserb td {
 		echo						"</td>";
 		echo					"</tr>";
 		echo					"<tr>";
-		echo						"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$serverh $price</td>";
+		echo						"<td style='text-align: center; '>Aktif:$vprofile $vtimelimit $vbytelimit</td></tr><tr><td style='text-align: center; '>$serverh $vprice</td>";
 		echo					"</tr>";
 		echo				"<tr>";
 		echo			"</table>";

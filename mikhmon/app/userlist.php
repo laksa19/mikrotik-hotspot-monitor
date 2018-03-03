@@ -218,7 +218,7 @@ $listphp = "userlist.php";
 				  <th title="Disable | Enable User" style='text-align:center;'>D/E</th>
 					<th >
 					  <div style="width:90%;">
-					    <input style="width:90%;"<input style="" type="text" id="CariU" size="auto" onkeyup="fCariU()" placeholder="User" title="Filter User berdasarkan Username">
+					    <input style="width:90%;" type="text" id="CariU" size="auto" onkeyup="fCariU()" placeholder="User" title="Filter User berdasarkan Username">
 					  </div>
 					</th>
 					<th >Password</th>

@@ -65,6 +65,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				<tr>
 					<td colspan=2>
 						<button class="material-icons" onclick="location.href='genkvs.php';" title="Reload">autorenew</button>
+						<button class="material-icons"	onclick="location.href='./uprofileadd.php';"	title="User Profile">local_library</button>
 						<div class="dropdown" style="float:right;">
 							<button class="material-icons dropbtn">local_play</button>
 								<div class="dropdown-content">
@@ -373,7 +374,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 						</select>
 						</td>
 					</tr>
-					<tr><td>Harga</td><td>:</td><td>
+					<!--<tr><td>Harga</td><td>:</td><td>
 						<select name="uprice" required="1">
 							<option value="">Pilih...</option>
 							<option>Free</option>
@@ -445,7 +446,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 								?>
 						</select>
 						</td>
-					</tr>
+					</tr>-->
 					<tr>
 						<td>Jumlah Voucher</td>
 						<td>:</td>
@@ -584,7 +585,32 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		$genall = ($_POST['genall']);
 		$pjguser = ($_POST['pjguser']);
 		$huruf = ($_POST['huruf']);
-		$kkv = $genall . "-" . $serverh . "-" . $vprofile . "-" . $timelimit . "-" . $bytelimit . "-" . $price . "-" . date("d.m.y") . "-" . rand(100,999);
+		$kkv = $genall . "-" . $serverh . "-" . $vprofile . "-" . $timelimit . "-" . $bytelimit . "-" . $uprofile . "-" . date("d.m.y") . "-" . rand(100,999);
+	$API->write('/ip/hotspot/user/profile/print', false);
+	$API->write('?=name='.$uprofile.'');
+	$cekprice = $API->read();
+	
+	$regtable = $cekprice[0];
+	$getprice = explode(",",$regtable['on-login']);
+	$price = $getprice[2];
+	$cur = "Rp";
+	if($price == "" ){
+	  $vprice = "Free";
+	}elseif(strlen($price) == 4){
+	  $vprice = $cur.substr($price,0,1).".".substr($price,1,3);
+	}elseif(strlen($price) == 5){
+	  $vprice = $cur.substr($price,0,2).".".substr($price,2,3);
+	}elseif(strlen($price) == 6){
+	  $vprice = $cur.substr($price,0,3).".".substr($price,3,3);
+	}elseif(strlen($price) == 7){
+	  $vprice = $cur.substr($price,0,1).".".substr($price,1,3).".".substr($price,4,3);
+	}elseif(strlen($price) == 8){
+	  $vprice = $cur.substr($price,0,2).".".substr($price,2,3).".".substr($price,5,3);
+	}elseif(strlen($price) == 9){
+	  $vprice = $cur.substr($price,0,3).".".substr($price,3,3).".".substr($price,6,3);
+	}else{
+	  $vprice = $price;
+	}
 	if($genall=="kv"){
 		for($i=1;$i<=$jmlv;$i++){
 		  if($huruf == "lower"){
@@ -618,7 +644,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		}
 		$my_file = 'vouchers/kvouchers.php';
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-		$data = '<?php $vkkv="' . $kkv . '"; $vserver="' . $serverh . '"; $vprofname="' . $vprofile . '"; $uptimelimit="' . $timelimit . '"; $upbytelimit="' . $bytelimit . '"; $vprice="' . $price . '"; ?>';
+		$data = '<?php $vkkv="' . $kkv . '"; $vserver="' . $serverh . '"; $vprofname="' . $vprofile . '"; $uptimelimit="' . $timelimit . '"; $upbytelimit="' . $bytelimit . '"; $profv="' . $uprofile . '"; ?>';
 	}
 	if($genall=="up"){
 		for($i=1;$i<=$jmlv;$i++){
@@ -653,7 +679,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		
 		$my_file = 'vouchers/vouchers.php';
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-		$data = '<?php $vkkv="' . $kkv . '"; $vserver="' . $serverh . '"; $vprofname="' . $vprofile . '"; $uptimelimit="' . $timelimit . '"; $upbytelimit="' . $bytelimit . '"; $vprice="' . $price . '"; ?>';
+		$data = '<?php $vkkv="' . $kkv . '"; $vserver="' . $serverh . '"; $vprofname="' . $vprofile . '"; $uptimelimit="' . $timelimit . '"; $upbytelimit="' . $bytelimit . '"; $profv="' . $uprofile . '"; ?>';
 	}
 		
 		$API->disconnect();

@@ -28,7 +28,7 @@ if(!isset($_SESSION['usermikhmon'])){
 
 
 
-$oldbuild = 2054;
+$oldbuild = 2055;
 $build = file_get_contents('build.txt');
 				$getbuild = explode("\n",$build);
 				$newbuild = $getbuild[0];
@@ -229,6 +229,7 @@ $name = $_GET['usr'];
 								</div>
 						</div>
 						<button class="material-icons"	onclick="location.href='../status';"	title="Status User">account_box</button>
+						<button class="material-icons"	onclick="location.href='./penjualan.php';"	title="Penjualan">monetization_on</button>
 						<form  method="post"><input type="submit" name="btnupdate" class="material-icons"	title="Cek Update" value="system_update_alt"></form>
 						<!-- -->
 					</td>

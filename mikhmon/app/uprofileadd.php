@@ -54,17 +54,39 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	  $profn = $regtable['name'];
 	  $sharedu = $regtable['shared-users'];
 	  $ratel = $regtable['rate-limit'];
-	  $modeexpu = $regtable['on-login'];
-	  if(substr($modeexpu,0,9) == ":put rem;"){
-							  $mdexpv = "rem";
+	  
+							$getmodeexp = explode(",",$regtable['on-login']);
+							$modeexpu = $getmodeexp[1];
+							if($modeexpu == "rem"){
 							  $mdexpt = "Hapus";
-							}elseif(substr($modeexpu,0,9) == ":put ntf;"){
-							  $mdexpv = "ntf";
+							}elseif($modeexpu == "ntf"){
 							  $mdexpt = "Notifikasi";
+							}elseif($modeexpu == "remc"){
+							  $mdexpt = "Hapus + Data";
+							}elseif($modeexpu == "ntfc"){
+							  $mdexpt = "Notifikasi + Data";
 							}else{
-							  $mdexpv = "0";
 							  $mdexpt = "No Expired";
 							}
+							
+							$getonlogin = explode(",",$regtable['on-login']);
+							$checkonlogin = $getonlogin[5];
+							
+							$getteng = explode(",",$regtable['on-login']);
+							$tengu = $getteng[4];
+							if(substr($tengu,-1) == "m"){
+							  $tengut = substr($tengu,0,-1)."Menit";
+							}elseif(substr($tengu,-1) == "h"){
+							  $tengut = substr($tengu,0,-1)."Jam";
+							}elseif(substr($tengu,-1) == "d"){
+							  $tengut = substr($tengu,0,-1)."Hari";
+							}else{
+							  $tengu = "5m";
+							}
+
+							$getprice = explode(",",$regtable['on-login']);
+							$priceu = trim($getprice[2]);
+
 	  $API->disconnect();
 	}
 	}
@@ -74,6 +96,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$nrxtx = ($_POST['nupdown']);
 	$mode = ($_POST['expmodeu']);
 	$tenggangu = ($_POST['tengremu']);
+	$priceu = ($_POST['nprice']);
 	$id = $_GET['idp'];
 	
 	if ($profn == $profile1){
@@ -107,19 +130,22 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			}elseif ($profn == $profile15){
 				$exptime = $uactive15;
 			}else {
-				$exptime= "x";
+				$exptime = "x";
 			}
-	$onlogin1 = ':put rem; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
-	$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event="[/ip hotspot active remove [find where user=$user]];[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/sys sch re [find where name=$user]];[/sys script run [find where name=$user]];[/sys script re [find where name=$user]]" start-date=$date start-time=$time];[/system script add name=$user source=":local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
-	$onlogin2a = ');[/system scheduler add disabled=no interval=\$uptime name=$user on-event= \":local date [/system clock get date ];:local time [/system clock get time ];[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]] start-date=\$date start-time=\$time]\"]"] }}';
-	
-	$onlogin3 = ':put ntf; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
-	$onlogin4 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
-	
-	if($mode == "rem"){
-			$onlogin = "$onlogin1$exptime$onlogin2$tenggangu$onlogin2a";
+	    $onlogin1 = ':put (",rem,'.$priceu.','.$exptime.','.$tenggangu.',"); {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$exptime.');[/system scheduler add disabled=no interval=$uptime name=$user on-event="[/ip hotspot active remove [find where user=$user]];[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/sys sch re [find where name=$user]];[/sys script run [find where name=$user]];[/sys script re [find where name=$user]]" start-date=$date start-time=$time];[/system script add name=$user source=":local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$tenggangu.');[/system scheduler add disabled=no interval=\$uptime name=$user on-event= \"[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]\"]"] }}';
+			$onlogin2 = ':put (",ntf,'.$priceu.','.$exptime.',,"); {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$exptime.');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time] }}';
+			$onlogin3 = ':put (",remc,'.$priceu.','.$exptime.','.$tenggangu.',"); {:local price ('.$priceu.');:local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$exptime.');[/system scheduler add disabled=no interval=$uptime name=$user on-event="[/ip hotspot active remove [find where user=$user]];[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/sys sch re [find where name=$user]];[/sys script run [find where name=$user]];[/sys script re [find where name=$user]]" start-date=$date start-time=$time];[/system script add name=$user source=":local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$tenggangu.');[/system scheduler add disabled=no interval=\$uptime name=$user on-event= \"[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]\"]"];:local bln [:pick $date 0 3]; :local thn [:pick $date 7 11];[/system script add name="$date-|-$time-|-$user-|-$price" owner="$bln$thn" source=$date comment=mikhmon] }}';
+			$onlogin4 = ':put (",ntfc,'.$priceu.','.$exptime.',,"); {:local price ('.$priceu.');:local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$exptime.');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time];:local bln [:pick $date 0 3]; :local thn [:pick $date 7 11];[/system script add name="$date-|-$time-|-$user-|-$price" owner="$bln$thn" source=$date comment=mikhmon] }}';
+			if($mode == "rem"){
+			$onlogin = "$onlogin1";
 			}elseif($mode == "ntf"){
-			$onlogin = "$onlogin3$exptime$onlogin4";
+			$onlogin = "$onlogin2";
+			}elseif($mode == "remc"){
+			$onlogin = "$onlogin3";
+			}elseif($mode == "ntfc"){
+			$onlogin = "$onlogin4";
+			}else{
+			$onlogin = ':put (",,,,,noexp,")';
 			}
 	if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	  if($exptime == "x"){
@@ -345,16 +371,18 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 					</td></tr>
 					<tr><td>Shared Users</td><td>:</td><td><input type="text" size="3" maxlength="3" name="sharedu" value="1" required="1"/></td></tr>
 					<tr><td>Upload/Download</td><td>:</td><td><input type="text" size="12"  name="updown" placeholder="contoh:512k/1M" required="1"/></td></tr>
-					<tr><td>Mode Expired</td><td>:</td><td>
+					<tr><td>Harga*</td><td>:</td><td><input type="text" size="12"  name="harga" placeholder="contoh:10000"/></td></tr>
+					<tr><td>Mode Expired*</td><td>:</td><td>
 						<select name="expmode" required="1">
-							<option value="">Pilih...</option>
+							<option value="0">No Expired</option>
 							<option value="rem">Hapus</option>
 							<option value="ntf">Notifikasi</option>
-							<option value="nul">No Expired</option>
+							<option value="remc">Hapus + Data</option>
+							<option value="ntfc">Notifikasi + Data</option>
 						</select>
 						</td>
 						</tr>
-						<tr><td>Tenggang Penghapusan</td><td>:</td><td>
+						<tr><td>Tenggang Penghapusan*</td><td>:</td><td>
 						<select name="tengrem" required="1">
 						  <option value="5m">5Menit</option>
 						  <option value="10m">10Menit</option>
@@ -408,20 +436,26 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			//$exptime = ($_POST['aktif']);
 			$sharuser=($_POST['sharedu']);
 			$rxtx = ($_POST['updown']);
+			$price = ($_POST['harga']);
 			$mode = ($_POST['expmode']);
 			$tenggang = ($_POST['tengrem']);
-			$onlogin1 = ':put rem; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
-			$onlogin2 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event="[/ip hotspot active remove [find where user=$user]];[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/sys sch re [find where name=$user]];[/sys script run [find where name=$user]];[/sys script re [find where name=$user]]" start-date=$date start-time=$time];[/system script add name=$user source=":local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
-			$onlogin2a = ');[/system scheduler add disabled=no interval=\$uptime name=$user on-event= \":local date [/system clock get date ];:local time [/system clock get time ];[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]] start-date=\$date start-time=\$time]\"]"] }}';
-			$onlogin3 = ':put ntf; {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime (';
-			$onlogin4 = ');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time]; }}';
+			$onlogin1 = ':put (",rem,'.$price.','.$exptime.','.$tenggang.',"); {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$exptime.');[/system scheduler add disabled=no interval=$uptime name=$user on-event="[/ip hotspot active remove [find where user=$user]];[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/sys sch re [find where name=$user]];[/sys script run [find where name=$user]];[/sys script re [find where name=$user]]" start-date=$date start-time=$time];[/system script add name=$user source=":local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$tenggang.');[/system scheduler add disabled=no interval=\$uptime name=$user on-event= \"[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]\"]"] }}';
+			$onlogin2 = ':put (",ntf,'.$price.','.$exptime.',,"); {:local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$exptime.');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time] }}';
+			$onlogin3 = ':put (",remc,'.$price.','.$exptime.','.$tenggang.',"); {:local price ('.$price.');:local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$exptime.');[/system scheduler add disabled=no interval=$uptime name=$user on-event="[/ip hotspot active remove [find where user=$user]];[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/sys sch re [find where name=$user]];[/sys script run [find where name=$user]];[/sys script re [find where name=$user]]" start-date=$date start-time=$time];[/system script add name=$user source=":local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$tenggang.');[/system scheduler add disabled=no interval=\$uptime name=$user on-event= \"[/ip hotspot user remove [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]\"]"];:local bln [:pick $date 0 3]; :local thn [:pick $date 7 11];[/system script add name="$date-|-$time-|-$user-|-$price" owner="$bln$thn" source=$date comment=mikhmon] }}';
+			$onlogin4 = ':put (",ntfc,'.$price.','.$exptime.',,"); {:local price ('.$price.');:local date [/system clock get date ];:local time [/system clock get time ];:local uptime ('.$exptime.');[/system scheduler add disabled=no interval=$uptime name=$user on-event= "[/ip hotspot user set limit-uptime=1s [find where name=$user]];[/ip hotspot active remove [find where user=$user]];[/sys sch re [find where name=$user]]" start-date=$date start-time=$time];:local bln [:pick $date 0 3]; :local thn [:pick $date 7 11];[/system script add name="$date-|-$time-|-$user-|-$price" owner="$bln$thn" source=$date comment=mikhmon] }}';
 			if($mode == "rem"){
-			$onlogin = "$onlogin1$exptime$onlogin2$tenggang$onlogin2a";
+			$onlogin = "$onlogin1";
 			}elseif($mode == "ntf"){
-			$onlogin = "$onlogin3$exptime$onlogin4";
+			$onlogin = "$onlogin2";
+			}elseif($mode == "remc"){
+			$onlogin = "$onlogin3";
+			}elseif($mode == "ntfc"){
+			$onlogin = "$onlogin4";
+			}else{
+			$onlogin = ':put (",,,,,noexp,")';
 			}
 			if ($API->connect($iphost, $userhost, $passwdhost)) {
-			  if($exptime == ""){
+			if($exptime == ""){
 			$API->comm("/ip/hotspot/user/profile/add", array(
 			  
 					  /*"add-mac-cookie" => "yes",*/
@@ -447,14 +481,17 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			$API->disconnect();
 			}
 ?>
-			<div>
-				<table class="zebra" align="center"  >
+			<div style="overflow-x:auto;">
+				<table style="white-space: nowrap;" class="zebra" align="center"  >
 					<tr>
 				    <th style='text-align:center;'>X</th>
 						<th >Name</th>
 						<th >Shared Users</th>
 						<th >Rate Limit</th>
 						<th >Mode Expired</th>
+						<th >Masa Aktif</th>
+						<th >Tenggang</th>
+						<th >Harga</th>
 					</tr>
 					<?php
 					$TotalReg = count($ARRAY);
@@ -467,19 +504,77 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 							//$regtable = $ARRAY[$i];echo "<td>" . $regtable['name'];echo "</td>";
 							echo "<td>" . $regtable['shared-users'];echo "</td>";
 							echo "<td>" . $regtable['rate-limit'];echo "</td>";
+							
+							
 							echo "<td>";
-							$modeexp = $regtable['on-login'];
-							if(substr($modeexp,0,9) == ":put rem;"){
+							$getmodeexp = explode(",",$regtable['on-login']);
+							$modeexp = $getmodeexp[1];
+							if($modeexp == "rem"){
 							  echo "Hapus";
-							}elseif(substr($modeexp,0,9) == ":put ntf;"){
+							}elseif($modeexp == "ntf"){
 							  echo "Notifikasi";
+							}elseif($modeexp == "remc"){
+							  echo "Hapus + Data";
+							}elseif($modeexp == "ntfc"){
+							  echo "Notifikasi + Data";
 							}else{
 							  
 							}
-							  echo "</td> </tr>";
+							echo "</td>";
+							
+							echo "<td>";
+							$getvalid = explode(",",$regtable['on-login']);
+							$valid = $getvalid[3];
+							
+							if(substr($valid,-1) == "m"){
+							  echo substr($valid,0,-1)."Menit";
+							}elseif(substr($valid,-1) == "h"){
+							  echo substr($valid,0,-1)."Jam";
+							}elseif(substr($valid,-1) == "d"){
+							  echo substr($valid,0,-1)."Hari";
+							}
+							echo "</td>";
+							
+							echo "<td>";
+							$getteng = explode(",",$regtable['on-login']);
+							$teng = $getteng[4];
+							if(substr($teng,-1) == "m"){
+							  echo substr($teng,0,-1)."Menit";
+							}elseif(substr($teng,-1) == "h"){
+							  echo substr($teng,0,-1)."Jam";
+							}elseif(substr($teng,-1) == "d"){
+							  echo substr($teng,0,-1)."Hari";
+							}
+							echo "</td>";
+							
+							echo "<td>";
+							$getprice = explode(",",$regtable['on-login']);
+							$price = trim($getprice[2]);
+							$cur = "Rp";
+							if($price == "" ){
+							  $vprice = "Free";
+							}elseif(strlen($price) == 4){
+							  $vprice = $cur.substr($price,0,1).".".substr($price,1,3);
+							}elseif(strlen($price) == 5){
+							  $vprice = $cur.substr($price,0,2).".".substr($price,2,3);
+							}elseif(strlen($price) == 6){
+							  $vprice = $cur.substr($price,0,3).".".substr($price,3,3);
+							}elseif(strlen($price) == 7){
+							  $vprice = $cur.substr($price,0,1).".".substr($price,1,3).".".substr($price,4,3);
+							}elseif(strlen($price) == 8){
+							  $vprice = $cur.substr($price,0,2).".".substr($price,2,3).".".substr($price,5,3);
+							}elseif(strlen($price) == 9){
+							  $vprice = $cur.substr($price,0,3).".".substr($price,3,3).".".substr($price,6,3);
+							}else{
+							  $vprice = $price;
+							}
+							echo $vprice. "</td>";
+							
+							echo "</tr>";
 							}
 					?>
 				</table>
+				</div>
 				<div>
 				  <tr>
 				    <td>
@@ -487,6 +582,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 							<ol>
 							  <li>Mode Expired "Hapus" akan  menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya, dan  menghapus data user sesuai dengan tenggang penghapusan.</li>
 							  <li>Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.<br>(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan meode yang sama).</li>
+							  <li>Mode Expired "Hapus + Data dan Notifikasi + Data" akan menyimpan data (tanggal, waktu dan harga) user saat login.</li>
 							  <li>Profile yang bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi" adalah profile yang terdaftar di laman Setup.</li>
 								<li>Profile yang dibuat manual silahkan pilih "No Expired" pada kolom Mode Expired.</li>
 								<li>Profile yang dibuat manual tidak akan bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi".</li>
@@ -494,10 +590,9 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 				    </td>
 				  </tr>
 				</div>
-			</div>
 			<div id="edit-profile" class="modal-window">
 		  <div>
-			<a style="font-wight:bold;"href="uprofileadd.php#x" title="Close" class="modal-close">X</a>
+			<a style="font-wight:bold;"href="uprofileadd.php#" title="Close" class="modal-close">X</a>
 			<h3>Edit Profile</h3>
 	<?php
 	echo "<div style='overflow-x:auto;'>";
@@ -516,17 +611,34 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	echo "	<tr>";
 	echo "		<td >Upload/Download</td>";
 	echo "		<td >:</td>";
-	echo "		<td ><input type='text' size='12'  name='nupdown' placeholder='contoh:512k/1M' value=$ratel ></td>";
+	echo "		<td ><input type='text' size='15'  name='nupdown' placeholder='contoh:512k/1M' value=$ratel ></td>";
+	echo "	</tr>";
+	echo "	<tr>";
+	if($checkonlogin == ""){
+	echo "	<tr>";
+	echo "		<td ></td>";
+	echo "		<td ></td>";
+	echo "		<td ><input type='submit' name='profupdate' class='btnsubmit' value='Update'/></td>";
+	echo "	</tr>";
+	echo "</table>";
+	echo "</form>";
+	echo "</div>";
+	}else{
+	echo "		<td >Harga</td>";
+	echo "		<td >:</td>";
+	echo "		<td ><input type='text' size='12'  name='nprice' placeholder='contoh:10000' value=$priceu ></td>";
 	echo "	</tr>";
 	echo "	<tr>";
 	echo "		<td >Mode Expired</td>";
 	echo "		<td >:</td>";
 	echo "		<td >";
 	echo "	  <select name='expmodeu' required='1'>";
-	echo "						<option value='$mdexpv'>$mdexpt</option>";
+	echo "						<option value='$modeexpu'>$mdexpt</option>";
+	echo "						<option value='0'>No Expired</option>";
 	echo "						<option value='rem'>Hapus</option>";
 	echo "						<option value='ntf'>Notifikasi</option>";
-	echo "						<option value='nul'>No Expired</option>";
+	echo "						<option value='remc'>Hapus + Data</option>";
+	echo "						<option value='ntfc'>Notifikasi + Data</option>";
 	echo "		</select>";
 	echo "		</td >";
 	echo "	</tr>";
@@ -536,6 +648,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	echo "		<td >:</td>";
 	echo "		<td >";
 	echo "	  <select name='tengremu' required='1'>";
+	echo "						<option value='$tengu'>$tengut</option>";
 	echo "						<option value='5m'>5Menit</option>";
 	echo "						<option value='10m'>10Menit</option>";
 	echo "						<option value='15m'>15Menit</option>";
@@ -553,6 +666,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	echo "</table>";
 	echo "</form>";
 	echo "</div>";
+	}
   ?>
     </div>
     </div>

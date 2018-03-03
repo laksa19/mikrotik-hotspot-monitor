@@ -64,21 +64,6 @@ $API->debug = false;
 		$sprofile13 = ($_POST['prof13']);
 		$sprofile14 = ($_POST['prof14']);
 		$sprofile15 = ($_POST['prof15']);
-		$sprice1 = ($_POST['harga1']);
-		$sprice2 = ($_POST['harga2']);
-		$sprice3 = ($_POST['harga3']);
-		$sprice4 = ($_POST['harga4']);
-		$sprice5 = ($_POST['harga5']);
-		$sprice6 = ($_POST['harga6']);
-		$sprice7 = ($_POST['harga7']);
-		$sprice8 = ($_POST['harga8']);
-		$sprice9 = ($_POST['harga9']);
-		$sprice10 = ($_POST['harga10']);
-		$sprice11 = ($_POST['harga11']);
-		$sprice12 = ($_POST['harga12']);
-		$sprice13 = ($_POST['harga13']);
-		$sprice14 = ($_POST['harga14']);
-		$sprice15 = ($_POST['harga15']);
 		$sheaderv = ($_POST['namahotspot']);
 		$snotev = ($_POST['notev']);
 		$sreloadindex = ($_POST['reloadindex']);
@@ -377,7 +362,7 @@ $API->debug = false;
 		$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 		$handle1 = fopen($my_file1, 'w') or die('Cannot open file:  '.$my_file1);
 		
-		$data = '<?php $iphost="'.$siphost.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $useradm="'.$suseradm.'"; $passadm="'.$spassadm.'"; $reloadindex="'.$sreloadindex.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $profile6="'.$sprofile6.'"; $profile7="'.$sprofile7.'"; $profile8="'.$sprofile8.'"; $profile9="'.$sprofile9.'"; $profile10="'.$sprofile10.'"; $profile11="'.$sprofile11.'"; $profile12="'.$sprofile12.'"; $profile13="'.$sprofile13.'"; $profile14="'.$sprofile14.'"; $profile15="'.$sprofile15.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $uactive6="'.$active6.'"; $uactive7="'.$active7.'"; $uactive8="'.$active8.'"; $uactive9="'.$active9.'"; $uactive10="'.$active10.'"; $uactive11="'.$active11.'"; $uactive12="'.$active12.'"; $uactive13="'.$active13.'"; $uactive14="'.$active14.'"; $uactive15="'.$active15.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $vname6="'.$suactive6t.'"; $vname7="'.$suactive7t.'"; $vname8="'.$suactive8t.'"; $vname9="'.$suactive9t.'"; $vname10="'.$suactive10t.'";  $vname11="'.$suactive11t.'"; $vname12="'.$suactive12t.'"; $vname13="'.$suactive13t.'"; $vname14="'.$suactive14t.'"; $vname15="'.$suactive15t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit6="'.$tlimit6.'"; $utimelimit7="'.$tlimit7.'";  $utimelimit8="'.$tlimit8.'"; $utimelimit9="'.$tlimit9.'"; $utimelimit10="'.$tlimit10.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $utimelimit6t="'.$stimelimit6t.'"; $utimelimit7t="'.$stimelimit7t.'"; $utimelimit8t="'.$stimelimit8t.'"; $utimelimit9t="'.$stimelimit9t.'"; $utimelimit10t="'.$stimelimit10t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit6="'.$bytelimit6.'"; $ubytelimit7="'.$bytelimit7.'";  $ubytelimit8="'.$bytelimit8.'"; $ubytelimit9="'.$bytelimit9.'"; $ubytelimit10="'.$bytelimit10.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $ubytelimit6t="'.$blimit6.'"; $ubytelimit7t="'.$blimit7.'"; $ubytelimit8t="'.$blimit8.'"; $ubytelimit9t="'.$blimit9.'"; $ubytelimit10t="'.$blimit10.'"; $price1="'.$sprice1.'"; $price2="'.$sprice2.'"; $price3="'.$sprice3.'"; $price4="'.$sprice4.'"; $price5="'.$sprice5.'"; $price6="'.$sprice6.'"; $price7="'.$sprice7.'"; $price8="'.$sprice8.'"; $price9="'.$sprice9.'"; $price10="'.$sprice10.'";  $price11="'.$sprice11.'"; $price12="'.$sprice12.'"; $price13="'.$sprice13.'"; $price14="'.$sprice14.'"; $price15="'.$sprice15.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
+		$data = '<?php $iphost="'.$siphost.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $useradm="'.$suseradm.'"; $passadm="'.$spassadm.'"; $reloadindex="'.$sreloadindex.'"; $profile1="'.$sprofile1.'"; $profile2="'.$sprofile2.'"; $profile3="'.$sprofile3.'"; $profile4="'.$sprofile4.'"; $profile5="'.$sprofile5.'"; $profile6="'.$sprofile6.'"; $profile7="'.$sprofile7.'"; $profile8="'.$sprofile8.'"; $profile9="'.$sprofile9.'"; $profile10="'.$sprofile10.'"; $profile11="'.$sprofile11.'"; $profile12="'.$sprofile12.'"; $profile13="'.$sprofile13.'"; $profile14="'.$sprofile14.'"; $profile15="'.$sprofile15.'"; $uactive1="'.$active1.'"; $uactive2="'.$active2.'"; $uactive3="'.$active3.'"; $uactive4="'.$active4.'"; $uactive5="'.$active5.'"; $uactive6="'.$active6.'"; $uactive7="'.$active7.'"; $uactive8="'.$active8.'"; $uactive9="'.$active9.'"; $uactive10="'.$active10.'"; $uactive11="'.$active11.'"; $uactive12="'.$active12.'"; $uactive13="'.$active13.'"; $uactive14="'.$active14.'"; $uactive15="'.$active15.'"; $vname1="'.$suactive1t.'"; $vname2="'.$suactive2t.'"; $vname3="'.$suactive3t.'"; $vname4="'.$suactive4t.'"; $vname5="'.$suactive5t.'"; $vname6="'.$suactive6t.'"; $vname7="'.$suactive7t.'"; $vname8="'.$suactive8t.'"; $vname9="'.$suactive9t.'"; $vname10="'.$suactive10t.'";  $vname11="'.$suactive11t.'"; $vname12="'.$suactive12t.'"; $vname13="'.$suactive13t.'"; $vname14="'.$suactive14t.'"; $vname15="'.$suactive15t.'"; $utimelimit1="'.$tlimit1.'"; $utimelimit2="'.$tlimit2.'"; $utimelimit3="'.$tlimit3.'"; $utimelimit4="'.$tlimit4.'"; $utimelimit5="'.$tlimit5.'"; $utimelimit6="'.$tlimit6.'"; $utimelimit7="'.$tlimit7.'";  $utimelimit8="'.$tlimit8.'"; $utimelimit9="'.$tlimit9.'"; $utimelimit10="'.$tlimit10.'"; $utimelimit1t="'.$stimelimit1t.'"; $utimelimit2t="'.$stimelimit2t.'"; $utimelimit3t="'.$stimelimit3t.'"; $utimelimit4t="'.$stimelimit4t.'"; $utimelimit5t="'.$stimelimit5t.'"; $utimelimit6t="'.$stimelimit6t.'"; $utimelimit7t="'.$stimelimit7t.'"; $utimelimit8t="'.$stimelimit8t.'"; $utimelimit9t="'.$stimelimit9t.'"; $utimelimit10t="'.$stimelimit10t.'"; $ubytelimit1="'.$bytelimit1.'"; $ubytelimit2="'.$bytelimit2.'"; $ubytelimit3="'.$bytelimit3.'"; $ubytelimit4="'.$bytelimit4.'"; $ubytelimit5="'.$bytelimit5.'"; $ubytelimit6="'.$bytelimit6.'"; $ubytelimit7="'.$bytelimit7.'";  $ubytelimit8="'.$bytelimit8.'"; $ubytelimit9="'.$bytelimit9.'"; $ubytelimit10="'.$bytelimit10.'"; $ubytelimit1t="'.$blimit1.'"; $ubytelimit2t="'.$blimit2.'"; $ubytelimit3t="'.$blimit3.'"; $ubytelimit4t="'.$blimit4.'"; $ubytelimit5t="'.$blimit5.'"; $ubytelimit6t="'.$blimit6.'"; $ubytelimit7t="'.$blimit7.'"; $ubytelimit8t="'.$blimit8.'"; $ubytelimit9t="'.$blimit9.'"; $ubytelimit10t="'.$blimit10.'"; $headerv="'.$sheaderv.'"; $notev="'.$snotev.'"; ?>';
 		
 		$data1 = '<?php  $iphost="'.$siphost.'"; $userhost="'.$suserhost.'"; $passwdhost="'.$spasswdhost.'"; $headerv="'.$sheaderv.'";?>';
 		
@@ -398,7 +383,7 @@ $API->debug = false;
 	    $API->disconnect();
 	}
 	  
-  $export = "$sreloadindex-|-$sheaderv-|-$snotev-|-$sprofile1-|-$sprofile2-|-$sprofile3-|-$sprofile4-|-$sprofile5-|-$sprofile6-|-$sprofile7-|-$sprofile8-|-$sprofile9-|-$sprofile10-|-$sprofile11-|-$sprofile12-|-$sprofile13-|-$sprofile14-|-$sprofile15-|-$active1-|-$active2-|-$active3-|-$active4-|-$active5-|-$active6-|-$active7-|-$active8-|-$active9-|-$active10-|-$active11-|-$active12-|-$active13-|-$active14-|-$active15-|-$sprice1-|-$sprice2-|-$sprice3-|-$sprice4-|-$sprice5-|-$sprice6-|-$sprice7-|-$sprice8-|-$sprice9-|-$sprice10-|-$sprice11-|-$sprice12-|-$sprice13-|-$sprice14-|-$sprice15-|-$tlimit1-|-$tlimit2-|-$tlimit3-|-$tlimit4-|-$tlimit5-|-$tlimit6-|-$tlimit7-|-$tlimit8-|-$tlimit9-|-$tlimit10-|-$bytelimit1-|-$bytelimit2-|-$bytelimit3-|-$bytelimit4-|-$bytelimit5-|-$bytelimit6-|-$bytelimit7-|-$bytelimit8-|-$bytelimit9-|-$bytelimit10-|-$blimit1-|-$blimit2-|-$blimit3-|-$blimit4-|-$blimit5-|-$blimit6-|-$blimit7-|-$blimit8-|-$blimit9-|-$blimit10-|-$suactive1t-|-$suactive2t-|-$suactive3t-|-$suactive4t-|-$suactive5t-|-$suactive6t-|-$suactive7t-|-$suactive8t-|-$suactive9t-|-$suactive10t-|-$suactive11t-|-$suactive12t-|-$suactive13t-|-$suactive14t-|-$suactive15t-|-$stimelimit1t-|-$stimelimit2t-|-$stimelimit3t-|-$stimelimit4t-|-$stimelimit5t-|-$stimelimit6t-|-$stimelimit7t-|-$stimelimit8t-|-$stimelimit9t-|-$stimelimit10t";
+  $export = "$sreloadindex-|-$sheaderv-|-$snotev-|-$sprofile1-|-$sprofile2-|-$sprofile3-|-$sprofile4-|-$sprofile5-|-$sprofile6-|-$sprofile7-|-$sprofile8-|-$sprofile9-|-$sprofile10-|-$sprofile11-|-$sprofile12-|-$sprofile13-|-$sprofile14-|-$sprofile15-|-$active1-|-$active2-|-$active3-|-$active4-|-$active5-|-$active6-|-$active7-|-$active8-|-$active9-|-$active10-|-$active11-|-$active12-|-$active13-|-$active14-|-$active15-|-$tlimit1-|-$tlimit2-|-$tlimit3-|-$tlimit4-|-$tlimit5-|-$tlimit6-|-$tlimit7-|-$tlimit8-|-$tlimit9-|-$tlimit10-|-$bytelimit1-|-$bytelimit2-|-$bytelimit3-|-$bytelimit4-|-$bytelimit5-|-$bytelimit6-|-$bytelimit7-|-$bytelimit8-|-$bytelimit9-|-$bytelimit10-|-$blimit1-|-$blimit2-|-$blimit3-|-$blimit4-|-$blimit5-|-$blimit6-|-$blimit7-|-$blimit8-|-$blimit9-|-$blimit10-|-$suactive1t-|-$suactive2t-|-$suactive3t-|-$suactive4t-|-$suactive5t-|-$suactive6t-|-$suactive7t-|-$suactive8t-|-$suactive9t-|-$suactive10t-|-$suactive11t-|-$suactive12t-|-$suactive13t-|-$suactive14t-|-$suactive15t-|-$stimelimit1t-|-$stimelimit2t-|-$stimelimit3t-|-$stimelimit4t-|-$stimelimit5t-|-$stimelimit6t-|-$stimelimit7t-|-$stimelimit8t-|-$stimelimit9t-|-$stimelimit10t";
   
   if ($API->connect($iphost, $userhost, $passwdhost)) {
   $API->comm("/system/script/add", array(
@@ -450,76 +435,61 @@ $API->debug = false;
    $active13 = $importl[30];
    $active14 = $importl[31];
    $active15 = $importl[32];
-   $sprice1 = $importl[33];
-   $sprice2 = $importl[34];
-   $sprice3 = $importl[35];
-   $sprice4 = $importl[36];
-   $sprice5 = $importl[37];
-   $sprice6 = $importl[38];
-   $sprice7 = $importl[39];
-   $sprice8 = $importl[40];
-   $sprice9 = $importl[41];
-   $sprice10 = $importl[42];
-   $sprice11 = $importl[43];
-   $sprice12 = $importl[44];
-   $sprice13 = $importl[45];
-   $sprice14 = $importl[46];
-   $sprice15 = $importl[47];
-   $tlimit1 = $importl[48];
-   $tlimit2 = $importl[49];
-   $tlimit3 = $importl[50];
-   $tlimit4 = $importl[51];
-   $tlimit5 = $importl[52];
-   $tlimit6 = $importl[53];
-   $tlimit7 = $importl[54];
-   $tlimit8 = $importl[55];
-   $tlimit9 = $importl[56];
-   $tlimit10 = $importl[57];
-   $bytelimit1 = $importl[58];
-   $bytelimit2 = $importl[59];
-   $bytelimit3 = $importl[60];
-   $bytelimit4 = $importl[61];
-   $bytelimit5 = $importl[62];
-   $bytelimit6 = $importl[63];
-   $bytelimit7 = $importl[64];
-   $bytelimit8 = $importl[65];
-   $bytelimit9 = $importl[66];
-   $bytelimit10 = $importl[67];
-   $blimit1 = $importl[68];
-   $blimit2 = $importl[69];
-   $blimit3 = $importl[70];
-   $blimit4 = $importl[71];
-   $blimit5 = $importl[72];
-   $blimit6 = $importl[73];
-   $blimit7 = $importl[74];
-   $blimit8 = $importl[75];
-   $blimit9 = $importl[76];
-   $blimit10 = $importl[77];
-   $suactive1t = $importl[78];
-   $suactive2t = $importl[79];
-   $suactive3t = $importl[80];
-   $suactive4t = $importl[81];
-   $suactive5t = $importl[82];
-   $suactive6t = $importl[83];
-   $suactive7t = $importl[84];
-   $suactive8t = $importl[85];
-   $suactive9t = $importl[86];
-   $suactive10t = $importl[87];
-   $suactive11t = $importl[88];
-   $suactive12t = $importl[89];
-   $suactive13t = $importl[90];
-   $suactive14t = $importl[91];
-   $suactive15t = $importl[92];
-   $stimelimit1t = $importl[93];
-   $stimelimit2t = $importl[94];
-	 $stimelimit3t = $importl[95];
-	 $stimelimit4t = $importl[96];
-	 $stimelimit5t = $importl[97];
-	 $stimelimit6t = $importl[98];
-	 $stimelimit7t = $importl[99];
-	 $stimelimit8t = $importl[100];
-	 $stimelimit9t = $importl[101];
-	 $stimelimit10t = $importl[102];
+   $tlimit1 = $importl[33];
+   $tlimit2 = $importl[34];
+   $tlimit3 = $importl[35];
+   $tlimit4 = $importl[36];
+   $tlimit5 = $importl[37];
+   $tlimit6 = $importl[38];
+   $tlimit7 = $importl[39];
+   $tlimit8 = $importl[40];
+   $tlimit9 = $importl[41];
+   $tlimit10 = $importl[42];
+   $bytelimit1 = $importl[43];
+   $bytelimit2 = $importl[44];
+   $bytelimit3 = $importl[45];
+   $bytelimit4 = $importl[46];
+   $bytelimit5 = $importl[47];
+   $bytelimit6 = $importl[48];
+   $bytelimit7 = $importl[49];
+   $bytelimit8 = $importl[50];
+   $bytelimit9 = $importl[51];
+   $bytelimit10 = $importl[52];
+   $blimit1 = $importl[53];
+   $blimit2 = $importl[54];
+   $blimit3 = $importl[55];
+   $blimit4 = $importl[56];
+   $blimit5 = $importl[57];
+   $blimit6 = $importl[58];
+   $blimit7 = $importl[59];
+   $blimit8 = $importl[60];
+   $blimit9 = $importl[61];
+   $blimit10 = $importl[62];
+   $suactive1t = $importl[63];
+   $suactive2t = $importl[64];
+   $suactive3t = $importl[65];
+   $suactive4t = $importl[66];
+   $suactive5t = $importl[67];
+   $suactive6t = $importl[68];
+   $suactive7t = $importl[69];
+   $suactive8t = $importl[70];
+   $suactive9t = $importl[71];
+   $suactive10t = $importl[72];
+   $suactive11t = $importl[73];
+   $suactive12t = $importl[74];
+   $suactive13t = $importl[75];
+   $suactive14t = $importl[76];
+   $suactive15t = $importl[77];
+   $stimelimit1t = $importl[78];
+   $stimelimit2t = $importl[70];
+	 $stimelimit3t = $importl[80];
+	 $stimelimit4t = $importl[81];
+	 $stimelimit5t = $importl[82];
+	 $stimelimit6t = $importl[83];
+	 $stimelimit7t = $importl[84];
+	 $stimelimit8t = $importl[85];
+	 $stimelimit9t = $importl[86];
+	 $stimelimit10t = $importl[87];
 	  $my_file = 'config.php';
 		$my_file1 = '../status/config.php';
 		
@@ -673,160 +643,135 @@ table.tsetup td {
 				<div style="overflow-x:auto;">
 				<table class="tsetup" align="center"  >
 					<tr>
-						<th colspan=3>USER PROFILE</th>
+						<th colspan=2>USER PROFILE</th>
+						<th colspan=2>USER LIMIT</th>
 					</tr>
 					<tr>
 						<th>NAMA PROFILE</th>
 						<th>MASA AKTIF</th>
-						<th>HARGA VOUCHER</th>
+						<!--<th>HARGA VOUCHER</th>-->
+						<th>DURASI</th>
+						<th>KUOTA</th>
 					</tr>
 					<tr>
-						<td style="text-align:left" colspan=3>Profile Baris ke 1 di Dashboard</td>
+						<td style="text-align:left" colspan=2>Profile Baris ke 1 di Dashboard</td>
+						<td colspan=2></td>
 					</tr>
 					<tr>
 						<td><input type="text" size="15" maxlength="20" name="prof1" placeholder="Profile1" value="<?php print_r($profile1);?>" required="1"/></td>
 						<td><input type="text" size="3" maxlength="3" name="active1" placeholder="Masa Aktif1" value="<?php print_r($uactive1);?>" required="1"/></td>
-						<td><input type="text" size="15" maxlength="20" name="harga1" placeholder="Harga Voucher1" value="<?php print_r($price1);?>" required="1"/></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof2" value="<?php print_r($profile2);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active2" value="<?php print_r($uactive2);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga2" value="<?php print_r($price2);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof3" value="<?php print_r($profile3);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active3" value="<?php print_r($uactive3);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga3" value="<?php print_r($price3);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof4" value="<?php print_r($profile4);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active4" value="<?php print_r($uactive4);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga4" value="<?php print_r($price4);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof5" value="<?php print_r($profile5);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active5" value="<?php print_r($uactive5);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga5" value="<?php print_r($price5);?>" /></td>
-					</tr>
-					<tr>
-						<td style="text-align:left" colspan=3>Profile Baris ke 2 di Dashboard</td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof6" value="<?php print_r($profile6);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active6" value="<?php print_r($uactive6);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga6" value="<?php print_r($price6);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof7" value="<?php print_r($profile7);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active7" value="<?php print_r($uactive7);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga7" value="<?php print_r($price7);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof8" value="<?php print_r($profile8);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active8" value="<?php print_r($uactive8);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga8" value="<?php print_r($price8);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof9" value="<?php print_r($profile9);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active9" value="<?php print_r($uactive9);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga9" value="<?php print_r($price9);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof10" value="<?php print_r($profile10);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active10" value="<?php print_r($uactive10);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga10" value="<?php print_r($price10);?>" /></td>
-					</tr>
-					<tr>
-						<td style="text-align:left" colspan=3>Profile Baris ke 3 di Dashboard</td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof11" value="<?php print_r($profile11);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active11" value="<?php print_r($uactive11);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga11" value="<?php print_r($price11);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof12" value="<?php print_r($profile12);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active12" value="<?php print_r($uactive12);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga12" value="<?php print_r($price12);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof13" value="<?php print_r($profile13);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active13" value="<?php print_r($uactive13);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga13" value="<?php print_r($price13);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof14" value="<?php print_r($profile14);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active14" value="<?php print_r($uactive14);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga14" value="<?php print_r($price14);?>" /></td>
-					</tr>
-					<tr>
-						<td><input type="text" size="15" maxlength="20" name="prof15" value="<?php print_r($profile15);?>" /></td>
-						<td><input type="text" size="3" maxlength="3" name="active15" value="<?php print_r($uactive15);?>" /></td>
-						<td><input type="text" size="15" maxlength="20" name="harga15" value="<?php print_r($price15);?>" /></td>
-					</tr>
-					<tr>
-						<td style="text-align:left" colspan=3>
-							Nama Profile dan Masa Aktif dibuat linier, agar dapat mengnali masa aktif Profile dengan mudah. Contoh: Profile 3Jam, Masa Aktif 3h (h=jam d=hari).<b style="color:red">Nama Profle tidak menggunakan spasi</b>
-						</td>
-					</tr>
-				</table>
-				</div>
-				<br>
-				<div style="overflow-x:auto;">
-				<table class="tsetup" align="center"  >
-					<tr>
-						<th>DURASI</th>
-						<th>Kuota</th>
-					</tr>
-					<tr>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga1" placeholder="Harga Voucher1" value="<?php print_r($price1);?>" required="1"/></td>-->
 						<td><input type="text" size="5" maxlength="3" name="durasi1"  value="<?php print_r($utimelimit1);?>" required="1"/></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota1"  value="<?php print_r($ubytelimit1t);?>" required="1"/></td>
 					</tr>
 					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof2" value="<?php print_r($profile2);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active2" value="<?php print_r($uactive2);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga2" value="<?php print_r($price2);?>" /></td>-->
+						<td><input type="text" size="5" maxlength="3" name="durasi2"  value="<?php print_r($utimelimit2);?>" /></td>
+						<td><input type="text" size="5" maxlength="5" name="kuota2"  value="<?php print_r($ubytelimit2t);?>" /></td>
+						
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof3" value="<?php print_r($profile3);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active3" value="<?php print_r($uactive3);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga3" value="<?php print_r($price3);?>" /></td>-->
 						<td><input type="text" size="5" maxlength="3" name="durasi2"  value="<?php print_r($utimelimit2);?>" /></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota2"  value="<?php print_r($ubytelimit2t);?>" /></td>
 					</tr>
 					<tr>
-						<td><input type="text" size="5" maxlength="3" name="durasi3"  value="<?php print_r($utimelimit3);?>" /></td>
-						<td><input type="text" size="5" maxlength="5" name="kuota3"  value="<?php print_r($ubytelimit3t);?>" /></td>
-					</tr>
-					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof4" value="<?php print_r($profile4);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active4" value="<?php print_r($uactive4);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga4" value="<?php print_r($price4);?>" /></td>-->
 						<td><input type="text" size="5" maxlength="3" name="durasi4"  value="<?php print_r($utimelimit4);?>" /></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota4"  value="<?php print_r($ubytelimit4t);?>" /></td>
 					</tr>
 					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof5" value="<?php print_r($profile5);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active5" value="<?php print_r($uactive5);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga5" value="<?php print_r($price5);?>" /></td>-->
 						<td><input type="text" size="5" maxlength="3" name="durasi5"  value="<?php print_r($utimelimit5);?>" /></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota5"  value="<?php print_r($ubytelimit5t);?>" /></td>
 					</tr>
 					<tr>
+						<td style="text-align:left" colspan=2>Profile Baris ke 2 di Dashboard</td>
+						<td colspan=2></td>
+					</tr>
 					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof6" value="<?php print_r($profile6);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active6" value="<?php print_r($uactive6);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga6" value="<?php print_r($price6);?>" /></td>-->
 						<td><input type="text" size="5" maxlength="3" name="durasi6"  value="<?php print_r($utimelimit6);?>" /></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota6"  value="<?php print_r($ubytelimit6t);?>" /></td>
 					</tr>
 					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof7" value="<?php print_r($profile7);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active7" value="<?php print_r($uactive7);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga7" value="<?php print_r($price7);?>" /></td>-->
 						<td><input type="text" size="5" maxlength="3" name="durasi7"  value="<?php print_r($utimelimit7);?>" /></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota7"  value="<?php print_r($ubytelimit7t);?>" /></td>
 					</tr>
 					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof8" value="<?php print_r($profile8);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active8" value="<?php print_r($uactive8);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga8" value="<?php print_r($price8);?>" /></td>-->
 						<td><input type="text" size="5" maxlength="3" name="durasi8"  value="<?php print_r($utimelimit8);?>" /></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota8"  value="<?php print_r($ubytelimit8t);?>" /></td>
 					</tr>
 					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof9" value="<?php print_r($profile9);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active9" value="<?php print_r($uactive9);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga9" value="<?php print_r($price9);?>" /></td>-->
 						<td><input type="text" size="5" maxlength="3" name="durasi9"  value="<?php print_r($utimelimit9);?>" /></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota9" value="<?php print_r($ubytelimit9t);?>" /></td>
 					</tr>
 					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof10" value="<?php print_r($profile10);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active10" value="<?php print_r($uactive10);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga10" value="<?php print_r($price10);?>" /></td>-->
 						<td><input type="text" size="5" maxlength="3" name="durasi10"  value="<?php print_r($utimelimit10);?>" /></td>
 						<td><input type="text" size="5" maxlength="5" name="kuota10"  value="<?php print_r($ubytelimit10t);?>" /></td>
 					</tr>
 					<tr>
-						<td style="text-align:left" colspan=2>
-							Durasi dan Kuota adalah adalah opsi tambahan pada saat generate voucher. Satuan Durasi (h atau d), Satuan Kuota (MB atau GB).
+						<td style="text-align:left" colspan=2>Profile Baris ke 3 di Dashboard</td>
+						<td style="text-align:left" valign="top" colspan=2 rowspan=7>
+							Durasi dan Kuota adalah adalah opsi tambahan pada saat generate voucher. <br>Satuan Durasi : (h atau d) <br>Satuan Kuota : (MB atau GB).
 						</td>
 					</tr>
-				</table>
-				</div>
-				<br>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof11" value="<?php print_r($profile11);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active11" value="<?php print_r($uactive11);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga11" value="<?php print_r($price11);?>" /></td>-->
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof12" value="<?php print_r($profile12);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active12" value="<?php print_r($uactive12);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga12" value="<?php print_r($price12);?>" /></td>-->
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof13" value="<?php print_r($profile13);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active13" value="<?php print_r($uactive13);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga13" value="<?php print_r($price13);?>" /></td>-->
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof14" value="<?php print_r($profile14);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active14" value="<?php print_r($uactive14);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga14" value="<?php print_r($price14);?>" /></td>-->
+					</tr>
+					<tr>
+						<td><input type="text" size="15" maxlength="20" name="prof15" value="<?php print_r($profile15);?>" /></td>
+						<td><input type="text" size="3" maxlength="3" name="active15" value="<?php print_r($uactive15);?>" /></td>
+						<!--<td><input type="text" size="15" maxlength="20" name="harga15" value="<?php print_r($price15);?>" /></td>-->
+					</tr>
+					<tr>
+						<td style="text-align:left" colspan=2>
+							Nama Profile dan Masa Aktif dibuat linier, agar dapat mengnali masa aktif Profile dengan mudah. <br>Contoh: Profile 3Jam, Masa Aktif 3h (h=jam d=hari).<br><b style="color:red">Nama Profle tidak menggunakan spasi</b>
+						</td>
+						
+					</tr>
+			</table>
+      </div>
+			<br>
 			</form>
 	</body>
 </html>

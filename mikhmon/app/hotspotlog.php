@@ -72,10 +72,14 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 		</tr>
 	</table>
 		<div style="overflow-x:auto;">
-			<table style="white-space: nowrap;" class="zebra" >
+			<table id="tLog" style="white-space: nowrap;" class="zebra" >
 				<tr>
 					<th >Time</th>
-					<th >Message</th>
+					<th >
+					  <div style="width:50%;">
+					    <input style="width:50%;" type="text" id="Mess" size="auto" onkeyup="fMess()" placeholder="Messages" title="Filter log messages.">
+					  </div>
+					</th>
 				</tr>
 				<?php
 					$TotalReg = count($log);
@@ -88,5 +92,24 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 			</table>
 		</div>
 	</div>
+	<script>
+	function fMess() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("Mess");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tLog");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+	</script>
 	</body>
 </html>
