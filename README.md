@@ -19,6 +19,7 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
     - Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.
     - Mode Expired "Notifikasi" tdak akan menghapus data user.
     - Mode Expired Hapus dan Notifikasi akan menampilkan notifikasi expired di laman login hotspot, untuk user yang sudah habis masa aktifnya.
+    - Mode Expired (Hapus + Data dan Notifikasi +Data). + Data artinya data user yang login akan disimpan di Mikrotik, meliputi Tanggal dan waktu login serta harga voucher.
     - Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan metode yang sama. Tutorial login hotspot dengan expired bisa di cek di  [Video](https://goo.gl/hVUnjD).
 5. Menampilkan daftar User Hotspot berdasarkan User Profile.
     - Filter berdasarkan Username, Server, dan Tanggal/Kode Generate.
@@ -36,7 +37,8 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
     - Pilihan Huruf untuk Kode Voucher dan User Password [abcd, ABCD, aBcD].
     - Generate Kode Voucher/User Password maksimal 99 untuk sekali generate, bisa diulangi lagi.
 8. Custom warna Voucher.
-9. Tools :
+9. Pencatatan data penjualan
+10. Tools :
     - Add Remove DNS Static untuk blok website.
     - Log Hotspot Mikrotik.
     - History.
@@ -77,6 +79,19 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 ### Versi 2018
 
 Download [update.zip](https://laksa19.github.io/download/update.zip)
+
+4-3-2018
+Penting!!Yang harus dilakuman setelah update.
+1. Simpan Setup mikhmon dan export lagi ke mikrotik.
+2. Update User Profile (sesuai kebutuhan)
+3. Clear cache browser.
+Perubahan
+1. Perbaikan dan penambahan opsi User Profile.
+    - Penamabahan Mode Expired (Hapus + Data dan Notifikasi +Data). + Data artinya data user yang login akan disimpan di Mikrotik, meliputi Tanggal dan waktu login serta harga voucher.
+    - Penambahan kolom Harga. Harga sekarang akan menempel pada User Profile, jadi ini memungkinkan jika suatu saat ingin merubah harga voucher yang sudah digenerate.
+2. Penghapusan opsi Harga di laman generate voucher. Tidak pelu lagi mengingat-ingat harga voucher.
+3. Penamabahan Pencatatan Penjualan, bisa diakses dari tombol ($).
+4. Penambahan Filter di log hotspot.
 
 23-2-2018
 
