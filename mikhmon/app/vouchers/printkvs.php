@@ -36,7 +36,7 @@ include('./kvouchers.php');
   $vprofname=$detv[2];
   $uptimelimit=$detv[3];
   $upbytelimit=$detv[4];
-  $vprice=$detv[5];
+  $profv=$detv[5];
   }
 }
    
@@ -47,9 +47,36 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	$API->write('/ip/hotspot/user/print', false);
 	$API->write('?=comment='.$vkkv.'');
 	$ARRAY = $API->read();
+	
+	$API->write('/ip/hotspot/user/profile/print', false);
+	$API->write('?=name='.$profv.'');
+	$ARRAY2 = $API->read();
+	
 	$API->disconnect();
 }
 $TotalReg = count($ARRAY);
+
+$regtable = $ARRAY2[0];
+$getprice = explode(",",$regtable['on-login']);
+$price = $getprice[2];
+$cur = "Rp";
+if($price == "" ){
+  $vprice = "Free";
+}elseif(strlen($price) == 4){
+  $vprice = $cur.substr($price,0,1).".".substr($price,1,3);
+}elseif(strlen($price) == 5){
+  $vprice = $cur.substr($price,0,2).".".substr($price,2,3);
+}elseif(strlen($price) == 6){
+  $vprice = $cur.substr($price,0,3).".".substr($price,3,3);
+}elseif(strlen($price) == 7){
+  $vprice = $cur.substr($price,0,1).".".substr($price,1,3).".".substr($price,4,3);
+}elseif(strlen($price) == 8){
+  $vprice = $cur.substr($price,0,2).".".substr($price,2,3).".".substr($price,5,3);
+}elseif(strlen($price) == 9){
+  $vprice = $cur.substr($price,0,3).".".substr($price,3,3).".".substr($price,6,3);
+}else{
+  $vprice = $price;
+}
 
 $tlimit = $uptimelimit;
 if ($tlimit == $utimelimit1){
@@ -166,10 +193,6 @@ table.tprintb td {
   font-size: 18px;
   text-align: left;
 }
-#qrcode {
-  width:32px;
-  height:32px;
-}
 		</style>
 	</head>
 	<body>
@@ -205,35 +228,5 @@ table.tprintb td {
 					<?php $indx++; } ?>
 			</tr>
 	<?php } ?>
-<script type="text/javascript">
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 100,
-	height : 100
-});
-
-function makeCode () {
-	var elText = document.getElementById("text");
-	
-	if (!elText.value) {
-		alert("Input a text");
-		elText.focus();
-		return;
-	}
-	
-	qrcode.makeCode(elText.value);
-}
-
-makeCode();
-
-$("#text").
-	on("blur", function () {
-		makeCode();
-	}).
-	on("keydown", function (e) {
-		if (e.keyCode == 13) {
-			makeCode();
-		}
-	});
-</script>
 </body>
 </html>
