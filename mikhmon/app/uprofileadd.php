@@ -614,16 +614,6 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	echo "		<td ><input type='text' size='15'  name='nupdown' placeholder='contoh:512k/1M' value=$ratel ></td>";
 	echo "	</tr>";
 	echo "	<tr>";
-	if($checkonlogin == ""){
-	echo "	<tr>";
-	echo "		<td ></td>";
-	echo "		<td ></td>";
-	echo "		<td ><input type='submit' name='profupdate' class='btnsubmit' value='Update'/></td>";
-	echo "	</tr>";
-	echo "</table>";
-	echo "</form>";
-	echo "</div>";
-	}else{
 	echo "		<td >Harga</td>";
 	echo "		<td >:</td>";
 	echo "		<td ><input type='text' size='12'  name='nprice' placeholder='contoh:10000' value=$priceu ></td>";
@@ -666,7 +656,7 @@ if ($API->connect( $iphost, $userhost, $passwdhost )) {
 	echo "</table>";
 	echo "</form>";
 	echo "</div>";
-	}
+	
   ?>
     </div>
     </div>
