@@ -1,4 +1,6 @@
-# MIKROTIK HOTSPOT MONITOR (MIKHMON) Discontinued
+# Discontinued. New build [Mikhmon V2](https://github.com/laksa19/mikhmonv2)
+
+# MIKROTIK HOTSPOT MONITOR (MIKHMON)
 Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager yang tidak didukung dibeberapa tipe RB Mikrotik.
 
 ## TENTANG  
