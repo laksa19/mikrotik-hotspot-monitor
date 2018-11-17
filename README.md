@@ -80,7 +80,6 @@ Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager
 
 ### Versi 2018
 
-Download [update.zip](https://laksa19.github.io/download/update.zip)
 
 4-3-2018
 
